@@ -1,0 +1,942 @@
+swagger: '2.0'
+info:
+  description: "This is a first version of SmartIdea API design.\n 
+  Team:\n 
+- Juan Jonas Maidana Alvarado\n
+- Corina Colque Flores\n
+- Laura Rebeca Salinas Ruiz\n
+- Josue Rodrigo Mamani Becerra\n 
+- Juan José Fernández Duarte\n
+ "
+  version: 1.0.0
+  title: SmartIdea
+
+  contact:
+    email: admin@smartidea.com
+
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+    
+
+tags:
+- name: users
+  description: User-only activities and interactions.
+- name: projects
+  description: Project-only activities and interactions.
+- name: certificates
+  description: Certificate-only activities and interactions.
+- name: plans
+  description: Plan-only activities and interactions.
+- name: userCards
+  description: Cards-only activities and interactions.
+- name: notifications
+  description: Cards-only activities and interactions.
+
+paths:
+  /newuser:
+    post:
+      tags:
+      - users
+      summary: Creat new users
+      description: |
+       user can creat new user
+      produces:
+      - application/json
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Creat user"
+        required: true
+        schema:
+          $ref: "#/definitions/User"
+      responses:
+        201:
+          description: user created
+        400:
+          description: can't creat new user
+          
+  /edit-profile/{userid}:
+    put:
+      tags:
+      - users
+      summary: edit your profile
+      description: |
+       edit a user profile
+      produces:
+      - application/json
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Creat user"
+        required: true
+        schema:
+          $ref: "#/definitions/User"
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      responses:
+        200:
+          description: profile updated
+        400:
+          description: bad recuest
+  
+  /user-tags/{userid}:
+    get:
+      tags:
+      - users
+      summary: get users tags
+      description: |
+       get user tags
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Tags"
+        410:
+          description: not found
+    post:
+      tags:
+      - users
+      summary: add Tags
+      description: |
+       user can  add Tags
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: "body"
+        name: "body"
+        description: "add tags"
+        required: true
+        schema:
+          $ref: "#/definitions/Tags"
+      responses:
+        201:
+          description: Tags added
+        400:
+          description: can't add tags
+    delete:
+      tags:
+      - users
+      summary: update Tags
+      description: |
+       user can update tags
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: "body"
+        name: "body"
+        description: "update Tags"
+        required: true
+        schema:
+          $ref: "#/definitions/Tags"
+      responses:
+        200:
+          description: Tags updated
+        400:
+          description: can't  update  Tags
+    
+  /my-projects/{userid}:
+    get:
+      tags:
+      - projects
+      summary: get users Proyects
+      description: |
+       get user Proyects
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: query
+        name: page number
+        type: integer
+        description: The numbers of page that we want to view.
+      - in: query
+        name: limit
+        type: integer
+        description: The numbers of items to return.
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Project"
+        410:
+          description: not found
+    post:
+      tags:
+      - projects
+      summary: create new project
+      description: |
+        create a new project and setting preferences
+      operationId: createproject
+      parameters:
+      - name: userid
+        in: "path"
+        description: "idowner"
+        required: true
+        type: "string"
+      - in: body
+        name: body
+        description: Data project
+        required: true
+        schema:
+          $ref: '#/definitions/Project'
+      produces:
+      - aplication/json
+      responses:
+        201:
+          description: Project created
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Project'
+        400:
+          description: Project can not create
+          
+  /bill/{userid}: 
+    get:
+      tags:
+      - users
+      summary: get users bills
+      description: |
+       get user bills
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: query
+        name: page number
+        type: integer
+        description: The numbers of page that we want to view.
+      - in: query
+        name: limit
+        type: integer
+        description: The numbers of items to return.
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Bill"
+        410:
+          description: not found
+  
+  /references/{userid}:
+    get:
+      tags:
+      - users
+      summary: get users Proyects
+      description: |
+       get Proyect that the user did not create, but he/she is part of.
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: query
+        name: page number
+        type: integer
+        description: The numbers of page that we want to view.
+      - in: query
+        name: limit
+        type: integer
+        description: The numbers of items to return.
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Project"
+        410:
+          description: not found
+          
+  /user-certificates/{userid}:
+    get:
+      tags:
+      - certificates
+      summary: get users certificate
+      description: |
+       get user certificate
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: query
+        name: page number
+        type: integer
+        description: The numbers of page that we want to view.
+      - in: query
+        name: limit
+        type: integer
+        description: The numbers of items to return.
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Certified"
+        410:
+          description: not found
+    post:
+      tags:
+      - certificates
+      summary: add new Certificate
+      description: |
+       user can  add Certificate
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: "body"
+        name: "body"
+        description: "add Certificate"
+        required: true
+        schema:
+          $ref: "#/definitions/Certified"
+      responses:
+        201:
+          description: Certificate added
+        400:
+          description: can't add Certificate
+    put:
+      tags:
+      - certificates
+      summary: update Certificate
+      description: |
+       user can update Certificate
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: "body"
+        name: "body"
+        description: "update Certificate"
+        required: true
+        schema:
+          $ref: "#/definitions/Certified"
+      responses:
+        200:
+          description: Certificate updated
+        400:
+          description: Can't  update  Certificate
+          
+    delete:
+      tags:
+       - certificates
+      summary: delete certificate
+      description: |
+       user can update Certificate
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: "body"
+        name: "body"
+        description: "update Certificate"
+        required: true
+        schema:
+          $ref: "#/definitions/Certified"
+      responses:
+        200:
+          description: Certificate updated
+        400:
+          description: can't  update  Certificate
+   
+  /projects/{projectid}:
+    put:
+      tags:
+      - projects
+      summary: "Can edit the project"
+      description: "Editing the proyect needs to be made by the user owner"
+      operationId: editproject
+      produces:
+      - application/json
+      parameters:
+      - name: projectid
+        in: "path"
+        description: "projectid"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Updated the project"
+        required: true
+        schema:
+          $ref: "#/definitions/Project"
+      responses:
+        "200":
+          description: "Project updated"
+        "400":
+          description: "Can't update the project"
+    get:
+      tags:
+      - projects
+      summary: get project details
+      description: |
+        You can view project details.
+      produces:
+      - application/json
+      parameters:
+      - name: projectid
+        in: "path"
+        description: "projectid"
+        required: true
+        type: "string"
+      - in: query
+        name: page number
+        type: integer
+        description: The numbers of page that we want to view.
+      - in: query
+        name: limit
+        type: integer
+        description: The numbers of items to return.
+      responses:
+        200:
+          description: Project details
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Project'
+        400:
+          description: Project not found
+          
+  /project-feed/{userid}:
+    get:
+      tags:
+      - projects
+      summary: get users feed
+      description: |
+       get user feed 
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in: "path"
+        description: "userid"
+        required: true
+        type: "string"
+      - in: query
+        name: page number
+        type: integer
+        description: The numbers of page that we want to view.
+      - in: query
+        name: limit
+        type: integer
+        description: The numbers of items to return.
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Project"
+        410:
+          description: not found
+   
+  /my-projects/{proyectId}/user-requests:
+    get:
+      tags:
+      - projects
+      summary: get users who wish to join the proyect
+      description: |
+        You can view users who wish to join the proyect
+      produces:
+      - application/json
+      parameters:
+      - name: proyectId
+        in: "path"
+        description: "idproyect"
+        required: true
+        type: "string"
+      - in: query
+        name: page number
+        type: integer
+        description: The numbers of page that we want to view.
+      - in: query
+        name: limit
+        type: integer
+        description: The numbers of items to return.
+      responses:
+        200:
+          description: users who wish to join the proyec
+          schema:
+            type: array
+            items:
+              $ref: "#/definitions/User"
+        400:
+          description: Project not found
+  
+  /my-projects/{proyectId}/plans:
+    get:
+      tags:
+      - plans
+      summary: get payment plans information for ads on a proyect.
+      description: |
+       get payment plans
+      produces:
+      - application/json
+      parameters:
+      - name: proyectId
+        in : path
+        required: true
+        type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Plans"
+        410:
+          description: not found
+          
+  /my-projects/{proyectid}/buy/{planid}:
+    post:
+      tags:
+      - plans
+      summary: get payment plans details for ads on a proyect.
+      description: |
+       get payment plans details
+      produces:
+      - application/json
+      parameters:
+      - name: proyectid
+        in : path
+        required: true
+        type: integer
+      - name: planid
+        in : path
+        required: true
+        type: integer
+      - in: "body"
+        name: "body"
+        description: "payment bill"
+        required: true
+        schema:
+          $ref: "#/definitions/Bill"
+      responses:
+        200:
+          description: OK
+        410:
+          description: not found
+          
+  /user-cards/{userid}:
+    get:
+      tags:
+      - userCards
+      summary: get user credit cards.
+      description: |
+       get all user´s credit cards
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: query
+        name: page number
+        type: integer
+        description: The numbers of page that we want to view.
+      - in: query
+        name: limit
+        type: integer
+        description: The numbers of items to return.
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Cards"
+        410:
+          description: not found
+    post:
+      tags:
+      - userCards
+      summary: add new Credit Card
+      description: |
+        user can  add Credit Card
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: "body"
+        name: "body"
+        description: "add Card"
+        required: true
+        schema:
+          $ref: "#/definitions/Cards"
+      responses:
+        201:
+          description: Credit card added
+        400:
+          description: can't add credit card
+    put:
+      tags:
+      - userCards
+      summary: modify user´s Credit Card data
+      description: |
+        user can modify user´s Credit Card
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: "body"
+        name: "body"
+        description: "add Card"
+        required: true
+        schema:
+          $ref: "#/definitions/Cards"
+      responses:
+        201:
+          description: Credit card added
+        400:
+          description: can't add credit card
+          
+  /user-notification/{userid}:
+    get:
+      tags:
+      - notifications
+      summary: get user notifications.
+      description: |
+       get all user´s not read.
+      produces:
+      - application/json
+      parameters:
+      - name: userid
+        in : path
+        required: true
+        type: integer
+      - in: query
+        name: page number
+        type: integer
+        description: The numbers of page that we want to view.
+      - in: query
+        name: limit
+        type: integer
+        description: The numbers of items to return.
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Notification"
+        410:
+          description: not found
+          
+  /notification/{notificationid}:
+    get:
+      tags:
+      - notifications
+      summary: get user notifications details.
+      description: |
+       get all user´s notification details.
+      produces:
+      - application/json
+      parameters:
+      - name: notificationid
+        in : path
+        required: true
+        type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Notification"
+        410:
+          description: not found
+    put:
+      tags:
+      - notifications
+      summary: modify user notifications status.
+      description: |
+        user can mark as read a notification, changins it´s status
+      produces:
+      - application/json
+      parameters:
+      - name: notificationid
+        in : path
+        required: true
+        type: integer
+      - in: "body"
+        name: "body"
+        description: "modify notification"
+        required: true
+        schema:
+          $ref: "#/definitions/Notification"
+      responses:
+        201:
+          description: Notification marked as read
+        400:
+          description: Can't mark notification as read
+    
+definitions:
+  User:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        example: 1
+      name:
+        type: string
+        format: varchar
+        example: Ana
+      lastname:
+        type: string
+        format: varchar
+        example: Martinez
+      email:
+        type: string
+        format: varchar
+        example: ana@gmail.com
+      nickname:
+        type: string
+        format: varchar
+        example: anamar
+      description:
+        type: string
+        format: varchar
+        example: Diseñadora grafica dedicata al diseño y a su trabajo.
+      image:
+        type: string
+        format: varchar
+      cellphone:
+        type: string
+        format: varchar
+        example: "67895452"
+  Tags:
+    type: object
+    properties:
+        id:
+          type: integer
+          example: 1
+        tagname:
+          type: string
+          example: python
+  Notification:
+    type: object
+    properties:
+        id:
+          type: integer
+          example: 1
+        title:
+          type: string
+          format: varchar
+          example: Proyecto solicitado
+        message:
+          type: string
+          format: varchar
+          example: Un usuario quiere unirse a tu proyecto
+        status:
+          type: integer
+          example: 1
+        date-time:
+          type: string
+          format: varchar
+  Project:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 1
+      title:
+        type: string
+        format: varchar
+        example: SmartIdea
+      media:
+        type: array
+        items:
+          $ref: '#/definitions/Media'
+      description:
+        type: string
+        format: varchar
+        example: Aplicacion para conectarte colaboradores para tus proyectos.
+      abilities:
+        type: string
+        format: varchar
+        example: Programacion con Python
+      tags:
+        type: array
+        items:
+          $ref: '#/definitions/Tags'
+      benefits:
+        type: string
+        format: varchar
+        example: 5% en acciones a los primeros 10 colaboradores aceptados
+      area:
+        type: string
+        format: varchar
+        example: Startup de tecnologia
+      team:
+        type: array
+        items:
+          $ref: '#/definitions/User'
+      views:
+        type: integer
+        example: 500
+      status:
+        type: integer
+        example: 2
+        
+  Media:
+    type: object
+    properties:
+      id:
+        type: integer
+        format: int64
+        example: 1
+      type_content:
+        type: string
+        example: video, photo
+      duration_ms:
+        type: integer
+      preview_image_url:
+        type: string
+      height:
+        type: integer
+      width:
+        type: integer
+      status:
+        type: integer
+        
+  Certified:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 1
+      name:
+        type: string
+        example: Curso de Python
+      nameorganization:
+        type: string
+        example: Coursera
+      date:
+        type: string
+        example: "2019-02-03 13:55:21"
+      urlcredential:
+        type: string
+      idcredential:
+        type: string
+      iduser:
+        type: integer
+        
+  Plans:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 1
+      name:
+        type: string
+        example: Plan 1
+      description: 
+        type: string
+        example: Obten publicidad para tu proyecto haciendo que aparezca primero en las busquedas.
+      price:
+        type: number
+        example: 100,00
+      duraction:
+        type: integer
+        example: 5
+        
+  Cards:
+    type: object
+    properties:
+      id:
+        type: integer
+      namecard:
+        type: string
+      number:
+        type: integer
+      expirationmonth:
+        type: string
+      expirationyear:
+        type: string
+      cvc:
+        type: integer
+      name:
+        type: string
+      lastname:
+        type: string
+        
+  Bill:
+    type: object
+    properties:
+      id:
+        type: integer
+        example: 1
+      idplan:
+        type: integer
+        example: 1
+      idcard:
+        type: integer
+        example: 1
+      purchasedate:
+        type: string
+        example: "2019-05-13 13:55:21"
+      country:
+        type: string
+        example: Bolivia
+      city:
+        type: string
+        example: La Paz
+        
+host: virtserver.swaggerhub.com
+basePath: /SoftwareAPI/SmartIdea/1.0.0
+schemes:
+ - https
