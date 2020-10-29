@@ -547,3 +547,29 @@ BEGIN
 END;
 |
 delimiter ;
+
+--Triggers for user
+
+delimiter |
+CREATE TRIGGER tr_h_user
+AFTER INSERT ON user
+for each row
+BEGIN
+    Insert into h_user (user_id,name,surname,username,email,password,description,image,cellphone,tx_id,tx_host,tx_user_id,tx_date) 
+    values(new.user_id, new.name,new.surname,new.username,new.email,new.password,new.description,new.image,new.cellphone,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+    
+END;
+|
+delimiter ;
+
+delimiter |
+CREATE TRIGGER tr_update_h_user
+AFTER UPDATE ON user
+for each row
+BEGIN
+    Insert into h_user (user_id,name,surname,username,email,password,description,image,cellphone,tx_id,tx_host,tx_user_id,tx_date) 
+    values(new.user_id, new.name,new.surname,new.username,new.email,new.password,new.description,new.image,new.cellphone,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+    
+END;
+|
+delimiter ;
