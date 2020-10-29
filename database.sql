@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2020-10-29 17:08:14.886
+-- Last modification date: 2020-10-29 18:57:41.489
 
 -- tables
 -- Table: area
@@ -67,6 +67,7 @@ CREATE TABLE certificate (
 -- Table: h_bill
 CREATE TABLE h_bill (
     h_bill_id int NOT NULL AUTO_INCREMENT,
+    bill_id int NOT NULL,
     user_id int NOT NULL,
     payment_plan_id int NOT NULL,
     card_id int NOT NULL,
@@ -85,6 +86,7 @@ CREATE TABLE h_bill (
 -- Table: h_card
 CREATE TABLE h_card (
     h_card_id int NOT NULL AUTO_INCREMENT,
+    card_id int NOT NULL,
     user_id int NOT NULL,
     card_name varchar(20) NOT NULL,
     card_number int NOT NULL,
@@ -103,8 +105,8 @@ CREATE TABLE h_card (
 
 -- Table: h_certificate
 CREATE TABLE h_certificate (
-    h_certificate_id int NOT NULL,
-    certificate_id int NOT NULL AUTO_INCREMENT,
+    h_certificate_id int NOT NULL AUTO_INCREMENT,
+    certificate_id int NOT NULL,
     user_id int NOT NULL,
     name varchar(100) NOT NULL,
     company varchar(200) NOT NULL,
@@ -121,8 +123,8 @@ CREATE TABLE h_certificate (
 
 -- Table: h_payment_plan
 CREATE TABLE h_payment_plan (
-    h_payment_plan_id int NOT NULL,
-    payment_plan_id int NOT NULL AUTO_INCREMENT,
+    h_payment_plan_id int NOT NULL AUTO_INCREMENT,
+    payment_plan_id int NOT NULL,
     plan varchar(50) NOT NULL,
     description text NOT NULL,
     cost numeric(10,4) NOT NULL,
@@ -137,6 +139,7 @@ CREATE TABLE h_payment_plan (
 
 -- Table: h_project_user
 CREATE TABLE h_project_user (
+    h_proyect_user_id int NOT NULL AUTO_INCREMENT,
     proyect_user_id int NOT NULL,
     user_id int NOT NULL,
     projects_id int NOT NULL,
@@ -146,7 +149,7 @@ CREATE TABLE h_project_user (
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
     tx_date timestamp NOT NULL,
-    CONSTRAINT h_project_user_pk PRIMARY KEY (proyect_user_id)
+    CONSTRAINT h_project_user_pk PRIMARY KEY (h_proyect_user_id)
 );
 
 -- Table: h_projects
@@ -169,8 +172,8 @@ CREATE TABLE h_projects (
 
 -- Table: h_user
 CREATE TABLE h_user (
-    h_user_id int NOT NULL,
-    user_id int NOT NULL AUTO_INCREMENT,
+    h_user_id int NOT NULL AUTO_INCREMENT,
+    user_id int NOT NULL,
     name varchar(50) NOT NULL,
     surname varchar(50) NOT NULL,
     username varchar(20) NOT NULL,
