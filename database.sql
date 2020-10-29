@@ -397,7 +397,7 @@ ALTER TABLE user_tags ADD CONSTRAINT user_tags_user FOREIGN KEY user_tags_user (
 INSERT INTO area VALUES (null, "Startup de tecnologia",now());
 
 -- Inserts for bill table
-INSERT INTO bill VALUES (null,1,1,1,1,1,now(),"c/Azul Nro. 123","Bolivia","Tarija",1,"192.168.1.1",1, now());
+INSERT INTO bill VALUES (null,1,1,1,1,now(),"c/Azul Nro. 123","Bolivia","Tarija",1,"192.168.1.1",1, now());
 
 -- Inserts for card table
 INSERT INTO card VALUES (null,1,"Tarjeta personal", 13456898453, 2020, 02, "Juan", "Perez",359,now(),1,"192.168.1.1",1, now());
@@ -421,10 +421,10 @@ INSERT INTO project_user VALUES (null,1,1,0,0,1,"192.168.1.1",1, now());
 INSERT INTO projects VALUES (null,"Media Mart App","Aplicacion para obtener multimedia mas facilmente","Se requiere programador backend y programador frontend experimentados en tecnologias web","2% en acciones a los que se unan a nuestro equipo",0,0,now(),1,"192.168.1.1",1, now());
 
 -- Inserts for projects_area table
-INSERT INTO project_area VALUES (null,1,1);
+INSERT INTO projects_area VALUES (null,1,1);
 
 -- Inserts for projects_tags table
-INSERT INTO project_tags VALUES (null,1,1);
+INSERT INTO projects_tags VALUES (null,1,1);
 
 -- Inserts for tags table
 INSERT INTO tags VALUES (null, "python",1);
