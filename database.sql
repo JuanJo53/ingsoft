@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2020-10-29 15:29:26.608
+-- Last modification date: 2020-10-29 17:08:14.886
 
 -- tables
 -- Table: area
@@ -160,7 +160,6 @@ CREATE TABLE h_projects (
     views int NOT NULL,
     status int NOT NULL,
     create_date date NOT NULL,
-    last_modification_date date NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -205,7 +204,8 @@ CREATE TABLE notification (
     date timestamp NOT NULL,
     title varchar(20) NOT NULL,
     message varchar(50) NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: UNSEEN
+1: SEEN',
     CONSTRAINT notification_pk PRIMARY KEY (notification_id)
 );
 
@@ -230,8 +230,12 @@ CREATE TABLE project_user (
     user_id int NOT NULL,
     projects_id int NOT NULL,
     rol int NOT NULL COMMENT '1: OWNER
-2: ',
-    status int NOT NULL,
+2: PARTICIPANT',
+    status int NOT NULL COMMENT '0: PUBLIC
+1: PRIVATE
+2: DELETED
+3: ARCHIVED
+',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -247,9 +251,11 @@ CREATE TABLE projects (
     abilities varchar(200) NOT NULL,
     benefits text NOT NULL,
     views int NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: PUBLIC
+1: PRIVATE
+2: DELETED
+3: ARCHIVED',
     create_date date NOT NULL,
-    last_modification_date date NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -277,7 +283,8 @@ CREATE TABLE projects_tags (
 CREATE TABLE tags (
     tags_id int NOT NULL AUTO_INCREMENT,
     name_tags varchar(20) NOT NULL,
-    verified int NOT NULL,
+    verified int NOT NULL COMMENT '0: UNVERIFIED
+1: VERIFIED',
     CONSTRAINT tags_pk PRIMARY KEY (tags_id)
 );
 
