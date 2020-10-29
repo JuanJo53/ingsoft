@@ -397,47 +397,58 @@ ALTER TABLE user_tags ADD CONSTRAINT user_tags_user FOREIGN KEY user_tags_user (
 INSERT INTO area VALUES (null, "Startup de tecnologia",now());
 INSERT INTO area VALUES (null, "Videogames",now());
 INSERT INTO area VALUES (null, "{Area de base de datos",now());
+INSERT INTO area VALUES (null, "Spring Boot",now());
 
 -- Inserts for bill table
 INSERT INTO bill VALUES (null,1,1,1,1,now(),"c/Azul Nro. 123","Bolivia","Tarija",1,"192.168.1.1",1, now());
 INSERT INTO bill VALUES (null,2,2,2,2,now(),"c/La Flores Nro. 968","Bolivia","La Paz",2,"192.168.1.1",2, now());
 INSERT INTO bill VALUES (null,3,3,3,3,now(),"Av.5 Nro. 30","Bolivia","Cochabamba",3,"192.168.1.6",3, now());
+INSERT INTO bill VALUES (null,4,4,4,4,now(),"Av costanera Nro. 10","Bolivia","tarija",4,"192.168.10.20",4, now());
 
 -- Inserts for card table
 INSERT INTO card VALUES (null,1,"Tarjeta personal", 13456898453, 2020, 02, "Juan", "Perez",359,now(),1,"192.168.1.1",1, now());
 INSERT INTO card VALUES (null,2,"Tarjeta Antonio", 12378964521, 2021, 04, "Antonio", "Rodriguez",242,now(),2,"192.168.1.1",2, now());
 INSERT INTO card VALUES (null,3,"VISA", 45678954632, 2019, 08, "Jose", "Laracroft",351,now(),4,"192.168.1.8",4, now());
+INSERT INTO card VALUES (null,4,"Tarjeta travajo ", 78948954632, 2022, 10, "Lucas", "Lopez",897,now(),3,"192.168.1.8",3, now());
 
 -- Inserts for certificate table
 INSERT INTO certificate VALUES (null, 1, "Curso Python Basico", "Udemy","10-02-2015","c9dd7d32e6548e9a3aa3669","https://udemy.com/@albert/certificados/curso-python",now(),1,"192.168.1.1",1, now());
 INSERT INTO certificate VALUES (null, 2, "Curso programacion en java", "edX","10-12-2018","a8hh9j12h134s9sss0988","https://www.edx.org/es/certificados/programacion-en-java",now(),2,"192.168.1.1",2, now());
 INSERT INTO certificate VALUES (null, 1, "Curso Cisco packet tracer", "Cisco","03-08-2018","ersdk4654dsaas6d523s1das","https://www.netacad.com/es/courses/packet-tracer",now(),5,"192.168.1.7",5, now());
+INSERT INTO certificate VALUES (null, 2, "Curso Cisco packet tracer", "Cisco","03-08-2019","a8489dsaf156sd5df4f4gasd4","https://www.netacad.com/es/courses/packet-tracer",now(),4,"192.168.1.7",4, now());
 
 -- Inserts for media table
 INSERT INTO media VALUES (null,1,1,"http://photos.com/super.png", 2,now());
 INSERT INTO media VALUES (null,2,2,"http://photos.com/image.png", 2,now());
 INSERT INTO media VALUES (null,3,3,"https://vignette.wikia.nocookie.net/arrow/images/3/3e/Armadura_de_Savitar.png/revision/latest?cb=20200316010606&path-prefix=es", 5,now());
-                          
+INSERT INTO media VALUES (null,4,4,"http://photos.com/perfil.png", 2,now());    
+
 -- Inserts for notification table
 INSERT INTO notification VALUES (null,1,now(),"Nuevo interesado","Un usario esta interesado en tu proyecto",5);
 INSERT INTO notification VALUES (null,2,now(),"Pago de publicidad","Se vence el plazo para tu pago",5);
 INSERT INTO notification VALUES (null,3,now(),"Nuevo integrante","Un usario ingreso a tu proyecto",1);
+INSERT INTO notification VALUES (null,4,now(),"Proyectos nuevos ","Hay nuevos proyectos nuevos para er",5);
+                          
                           
 -- Inserts for payment_plan table
 INSERT INTO payment_plan VALUES (null,"Plan 1","Plan por publicidad por un mes para tu proyecto",100.0,5,now(),1,"192.168.1.1",1, now());
 INSERT INTO payment_plan VALUES (null,"Plan 3","Plan por publicidad por un año para tu proyecto",250.0,6,now(),1,"192.168.1.1",1, now());
 Insert into payment_plan values(null, "Plan 2","Plan de seis meses",50.0,1,now(),2,"192.168.1.5",2,now());
+Insert into payment_plan values(null, "Plan 4","Plan de tres meses",25.0,1,now(),2,"192.168.1.5",2,now());
+
 
 -- Inserts for project_user table
 INSERT INTO project_user VALUES (null,1,1,0,0,1,"192.168.1.1",1, now());
 INSERT INTO project_user VALUES (null,2,2,0,0,2,"192.168.1.1",1, now());
 INSERT INTO project_user VALUES (null,3,3,5,1,3,"192.168.1.17",2, now());
+INSERT INTO project_user VALUES (null,4,4,0,0,4,"192.168.1.17",2, now());
 
 -- Inserts for projects table
 INSERT INTO projects VALUES (null,"Media Mart App","Aplicacion para obtener multimedia mas facilmente","Se requiere programador backend y programador frontend experimentados en tecnologias web","2% en acciones a los que se unan a nuestro equipo",0,0,now(),1,"192.168.1.1",1, now());
 INSERT INTO projects VALUES (null,"Arcade Videogames","Aplicacion para descargar juegos arcades","Se requiere programadores juniors","5% en acciones a los que se unan a nuestro equipo",0,0,now(),1,"192.168.1.1",1, now());
 INSERT INTO projects VALUES (null,"SmartIdea","Aplicacion para crear y unirte a startups","Se requiere programador backend y programador frontend experimentados en tecnologias web","5% en acciones a los que se unan a nuestro equipo",2,3,now(),1,"192.168.1.15",1, now());
-                             
+INSERT INTO projects VALUES (null,"Fastforyou","Aplicacion para restaurantes ","Se requiere programador backend y programador frontend experimentados en tecnologias web","5% en acciones a los que se unan a nuestro equipo",2,3,now(),1,"192.168.1.15",1, now());
+
 -- Inserts for projects_area table
 INSERT INTO projects_area VALUES (null,1,1);
 INSERT INTO projects_area VALUES (null,2,2);
@@ -445,22 +456,25 @@ INSERT INTO projects_area VALUES (null,2,2);
 -- Inserts for projects_tags table
 INSERT INTO projects_tags VALUES (null,1,1);
 INSERT INTO projects_tags VALUES (null,2,2);
-INSERT INTO projects_area VALUES (null,3,3);
+INSERT INTO projects_tags VALUES (null,3,3);
 
 -- Inserts for tags table
 INSERT INTO tags VALUES (null, "python",1);
 INSERT INTO tags VALUES (null, "java",2);
 INSERT INTO tags VALUES (null, "c++",0);
+INSERT INTO tags VALUES (null, "Angular",1);
                              
 -- Inserts for user table
 INSERT INTO user VALUES (null, "Albert", "Molina", "@almola","moli147@gmail.com","c9dd7d32e8e9a3aa3669","","","",1,"192.168.1.1",1, now());
 INSERT INTO user VALUES (null, "Lucas", "Gutierrez", "@aLuck","luck.gt@gmail.com","a8hh9j12h134s9sss0988","","","",1,"192.168.1.1",1, now());
 INSERT INTO user VALUES (null, "Carla", "Mamani", "@calman","mamanicarla789@gmail.com","sad45s51s1344hfdsa3sw","","","",2,"192.168.1.16",2, now());
+INSERT INTO user VALUES (null, "pedro", "Lopez", "@pedrito","pedrolopez@gmail.com","sad45s51s1344hfdsa3sw","","","",2,"192.168.1.16",2, now());
 
 -- Inserts for user_tags table
 INSERT INTO user_tags VALUES (null,1,1);
 INSERT INTO user_tags VALUES (null,2,2);
-INSERT INTO user_tags VALUES (null,3,3);     
+INSERT INTO user_tags VALUES (null,3,3); 
+INSERT INTO user_tags VALUES (null,4,4);        
 
 --Triggers for payment_plan                  
 delimiter |
@@ -502,6 +516,34 @@ AFTER UPDATE ON certificate
 for each row
 BEGIN
 	Insert into `h_certificate` (`certificate_id`,`user_id`,`name`,`company`,`expedition_date`,`credential_id`,`credential_url`,`date`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.certificate_id, new.user_id,new.name,new.company,new.expedition_date,new.credential_id,new.credential_url,new.date,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+END;
+|
+delimiter ;
+
+
+--Triggers for project_user   
+delimiter |
+CREATE TRIGGER tr_h_project_user
+AFTER INSERT ON project_user
+for each row
+BEGIN
+    Insert into h_project_user (project_user_id,user_id,projects_id,rol,status,tx_id,tx_host,tx_user_id,tx_date) 
+    values(new.project_user_id, new.user_id,new.projects_id,new.rol
+    ,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+    
+END;
+|
+delimiter ;
+
+delimiter |
+CREATE TRIGGER tr_update_h_project_user
+AFTER UPDATE ON project_user
+for each row
+BEGIN
+    Insert into h_project_user (project_user_id,user_id,projects_id,rol,status,tx_id,tx_host,tx_user_id,tx_date) 
+    values(new.project_user_id, new.user_id,new.projects_id,new.rol
+    ,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+    
 END;
 |
 delimiter ;
