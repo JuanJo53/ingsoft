@@ -1,7 +1,7 @@
 package bo.ucb.edu.ingsoft.bl;
 
 import bo.ucb.edu.ingsoft.dao.ContactDao;
-import bo.ucb.edu.ingsoft.dto.Contact;
+import bo.ucb.edu.ingsoft.model.Contact;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
