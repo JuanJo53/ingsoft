@@ -1,6 +1,6 @@
 package bo.ucb.edu.ingsoft.dao;
 
-import bo.ucb.edu.ingsoft.dto.Phone;
+import bo.ucb.edu.ingsoft.model.Phone;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
