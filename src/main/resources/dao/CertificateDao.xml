@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.CertificateDao">
+    <select id="detailsByCertificateId" resultType="bo.ucb.edu.ingsoft.model.Certificate">
+        SELECT
+            certificate_id as certificateId,
+            user_id as userId,
+            name as name,
+            company as company,
+            expedition_date as expeditionDate,
+            credential_id as credentialId
+            credential_url as credentialURL
+            date as date
+        FROM certificate
+        WHERE
+            certificate_id = #{certificateId}
+    </select>
+    <select id="getCertificateBasicData" resultType="bo.ucb.edu.ingsoft.model.Certificate">
+        SELECT
+               certificate_id as certificateId,
+               name as name,
+               company as company,
+               expedition_date as expeditionDate,
+               date as date
+        FROM certificate
+        WHERE
+            user_id = #{userId}
+    </select>
+</mapper>

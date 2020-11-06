@@ -28,7 +28,10 @@ public class Certificate {
                 ", credentialId='" + credentialId + '\'' +
                 ", credentialURL='" + credentialURL + '\'' +
                 ", date=" + date +
-                ", transaction=" + transaction +
+                ", txId=" + transaction.getTxId() +
+                ", txHost=" + transaction.getTxHost() +
+                ", txUserId=" + transaction.getTxUserId() +
+                ", txDate=" + transaction.getTxDate() +
                 '}';
     }
 

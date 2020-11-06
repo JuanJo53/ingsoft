@@ -28,7 +28,10 @@ public class User {
                 ", description='" + description + '\'' +
                 ", image='" + image + '\'' +
                 ", cellphone='" + cellphone + '\'' +
-                ", transaction=" + transaction +
+                ", txId=" + transaction.getTxId() +
+                ", txHost=" + transaction.getTxHost() +
+                ", txUserId=" + transaction.getTxUserId() +
+                ", txDate=" + transaction.getTxDate() +
                 '}';
     }
 
