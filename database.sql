@@ -56,7 +56,7 @@ CREATE TABLE certificate (
     expedition_date date NOT NULL,
     credential_id varchar(100) NOT NULL,
     credential_url varchar(200) NOT NULL,
-    date date NOT NULL,
+    expiration_date date NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,

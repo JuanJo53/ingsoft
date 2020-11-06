@@ -10,22 +10,28 @@
             name as name,
             company as company,
             expedition_date as expeditionDate,
-            credential_id as credentialId
+            credential_id as credentialId,
             credential_url as credentialURL
-            date as date
+            expiration_Date as expirationDate,
         FROM certificate
         WHERE
             certificate_id = #{certificateId}
     </select>
-    <select id="getCertificateBasicData" resultType="bo.ucb.edu.ingsoft.model.Certificate">
+    <select id="getCertificates" resultType="bo.ucb.edu.ingsoft.model.Certificate">
         SELECT
                certificate_id as certificateId,
                name as name,
                company as company,
-               expedition_date as expeditionDate,
-               date as date
+               expedition_Date as expeditionDate,
+               expiration_Date as expirationDate,
         FROM certificate
         WHERE
             user_id = #{userId}
     </select>
+    <insert id="newCertificate" parameterType="bo.ucb.edu.ingsoft.model.Certificate">
+        INSERT INTO certificate VALUES (
+            null, #{userId}, #{name}, #{company},#{expeditionDate},#{credentialId},#{credentialURL},#{expirationDate},1,"192.168.1.1",1, now()
+        )
+    </insert>
+
 </mapper>

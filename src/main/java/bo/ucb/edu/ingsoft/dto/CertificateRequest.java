@@ -1,54 +1,30 @@
-package bo.ucb.edu.ingsoft.model;
+package bo.ucb.edu.ingsoft.dto;
+
+import bo.ucb.edu.ingsoft.model.Transaction;
 
 import java.util.Date;
 
-public class Certificate {
-    private Integer certificateId;
-    private Integer userId;
+public class CertificateRequest {
     private String name;
     private String company;
     private Date expeditionDate;
     private String credentialId;
     private String credentialURL;
     private Date expirationDate;
-    private Transaction transaction;
 
-    public Certificate() {
-        transaction=new Transaction();
+    public CertificateRequest() {
     }
 
     @Override
     public String toString() {
-        return "Certificate{" +
-                "certificateId=" + certificateId +
-                ", userId=" + userId +
-                ", name='" + name + '\'' +
+        return "CertificateRequest{" +
+                "name='" + name + '\'' +
                 ", company='" + company + '\'' +
                 ", expeditionDate=" + expeditionDate +
                 ", credentialId='" + credentialId + '\'' +
                 ", credentialURL='" + credentialURL + '\'' +
-                ", date=" + expirationDate +
-                ", txId=" + transaction.getTxId() +
-                ", txHost=" + transaction.getTxHost() +
-                ", txUserId=" + transaction.getTxUserId() +
-                ", txDate=" + transaction.getTxDate() +
+                ", expirationDate=" + expirationDate +
                 '}';
-    }
-
-    public Integer getCertificateId() {
-        return certificateId;
-    }
-
-    public void setCertificateId(Integer certificateId) {
-        this.certificateId = certificateId;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
     }
 
     public String getName() {
@@ -97,13 +73,5 @@ public class Certificate {
 
     public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
-    }
-
-    public Transaction getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
     }
 }

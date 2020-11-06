@@ -1,0 +1,20 @@
+###
+GET http://localhost:8080/user/certificates
+Accept: application/json
+
+###
+POST http://localhost:8080/user/certificates
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Curso Basico de Docker",
+  "company": "Platzi",
+  "expedition_date": "10/10/2019",
+  "credential_id": "45647sadwer98g",
+  "credential_url": "http://platzi.com/certificados/docker",
+  "expedition_date": "10/10/2022"
+}
+
+
+###
