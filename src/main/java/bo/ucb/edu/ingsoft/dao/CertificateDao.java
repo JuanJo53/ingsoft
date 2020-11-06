@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface CertificateDao {
     public Certificate detailsByCertificateId(Integer certificateId);
-    public Certificate getCertificates(Integer user);
-    public Certificate newCertificate(Integer user);
+
+    public Certificate getCertificates(Integer userId);
+
+    public void newCertificate(Certificate certificate);
 }

@@ -10,10 +10,10 @@ Content-Type: application/json
 {
   "name": "Curso Basico de Docker",
   "company": "Platzi",
-  "expedition_date": "10/10/2019",
-  "credential_id": "45647sadwer98g",
-  "credential_url": "http://platzi.com/certificados/docker",
-  "expedition_date": "10/10/2022"
+  "expeditionDate": "2019-10-10",
+  "credentialId": "45647sadwer98g",
+  "credentialURL": "http://platzi.com/certificados/docker",
+  "expirationDate": "2022-10-10"
 }
 
 

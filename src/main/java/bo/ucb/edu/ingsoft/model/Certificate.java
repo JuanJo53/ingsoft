@@ -1,7 +1,6 @@
 package bo.ucb.edu.ingsoft.model;
 
 import java.util.Date;
-
 public class Certificate {
     private Integer certificateId;
     private Integer userId;

@@ -1,7 +1,5 @@
 package bo.ucb.edu.ingsoft.dto;
 
-import bo.ucb.edu.ingsoft.model.Transaction;
-
 import java.util.Date;
 
 public class CertificateRequest {
@@ -13,18 +11,6 @@ public class CertificateRequest {
     private Date expirationDate;
 
     public CertificateRequest() {
-    }
-
-    @Override
-    public String toString() {
-        return "CertificateRequest{" +
-                "name='" + name + '\'' +
-                ", company='" + company + '\'' +
-                ", expeditionDate=" + expeditionDate +
-                ", credentialId='" + credentialId + '\'' +
-                ", credentialURL='" + credentialURL + '\'' +
-                ", expirationDate=" + expirationDate +
-                '}';
     }
 
     public String getName() {

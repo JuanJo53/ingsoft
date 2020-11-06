@@ -35,7 +35,7 @@ public class CertificateApi {
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public CertificateRequest createContact(@RequestBody CertificateRequest certificateRequest, HttpServletRequest request) {
+    public CertificateRequest createCertificate(@RequestBody CertificateRequest certificateRequest, HttpServletRequest request) {
         // Creamos transaccion para la operación.
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);

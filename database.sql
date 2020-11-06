@@ -293,9 +293,9 @@ CREATE TABLE tags (
 
 -- Table: transaction
 CREATE TABLE transaction (
-    tx_id int NOT NULL,
+    tx_id int NOT NULL AUTO_INCREMENT,
     tx_host varchar(100) NOT NULL,
-    tx_user_ud int NOT NULL,
+    tx_user_id int NOT NULL,
     tx_date timestamp NOT NULL,
     CONSTRAINT transaction_pk PRIMARY KEY (tx_id)
 );

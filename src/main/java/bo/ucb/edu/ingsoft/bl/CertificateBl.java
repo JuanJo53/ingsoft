@@ -34,6 +34,9 @@ public class CertificateBl {
     public CertificateRequest createCertificate(Integer userId, CertificateRequest certificateRequest, Transaction transaction) {
         Certificate certificate = new Certificate();
 
+        LOGGER.error(certificateRequest.getExpirationDate().toString());
+        LOGGER.error(certificateRequest.getExpeditionDate().toString());
+
         certificate.setUserId(userId);
         certificate.setName(certificateRequest.getName());
         certificate.setCompany(certificateRequest.getCompany());
@@ -42,12 +45,9 @@ public class CertificateBl {
         certificate.setCredentialURL(certificateRequest.getCredentialURL());
         certificate.setExpirationDate(certificateRequest.getExpirationDate());
 
-        certificate.getTransaction().setTxId(transaction.getTxId());
-        certificate.getTransaction().setTxHost(transaction.getTxHost());
-        certificate.getTransaction().setTxUserId(transaction.getTxUserId());
-        certificate.getTransaction().setTxDate(transaction.getTxDate());
+        certificate.setTransaction(transaction);
 
-        certificateDao.newCertificate(userId);
+        certificateDao.newCertificate(certificate);
 
         return  certificateRequest;
     }

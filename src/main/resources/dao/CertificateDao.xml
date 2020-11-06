@@ -23,14 +23,25 @@
                name as name,
                company as company,
                expedition_Date as expeditionDate,
-               expiration_Date as expirationDate,
+               expiration_Date as expirationDate
         FROM certificate
         WHERE
             user_id = #{userId}
     </select>
     <insert id="newCertificate" parameterType="bo.ucb.edu.ingsoft.model.Certificate">
         INSERT INTO certificate VALUES (
-            null, #{userId}, #{name}, #{company},#{expeditionDate},#{credentialId},#{credentialURL},#{expirationDate},1,"192.168.1.1",1, now()
+            null,
+            #{userId},
+            #{name},
+            #{company},
+            #{expeditionDate},
+            #{credentialId},
+            #{credentialURL},
+            #{expirationDate},
+            #{transaction.txId},
+            #{transaction.txHost},
+            #{transaction.txUserId},
+            #{transaction.txDate}
         )
     </insert>
 
