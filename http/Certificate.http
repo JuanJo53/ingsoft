@@ -56,5 +56,15 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/my-projects/1
+GET http://localhost:8080/my-projects/2
+Accept: application/json
+###
+///project-feed/{userid}
+
+GET http://localhost:8080/my-projects/project-feed/1
+Accept: application/json
+
+###
+///list/{userid}
+GET http://localhost:8080/my-projects/list/1
 Accept: application/json

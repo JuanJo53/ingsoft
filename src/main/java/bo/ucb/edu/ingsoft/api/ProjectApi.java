@@ -65,5 +65,16 @@ public class ProjectApi {
     public Certificate getUserCertificates(HttpServletRequest request) {
         return certificateBl.getCertificateBasicData(1);
     }
+* /project-feed/{userid}
 * */
+@RequestMapping(value = "/project-feed/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+public List<Project> getpryectlist(@PathVariable("userid") Integer id){
+    return projectBl.listproyect();
+}
+
+    @RequestMapping(value = "/list/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Project> getpryectlistuser(@PathVariable("userid") Integer id){
+        return projectBl.listproyectuser(id);
+    }
+
 }

@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class ProjectBl {
@@ -79,4 +80,14 @@ public class ProjectBl {
         return  projectDao.detailsproyect(projectid);
     }
 
+
+    public List<Project>listproyect(){
+        return  projectDao.listproyect();
     }
+
+    public List<Project>listproyectuser(Integer idUser){
+        return  projectDao.listproyectuser(idUser);
+    }
+
+
+}
