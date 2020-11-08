@@ -49,7 +49,7 @@ public class ProjectBl {
 
         ProjectUser projectUser=new ProjectUser();
         projectUser.setUserId(id);
-        projectUser.setProjectId(1);
+        projectUser.setProjectId(projectDao.getLastInsertIdProject());
         projectUser.setRol(1);
         projectUser.setStatus(1);
         projectUser.setTransaction(transaction);

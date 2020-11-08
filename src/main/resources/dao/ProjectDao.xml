@@ -12,7 +12,7 @@
             #{benefits},
             #{views},
             #{status},
-            #{create_date},
+            #{createDate},
             #{transaction.txId},
             #{transaction.txHost},
             #{transaction.txUserId},
@@ -65,6 +65,10 @@
         FROM projects a ,project_user b
         where a.projects_id=b.projects_id and b.user_id=#{UserId}
 
+    </select>
+
+    <select id="getLastInsertIdProject" resultType="java.lang.Integer">
+    SELECT projects_id FROM projects ORDER BY projects_id DESC LIMIT 1
     </select>
 
 </mapper>
