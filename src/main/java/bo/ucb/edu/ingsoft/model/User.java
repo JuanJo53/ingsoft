@@ -12,8 +12,8 @@ public class User {
     private String cellphone;
     private Transaction transaction;
 
-    public User(Transaction transaction) {
-        this.transaction = transaction;
+    public User() {
+        transaction=new Transaction();
     }
 
     @Override
