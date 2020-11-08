@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.ProjectDao">
+    <insert id="newProject" parameterType="bo.ucb.edu.ingsoft.model.Project">
+        INSERT INTO projects VALUES (
+            null,
+            #{projectTitle},
+            #{description},
+            #{abilities},
+            #{benefits},
+            #{views},
+            #{status},
+            #{create_date},
+            #{transaction.txId},
+            #{transaction.txHost},
+            #{transaction.txUserId},
+            #{transaction.txDate}
+        )
+    </insert>
+</mapper>

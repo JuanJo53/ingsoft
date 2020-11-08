@@ -27,3 +27,17 @@ Content-Type: application/json
   "nickName": "El Nerd",
   "email": "example@gmail.com"
 }
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Tadeoasd",
+  "description": "Fernandez",
+  "abilities": "El Nerd",
+  "benefits": "mucho dimero ",
+   "status" : "1"
+}
