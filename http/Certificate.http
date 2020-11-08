@@ -54,3 +54,7 @@ Content-Type: application/json
   "benefits": "mucho dinero ",
   "status" : "0"
 }
+
+###
+GET http://localhost:8080/my-projects/1
+Accept: application/json

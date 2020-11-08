@@ -4,6 +4,7 @@ import bo.ucb.edu.ingsoft.dao.ProjectDao;
 import bo.ucb.edu.ingsoft.dao.ProjectUserDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.ProjectRequest;
+import bo.ucb.edu.ingsoft.model.Certificate;
 import bo.ucb.edu.ingsoft.model.Project;
 import bo.ucb.edu.ingsoft.model.ProjectUser;
 import bo.ucb.edu.ingsoft.model.Transaction;
@@ -38,7 +39,7 @@ public class ProjectBl {
        project.setBenefits(projectRequest.getBenefits());
        project.setViews(0);
        project.setStatus(projectRequest.getStatus());
-       project.setCreate_date(new Date());
+       project.setCreateDate(new Date());
 
        project.setTransaction(transaction);
 
@@ -71,4 +72,11 @@ public class ProjectBl {
 
         return projectRequest;
     }
+
+    public Project detailsByprojectId(Integer projectid) {
+        Project p=projectDao.detailsproyect(projectid);
+        LOGGER.error(p.getAbilities());
+        return  projectDao.detailsproyect(projectid);
+    }
+
     }

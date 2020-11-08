@@ -10,7 +10,7 @@ public class Project {
     private String benefits;
     private Integer views;
     private Integer status;
-    private Date create_date;
+    private Date createDate;
     private Transaction transaction;
 
     public Project() {
@@ -28,7 +28,7 @@ public class Project {
                 ", benefits='" + benefits + '\'' +
                 ", views=" + views +
                 ", status=" + status +
-                ", create_date=" + create_date +
+                ", create_date=" + createDate +
                 ", transaction=" + transaction +
                 '}';
     }
@@ -89,12 +89,12 @@ public class Project {
         this.status = status;
     }
 
-    public Date getCreate_date() {
-        return create_date;
+    public Date getCreateDate() {
+        return createDate;
     }
 
-    public void setCreate_date(Date create_date) {
-        this.create_date = create_date;
+    public void setCreateDate(Date createDate) {
+        this.createDate = createDate;
     }
 
     public Transaction getTransaction() {

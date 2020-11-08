@@ -4,6 +4,7 @@ import bo.ucb.edu.ingsoft.bl.ProjectBl;
 import bo.ucb.edu.ingsoft.bl.TransactionBl;
 import bo.ucb.edu.ingsoft.dto.CertificateRequest;
 import bo.ucb.edu.ingsoft.dto.ProjectRequest;
+import bo.ucb.edu.ingsoft.model.Project;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,4 +56,14 @@ public class ProjectApi {
         return projectRespont;
     }
 
+    @RequestMapping(value = "/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Project getpryect(@PathVariable("userid") Integer id){
+        return projectBl.detailsByprojectId(id);
+    }
+/*
+*  @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Certificate getUserCertificates(HttpServletRequest request) {
+        return certificateBl.getCertificateBasicData(1);
+    }
+* */
 }
