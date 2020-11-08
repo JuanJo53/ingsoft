@@ -29,6 +29,8 @@ public class UserBl {
 
         user.setName(userRequest.getName());
         user.setSurname(userRequest.getSurname());
+        user.setUsername(userRequest.getNickName());
+        user.setEmail(userRequest.getEmail());
         user.setTransaction(transaction);
 
         userDao.newUser(user);
