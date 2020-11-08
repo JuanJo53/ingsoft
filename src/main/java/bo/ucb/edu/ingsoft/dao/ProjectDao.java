@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface ProjectDao {
+    //
     public void newProject(Project project);
+    public void updateproyect(Project project);
 
 }

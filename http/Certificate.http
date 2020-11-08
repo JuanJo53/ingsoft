@@ -35,9 +35,22 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "projectTitle": "Tadeoasd",
-  "description": "Fernandez",
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo  ",
   "abilities": "El Nerd",
-  "benefits": "mucho dimero ",
+  "benefits": "mucho dinero ",
    "status" : "1"
+}
+###
+///
+PUT http://localhost:8080/my-projects/edit/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo  ",
+  "abilities": "El Nerd",
+  "benefits": "mucho dinero ",
+  "status" : "0"
 }

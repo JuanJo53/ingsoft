@@ -19,4 +19,18 @@
             #{transaction.txDate}
         )
     </insert>
+
+    <update id="updateproyect" parameterType="bo.ucb.edu.ingsoft.model.Project">
+
+        Update projects set project_title=#{projectTitle},
+             description=#{description},
+             abilities=#{abilities},
+             benefits= #{benefits},
+             views=#{views},
+             status=#{status}
+             where projects_id=#{projectsId}
+    </update>
+
+
+
 </mapper>

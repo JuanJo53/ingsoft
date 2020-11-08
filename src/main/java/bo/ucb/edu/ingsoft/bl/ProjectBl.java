@@ -56,4 +56,19 @@ public class ProjectBl {
 
         return projectRequest;
     }
-}
+    public ProjectRequest editproject(ProjectRequest projectRequest,
+                                      Integer id,Transaction transaction) {
+        Project project =new Project();
+
+        project.setProjectsId(id);
+        project.setProjectTitle(projectRequest.getProjectTitle());
+        project.setDescription(projectRequest.getDescription());
+        project.setAbilities(projectRequest.getAbilities());
+        project.setBenefits(projectRequest.getBenefits());
+        project.setStatus(projectRequest.getStatus());
+        project.setViews(0);
+        projectDao.updateproyect(project);
+
+        return projectRequest;
+    }
+    }

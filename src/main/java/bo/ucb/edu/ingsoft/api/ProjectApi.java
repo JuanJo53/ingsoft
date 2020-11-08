@@ -41,4 +41,18 @@ public class ProjectApi {
         return projectRespont;
     }
 
+
+    @RequestMapping(value = "/edit/{projectid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ProjectRequest editproyect(@PathVariable("projectid") Integer id,@RequestBody ProjectRequest projectRequest, HttpServletRequest request) {
+        // Creamos transaccion para la operación.
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+
+        ProjectRequest projectRespont=projectBl.editproject(projectRequest,id,transaction);
+        //CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
+        //
+        return projectRespont;
+    }
+
 }
