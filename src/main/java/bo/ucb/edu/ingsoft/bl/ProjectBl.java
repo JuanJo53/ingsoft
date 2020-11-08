@@ -3,11 +3,9 @@ package bo.ucb.edu.ingsoft.bl;
 import bo.ucb.edu.ingsoft.dao.ProjectDao;
 import bo.ucb.edu.ingsoft.dao.ProjectUserDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
+import bo.ucb.edu.ingsoft.dao.UserDao;
 import bo.ucb.edu.ingsoft.dto.ProjectRequest;
-import bo.ucb.edu.ingsoft.model.Certificate;
-import bo.ucb.edu.ingsoft.model.Project;
-import bo.ucb.edu.ingsoft.model.ProjectUser;
-import bo.ucb.edu.ingsoft.model.Transaction;
+import bo.ucb.edu.ingsoft.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,14 +19,16 @@ public class ProjectBl {
     private TransactionDao transactionDao;
     private ProjectDao projectDao;
     private ProjectUserDao projectUserDao;
+    private UserDao userDao;
     private static final Logger LOGGER = LoggerFactory.getLogger(CertificateBl.class);
 
 
     @Autowired
-    public ProjectBl(TransactionDao transactionDao, ProjectDao projectDao, ProjectUserDao projectUserDao) {
+    public ProjectBl(TransactionDao transactionDao, ProjectDao projectDao, ProjectUserDao projectUserDao,UserDao userDao) {
         this.transactionDao = transactionDao;
         this.projectDao = projectDao;
         this.projectUserDao = projectUserDao;
+        this.userDao=userDao;
     }
 
     public ProjectRequest newproject(ProjectRequest projectRequest, Integer id,Transaction transaction){
@@ -89,5 +89,8 @@ public class ProjectBl {
         return  projectDao.listproyectuser(idUser);
     }
 
+    public List<User>listUserProject(Integer idproject){
 
+        return userDao.listproyectuser(idproject);
+    }
 }

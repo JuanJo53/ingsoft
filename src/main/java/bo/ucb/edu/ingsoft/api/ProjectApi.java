@@ -6,6 +6,7 @@ import bo.ucb.edu.ingsoft.dto.CertificateRequest;
 import bo.ucb.edu.ingsoft.dto.ProjectRequest;
 import bo.ucb.edu.ingsoft.model.Project;
 import bo.ucb.edu.ingsoft.model.Transaction;
+import bo.ucb.edu.ingsoft.model.User;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -20,6 +21,7 @@ public class ProjectApi {
 
     private ProjectBl projectBl;
     private TransactionBl transactionBl;
+
 
     @Autowired
 
@@ -76,5 +78,12 @@ public List<Project> getpryectlist(@PathVariable("userid") Integer id){
     public List<Project> getpryectlistuser(@PathVariable("userid") Integer id){
         return projectBl.listproyectuser(id);
     }
+
+
+    @RequestMapping(value = "/{projectid}/user-request" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<User> userprojetrecuest(@PathVariable("projectid") Integer id){
+        return  projectBl.listUserProject(id);
+    }
+
 
 }
