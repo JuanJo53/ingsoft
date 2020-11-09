@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/user/certificates")
@@ -29,7 +30,7 @@ public class CertificateApi {
     }
 
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Certificate getUserCertificates(HttpServletRequest request) {
+    public List<Certificate> getUserCertificates(HttpServletRequest request) {
         return certificateBl.getCertificateBasicData(1);
     }
 

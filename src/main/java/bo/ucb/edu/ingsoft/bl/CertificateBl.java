@@ -12,6 +12,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CertificateBl {
     private CertificateDao certificateDao;
@@ -26,9 +28,7 @@ public class CertificateBl {
     public Certificate detailsByCertificateId(Integer certificateId) {
         return  certificateDao.detailsByCertificateId(certificateId);
     }
-    public Certificate getCertificateBasicData(Integer userId) {
-        Certificate c=certificateDao.getCertificates(userId);
-        LOGGER.error(c.getName());
+    public List<Certificate> getCertificateBasicData(Integer userId) {
         return  certificateDao.getCertificates(userId);
     }
     public CertificateRequest createCertificate(Integer userId, CertificateRequest certificateRequest, Transaction transaction) {
