@@ -1,0 +1,39 @@
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "abilities": "El Nerd 2",
+  "benefits": "mucho dinero 2",
+  "status" : "0"
+}
+###
+///
+PUT http://localhost:8080/my-projects/edit/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "abilities": "El Nerd",
+  "benefits": "mucho dinero ",
+  "status" : "0"
+}
+
+###
+GET http://localhost:8080/my-projects/2
+Accept: application/json
+###
+///project-feed/{userid}
+
+GET http://localhost:8080/my-projects/project-feed/1
+Accept: application/json
+
+###
+///list/{userid}
+GET http://localhost:8080/my-projects/list/1
+Accept: application/json
