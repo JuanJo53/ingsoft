@@ -4,20 +4,21 @@ import java.util.Date;
 
 public class Card {
 
-        private Integer cardId;
-        private Integer userId;
-        private String cardName;
-        private Integer expirationYear;
-        private Integer expirationMonth;
-        private String userName;
-        private String userSurname;
-        private Integer CVC;
-        private Date creationDate;
-        private Transaction transaction;
+    private Integer cardId;
+    private Integer userId;
+    private String cardName;
+    private Integer cardNumber;
+    private Integer expirationYear;
+    private Integer expirationMonth;
+    private String userName;
+    private String userSurname;
+    private Integer cvc;
+    private Date creationDate;
+    private Transaction transaction;
 
-        public Card() {
-            transaction=new Transaction();
-        }
+    public Card() {
+        transaction = new Transaction();
+    }
 
     public Integer getCardId() {
         return cardId;
@@ -41,6 +42,14 @@ public class Card {
 
     public void setCardName(String cardName) {
         this.cardName = cardName;
+    }
+
+    public Integer getCardNumber() {
+        return cardNumber;
+    }
+
+    public void setCardNumber(Integer cardNumber) {
+        this.cardNumber = cardNumber;
     }
 
     public Integer getExpirationYear() {
@@ -75,12 +84,12 @@ public class Card {
         this.userSurname = userSurname;
     }
 
-    public Integer getCVC() {
-        return CVC;
+    public Integer getCvc() {
+        return cvc;
     }
 
-    public void setCVC(Integer CVC) {
-        this.CVC = CVC;
+    public void setCvc(Integer cvc) {
+        this.cvc = cvc;
     }
 
     public Date getCreationDate() {
@@ -105,13 +114,17 @@ public class Card {
                 "cardId=" + cardId +
                 ", userId=" + userId +
                 ", cardName='" + cardName + '\'' +
+                ", cardNumber=" + cardNumber +
                 ", expirationYear=" + expirationYear +
                 ", expirationMonth=" + expirationMonth +
                 ", userName='" + userName + '\'' +
                 ", userSurname='" + userSurname + '\'' +
-                ", CVC=" + CVC +
+                ", cvc=" + cvc+
                 ", creationDate=" + creationDate +
-                ", transaction=" + transaction +
+                ", txId=" + transaction.getTxId() +
+                ", txHost=" + transaction.getTxHost() +
+                ", txUserId=" + transaction.getTxUserId() +
+                ", txDate=" + transaction.getTxDate() +
                 '}';
     }
 }
