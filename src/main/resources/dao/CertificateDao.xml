@@ -17,7 +17,14 @@
         WHERE
             certificate_id = #{certificateId}
     </select>
-    <select id="getCertificates" resultType="bo.ucb.edu.ingsoft.model.Certificate">
+    <resultMap id="certificatesResultMap" type="certificate">
+        <id column="certificate_id" property="id"></id>
+        <result column="name" property="name"></result>
+        <result column="company" property="company"></result>
+        <result column="expedition_Date" property="expedition_Date"></result>
+        <result column="expiration_Date" property="expiration_Date"></result>
+    </resultMap>
+    <select id="getCertificates" resultMap="certificatesResultMap" resultType="bo.ucb.edu.ingsoft.model.Certificate">
         SELECT
                certificate_id as certificateId,
                name as name,
