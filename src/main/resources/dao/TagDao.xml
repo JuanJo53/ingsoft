@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.TagDao">
+    <insert id="createTag" parameterType="bo.ucb.edu.ingsoft.model.Tag">
+        INSERT INTO tags
+        VALUES (
+            null,#{nameTags},#{verified}
+
+        )
+    </insert>
+    <select id="getLastIdTag" resultType="java.lang.Integer">
+        SELECT tags_id FROM tags ORDER BY tags_id DESC LIMIT 1
+    </select>
+    <select id="getByTagName" resultType="bo.ucb.edu.ingsoft.model.Tag">
+        SELECT tags_id as tagId,
+        name_tags as nameTags,
+        verified as verified
+        FROM tags
+        WHERE verified = 1 and name_tags=#{nameTags}
+    </select>
+</mapper>

@@ -20,9 +20,26 @@
         a.surname as surname,
         a.username as username,
         a.email as email
-        FROM  user a ,project_user b
+        FROM user a ,project_user b
         where b.projects_id=#{projectsId} and b.user_id=a.user_id and b.rol=2
 
     </select>
+    <select id="findByUserId" resultType="bo.ucb.edu.ingsoft.model.User">
+        SELECT user_id as userId,
+        name as name,
+        surname as surname,
+        username as username,
+        email as email,
+        description as description,
+        image as image,
+        cellphone as cellphone
+        FROM user
+    </select>
+    <update id="updateUser" parameterType="bo.ucb.edu.ingsoft.model.User">
+            UPDATE user SET name=#{name},surname=#{surname},
+             username= #{username},email=#{email},
+             description=#{description},image=#{image}, cellphone=#{cellphone}
+             WHERE user_id= #{userId}
+    </update>
 
 </mapper>

@@ -1,0 +1,29 @@
+### Create new user
+POST http://localhost:8080/users/newuser
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com"
+}
+### Get user 1
+GET http://localhost:8080/users/1
+Accept: application/json
+### Update user 1
+PUT http://localhost:8080/users/editprofile/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "otro lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com",
+  "description": "Me gusta el sql",
+  "image": null,
+  "cellphone": "75281857"
+}
+###

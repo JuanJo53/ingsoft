@@ -29,18 +29,7 @@ Content-Type: application/json
   "credentialURL" : "http://udemy.com/certificados/finanzas",
   "expirationDate" : "2020-05-12"
 }
-### Create new user
-
-POST http://localhost:8080/newuser
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "lorito",
-  "surname": "Fernandez",
-  "nickName": "El yepas",
-  "email": "example@gmail.com"
-}
+###
 
 ###
 
