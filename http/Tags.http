@@ -1,0 +1,16 @@
+
+POST http://localhost:8080/tags/createTag/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tag": "c++",
+  "verified": "1"
+}
+
+###
+
+GET http://localhost:8080/tags/c++
+Accept: application/json
+
+###

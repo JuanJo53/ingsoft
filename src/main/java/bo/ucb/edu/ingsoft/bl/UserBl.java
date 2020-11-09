@@ -5,7 +5,9 @@ import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dao.UserDao;
 import bo.ucb.edu.ingsoft.dto.CertificateRequest;
 import bo.ucb.edu.ingsoft.dto.UserRequest;
+import bo.ucb.edu.ingsoft.dto.UserUpdate;
 import bo.ucb.edu.ingsoft.model.Certificate;
+import bo.ucb.edu.ingsoft.model.Project;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.model.User;
 import org.slf4j.Logger;
@@ -36,6 +38,22 @@ public class UserBl {
         userDao.newUser(user);
 
         return  userRequest;
+    }
+    public User updateUser(UserUpdate userUpdate, Integer id, Transaction transaction){
+        User user = findByUserId(id);
+        user.setName(userUpdate.getName());
+        user.setSurname(userUpdate.getSurname());
+        user.setUsername(userUpdate.getNickName());
+        user.setEmail(userUpdate.getEmail());
+        user.setCellphone(userUpdate.getCellphone());
+        user.setDescription(userUpdate.getDescription());
+        user.setImage(userUpdate.getImage());
+        userDao.updateUser(user);
+        return user;
+    }
+    public User findByUserId (Integer id1){
+        User user=userDao.findByUserId(id1);
+        return user;
     }
 
 }

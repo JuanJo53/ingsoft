@@ -8,4 +8,7 @@ import java.util.List;
 public interface UserDao {
     public void newUser(User user);
     public List<User> listproyectuser(Integer projectsId);
+    public void updateUser(User user);
+    public User findByUserId(Integer userId);
+
 }

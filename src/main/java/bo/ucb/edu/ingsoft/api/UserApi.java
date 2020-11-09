@@ -2,21 +2,20 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.TransactionBl;
 import bo.ucb.edu.ingsoft.bl.UserBl;
-import bo.ucb.edu.ingsoft.dto.CertificateRequest;
 import bo.ucb.edu.ingsoft.dto.UserRequest;
+import bo.ucb.edu.ingsoft.dto.UserUpdate;
 import bo.ucb.edu.ingsoft.model.Transaction;
+import bo.ucb.edu.ingsoft.model.User;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
-@RequestMapping(value = "/newuser")
+@RequestMapping(value = "/users")
 public class UserApi {
 
     private UserBl userBl;
@@ -28,7 +27,7 @@ public class UserApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/newusers", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public UserRequest createnewuser(@RequestBody UserRequest userRequest, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
@@ -36,4 +35,18 @@ public class UserApi {
         UserRequest userResponse = userBl.createNewUser(userRequest, transaction);
         return userResponse;
     }
+
+    @RequestMapping(value = "/editprofile/{userid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public User updateuser(@PathVariable("userid") Integer id, @RequestBody UserUpdate userUpdate, HttpServletRequest request) {
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+        User userResponse = userBl.updateUser(userUpdate, id,transaction);
+        return userResponse;
+    }
+    @RequestMapping(value = "/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public User findbyuserid(@PathVariable("userid") Integer id){
+        return  userBl.findByUserId(id);
+    }
+
 }

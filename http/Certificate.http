@@ -16,7 +16,7 @@ Content-Type: application/json
   "expirationDate": "2022-11-01"
 }
 
-###Edit a certificate
+### Edit a certificate
 PUT http://localhost:8080/user/certificates/edit/3
 Accept: application/json
 Content-Type: application/json
@@ -42,8 +42,8 @@ Content-Type: application/json
   "nickName": "El yepas",
   "email": "example@gmail.com"
 }
-
 ###
+
 ///{projectid}/user-request
 GET http://localhost:8080/my-projects/3/user-request
 Accept: application/json
