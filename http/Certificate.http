@@ -1,21 +1,35 @@
-###
+### GET request for all certificates of a user
 GET http://localhost:8080/user/certificates
 Accept: application/json
 
-###
+### Add new certificate to a user
 POST http://localhost:8080/user/certificates
 Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Curso Basico de Docker",
-  "company": "Platzi",
-  "expeditionDate": "2019-10-10",
-  "credentialId": "45647sadwer98g",
-  "credentialURL": "http://platzi.com/certificados/docker",
-  "expirationDate": "2022-10-10"
+  "name": "Curso de Finanzas",
+  "company": "Udemy",
+  "expeditionDate": "2018-11-01",
+  "credentialId": "4564sdg7sadwer98g",
+  "credentialURL": "http://udemy.com/certificados/finanzas",
+  "expirationDate": "2022-11-01"
 }
-###
+
+###Edit a certificate
+PUT http://localhost:8080/user/certificates/edit/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Curso de Finanzas",
+  "company": "Udemy",
+  "expeditionDate": "2018-11-02",
+  "credentialId": "4564sdg7sadwer98g987",
+  "credentialURL" : "http://udemy.com/certificados/finanzas",
+  "expirationDate" : "2020-05-12"
+}
+### Create new user
 
 POST http://localhost:8080/newuser
 Accept: application/json
@@ -49,7 +63,7 @@ Content-Type: application/json
 
 {
   "projectTitle": "Autos voladores",
-  "description": "es un poyecto muy nuevo  ",
+  "description": "es un poyecto muy nuevo",
   "abilities": "El Nerd",
   "benefits": "mucho dinero ",
   "status" : "0"

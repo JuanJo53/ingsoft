@@ -52,4 +52,16 @@
         )
     </insert>
 
+    <update id="updateCertificate" parameterType="bo.ucb.edu.ingsoft.model.Certificate">
+        Update certificate
+        set
+            name=#{name},
+            company=#{company},
+            expedition_date=#{expeditionDate},
+            credential_id=#{credentialId},
+            credential_url=#{credentialURL},
+            expiration_date=#{expirationDate}
+        where
+            certificate_id = #{certificateId}
+    </update>
 </mapper>
