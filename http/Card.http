@@ -1,0 +1,32 @@
+
+POST http://localhost:8080/user/card
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "SOL",
+  "cardNumber": "43674786",
+  "expirationYear": "2022",
+  "expirationMonth": "07",
+  "userName": "Camila",
+  "userSurname": "cami",
+  "cvc": "12345",
+  "creationDate": "2022-11-01"
+
+}
+
+###Edit a Card
+PUT http://localhost:8080/user/card/edit/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta cami",
+  "cardNumber": "2074965",
+  "expirationYear": "2020",
+  "expirationMonth": "07",
+  "userName": "Javier",
+  "userSurname": "Javi",
+  "cvc": "12345",
+  "creationDate": "2022-11-01"
+}
