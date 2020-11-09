@@ -73,3 +73,17 @@ Accept: application/json
 ///{projectid}/user-request
 GET http://localhost:8080/my-projects/3/user-request
 Accept: application/json
+
+###
+POST http://localhost:8080/paymentPlan
+Accept: application/json
+Content-Type: application/json
+
+{
+  "plan": "2 mes",
+  "description": "2 meses de publicidad para tu proyecto",
+  "cost": "450.99",
+  "duration": "2",
+  "creationDate": "2020-10-15"
+}
+###

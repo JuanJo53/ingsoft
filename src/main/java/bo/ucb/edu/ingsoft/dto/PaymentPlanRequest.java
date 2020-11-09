@@ -1,27 +1,13 @@
-package bo.ucb.edu.ingsoft.model;
+package bo.ucb.edu.ingsoft.dto;
 
 import java.util.Date;
 
-public class PaymentPlan {
-    private Integer paymentPlanId;
+public class PaymentPlanRequest {
     private String plan;
     private String description;
     private Double cost;
     private Integer duration;
     private Date creationDate;
-    private Transaction transaction;
-
-    public PaymentPlan() {
-        transaction=new Transaction();
-    }
-
-    public Integer getPaymentPlanId() {
-        return paymentPlanId;
-    }
-
-    public void setPaymentPlanId(Integer paymentPlanId) {
-        this.paymentPlanId = paymentPlanId;
-    }
 
     public String getPlan() {
         return plan;
@@ -63,27 +49,14 @@ public class PaymentPlan {
         this.creationDate = creationDate;
     }
 
-    public Transaction getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
-    }
-
     @Override
     public String toString() {
-        return "PaymentPlan{" +
-                "paymentPlanId=" + paymentPlanId +
-                ", plan='" + plan + '\'' +
+        return "PaymentPlanRequest{" +
+                "plan='" + plan + '\'' +
                 ", description='" + description + '\'' +
                 ", cost=" + cost +
                 ", duration=" + duration +
                 ", creationDate=" + creationDate +
-                ", txId=" + transaction.getTxId() +
-                ", txHost=" + transaction.getTxHost() +
-                ", txUserId=" + transaction.getTxUserId() +
-                ", txDate=" + transaction.getTxDate() +
                 '}';
     }
 }
