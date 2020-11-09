@@ -78,5 +78,20 @@ public class CertificateBl {
 
         return  certificateRequest;
     }
+    public Certificate deleteCertificate(Integer certificateId, Transaction transaction) {
+        Certificate certificate = new Certificate();
+
+        certificate.setCertificateId(certificateId);
+        certificate.setStatus(0);
+
+        LOGGER.error(certificate.getCertificateId().toString());
+        LOGGER.error(certificate.getStatus().toString());
+
+        certificate.setTransaction(transaction);
+
+        certificateDao.deleteCertificate(certificate);
+
+        return  certificate;
+    }
 
 }

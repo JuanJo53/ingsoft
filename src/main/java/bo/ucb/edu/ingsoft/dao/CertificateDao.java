@@ -15,4 +15,6 @@ public interface CertificateDao {
 
     public void updateCertificate(Certificate certificate);
 
+    public void deleteCertificate(Certificate certificate);
+
 }

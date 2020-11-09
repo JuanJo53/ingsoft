@@ -53,4 +53,14 @@ public class CertificateApi {
         //CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
         return certificateResponse;
     }
+    @RequestMapping(value = "/edit/{certificateid}" ,method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Certificate deleteCertificate(@PathVariable("certificateid") Integer certificateId, HttpServletRequest request) {
+        // Creamos transaccion para la operación.
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+
+        Certificate certificateResponse=certificateBl.deleteCertificate(certificateId,transaction);
+        //CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
+        return certificateResponse;
+    }
 }

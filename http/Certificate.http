@@ -32,4 +32,6 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/user/certificates/edit/3
+DELETE http://localhost:8080/user/certificates/edit/2
+Accept: application/json
+Content-Type: application/json

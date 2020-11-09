@@ -65,4 +65,11 @@
         where
             certificate_id = #{certificateId}
     </update>
+    <update id="deleteCertificate" parameterType="bo.ucb.edu.ingsoft.model.Certificate">
+        Update certificate
+        set
+            status=#{status}
+        where
+            certificate_id = #{certificateId}
+    </update>
 </mapper>
