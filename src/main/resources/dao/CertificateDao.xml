@@ -6,16 +6,16 @@
     <select id="detailsByCertificateId" resultType="bo.ucb.edu.ingsoft.model.Certificate">
         SELECT
             certificate_id as certificateId,
-            user_id as userId,
             name as name,
             company as company,
             expedition_date as expeditionDate,
             credential_id as credentialId,
-            credential_url as credentialURL
+            credential_url as credentialURL,
             expiration_Date as expirationDate,
+            status as status
         FROM certificate
         WHERE
-            certificate_id = #{certificateId}
+            certificate_id = #{certificateId} and user_id = #{userId}
     </select>
     <resultMap id="certificatesResultMap" type="bo.ucb.edu.ingsoft.model.Certificate">
         <id column="certificate_id" property="id"></id>

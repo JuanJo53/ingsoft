@@ -16,10 +16,29 @@
         WHERE
             payment_plan_id = #{paymentPlanId}
     </select>
-
+    <resultMap id="patmentsResultMap" type="bo.ucb.edu.ingsoft.model.PaymentPlan">
+        <id column="paymentPlanId" property="paymentPlanId"></id>
+        <result column="plan" property="plan"></result>
+        <result column="description" property="description"></result>
+        <result column="cost" property="cost"></result>
+        <result column="duration" property="duration"></result>
+        <result column="creationDate" property="creationDate"></result>
+    </resultMap>
+    <select id="getPaymentPlans" resultMap="patmentsResultMap">
+        SELECT
+            payment_plan_id as paymentPlanId,
+            plan as plan,
+            description as description,
+            cost as cost,
+            duration as duration,
+            creation_date as creationDate
+        FROM payment_plan
+        WHERE
+            status = 1
+    </select>
     <insert id="newPaymentPlan" parameterType="bo.ucb.edu.ingsoft.model.PaymentPlan">
         INSERT INTO payment_plan VALUES (
-            null,#{plan},#{description}, #{cost},#{duration}, #{creationDate},
+            null,#{plan},#{description}, #{cost},#{duration}, #{creationDate}, #{status},
             #{transaction.txId},#{transaction.txHost},#{transaction.txUserId},#{transaction.txDate}
         )
     </insert>

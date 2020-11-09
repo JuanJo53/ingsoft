@@ -16,6 +16,10 @@ Content-Type: application/json
   "expirationDate": "2022-09-01"
 }
 
+### GET request for an specific certificates of a user
+GET http://localhost:8080/user/certificates/1/1
+Accept: application/json
+
 ### Edit a certificate
 PUT http://localhost:8080/user/certificates/edit/3
 Accept: application/json
@@ -30,7 +34,7 @@ Content-Type: application/json
   "expirationDate" : "2020-05-12"
 }
 
-###
+### Soft-delete for an especific certificate
 
 DELETE http://localhost:8080/user/certificates/edit/2
 Accept: application/json

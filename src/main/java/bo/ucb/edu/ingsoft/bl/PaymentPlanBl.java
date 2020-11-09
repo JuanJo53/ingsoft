@@ -9,6 +9,8 @@ import bo.ucb.edu.ingsoft.model.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class  PaymentPlanBl  {
     private PaymentPlanDao paymentPlanDao;
@@ -32,10 +34,14 @@ public class  PaymentPlanBl  {
         paymentPlan.setCost(paymentPlanRequest.getCost());
         paymentPlan.setDuration(paymentPlanRequest.getDuration());
         paymentPlan.setCreationDate(paymentPlanRequest.getCreationDate());
+        paymentPlan.setStatus(1);
 
         paymentPlan.setTransaction(transaction);
         paymentPlanDao.newPaymentPlan(paymentPlan);
         return paymentPlanRequest;
+    }
+    public List<PaymentPlan> getPaymentsPlan(){
+        return  paymentPlanDao.getPaymentPlans();
     }
 
 }

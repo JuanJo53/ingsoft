@@ -23,8 +23,8 @@ public class CertificateBl {
         this.transactionDao = transactionDao;
     }
 
-    public Certificate detailsByCertificateId(Integer certificateId) {
-        return  certificateDao.detailsByCertificateId(certificateId);
+    public Certificate getCertificateDetails(Integer userid,Integer certificateId) {
+        return  certificateDao.detailsByCertificateId(userid,certificateId);
     }
     //Function that gets all user certificates
     public List<Certificate> getCertificateBasicData(Integer userId) {
@@ -52,7 +52,6 @@ public class CertificateBl {
 
         return  certificateRequest;
     }
-
     public CertificateRequest editCertificate(CertificateRequest certificateRequest, Integer certificateId, Transaction transaction) {
         Certificate certificate = new Certificate();
 

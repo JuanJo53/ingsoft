@@ -9,4 +9,8 @@ Content-Type: application/json
   "duration": "2",
   "creationDate": "2020-10-15"
 }
-###
+### Get all payment plans avaiable
+
+GET http://localhost:8080/paymentPlan
+Accept: application/json
+Content-Type: application/json

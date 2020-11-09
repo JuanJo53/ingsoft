@@ -3,17 +3,16 @@ package bo.ucb.edu.ingsoft.api;
 import bo.ucb.edu.ingsoft.bl.PaymentPlanBl;
 import bo.ucb.edu.ingsoft.bl.TransactionBl;
 import bo.ucb.edu.ingsoft.dto.PaymentPlanRequest;
+import bo.ucb.edu.ingsoft.model.Certificate;
 import bo.ucb.edu.ingsoft.model.PaymentPlan;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value="/paymentPlan")
@@ -36,5 +35,11 @@ public class PaymentPlanApi{
         PaymentPlanRequest paymentPlanResponse = paymentPlanBl.createPaymentPlan(1,paymentPlanRequest, transaction);
         return paymentPlanResponse;
     }
+
+    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<PaymentPlan> getPaymentPlans(HttpServletRequest request) {
+        return paymentPlanBl.getPaymentsPlan();
+    }
+
 
 }

@@ -133,6 +133,8 @@ CREATE TABLE h_payment_plan (
     cost numeric(10,4) NOT NULL,
     duration int NOT NULL,
     creation_date date NOT NULL,
+    status int NOT NULL COMMENT '0: UNAVAILABLE
+1: AVAILABLE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -223,6 +225,8 @@ CREATE TABLE payment_plan (
     cost numeric(10,4) NOT NULL,
     duration int NOT NULL,
     creation_date date NOT NULL,
+    status int NOT NULL COMMENT '0: UNAVAILABLE
+1: AVAILABLE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,

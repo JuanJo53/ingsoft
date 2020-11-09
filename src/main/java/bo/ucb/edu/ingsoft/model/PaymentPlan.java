@@ -9,6 +9,7 @@ public class PaymentPlan {
     private Double cost;
     private Integer duration;
     private Date creationDate;
+    private Integer status;
     private Transaction transaction;
 
     public PaymentPlan() {
@@ -69,6 +70,14 @@ public class PaymentPlan {
 
     public void setTransaction(Transaction transaction) {
         this.transaction = transaction;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     @Override

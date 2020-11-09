@@ -41,7 +41,10 @@ public class CertificateApi {
         CertificateRequest certificateResponse = certificateBl.createCertificate(userid,certificateRequest, transaction);
         return certificateResponse;
     }
-
+    @RequestMapping(value = "/{userid}/{certificateid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Certificate getCertificateDetails(@PathVariable("userid") Integer userid,@PathVariable("certificateid") Integer certificateid,HttpServletRequest request) {
+        return certificateBl.getCertificateDetails(userid,certificateid);
+    }
     @RequestMapping(value = "/edit/{certificateid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public CertificateRequest editCertificate(@PathVariable("certificateid") Integer certificateId, @RequestBody CertificateRequest certificateRequest, HttpServletRequest request) {

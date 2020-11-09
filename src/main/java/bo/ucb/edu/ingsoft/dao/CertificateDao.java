@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface CertificateDao {
-    public Certificate detailsByCertificateId(Integer certificateId);
+    public Certificate detailsByCertificateId(Integer userId, Integer certificateId);
 
     public List<Certificate> getCertificates(Integer userId);
 
