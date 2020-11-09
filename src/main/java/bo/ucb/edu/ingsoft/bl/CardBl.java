@@ -33,11 +33,11 @@ public class CardBl {
         return cardDao.dataCardId(cardId);
     }
 
-
     //Function that gets all user certificates
     public List<Card> getCardBasicData(Integer userId) {
         return  cardDao.getCard (userId);
     }
+
     public CardRequest createCard(Integer userId, CardRequest cardRequest, Transaction transaction) {
         Card card = new Card();
 

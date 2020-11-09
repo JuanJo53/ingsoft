@@ -27,11 +27,10 @@ public class CardApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Card> getUserCard(HttpServletRequest request) {
-        return cardBl.getCardBasicData(1);
+    @RequestMapping(value = "/{userid}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Card> getUserCard(@PathVariable("userid") Integer userid, HttpServletRequest request) {
+        return cardBl.getCardBasicData(userid);
     }
-
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)

@@ -20,14 +20,14 @@
             card_id = #{cardId}
     </select>
     <resultMap id="cardResultMap" type="bo.ucb.edu.ingsoft.model.Card">
-        <id column="card_id" property="id"></id>
+        <id column="userId" property="userId"></id>
         <result column="cardName" property="cardName"></result>
         <result column="cardNumber" property="cardNumber"></result>
         <result column="expirationYear" property="expirationYear"></result>
         <result column="expirationMonth" property="expirationMonth"></result>
         <result column="userName" property="userName"></result>
         <result column="userSurname" property="userSurname"></result>
-        <result column="CVC" property="CVC"></result>
+        <result column="cvc" property="cvc"></result>
         <result column="creationDate" property="creationDate"></result>
     </resultMap>
     <select id="getCard" resultMap="cardResultMap">
