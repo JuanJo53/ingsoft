@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.ProjectDao">
+    <insert id="newProject" parameterType="bo.ucb.edu.ingsoft.model.Project">
+        INSERT INTO projects VALUES (
+            null,
+            #{projectTitle},
+            #{description},
+            #{abilities},
+            #{benefits},
+            #{views},
+            #{status},
+            #{createDate},
+            #{transaction.txId},
+            #{transaction.txHost},
+            #{transaction.txUserId},
+            #{transaction.txDate}
+        )
+    </insert>
+
+    <update id="updateproyect" parameterType="bo.ucb.edu.ingsoft.model.Project">
+
+        Update projects set project_title=#{projectTitle},
+             description=#{description},
+             abilities=#{abilities},
+             benefits= #{benefits},
+             views=#{views},
+             status=#{status}
+             where projects_id= 1
+    </update>
+
+    <select id="detailsproyect" resultType="bo.ucb.edu.ingsoft.model.Project">
+        SELECT projects_id as projectsId,
+        project_title as projectTitle,
+        description as description,
+        abilities as abilities,
+        benefits as benefits,
+        status as status,
+        create_date as createDate
+        FROM projects
+        WHERE projects_id =#{projectsId}
+    </select>
+
+    <select id="listproyect" resultType="bo.ucb.edu.ingsoft.model.Project">
+        SELECT projects_id as projectsId,
+        project_title as projectTitle,
+        description as description,
+        abilities as abilities,
+        benefits as benefits,
+        status as status,
+        create_date as createDate
+        FROM projects
+    </select>
+
+    <select id="listproyectuser" resultType="bo.ucb.edu.ingsoft.model.Project">
+        SELECT a.projects_id as projectsId,
+        a.project_title as projectTitle,
+        a.description as description,
+        a.abilities as abilities,
+        a.benefits as benefits,
+        a.status as status,
+        a.create_date as createDate
+        FROM projects a ,project_user b
+        where a.projects_id=b.projects_id and b.user_id=#{UserId}
+
+    </select>
+
+    <select id="getLastInsertIdProject" resultType="java.lang.Integer">
+    SELECT projects_id FROM projects ORDER BY projects_id DESC LIMIT 1
+    </select>
+
+</mapper>

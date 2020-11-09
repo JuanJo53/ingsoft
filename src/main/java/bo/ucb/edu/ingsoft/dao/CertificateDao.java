@@ -10,4 +10,5 @@ public interface CertificateDao {
     public Certificate getCertificates(Integer userId);
 
     public void newCertificate(Certificate certificate);
+
 }

@@ -1,44 +1,25 @@
-package bo.ucb.edu.ingsoft.model;
+package bo.ucb.edu.ingsoft.dto;
+
+import bo.ucb.edu.ingsoft.model.Transaction;
 
 import java.util.Date;
 
-public class Project {
-    private Integer projectsId;
+public class ProjectRequest {
     private String projectTitle;
     private String description;
     private String abilities;
     private String benefits;
-    private Integer views;
     private Integer status;
-    private Date createDate;
-    private Transaction transaction;
-
-    public Project() {
-        transaction=new Transaction();
-    }
-
 
     @Override
     public String toString() {
-        return "Project{" +
-                "projectsId=" + projectsId +
-                ", projectTitle='" + projectTitle + '\'' +
+        return "ProyectRequest{" +
+                "projectTitle='" + projectTitle + '\'' +
                 ", description='" + description + '\'' +
                 ", abilities='" + abilities + '\'' +
                 ", benefits='" + benefits + '\'' +
-                ", views=" + views +
                 ", status=" + status +
-                ", create_date=" + createDate +
-                ", transaction=" + transaction +
                 '}';
-    }
-
-    public Integer getProjectsId() {
-        return projectsId;
-    }
-
-    public void setProjectsId(Integer projectsId) {
-        this.projectsId = projectsId;
     }
 
     public String getProjectTitle() {
@@ -73,35 +54,11 @@ public class Project {
         this.benefits = benefits;
     }
 
-    public Integer getViews() {
-        return views;
-    }
-
-    public void setViews(Integer views) {
-        this.views = views;
-    }
-
     public Integer getStatus() {
         return status;
     }
 
     public void setStatus(Integer status) {
         this.status = status;
-    }
-
-    public Date getCreateDate() {
-        return createDate;
-    }
-
-    public void setCreateDate(Date createDate) {
-        this.createDate = createDate;
-    }
-
-    public Transaction getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
     }
 }
