@@ -37,3 +37,9 @@ Accept: application/json
 ///list/{userid}
 GET http://localhost:8080/my-projects/list/1
 Accept: application/json
+
+###
+
+///{projectid}/user-request
+GET http://localhost:8080/my-projects/3/user-request
+Accept: application/json

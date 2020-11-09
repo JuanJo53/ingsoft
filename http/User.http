@@ -9,9 +9,11 @@ Content-Type: application/json
   "nickName": "El yepas",
   "email": "example@gmail.com"
 }
+
 ### Get user 1
 GET http://localhost:8080/users/1
 Accept: application/json
+
 ### Update user 1
 PUT http://localhost:8080/users/editprofile/1
 Accept: application/json

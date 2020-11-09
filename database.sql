@@ -57,6 +57,8 @@ CREATE TABLE certificate (
     credential_id varchar(100) NOT NULL,
     credential_url varchar(200) NOT NULL,
     expiration_date date NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -113,7 +115,8 @@ CREATE TABLE h_certificate (
     expedition_date date NOT NULL,
     credential_id varchar(100) NOT NULL,
     credential_url varchar(200) NOT NULL,
-    date date NOT NULL,
+    expiration_date date NOT NULL,
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -417,11 +420,11 @@ INSERT INTO card VALUES (null,5,"BNB", 14375678651, 2020, 08, "Javier", "Mendoza
 
 
 -- Inserts for certificate table
-INSERT INTO certificate VALUES (null, 1, "Curso Python Basico", "Udemy","10-02-2015","c9dd7d32e6548e9a3aa3669","https://udemy.com/@albert/certificados/curso-python",now(),1,"192.168.1.1",1, now());
-INSERT INTO certificate VALUES (null, 2, "Curso programacion en java", "edX","10-12-2018","a8hh9j12h134s9sss0988","https://www.edx.org/es/certificados/programacion-en-java",now(),2,"192.168.1.1",2, now());
-INSERT INTO certificate VALUES (null, 1, "Curso Cisco packet tracer", "Cisco","03-08-2018","ersdk4654dsaas6d523s1das","https://www.netacad.com/es/courses/packet-tracer",now(),5,"192.168.1.7",5, now());
-INSERT INTO certificate VALUES (null, 2, "Curso Cisco packet tracer", "Cisco","03-08-2019","a8489dsaf156sd5df4f4gasd4","https://www.netacad.com/es/courses/packet-tracer",now(),4,"192.168.1.7",4, now());
-INSERT INTO certificate VALUES (null, 1, "Curso de inteligencia artificial", "udemy","04-09-2019","a8489dsaf156sd5df4f4gasd4","https://www.udemy.com/es/courses/inteligencia-artificial",now(),4,"192.168.1.7",4, now());
+INSERT INTO certificate VALUES (null, 1, "Curso Python Basico", "Udemy","10-02-2015","c9dd7d32e6548e9a3aa3669","https://udemy.com/@albert/certificados/curso-python",now(),1,1,"192.168.1.1",1, now());
+INSERT INTO certificate VALUES (null, 2, "Curso programacion en java", "edX","10-12-2018","a8hh9j12h134s9sss0988","https://www.edx.org/es/certificados/programacion-en-java",1,now(),2,"192.168.1.1",2, now());
+INSERT INTO certificate VALUES (null, 1, "Curso Cisco packet tracer", "Cisco","03-08-2018","ersdk4654dsaas6d523s1das","https://www.netacad.com/es/courses/packet-tracer",now(),1,5,"192.168.1.7",5, now());
+INSERT INTO certificate VALUES (null, 2, "Curso Cisco packet tracer", "Cisco","03-08-2019","a8489dsaf156sd5df4f4gasd4","https://www.netacad.com/es/courses/packet-tracer",now(),1,4,"192.168.1.7",4, now());
+INSERT INTO certificate VALUES (null, 1, "Curso de inteligencia artificial", "udemy","04-09-2019","a8489dsaf156sd5df4f4gasd4","https://www.udemy.com/es/courses/inteligencia-artificial",now(),1,4,"192.168.1.7",4, now());
 
 
 -- Inserts for media table
@@ -515,7 +518,7 @@ CREATE TRIGGER tr_h_certificate
 AFTER INSERT ON certificate
 for each row
 BEGIN
-	Insert into `h_certificate` (`certificate_id`,`user_id`,`name`,`company`,`expedition_date`,`credential_id`,`credential_url`,`date`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.certificate_id, new.user_id,new.name,new.company,new.expedition_date,new.credential_id,new.credential_url,new.date,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+	Insert into `h_certificate` (`certificate_id`,`user_id`,`name`,`company`,`expedition_date`,`credential_id`,`credential_url`,`expiration_date`,`status`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.certificate_id, new.user_id,new.name,new.company,new.expedition_date,new.credential_id,new.credential_url,new.expiration_date,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
 END;
 |
 delimiter ;
@@ -526,7 +529,7 @@ CREATE TRIGGER tr_h_update_certificate
 AFTER UPDATE ON certificate
 for each row
 BEGIN
-	Insert into `h_certificate` (`certificate_id`,`user_id`,`name`,`company`,`expedition_date`,`credential_id`,`credential_url`,`date`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.certificate_id, new.user_id,new.name,new.company,new.expedition_date,new.credential_id,new.credential_url,new.date,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+	Insert into `h_certificate` (`certificate_id`,`user_id`,`name`,`company`,`expedition_date`,`credential_id`,`credential_url`,`expiration_date`,`status`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.certificate_id, new.user_id,new.name,new.company,new.expedition_date,new.credential_id,new.credential_url,new.expiration_date,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
 END;
 |
 delimiter ;

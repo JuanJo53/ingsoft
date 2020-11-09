@@ -27,18 +27,18 @@ public class CertificateApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Certificate> getUserCertificates(HttpServletRequest request) {
-        return certificateBl.getCertificateBasicData(1);
+    @RequestMapping(value = "/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Certificate> getUserCertificates(@PathVariable("userid") Integer userid,HttpServletRequest request) {
+        return certificateBl.getCertificateBasicData(userid);
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public CertificateRequest createCertificate(@RequestBody CertificateRequest certificateRequest, HttpServletRequest request) {
+    public CertificateRequest createCertificate(@PathVariable("userid") Integer userid,@RequestBody CertificateRequest certificateRequest, HttpServletRequest request) {
         // Creamos transaccion para la operación.
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-        CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
+        CertificateRequest certificateResponse = certificateBl.createCertificate(userid,certificateRequest, transaction);
         return certificateResponse;
     }
 

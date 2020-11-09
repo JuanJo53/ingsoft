@@ -10,6 +10,7 @@ public class Certificate {
     private String credentialId;
     private String credentialURL;
     private Date expirationDate;
+    private Integer status;
     private Transaction transaction;
 
     public Certificate() {
@@ -104,5 +105,12 @@ public class Certificate {
 
     public void setTransaction(Transaction transaction) {
         this.transaction = transaction;
+    }
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

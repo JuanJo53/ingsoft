@@ -33,7 +33,7 @@
                expiration_Date as expirationDate
         FROM certificate
         WHERE
-            user_id = #{userId}
+            user_id = #{userId} and status = 1
     </select>
     <insert id="newCertificate" parameterType="bo.ucb.edu.ingsoft.model.Certificate">
         INSERT INTO certificate VALUES (
@@ -45,6 +45,7 @@
             #{credentialId},
             #{credentialURL},
             #{expirationDate},
+            #{status},
             #{transaction.txId},
             #{transaction.txHost},
             #{transaction.txUserId},

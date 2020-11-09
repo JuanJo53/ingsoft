@@ -1,19 +1,19 @@
 ### GET request for all certificates of a user
-GET http://localhost:8080/user/certificates
+GET http://localhost:8080/user/certificates/1
 Accept: application/json
 
 ### Add new certificate to a user
-POST http://localhost:8080/user/certificates
+POST http://localhost:8080/user/certificates/1
 Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Curso de Finanzas",
+  "name": "Curso de Fisica Basica",
   "company": "Udemy",
-  "expeditionDate": "2018-11-01",
-  "credentialId": "4564sdg7sadwer98g",
-  "credentialURL": "http://udemy.com/certificados/finanzas",
-  "expirationDate": "2022-11-01"
+  "expeditionDate": "2018-09-01",
+  "credentialId": "456sd114sdg7sadwer98g",
+  "credentialURL": "http://udemy.com/certificados/fisica",
+  "expirationDate": "2022-09-01"
 }
 
 ### Edit a certificate
@@ -30,34 +30,6 @@ Content-Type: application/json
   "expirationDate" : "2020-05-12"
 }
 
-### Create new user
-
-POST http://localhost:8080/newuser
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "lorito",
-  "surname": "Fernandez",
-  "nickName": "El yepas",
-  "email": "example@gmail.com"
-}
 ###
 
-///{projectid}/user-request
-GET http://localhost:8080/my-projects/3/user-request
-Accept: application/json
-
-###
-POST http://localhost:8080/paymentPlan
-Accept: application/json
-Content-Type: application/json
-
-{
-  "plan": "2 mes",
-  "description": "2 meses de publicidad para tu proyecto",
-  "cost": "450.99",
-  "duration": "2",
-  "creationDate": "2020-10-15"
-}
-###
+DELETE http://localhost:8080/user/certificates/edit/3
