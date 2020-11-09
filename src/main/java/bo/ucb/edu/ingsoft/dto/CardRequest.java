@@ -1,11 +1,12 @@
-package bo.ucb.edu.ingsoft.model;
+package bo.ucb.edu.ingsoft.dto;
+
+import bo.ucb.edu.ingsoft.model.Transaction;
 
 import java.util.Date;
 
-public class Card {
+public class CardRequest {
 
-    private Integer cardId;
-    private Integer userId;
+
     private String cardName;
     private Integer cardNumber;
     private Integer expirationYear;
@@ -14,26 +15,8 @@ public class Card {
     private String userSurname;
     private Integer cvc;
     private Date creationDate;
-    private Transaction transaction;
 
-    public Card() {
-        transaction = new Transaction();
-    }
-
-    public Integer getCardId() {
-        return cardId;
-    }
-
-    public void setCardId(Integer cardId) {
-        this.cardId = cardId;
-    }
-
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    public CardRequest() {
     }
 
     public String getCardName() {
@@ -98,33 +81,5 @@ public class Card {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
-    }
-
-    public Transaction getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
-    }
-
-    @Override
-    public String toString() {
-        return "Card{" +
-                "cardId=" + cardId +
-                ", userId=" + userId +
-                ", cardName='" + cardName + '\'' +
-                ", cardNumber=" + cardNumber +
-                ", expirationYear=" + expirationYear +
-                ", expirationMonth=" + expirationMonth +
-                ", userName='" + userName + '\'' +
-                ", userSurname='" + userSurname + '\'' +
-                ", cvc=" + cvc+
-                ", creationDate=" + creationDate +
-                ", txId=" + transaction.getTxId() +
-                ", txHost=" + transaction.getTxHost() +
-                ", txUserId=" + transaction.getTxUserId() +
-                ", txDate=" + transaction.getTxDate() +
-                '}';
     }
 }
