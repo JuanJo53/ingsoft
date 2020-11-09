@@ -8,6 +8,15 @@ public class Tag {
     public Tag() {
     }
 
+    @Override
+    public String toString() {
+        return "Tag{" +
+                "tagId=" + tagId +
+                ", nameTags='" + nameTags + '\'' +
+                ", verified=" + verified +
+                '}';
+    }
+
     public Integer getTagId() {
         return tagId;
     }

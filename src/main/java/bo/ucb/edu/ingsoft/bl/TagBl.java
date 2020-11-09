@@ -13,6 +13,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class TagBl {
     private TagDao tagDao;
@@ -48,5 +50,8 @@ public class TagBl {
     public Tag getTagByName(String tagname) {
         Tag tag = tagDao.getByTagName(tagname);
         return tag;
+    }
+    public List<Tag> getAllVerifiedTags(){
+        return tagDao.getVerifiedTags();
     }
 }

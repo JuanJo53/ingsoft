@@ -20,4 +20,18 @@
         FROM tags
         WHERE verified = 1 and name_tags=#{nameTags}
     </select>
+    <resultMap id="tagsResultMap" type="bo.ucb.edu.ingsoft.model.Tag">
+        <id column="tagId" property="tagId"></id>
+        <result column="nameTags" property="nameTags"></result>
+        <result column="verified" property="verified"></result>
+    </resultMap>
+    <select id="getVerifiedTags" resultMap="tagsResultMap">
+        SELECT
+               tags_id as tagId,
+               name_tags as nameTags,
+               verified as verified
+        FROM tags
+        WHERE
+            verified = 1
+    </select>
 </mapper>

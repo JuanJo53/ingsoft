@@ -1,4 +1,4 @@
-
+### POST new tag
 POST http://localhost:8080/tags/createTag/1
 Accept: application/json
 Content-Type: application/json
@@ -8,9 +8,11 @@ Content-Type: application/json
   "verified": "1"
 }
 
-###
+### GET tag by name
 
 GET http://localhost:8080/tags/c++
 Accept: application/json
 
-###
+### GET All verified tags
+GET http://localhost:8080/tags
+Accept: application/json

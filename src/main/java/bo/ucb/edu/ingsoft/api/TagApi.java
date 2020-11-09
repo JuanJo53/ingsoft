@@ -3,10 +3,14 @@ package bo.ucb.edu.ingsoft.api;
 import bo.ucb.edu.ingsoft.bl.TagBl;
 
 import bo.ucb.edu.ingsoft.dto.TagRequest;
+import bo.ucb.edu.ingsoft.model.Certificate;
 import bo.ucb.edu.ingsoft.model.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/tags")
@@ -29,4 +33,10 @@ public class TagApi {
         Tag tagNameResponse = tagBl.getTagByName(tag);
         return tagNameResponse;
     }
+
+    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Tag> getVerifiedTags(HttpServletRequest request) {
+        return tagBl.getAllVerifiedTags();
+    }
+
 }
