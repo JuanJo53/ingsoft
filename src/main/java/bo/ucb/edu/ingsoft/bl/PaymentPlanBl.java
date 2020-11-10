@@ -21,6 +21,7 @@ public class  PaymentPlanBl  {
         this.transactionDao = transactionDao;
     }
 
+
     public PaymentPlan detailsByPaymentPlanId(Integer paymentPlanId) {
         return  paymentPlanDao.detailsByPaymentPlanId(paymentPlanId);
     }

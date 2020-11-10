@@ -1,13 +1,17 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2020-10-29 18:57:41.489
+-- Last modification date: 2020-11-10 20:37:35.827
 
 -- tables
 -- Table: area
-
 CREATE TABLE area (
     area_id int NOT NULL AUTO_INCREMENT,
     name_area varchar(50) NOT NULL,
     creation_date date NOT NULL,
+    status int NOT NULL,
+    tx_id int NOT NULL,
+    tx_host varchar(100) NOT NULL,
+    tx_user_id int NOT NULL,
+    tx_date timestamp NOT NULL,
     CONSTRAINT area_pk PRIMARY KEY (area_id)
 );
 
@@ -18,10 +22,11 @@ CREATE TABLE bill (
     payment_plan_id int NOT NULL,
     card_id int NOT NULL,
     projects_id int NOT NULL,
-    date date NOT NULL,
-    billing_address varchar(50) NOT NULL,
+    buy_date date NOT NULL,
+    billing_address varchar(50) NULL,
     country varchar(20) NOT NULL,
     city varchar(20) NOT NULL,
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -37,10 +42,9 @@ CREATE TABLE card (
     card_number int NOT NULL,
     expiration_year int NOT NULL,
     expiration_month int NOT NULL,
-    user_name varchar(50) NOT NULL,
-    user_surname varchar(50) NOT NULL,
     CVC int NOT NULL,
     creation_date date NOT NULL,
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -52,14 +56,13 @@ CREATE TABLE card (
 CREATE TABLE certificate (
     certificate_id int NOT NULL AUTO_INCREMENT,
     user_id int NOT NULL,
-    name varchar(100) NOT NULL,
+    certificate_name varchar(100) NOT NULL,
     company varchar(200) NOT NULL,
     expedition_date date NOT NULL,
+    expiration_date date NULL,
     credential_id varchar(100) NOT NULL,
     credential_url varchar(200) NOT NULL,
-    expiration_date date NOT NULL,
-    status int NOT NULL COMMENT '0: DELETED
-1: ACTIVE',
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -75,10 +78,11 @@ CREATE TABLE h_bill (
     payment_plan_id int NOT NULL,
     card_id int NOT NULL,
     projects_id int NOT NULL,
-    date date NOT NULL,
-    billing_address varchar(50) NOT NULL,
+    buy_date date NOT NULL,
+    billing_address varchar(50) NULL,
     country varchar(20) NOT NULL,
     city varchar(20) NOT NULL,
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -95,10 +99,9 @@ CREATE TABLE h_card (
     card_number int NOT NULL,
     expiration_year int NOT NULL,
     expiration_month int NOT NULL,
-    user_name varchar(50) NOT NULL,
-    user_surname varchar(50) NOT NULL,
     CVC int NOT NULL,
     creation_date date NOT NULL,
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -111,12 +114,12 @@ CREATE TABLE h_certificate (
     h_certificate_id int NOT NULL AUTO_INCREMENT,
     certificate_id int NOT NULL,
     user_id int NOT NULL,
-    name varchar(100) NOT NULL,
+    certificate_name varchar(100) NOT NULL,
     company varchar(200) NOT NULL,
     expedition_date date NOT NULL,
+    expiration_date date NOT NULL,
     credential_id varchar(100) NOT NULL,
     credential_url varchar(200) NOT NULL,
-    expiration_date date NOT NULL,
     status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
@@ -130,12 +133,10 @@ CREATE TABLE h_payment_plan (
     h_payment_plan_id int NOT NULL AUTO_INCREMENT,
     payment_plan_id int NOT NULL,
     plan varchar(50) NOT NULL,
-    description text NOT NULL,
+    description text NULL,
     cost numeric(10,4) NOT NULL,
     duration int NOT NULL,
-    creation_date date NOT NULL,
-    status int NOT NULL COMMENT '0: UNAVAILABLE
-1: AVAILABLE',
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -164,11 +165,11 @@ CREATE TABLE h_projects (
     projects_id int NOT NULL,
     project_title varchar(50) NOT NULL,
     description text NOT NULL,
-    abilities varchar(200) NOT NULL,
-    benefits text NOT NULL,
+    abilities varchar(200) NULL,
+    benefits text NULL,
     views int NOT NULL,
-    status int NOT NULL,
     create_date date NOT NULL,
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -188,6 +189,7 @@ CREATE TABLE h_user (
     description text NULL,
     image varchar(200) NULL,
     cellphone varchar(20) NULL,
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -199,10 +201,14 @@ CREATE TABLE h_user (
 CREATE TABLE media (
     media_id int NOT NULL AUTO_INCREMENT,
     projects_id int NOT NULL,
-    status int NOT NULL,
     url varchar(200) NOT NULL,
     type int NOT NULL,
     creation_date date NOT NULL,
+    status int NOT NULL,
+    tx_id int NOT NULL,
+    tx_host varchar(100) NOT NULL,
+    tx_user_id int NOT NULL,
+    tx_date timestamp NOT NULL,
     CONSTRAINT media_pk PRIMARY KEY (media_id)
 );
 
@@ -210,11 +216,15 @@ CREATE TABLE media (
 CREATE TABLE notification (
     notification_id int NOT NULL AUTO_INCREMENT,
     user_id int NOT NULL,
-    date timestamp NOT NULL,
     title varchar(20) NOT NULL,
     message varchar(50) NOT NULL,
+    date timestamp NOT NULL,
     status int NOT NULL COMMENT '0: UNSEEN
 1: SEEN',
+    tx_id int NOT NULL,
+    tx_host varchar(100) NOT NULL,
+    tx_user_id int NOT NULL,
+    tx_date timestamp NOT NULL,
     CONSTRAINT notification_pk PRIMARY KEY (notification_id)
 );
 
@@ -222,12 +232,10 @@ CREATE TABLE notification (
 CREATE TABLE payment_plan (
     payment_plan_id int NOT NULL AUTO_INCREMENT,
     plan varchar(50) NOT NULL,
-    description text NOT NULL,
+    description text NULL,
     cost numeric(10,4) NOT NULL,
     duration int NOT NULL,
-    creation_date date NOT NULL,
-    status int NOT NULL COMMENT '0: UNAVAILABLE
-1: AVAILABLE',
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -259,8 +267,8 @@ CREATE TABLE projects (
     projects_id int NOT NULL AUTO_INCREMENT,
     project_title varchar(50) NOT NULL,
     description text NOT NULL,
-    abilities varchar(200) NOT NULL,
-    benefits text NOT NULL,
+    abilities varchar(200) NULL,
+    benefits text NULL,
     views int NOT NULL,
     status int NOT NULL COMMENT '0: PUBLIC
 1: PRIVATE
@@ -296,6 +304,11 @@ CREATE TABLE tags (
     name_tags varchar(20) NOT NULL,
     verified int NOT NULL COMMENT '0: UNVERIFIED
 1: VERIFIED',
+    status int NOT NULL,
+    tx_id int NOT NULL,
+    tx_host varchar(100) NOT NULL,
+    tx_user_id int NOT NULL,
+    tx_date timestamp NOT NULL,
     CONSTRAINT tags_pk PRIMARY KEY (tags_id)
 );
 
@@ -303,7 +316,7 @@ CREATE TABLE tags (
 CREATE TABLE transaction (
     tx_id int NOT NULL AUTO_INCREMENT,
     tx_host varchar(100) NOT NULL,
-    tx_user_id int NOT NULL,
+    tx_user_ud int NOT NULL,
     tx_date timestamp NOT NULL,
     CONSTRAINT transaction_pk PRIMARY KEY (tx_id)
 );
@@ -319,6 +332,7 @@ CREATE TABLE user (
     description text NULL,
     image varchar(200) NULL,
     cellphone varchar(20) NULL,
+    status int NOT NULL,
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -400,3 +414,4 @@ ALTER TABLE user_tags ADD CONSTRAINT user_tags_user FOREIGN KEY user_tags_user (
     REFERENCES user (user_id);
 
 -- End of file.
+

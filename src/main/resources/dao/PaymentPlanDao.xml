@@ -38,8 +38,28 @@
     </select>
     <insert id="newPaymentPlan" parameterType="bo.ucb.edu.ingsoft.model.PaymentPlan">
         INSERT INTO payment_plan VALUES (
-            null,#{plan},#{description}, #{cost},#{duration}, #{creationDate}, #{status},
+            null,#{plan},#{description}, #{cost},#{duration}, #{creationDate},
             #{transaction.txId},#{transaction.txHost},#{transaction.txUserId},#{transaction.txDate}
         )
     </insert>
+
+    <insert id="createPlan" parameterType="bo.ucb.edu.ingsoft.model.PaymentPlan">
+        INSERT INTO payment_plan VALUES (
+            null,#{plan},#{description}, #{cost},#{duration}, #{creationDate},
+            #{transaction.txId},#{transaction.txHost},#{transaction.txUserId},#{transaction.txDate}
+        )
+    </insert>
+
+    <insert id="createPaymentPlan" parameterType="bo.ucb.edu.ingsoft.model.PaymentPlan">
+        INSERT INTO payment_plan VALUES (
+            null,#{paymentPlanId}
+        )
+    </insert>
+
+    <insert id="createBill" parameterType="bo.ucb.edu.ingsoft.model.Bill">
+        INSERT INTO bill VALUES (
+            null,#{cardId}#{date}, #{country},#{city}
+        )
+    </insert>
+
 </mapper>
