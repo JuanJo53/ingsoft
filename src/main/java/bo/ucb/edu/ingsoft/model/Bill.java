@@ -10,7 +10,7 @@ public class Bill {
     private Date date;
     private String billingAddress;
     private String country;
-    private Date city;
+    private String city;
     private Transaction transaction;
 
     public Bill() {
@@ -73,11 +73,11 @@ public class Bill {
         this.country = country;
     }
 
-    public Date getCity() {
+    public String getCity() {
         return city;
     }
 
-    public void setCity(Date city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
