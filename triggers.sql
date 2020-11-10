@@ -19,6 +19,20 @@ END;
 |
 delimiter ;
 
+--Triggers for bill
+delimiter |
+CREATE  TRIGGER tr_h_bill
+AFTER INSERT  ON bill
+for each row
+BEGIN
+    Insert into `h_bill` (`bill_id`,`user_id`,`payment_plan_id`,`card_id`,`projects_id`,`buy_date`,`billing_address`,`country`,`city`,`status`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.bill_id, new.user_id,new.payment_plan_id,new.card_id,new.projects_id,new.buy_date,new.billing_address,new.country,new.city,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+END;
+|
+delimiter ;
+
+--Triggers for card
+
+
 --Triggers for certificate
 delimiter |
 CREATE TRIGGER tr_h_certificate

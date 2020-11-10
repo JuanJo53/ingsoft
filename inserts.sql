@@ -4,11 +4,11 @@ INSERT INTO area VALUES (null, "Videogames",now());
 
 -- Inserts for bill table
 INSERT INTO bill VALUES (null,1,1,1,1,now(),"c/Azul Nro. 123","Bolivia","Tarija",1,"192.168.1.1",1, now());
-INSERT INTO bill VALUES (null,2,2,2,2,now(),"c/La Flores Nro. 968","Bolivia","La Paz",2,"192.168.1.1",2, now());
+INSERT INTO bill VALUES (null,2,2,2,2,now(),"c/La Flores Nro. 968","Bolivia","La Paz",1,"192.168.1.1",2, now());
 
 -- Inserts for card table
-INSERT INTO card VALUES (null,1,"Tarjeta personal", 13456898453, 2020, 02, "Juan", "Perez",359,now(),1,"192.168.1.1",1, now());
-INSERT INTO card VALUES (null,2,"Tarjeta Antonio", 12378964521, 2021, 04, "Antonio", "Rodriguez",242,now(),2,"192.168.1.1",2, now());
+INSERT INTO card VALUES (null,1,"Tarjeta personal", 13456898453, 2020, 02,359,now(),1,"192.168.1.1buy_date",1, now());
+INSERT INTO card VALUES (null,2,"Tarjeta Antonio", 12378964521, 2021, 04,242,now(),1,"192.168.1.1",2, now());
 
 -- Inserts for certificate table
 INSERT INTO certificate VALUES (null, 1, "Curso Python Basico", "Udemy","10-02-2015","c9dd7d32e6548e9a3aa3669","https://udemy.com/@albert/certificados/curso-python",now(),1,1,"192.168.1.1",1, now());
@@ -24,7 +24,7 @@ INSERT INTO notification VALUES (null,2,now(),"Pago de publicidad","Se vence el 
 
 -- Inserts for payment_plan table
 INSERT INTO payment_plan VALUES (null,"Plan 1","Plan por publicidad por un mes para tu proyecto",100.0,5,now(),1,"192.168.1.1",1, now());
-INSERT INTO payment_plan VALUES (null,"Plan 3","Plan por publicidad por un año para tu proyecto",250.0,6,now(),1,"192.168.1.1",1, now());
+INSERT INTO payment_plan VALUES (null,"Plan 3","Plan por publicidad por un año para tu proyecto",250.0,6,now(),1,"192.168.1.1",2, now());
 
 -- Inserts for project_user table
 INSERT INTO project_user VALUES (null,1,1,0,0,1,"192.168.1.1",1, now());
