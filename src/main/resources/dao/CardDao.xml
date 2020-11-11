@@ -11,10 +11,9 @@
             card_number as cardNumber,
             expiration_year as expirationYear,
             expiration_month as expirationMonth,
-            user_name as userName,
-            user_surname as userSurname,
             cvc as cvc,
-            creation_date as creationDate
+            creation_date as creationDate,
+            status as status
         FROM card
         WHERE
             card_id = #{cardId}
@@ -25,10 +24,9 @@
         <result column="cardNumber" property="cardNumber"></result>
         <result column="expirationYear" property="expirationYear"></result>
         <result column="expirationMonth" property="expirationMonth"></result>
-        <result column="userName" property="userName"></result>
-        <result column="userSurname" property="userSurname"></result>
         <result column="cvc" property="cvc"></result>
         <result column="creationDate" property="creationDate"></result>
+        <result column="status" property="status"></result>
     </resultMap>
     <select id="getCard" resultMap="cardResultMap">
         SELECT
@@ -37,10 +35,9 @@
             card_number as cardNumber,
             expiration_year as expirationYear,
             expiration_month as expirationMonth,
-            user_name as userName,
-            user_surname as userSurname,
             cvc as cvc,
-            creation_date as creationDate
+            creation_date as creationDate,
+            status as status,
         FROM card
         WHERE
             user_id = #{userId}
@@ -53,10 +50,9 @@
             #{cardNumber},
             #{expirationYear},
             #{expirationMonth},
-            #{userName},
-            #{userSurname},
             #{cvc},
             #{creationDate},
+            #{status},
             #{transaction.txId},
             #{transaction.txHost},
             #{transaction.txUserId},
@@ -72,10 +68,9 @@
             card_Number=#{cardNumber},
             expiration_year=#{expirationYear},
             expiration_month=#{ expirationMonth},
-            user_name=#{userName},
-            user_surname=#{userSurname},
             CVC=#{cvc},
-            creation_date=#{creationDate}
+            creation_date=#{creationDate},
+            status=#{status}
         where
             card_id = #{cardId}
     </update>
