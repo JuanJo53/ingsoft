@@ -8,7 +8,6 @@ public class PaymentPlan {
     private String description;
     private Double cost;
     private Integer duration;
-    private Date creationDate;
     private Integer status;
     private Transaction transaction;
 
@@ -56,12 +55,12 @@ public class PaymentPlan {
         this.duration = duration;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Transaction getTransaction() {
@@ -72,14 +71,6 @@ public class PaymentPlan {
         this.transaction = transaction;
     }
 
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
     @Override
     public String toString() {
         return "PaymentPlan{" +
@@ -88,11 +79,8 @@ public class PaymentPlan {
                 ", description='" + description + '\'' +
                 ", cost=" + cost +
                 ", duration=" + duration +
-                ", creationDate=" + creationDate +
-                ", txId=" + transaction.getTxId() +
-                ", txHost=" + transaction.getTxHost() +
-                ", txUserId=" + transaction.getTxUserId() +
-                ", txDate=" + transaction.getTxDate() +
+                ", status=" + status +
+                ", transaction=" + transaction +
                 '}';
     }
 }

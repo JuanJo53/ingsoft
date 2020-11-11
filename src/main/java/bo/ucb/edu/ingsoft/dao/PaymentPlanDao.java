@@ -10,4 +10,5 @@ public interface PaymentPlanDao {
     public PaymentPlan detailsByPaymentPlanId(Integer paymentPlanId);
     public void newPaymentPlan(PaymentPlan paymentPlan);
     public List<PaymentPlan> getPaymentPlans();
+
 }

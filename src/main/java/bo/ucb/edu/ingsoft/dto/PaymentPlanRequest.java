@@ -7,7 +7,7 @@ public class PaymentPlanRequest {
     private String description;
     private Double cost;
     private Integer duration;
-    private Date creationDate;
+    private Integer status;
 
     public String getPlan() {
         return plan;
@@ -41,12 +41,12 @@ public class PaymentPlanRequest {
         this.duration = duration;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public Integer getStatus() {
+        return status;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     @Override
@@ -56,7 +56,7 @@ public class PaymentPlanRequest {
                 ", description='" + description + '\'' +
                 ", cost=" + cost +
                 ", duration=" + duration +
-                ", creationDate=" + creationDate +
+                ", status=" + status +
                 '}';
     }
 }

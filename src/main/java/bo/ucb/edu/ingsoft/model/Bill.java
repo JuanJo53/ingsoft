@@ -11,6 +11,7 @@ public class Bill {
     private String billingAddress;
     private String country;
     private String city;
+    private Integer status;
     private Transaction transaction;
 
     public Bill() {

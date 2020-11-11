@@ -1,13 +1,17 @@
 ###
+GET http://localhost:8080/paymentPlan
+Accept: application/json
+
+###
 POST http://localhost:8080/paymentPlan
 Accept: application/json
 Content-Type: application/json
 
 {
-  "plan": "1 año",
-  "description": "1 año de publicidad para tu proyecto",
-  "cost": "550.20",
-  "duration": "1",
-  "creationDate": "2020-02-03"
+  "plan": "10 meses",
+  "description": " 10 meses de publicidad para tu proyecto",
+  "cost": "1500.95",
+  "duration": "10",
+  "status":"0"
 }
 

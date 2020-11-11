@@ -21,11 +21,16 @@ public class  PaymentPlanBl  {
         this.transactionDao = transactionDao;
     }
 
-
+    //payment plan details
     public PaymentPlan detailsByPaymentPlanId(Integer paymentPlanId) {
         return  paymentPlanDao.detailsByPaymentPlanId(paymentPlanId);
     }
 
+    // payments plan get
+    public List<PaymentPlan> getPaymentsPlan(){ return  paymentPlanDao.getPaymentPlans();
+    }
+
+    //payment plan request
     public PaymentPlanRequest createPaymentPlan( Integer paymentPlanId,PaymentPlanRequest paymentPlanRequest,Transaction transaction){
         PaymentPlan paymentPlan = new PaymentPlan();
 
@@ -34,15 +39,12 @@ public class  PaymentPlanBl  {
         paymentPlan.setDescription(paymentPlanRequest.getDescription());
         paymentPlan.setCost(paymentPlanRequest.getCost());
         paymentPlan.setDuration(paymentPlanRequest.getDuration());
-        paymentPlan.setCreationDate(paymentPlanRequest.getCreationDate());
         paymentPlan.setStatus(1);
 
         paymentPlan.setTransaction(transaction);
         paymentPlanDao.newPaymentPlan(paymentPlan);
+
         return paymentPlanRequest;
-    }
-    public List<PaymentPlan> getPaymentsPlan(){
-        return  paymentPlanDao.getPaymentPlans();
     }
 
 }
