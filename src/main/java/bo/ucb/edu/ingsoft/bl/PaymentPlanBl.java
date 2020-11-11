@@ -6,6 +6,8 @@ import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.PaymentPlanRequest;
 import bo.ucb.edu.ingsoft.model.PaymentPlan;
 import bo.ucb.edu.ingsoft.model.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,8 @@ import java.util.List;
 public class  PaymentPlanBl  {
     private PaymentPlanDao paymentPlanDao;
     private TransactionDao transactionDao;
+    private static final Logger LOGGER = LoggerFactory.getLogger(PaymentPlanBl.class);
+
     @Autowired
     public PaymentPlanBl(PaymentPlanDao paymentPlanDao, TransactionDao transactionDao) {
         this.paymentPlanDao = paymentPlanDao;
@@ -24,10 +28,6 @@ public class  PaymentPlanBl  {
     //payment plan details
     public PaymentPlan detailsByPaymentPlanId(Integer paymentPlanId) {
         return  paymentPlanDao.detailsByPaymentPlanId(paymentPlanId);
-    }
-
-    // payments plan get
-    public List<PaymentPlan> getPaymentsPlan(){ return  paymentPlanDao.getPaymentPlans();
     }
 
     //payment plan request
@@ -45,6 +45,10 @@ public class  PaymentPlanBl  {
         paymentPlanDao.newPaymentPlan(paymentPlan);
 
         return paymentPlanRequest;
+    }
+
+    // payments plan get
+    public List<PaymentPlan> getPaymentsPlan(){ return  paymentPlanDao.getPaymentPlans();
     }
 
 }

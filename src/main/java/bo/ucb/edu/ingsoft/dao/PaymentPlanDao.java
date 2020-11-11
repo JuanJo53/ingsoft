@@ -1,5 +1,6 @@
 package bo.ucb.edu.ingsoft.dao;
 
+import bo.ucb.edu.ingsoft.dto.PaymentPlanRequest;
 import bo.ucb.edu.ingsoft.model.PaymentPlan;
 import org.apache.ibatis.annotations.Mapper;
 

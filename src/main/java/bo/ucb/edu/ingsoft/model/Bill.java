@@ -7,6 +7,7 @@ public class Bill {
     private Integer userId;
     private Integer paymentPlanId;
     private Integer cardId;
+    private Integer projectsId;
     private Date buyDate;
     private String billingAddress;
     private String country;
@@ -48,6 +49,14 @@ public class Bill {
 
     public void setCardId(Integer cardId) {
         this.cardId = cardId;
+    }
+
+    public Integer getProjectsId() {
+        return projectsId;
+    }
+
+    public void setProjectsId(Integer projectsId) {
+        this.projectsId = projectsId;
     }
 
     public Date getBuyDate() {
@@ -105,6 +114,7 @@ public class Bill {
                 ", userId=" + userId +
                 ", paymentPlanId=" + paymentPlanId +
                 ", cardId=" + cardId +
+                ", projectsId=" + projectsId +
                 ", buyDate=" + buyDate +
                 ", billingAddress='" + billingAddress + '\'' +
                 ", country='" + country + '\'' +

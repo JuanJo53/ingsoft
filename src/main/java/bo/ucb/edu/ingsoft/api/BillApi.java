@@ -1,9 +1,9 @@
 package bo.ucb.edu.ingsoft.api;
 
-import bo.ucb.edu.ingsoft.bl.PaymentPlanBl;
+import bo.ucb.edu.ingsoft.bl.BillBl;
 import bo.ucb.edu.ingsoft.bl.TransactionBl;
-import bo.ucb.edu.ingsoft.dto.PaymentPlanRequest;
-import bo.ucb.edu.ingsoft.model.PaymentPlan;
+import bo.ucb.edu.ingsoft.dto.BillRequest;
+import bo.ucb.edu.ingsoft.model.Bill;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.http.MediaType;
@@ -14,32 +14,30 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/paymentPlan")
-public class PaymentPlanApi{
-    private PaymentPlanBl paymentPlanBl;
+@RequestMapping(value="/bill")
+public class BillApi {
+    private BillBl billBl;
     private TransactionBl transactionBl;
 
     @Autowired
-    public PaymentPlanApi(PaymentPlanBl paymentPlanBl, TransactionBl transactionBl){
-        this.paymentPlanBl = paymentPlanBl;
+    public BillApi(BillBl billBl, TransactionBl transactionBl){
+        this.billBl = billBl;
         this.transactionBl = transactionBl;
     }
 
-    //post
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public PaymentPlanRequest createPaymentPlan(@RequestBody PaymentPlanRequest paymentPlanRequest, HttpServletRequest request) {
-        // Creamos transaccion para la operación.
+
+    public BillRequest createBill(@RequestBody BillRequest billRequest, HttpServletRequest request){
+        //Creamos transaccion para la operacion
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-        PaymentPlanRequest paymentPlanResponse = paymentPlanBl.createPaymentPlan(1,paymentPlanRequest, transaction);
-        return paymentPlanResponse;
+        BillRequest billResponse = billBl.createBill(1,billRequest,transaction);
+        return billResponse;
     }
 
-    //get
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<PaymentPlan> getPaymentPlans(HttpServletRequest request) {
-
-        return paymentPlanBl.getPaymentsPlan();
+    public List<Bill> getBills(HttpServletRequest request){
+        return billBl.getBill();
     }
 }
