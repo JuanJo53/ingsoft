@@ -6,15 +6,13 @@ import java.util.Date;
 
 public class CardRequest {
 
-
     private String cardName;
     private Integer cardNumber;
     private Integer expirationYear;
     private Integer expirationMonth;
-    private String userName;
-    private String userSurname;
     private Integer cvc;
     private Date creationDate;
+    private Integer status;
 
     public CardRequest() {
     }
@@ -51,22 +49,6 @@ public class CardRequest {
         this.expirationMonth = expirationMonth;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserSurname() {
-        return userSurname;
-    }
-
-    public void setUserSurname(String userSurname) {
-        this.userSurname = userSurname;
-    }
-
     public Integer getCvc() {
         return cvc;
     }
@@ -81,5 +63,13 @@ public class CardRequest {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

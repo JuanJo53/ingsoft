@@ -10,10 +10,9 @@ public class Card {
     private Integer cardNumber;
     private Integer expirationYear;
     private Integer expirationMonth;
-    private String userName;
-    private String userSurname;
     private Integer cvc;
     private Date creationDate;
+    private Integer status;
     private Transaction transaction;
 
     public Card() {
@@ -68,22 +67,6 @@ public class Card {
         this.expirationMonth = expirationMonth;
     }
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getUserSurname() {
-        return userSurname;
-    }
-
-    public void setUserSurname(String userSurname) {
-        this.userSurname = userSurname;
-    }
-
     public Integer getCvc() {
         return cvc;
     }
@@ -98,6 +81,14 @@ public class Card {
 
     public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Transaction getTransaction() {
@@ -117,10 +108,9 @@ public class Card {
                 ", cardNumber=" + cardNumber +
                 ", expirationYear=" + expirationYear +
                 ", expirationMonth=" + expirationMonth +
-                ", userName='" + userName + '\'' +
-                ", userSurname='" + userSurname + '\'' +
-                ", cvc=" + cvc+
+                ", cvc=" + cvc +
                 ", creationDate=" + creationDate +
+                ", status=" + status +
                 ", txId=" + transaction.getTxId() +
                 ", txHost=" + transaction.getTxHost() +
                 ", txUserId=" + transaction.getTxUserId() +
@@ -128,3 +118,4 @@ public class Card {
                 '}';
     }
 }
+

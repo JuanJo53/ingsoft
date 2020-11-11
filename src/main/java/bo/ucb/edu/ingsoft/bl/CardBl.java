@@ -49,10 +49,9 @@ public class CardBl {
         card.setCardNumber(cardRequest.getCardNumber());
         card.setExpirationYear(cardRequest.getExpirationYear());
         card.setExpirationMonth(cardRequest.getExpirationMonth());
-        card.setUserName(cardRequest.getUserName());
-        card.setUserSurname(cardRequest.getUserSurname());
         card.setCvc(cardRequest.getCvc());
         card.setCreationDate(cardRequest.getCreationDate());
+        card.setStatus(cardRequest.getStatus());
         card.setTransaction(transaction);
         cardDao.newCard(card);
         return cardRequest;
@@ -64,10 +63,9 @@ public class CardBl {
         card.setCardNumber(cardRequest.getCardNumber());
         card.setExpirationYear(cardRequest.getExpirationYear());
         card.setExpirationMonth(cardRequest.getExpirationMonth());
-        card.setUserName(cardRequest.getUserName());
-        card.setUserSurname(cardRequest.getUserSurname());
         card.setCvc(cardRequest.getCvc());
         card.setCreationDate(cardRequest.getCreationDate());
+        card.setStatus(cardRequest.getStatus());
         card.setTransaction(transaction);
         cardDao.updateCard(card);
         return  cardRequest;
