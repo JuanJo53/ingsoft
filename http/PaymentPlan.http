@@ -8,10 +8,10 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "plan": "10 meses",
-  "description": " 10 meses de publicidad para tu proyecto",
-  "cost": "1500.95",
-  "duration": "10",
+  "plan": "4 meses",
+  "description": " 4 meses de publicidad para tu proyecto",
+  "cost": "156.95",
+  "duration": "4",
   "status":"0"
 }
 

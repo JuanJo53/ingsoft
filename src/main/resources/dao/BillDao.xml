@@ -3,17 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bo.ucb.edu.ingsoft.dao.CardDao">
-    <select id="findByBillId" resultType="bo.ucb.edu.ingsoft.model.Bill">
+    <select id="detailsByBillId" resultType="bo.ucb.edu.ingsoft.model.Bill">
         SELECT
             bill_id as billId,
             user_id as userId,
             payment_plan_id as paymentPlanId,
             card_id as cardId,
             projects_id as projectsId,
-            date as date,
+            buy_date as buyDate,
             billing_address as billingAddress,
             country as country,
-            city as city
+            city as city,
+            status as status
 
         FROM bill
         WHERE
@@ -22,14 +23,16 @@
 
     <insert id="createBill" parameterType="bo.ucb.edu.ingsoft.model.Bill">
         INSERT INTO bill VALUES (
-            null,#{userId},
+            null,
+            #{userId},
             #{paymentPlanId},
             #{cardId},
             #{projectsId},
-            #{date},
+            #{buyDate},
             #{billingAddress},
             #{country},
-            #{city}
+            #{city},
+            #{status},
             #{transaction.txId},
             #{transaction.txHost},
             #{transaction.txUserId},

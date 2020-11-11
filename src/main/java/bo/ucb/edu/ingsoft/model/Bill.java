@@ -7,7 +7,7 @@ public class Bill {
     private Integer userId;
     private Integer paymentPlanId;
     private Integer cardId;
-    private Date date;
+    private Date buyDate;
     private String billingAddress;
     private String country;
     private String city;
@@ -50,12 +50,12 @@ public class Bill {
         this.cardId = cardId;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getBuyDate() {
+        return buyDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setBuyDate(Date buyDate) {
+        this.buyDate = buyDate;
     }
 
     public String getBillingAddress() {
@@ -82,6 +82,14 @@ public class Bill {
         this.city = city;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     public Transaction getTransaction() {
         return transaction;
     }
@@ -97,16 +105,12 @@ public class Bill {
                 ", userId=" + userId +
                 ", paymentPlanId=" + paymentPlanId +
                 ", cardId=" + cardId +
-                ", date=" + date +
+                ", buyDate=" + buyDate +
                 ", billingAddress='" + billingAddress + '\'' +
                 ", country='" + country + '\'' +
-                ", city=" + city +
+                ", city='" + city + '\'' +
+                ", status=" + status +
                 ", transaction=" + transaction +
-                ", txId=" + transaction.getTxId() +
-                ", txHost=" + transaction.getTxHost() +
-                ", txUserId=" + transaction.getTxUserId() +
-                ", txDate=" + transaction.getTxDate() +
-
                 '}';
     }
 }

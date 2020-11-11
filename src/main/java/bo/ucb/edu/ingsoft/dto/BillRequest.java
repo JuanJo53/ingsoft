@@ -7,10 +7,11 @@ public class BillRequest {
     private Integer userId;
     private Integer paymentPlanId;
     private Integer cardId;
-    private Date date;
+    private Date buyDate;
     private String billingAddress;
     private String country;
     private String city;
+    private Integer status;
 
     public Integer getBillId() {
         return billId;
@@ -44,12 +45,12 @@ public class BillRequest {
         this.cardId = cardId;
     }
 
-    public Date getDate() {
-        return date;
+    public Date getBuyDate() {
+        return buyDate;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setBuyDate(Date buyDate) {
+        this.buyDate = buyDate;
     }
 
     public String getBillingAddress() {
@@ -76,6 +77,14 @@ public class BillRequest {
         this.city = city;
     }
 
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "BillRequest{" +
@@ -83,10 +92,11 @@ public class BillRequest {
                 ", userId=" + userId +
                 ", paymentPlanId=" + paymentPlanId +
                 ", cardId=" + cardId +
-                ", date=" + date +
+                ", buyDate=" + buyDate +
                 ", billingAddress='" + billingAddress + '\'' +
                 ", country='" + country + '\'' +
                 ", city='" + city + '\'' +
+                ", status=" + status +
                 '}';
     }
 }
