@@ -34,7 +34,7 @@ tags:
   description: Cards-only activities and interactions.
 
 paths:
-  /newuser:
+  /users/newuser:
     post:
       tags:
       - users
@@ -56,7 +56,7 @@ paths:
         400:
           description: can't creat new user
           
-  /edit-profile/{userid}:
+  /users/edit-profile/{userid}:
     put:
       tags:
       - users
@@ -81,7 +81,31 @@ paths:
           description: profile updated
         400:
           description: bad recuest
-  
+
+  /users/{userid}:
+    get:
+      tags:
+        - users
+      summary: get user profile data
+      description: |
+        get user tags
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/User"
+        410:
+          description: not found
+
   /user-tags/{userid}:
     get:
       tags:
@@ -779,18 +803,18 @@ definitions:
         type: string
         format: varchar
         example: Ana
-      lastname:
+      surname:
         type: string
         format: varchar
         example: Martinez
+      username:
+        type: string
+        format: varchar
+        example: anamar
       email:
         type: string
         format: varchar
         example: ana@gmail.com
-      nickname:
-        type: string
-        format: varchar
-        example: anamar
       description:
         type: string
         format: varchar
