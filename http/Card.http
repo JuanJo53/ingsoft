@@ -1,31 +1,31 @@
 ### GET all user cards
-GET http://localhost:8080/user/card/1
+GET http://localhost:8080/user/1/card
 Accept: application/json
 Content-Type: application/json
 
 ###
 
-POST http://localhost:8080/user/card
+POST http://localhost:8080/user/1/card
 Accept: application/json
 Content-Type: application/json
 
 {
-  "cardName": "Tarjeta VISA",
-  "cardNumber": "123456789",
+  "cardName": "Tarjeta BNB",
+  "cardNumber": "987963958",
   "expirationYear": "2021",
   "expirationMonth": "12",
-  "cvc": "321",
+  "cvc": "958",
   "creationDate": "2022-11-01",
   "status": 1
 }
 
 ###Edit a Card
-PUT http://localhost:8080/user/card/edit/1
+PUT http://localhost:8080/user/1/card/edit/3
 Accept: application/json
 Content-Type: application/json
 
 {
-  "cardName": "Tarjeta Daniel",
+  "cardName": "Tarjeta VISA 2",
   "cardNumber": "43674786",
   "expirationYear": "2022",
   "expirationMonth": "07",

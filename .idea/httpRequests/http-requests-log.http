@@ -1,3 +1,179 @@
+GET http://localhost:8080/user/1/card
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T063731.200.json
+
+###
+
+PUT http://localhost:8080/user/1/card/edit/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta VISA 2",
+  "cardNumber": "43674786",
+  "expirationYear": "2022",
+  "expirationMonth": "07",
+  "cvc": "12345",
+  "creationDate": "2022-11-01",
+  "status": 1
+
+}
+
+<> 2020-11-12T063729.200.json
+
+###
+
+PUT http://localhost:8080/user/1/card/edit/2
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta VISA 1",
+  "cardNumber": "43674786",
+  "expirationYear": "2022",
+  "expirationMonth": "07",
+  "cvc": "12345",
+  "creationDate": "2022-11-01",
+  "status": 1
+
+}
+
+<> 2020-11-12T063722.200.json
+
+###
+
+PUT http://localhost:8080/user/1/card/edit/2
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta VISA 3",
+  "cardNumber": "43674786",
+  "expirationYear": "2022",
+  "expirationMonth": "07",
+  "cvc": "12345",
+  "creationDate": "2022-11-01",
+  "status": 1
+
+}
+
+<> 2020-11-12T063711.200.json
+
+###
+
+GET http://localhost:8080/user/1/card
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T063656.200.json
+
+###
+
+POST http://localhost:8080/user/1/card
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta BNB",
+  "cardNumber": "987963958",
+  "expirationYear": "2021",
+  "expirationMonth": "12",
+  "cvc": "958",
+  "creationDate": "2022-11-01",
+  "status": 1
+}
+
+<> 2020-11-12T063647.200.json
+
+###
+
+GET http://localhost:8080/user/card/1
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T063342.200.json
+
+###
+
+GET http://localhost:8080/user/1/card/1
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T063333.404.json
+
+###
+
+PUT http://localhost:8080/user/card/edit/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta VISA 3",
+  "cardNumber": "43674786",
+  "expirationYear": "2022",
+  "expirationMonth": "07",
+  "cvc": "12345",
+  "creationDate": "2022-11-01",
+  "status": 1
+
+}
+
+<> 2020-11-12T063132.200.json
+
+###
+
+POST http://localhost:8080/user/card
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta VISA 2",
+  "cardNumber": "987963958",
+  "expirationYear": "2021",
+  "expirationMonth": "12",
+  "cvc": "958",
+  "creationDate": "2022-11-01",
+  "status": 1
+}
+
+<> 2020-11-12T063100.200.json
+
+###
+
+GET http://localhost:8080/user/card/1
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T063037.200.json
+
+###
+
+POST http://localhost:8080/user/1/my-projects/1/buy/1/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "buyDate": "2020-25-17",
+  "billingAddress": "",
+  "country": "Chile",
+  "city": "Santiago",
+  "status": 1
+}
+
+<> 2020-11-12T062940.200.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T062920.200.json
+
+###
+
 PUT http://localhost:8080/user/notification/update/1/2
 Accept: application/json
 
@@ -355,126 +531,6 @@ Accept: application/json
 
 GET http://localhost:8080/user/notification/2
 Accept: application/json
-
-###
-
-GET http://localhost:8080/user/notification/list/1
-Accept: application/json
-
-<> 2020-11-12T051618.200.json
-
-###
-
-GET http://localhost:8080/user/notification/1
-Accept: application/json
-
-<> 2020-11-12T051614.200.json
-
-###
-
-GET http://localhost:8080/tags/python
-Accept: application/json
-
-<> 2020-11-12T043437.200.json
-
-###
-
-GET http://localhost:8080/tags/c++
-Accept: application/json
-
-<> 2020-11-12T043430.200.json
-
-###
-
-GET http://localhost:8080/tags
-Accept: application/json
-
-<> 2020-11-12T043420.200.json
-
-###
-
-POST http://localhost:8080/tags/createTag/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "tag": "c++",
-  "verified": 1
-}
-
-<> 2020-11-12T043401.200.json
-
-###
-
-POST http://localhost:8080/tags/createTag/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "tag": "c++",
-  "verified": "1"
-}
-
-<> 2020-11-12T043335.200.json
-
-###
-
-GET http://localhost:8080/users/4
-Accept: application/json
-
-<> 2020-11-12T042749.200.json
-
-###
-
-POST http://localhost:8080/users/newusers
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "Maria",
-  "surname": "Lopez",
-  "nickName": "mlop",
-  "email": "lopita@gmail.com"
-}
-
-<> 2020-11-12T042736.200.json
-
-###
-
-GET http://localhost:8080/users/3
-Accept: application/json
-
-<> 2020-11-12T042618.200.json
-
-###
-
-GET http://localhost:8080/paymentPlan
-Accept: application/json
-
-<> 2020-11-12T042343.200.json
-
-###
-
-GET http://localhost:8080/paymentPlan
-Accept: application/json
-
-<> 2020-11-12T042044.200.json
-
-###
-
-POST http://localhost:8080/paymentPlan
-Accept: application/json
-Content-Type: application/json
-
-{
-  "plan": "1 mes",
-  "description": "1 mes de publicidad para tu proyecto",
-  "cost": 99.99,
-  "duration": 1,
-  "status": 1
-}
-
-<> 2020-11-12T042041.200.json
 
 ###
 

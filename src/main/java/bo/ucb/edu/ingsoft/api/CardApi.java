@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/user/card")
+@RequestMapping(value = "/user")
 public class CardApi {
 
     private CardBl cardBl;
@@ -27,25 +27,25 @@ public class CardApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(value = "/{userid}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{userid}/card",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Card> getUserCard(@PathVariable("userid") Integer userid, HttpServletRequest request) {
         return cardBl.getCardBasicData(userid);
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/card",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public CardRequest createCard(@RequestBody CardRequest cardRequest, HttpServletRequest request) {
+    public CardRequest createCard(@PathVariable("userid") Integer userid,@RequestBody CardRequest cardRequest, HttpServletRequest request) {
         // Creamos transaccion para la operación.
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-        CardRequest cardResponse = cardBl.createCard(1, cardRequest, transaction);
+        CardRequest cardResponse = cardBl.createCard(userid, cardRequest, transaction);
         return cardResponse;
     }
 
-    @RequestMapping(value = "/edit/{cardid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/card/edit/{cardid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
 
-    public CardRequest editCard(@PathVariable("cardid") Integer cardId, @RequestBody CardRequest cardRequest, HttpServletRequest request) {
+    public CardRequest editCard(@PathVariable("userid") Integer userid,@PathVariable("cardid") Integer cardId, @RequestBody CardRequest cardRequest, HttpServletRequest request) {
         // Creamos transaccion para la operación.
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);

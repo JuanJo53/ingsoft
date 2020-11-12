@@ -10,8 +10,8 @@ Content-Type: application/json
 {
   "buyDate": "2020-25-17",
   "billingAddress": "",
-  "country": "Bolivia",
-  "city": "La Paz",
+  "country": "Chile",
+  "city": "Santiago",
   "status": 1
 }
 ###
