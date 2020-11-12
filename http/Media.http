@@ -9,7 +9,7 @@ Content-Type: application/json
   "type": "1"
 }
 
-###
+### Get the list of media by project id /my-projects/{idproject}/media
 
 GET http://localhost:8080/my-projects/1/media
 Accept: application/json
