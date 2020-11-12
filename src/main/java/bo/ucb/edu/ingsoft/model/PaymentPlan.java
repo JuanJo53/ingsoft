@@ -11,10 +11,12 @@ public class PaymentPlan {
     private Integer status;
     private Transaction transaction;
 
+    //transaction
     public PaymentPlan() {
         transaction=new Transaction();
     }
 
+    //getters and setters
     public Integer getPaymentPlanId() {
         return paymentPlanId;
     }
@@ -71,6 +73,7 @@ public class PaymentPlan {
         this.transaction = transaction;
     }
 
+    //toString with transaction
     @Override
     public String toString() {
         return "PaymentPlan{" +
