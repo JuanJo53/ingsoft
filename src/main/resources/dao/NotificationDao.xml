@@ -4,8 +4,6 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bo.ucb.edu.ingsoft.dao.NotificationDao">
 
-
-
     <select id="getNotification" resultType="bo.ucb.edu.ingsoft.model.Notification">
         SELECT notification_id as notificationId,
         user_id as userId,
@@ -13,7 +11,8 @@
         message as message,
         date as date,
         status as status
-        FROM notification where user_id=#{userId}
+        FROM notification
+        where user_id=#{userId} and status=1
     </select>
     <select id="detailsByNotificationId" resultType="bo.ucb.edu.ingsoft.model.Notification">
         SELECT notification_id as notificationId,
@@ -22,10 +21,8 @@
         message as message,
         date as date,
         status as status
-        FROM notification where notification_id=#{notificationId}
+        FROM notification
+        where notification_id=#{notificationId} and status=1
     </select>
-
-
-
 
 </mapper>

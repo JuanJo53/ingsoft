@@ -1,3 +1,29 @@
+GET http://localhost:8080/user/notification/list/2
+Accept: application/json
+
+<> 2020-11-12T051629.200.json
+
+###
+
+GET http://localhost:8080/user/notification/2
+Accept: application/json
+
+###
+
+GET http://localhost:8080/user/notification/list/1
+Accept: application/json
+
+<> 2020-11-12T051618.200.json
+
+###
+
+GET http://localhost:8080/user/notification/1
+Accept: application/json
+
+<> 2020-11-12T051614.200.json
+
+###
+
 GET http://localhost:8080/tags/python
 Accept: application/json
 
@@ -414,42 +440,6 @@ GET http://localhost:8080/my-projects/3/user-request
 Accept: application/json
 
 <> 2020-11-12T121633.200.json
-
-###
-
-GET http://localhost:8080/my-projects/list/1
-Accept: application/json
-
-<> 2020-11-12T121626.200.json
-
-###
-
-GET http://localhost:8080/my-projects/3/user-members
-Accept: application/json
-
-<> 2020-11-12T121610.200.json
-
-###
-
-GET http://localhost:8080/my-projects/list/1
-Accept: application/json
-
-<> 2020-11-12T114246.200.json
-
-###
-
-POST http://localhost:8080/users/newusers
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "lorito",
-  "surname": "Fernandez",
-  "nickName": "El yepas",
-  "email": "example@gmail.com"
-}
-
-<> 2020-11-12T113741.200.json
 
 ###
 
