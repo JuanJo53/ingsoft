@@ -8,5 +8,5 @@ import java.util.List;
 @Mapper
 public interface MediaDao {
     public void insertImage(Media media);
-    public List<Media>getMediaList(Integer idprojects);
+    public List<Media>getMediaList(Integer projectsId);
 }
