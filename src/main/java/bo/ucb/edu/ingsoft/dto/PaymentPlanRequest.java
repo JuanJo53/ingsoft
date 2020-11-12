@@ -9,6 +9,7 @@ public class PaymentPlanRequest {
     private Integer duration;
     private Integer status;
 
+    //getters and setters
     public String getPlan() {
         return plan;
     }
@@ -49,6 +50,7 @@ public class PaymentPlanRequest {
         this.status = status;
     }
 
+    //toString
     @Override
     public String toString() {
         return "PaymentPlanRequest{" +
