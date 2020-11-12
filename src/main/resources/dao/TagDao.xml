@@ -6,7 +6,8 @@
     <insert id="createTag" parameterType="bo.ucb.edu.ingsoft.model.Tag">
         INSERT INTO tags
         VALUES (
-            null,#{nameTags},#{verified}
+            null,#{nameTags},#{verified},1,#{transaction.txId},#{transaction.txHost},
+            #{transaction.txUserId},#{transaction.txDate}
 
         )
     </insert>

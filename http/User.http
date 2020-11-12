@@ -22,7 +22,7 @@ Content-Type: application/json
 {
   "name": "otro lorito",
   "surname": "Fernandez",
-  "nickName": "El yepas",
+  "nickName": "El paisano",
   "email": "example@gmail.com",
   "description": "Me gusta el sql",
   "image": null,
