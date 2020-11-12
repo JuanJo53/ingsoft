@@ -6,7 +6,7 @@
     <select id="detailsByCertificateId" resultType="bo.ucb.edu.ingsoft.model.Certificate">
         SELECT
             certificate_id as certificateId,
-            name as name,
+            certificate_name as certificateName,
             company as company,
             expedition_date as expeditionDate,
             credential_id as credentialId,
@@ -15,11 +15,11 @@
             status as status
         FROM certificate
         WHERE
-            certificate_id = #{certificateId} and user_id = #{userId}
+            certificate_id = #{certificateId} and user_id = #{userId} and status = 1
     </select>
     <resultMap id="certificatesResultMap" type="bo.ucb.edu.ingsoft.model.Certificate">
         <id column="certificate_id" property="id"></id>
-        <result column="name" property="name"></result>
+        <result column="certificateName" property="certificateName"></result>
         <result column="company" property="company"></result>
         <result column="expeditionDate" property="expeditionDate"></result>
         <result column="expirationDate" property="expirationDate"></result>
@@ -27,7 +27,7 @@
     <select id="getCertificates" resultMap="certificatesResultMap">
         SELECT
                certificate_id as certificateId,
-               name as name,
+               certificate_name as certificateName,
                company as company,
                expedition_Date as expeditionDate,
                expiration_Date as expirationDate
@@ -39,12 +39,12 @@
         INSERT INTO certificate VALUES (
             null,
             #{userId},
-            #{name},
+            #{certificateName},
             #{company},
             #{expeditionDate},
+            #{expirationDate},
             #{credentialId},
             #{credentialURL},
-            #{expirationDate},
             #{status},
             #{transaction.txId},
             #{transaction.txHost},
@@ -52,24 +52,23 @@
             #{transaction.txDate}
         )
     </insert>
-
     <update id="updateCertificate" parameterType="bo.ucb.edu.ingsoft.model.Certificate">
         Update certificate
         set
-            name=#{name},
+            certificate_name=#{certificateName},
             company=#{company},
             expedition_date=#{expeditionDate},
             credential_id=#{credentialId},
             credential_url=#{credentialURL},
             expiration_date=#{expirationDate}
         where
-            certificate_id = #{certificateId}
+            certificate_id = #{certificateId} and status = 1
     </update>
     <update id="deleteCertificate" parameterType="bo.ucb.edu.ingsoft.model.Certificate">
         Update certificate
         set
             status=#{status}
         where
-            certificate_id = #{certificateId}
+            certificate_id = #{certificateId} and status = 1
     </update>
 </mapper>

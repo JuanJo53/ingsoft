@@ -4,7 +4,7 @@ import java.util.Date;
 public class Certificate {
     private Integer certificateId;
     private Integer userId;
-    private String name;
+    private String certificateName;
     private String company;
     private Date expeditionDate;
     private String credentialId;
@@ -22,16 +22,14 @@ public class Certificate {
         return "Certificate{" +
                 "certificateId=" + certificateId +
                 ", userId=" + userId +
-                ", name='" + name + '\'' +
+                ", certificateName='" + certificateName + '\'' +
                 ", company='" + company + '\'' +
                 ", expeditionDate=" + expeditionDate +
                 ", credentialId='" + credentialId + '\'' +
                 ", credentialURL='" + credentialURL + '\'' +
-                ", date=" + expirationDate +
-                ", txId=" + transaction.getTxId() +
-                ", txHost=" + transaction.getTxHost() +
-                ", txUserId=" + transaction.getTxUserId() +
-                ", txDate=" + transaction.getTxDate() +
+                ", expirationDate=" + expirationDate +
+                ", status=" + status +
+                ", transaction=" + transaction +
                 '}';
     }
 
@@ -51,12 +49,12 @@ public class Certificate {
         this.userId = userId;
     }
 
-    public String getName() {
-        return name;
+    public String getCertificateName() {
+        return certificateName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCertificateName(String certificateName) {
+        this.certificateName = certificateName;
     }
 
     public String getCompany() {
@@ -99,18 +97,19 @@ public class Certificate {
         this.expirationDate = expirationDate;
     }
 
-    public Transaction getTransaction() {
-        return transaction;
-    }
-
-    public void setTransaction(Transaction transaction) {
-        this.transaction = transaction;
-    }
     public Integer getStatus() {
         return status;
     }
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    public Transaction getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
     }
 }
