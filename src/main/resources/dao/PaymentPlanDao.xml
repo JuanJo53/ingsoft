@@ -14,7 +14,7 @@
 
         FROM payment_plan
         WHERE
-            payment_plan_id = #{paymentPlanId}
+            payment_plan_id = #{paymentPlanId} and status = 1
     </select>
     <resultMap id="paymentsResultMap" type="bo.ucb.edu.ingsoft.model.PaymentPlan">
         <id column="paymentPlanId" property="paymentPlanId"></id>
