@@ -1,13 +1,14 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2020-11-10 20:37:35.827
-
+-- Last modification date: 2020-11-12 03:16:12.401
+CREATE DATABASE IF NOT EXISTS smart_idea;
 -- tables
 -- Table: area
 CREATE TABLE area (
     area_id int NOT NULL AUTO_INCREMENT,
     name_area varchar(50) NOT NULL,
     creation_date date NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: INACTIVE
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -23,10 +24,11 @@ CREATE TABLE bill (
     card_id int NOT NULL,
     projects_id int NOT NULL,
     buy_date date NOT NULL,
-    billing_address varchar(50) NULL,
+    billing_address varchar(50) NOT NULL,
     country varchar(20) NOT NULL,
     city varchar(20) NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -44,7 +46,8 @@ CREATE TABLE card (
     expiration_month int NOT NULL,
     CVC int NOT NULL,
     creation_date date NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -62,7 +65,8 @@ CREATE TABLE certificate (
     expiration_date date NULL,
     credential_id varchar(100) NOT NULL,
     credential_url varchar(200) NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: INACTIVE
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -82,7 +86,8 @@ CREATE TABLE h_bill (
     billing_address varchar(50) NULL,
     country varchar(20) NOT NULL,
     city varchar(20) NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -101,7 +106,8 @@ CREATE TABLE h_card (
     expiration_month int NOT NULL,
     CVC int NOT NULL,
     creation_date date NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -120,7 +126,8 @@ CREATE TABLE h_certificate (
     expiration_date date NOT NULL,
     credential_id varchar(100) NOT NULL,
     credential_url varchar(200) NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: INACTIVE
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -136,7 +143,8 @@ CREATE TABLE h_payment_plan (
     description text NULL,
     cost numeric(10,4) NOT NULL,
     duration int NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -151,7 +159,8 @@ CREATE TABLE h_project_user (
     user_id int NOT NULL,
     projects_id int NOT NULL,
     rol int NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -169,7 +178,10 @@ CREATE TABLE h_projects (
     benefits text NULL,
     views int NOT NULL,
     create_date date NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: PUBLIC
+2: PRIVATE
+3: ARCHIVED',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -189,7 +201,8 @@ CREATE TABLE h_user (
     description text NULL,
     image varchar(200) NULL,
     cellphone varchar(20) NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: INACTIVE
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -204,7 +217,8 @@ CREATE TABLE media (
     url varchar(200) NOT NULL,
     type int NOT NULL,
     creation_date date NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -219,8 +233,10 @@ CREATE TABLE notification (
     title varchar(20) NOT NULL,
     message varchar(50) NOT NULL,
     date timestamp NOT NULL,
-    status int NOT NULL COMMENT '0: UNSEEN
-1: SEEN',
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE
+2: UNSEEN
+3: SEEN',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -235,7 +251,8 @@ CREATE TABLE payment_plan (
     description text NULL,
     cost numeric(10,4) NOT NULL,
     duration int NOT NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -249,11 +266,10 @@ CREATE TABLE project_user (
     user_id int NOT NULL,
     projects_id int NOT NULL,
     rol int NOT NULL COMMENT '1: OWNER
-2: PARTICIPANT',
-    status int NOT NULL COMMENT '0: PUBLIC
-1: PRIVATE
-2: DELETED
-3: ARCHIVED
+2: WAITING
+3: PARTICIPANT',
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE
 ',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
@@ -270,11 +286,11 @@ CREATE TABLE projects (
     abilities varchar(200) NULL,
     benefits text NULL,
     views int NOT NULL,
-    status int NOT NULL COMMENT '0: PUBLIC
-1: PRIVATE
-2: DELETED
-3: ARCHIVED',
     create_date date NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: PUBLIC
+2: PRIVATE
+3: ARCHIVED',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -304,7 +320,8 @@ CREATE TABLE tags (
     name_tags varchar(20) NOT NULL,
     verified int NOT NULL COMMENT '0: UNVERIFIED
 1: VERIFIED',
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
@@ -332,7 +349,8 @@ CREATE TABLE user (
     description text NULL,
     image varchar(200) NULL,
     cellphone varchar(20) NULL,
-    status int NOT NULL,
+    status int NOT NULL COMMENT '0: INACTIVE
+1: ACTIVE',
     tx_id int NOT NULL,
     tx_host varchar(100) NOT NULL,
     tx_user_id int NOT NULL,
