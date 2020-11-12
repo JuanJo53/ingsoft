@@ -60,7 +60,7 @@ CREATE TRIGGER tr_h_project_user
 AFTER INSERT ON project_user
 for each row
 BEGIN
-    Insert into h_project_user (project_user_id,user_id,projects_id,rol,status,tx_id,tx_host,tx_user_id,tx_date)
+    Insert into h_project_user (proyect_user_id,user_id,projects_id,rol,status,tx_id,tx_host,tx_user_id,tx_date)
     values(new.project_user_id, new.user_id,new.projects_id,new.rol
     ,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
 
@@ -73,7 +73,7 @@ CREATE TRIGGER tr_update_h_project_user
 AFTER UPDATE ON project_user
 for each row
 BEGIN
-    Insert into h_project_user (project_user_id,user_id,projects_id,rol,status,tx_id,tx_host,tx_user_id,tx_date)
+    Insert into h_project_user (proyect_user_id,user_id,projects_id,rol,status,tx_id,tx_host,tx_user_id,tx_date)
     values(new.project_user_id, new.user_id,new.projects_id,new.rol
     ,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
 

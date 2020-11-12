@@ -1,3 +1,121 @@
+GET http://localhost:8080/users/3
+Accept: application/json
+
+<> 2020-11-12T033308.200.json
+
+###
+
+GET http://localhost:8080/users/1
+Accept: application/json
+
+<> 2020-11-12T033301.200.json
+
+###
+
+GET http://localhost:8080/users/1
+Accept: application/json
+
+<> 2020-11-12T033225.500.json
+
+###
+
+GET http://localhost:8080/users/1
+Accept: application/json
+
+<> 2020-11-12T032928.500.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Marco",
+  "surname": "Polo",
+  "nickName": "polito",
+  "email": "polito@gmail.com"
+}
+
+<> 2020-11-12T032908.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Juan",
+  "surname": "Perez",
+  "nickName": "jperez",
+  "email": "example@gmail.com"
+}
+
+<> 2020-11-12T032827.200.json
+
+###
+
+PUT http://localhost:8080/users/editprofile/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "otro lorito",
+  "surname": "Fernandez",
+  "nickName": "El paisano",
+  "email": "example@gmail.com",
+  "description": "Me gusta el sql",
+  "image": null,
+  "cellphone": "75281857"
+}
+
+<> 2020-11-12T032743.200.json
+
+###
+
+GET http://localhost:8080/users/1
+Accept: application/json
+
+<> 2020-11-12T031853.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com"
+}
+
+<> 2020-11-12T031812.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com"
+}
+
+<> 2020-11-12T031745.500.json
+
+###
+
+GET http://localhost:8080/user/notification/1
+Accept: application/json
+
+###
+
 GET http://localhost:8080/user/notification/list/1
 Accept: application/json
 
@@ -387,22 +505,6 @@ Content-Type: application/json
 }
 
 <> 2020-11-12T104919.500.json
-
-###
-
-POST http://localhost:8080/my-projects/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectTitle": "Esto es una prueba 2",
-  "description": "es un poyecto es una prueba 2",
-  "abilities": "El Nerd 2",
-  "benefits": "mucho dinero 2",
-  "status" : "0"
-}
-
-<> 2020-11-12T104711.500.json
 
 ###
 

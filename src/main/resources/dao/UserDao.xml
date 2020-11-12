@@ -10,7 +10,6 @@
             #{email},'PasswordNeedsSecure',null,null,
             null,1,#{transaction.txId},#{transaction.txHost},#{transaction.txUserId},
             #{transaction.txDate}
-
         )
     </insert>
 
@@ -49,6 +48,7 @@
         image as image,
         cellphone as cellphone
         FROM user
+        where user_id=#{userId} and status = 1
     </select>
     <update id="updateUser" parameterType="bo.ucb.edu.ingsoft.model.User">
             UPDATE user SET name=#{name},surname=#{surname},
