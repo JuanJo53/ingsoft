@@ -1,3 +1,43 @@
+PUT http://localhost:8080/user/notification/update/1/2
+Accept: application/json
+
+<> 2020-11-12T051653.200.json
+
+###
+
+PUT http://localhost:8080/user/notification/update/1/2
+Accept: application/json
+
+<> 2020-11-12T051553.415.json
+
+###
+
+GET http://localhost:8080/user/notification/list/1
+Accept: application/json
+
+<> 2020-11-12T051529.200.json
+
+###
+
+PUT http://localhost:8080/user/notification/update/1/2
+Accept: application/json
+
+<> 2020-11-12T051506.415.json
+
+###
+
+PUT http://localhost:8080/user/notification/update/1/2
+
+<> 2020-11-12T051447.415.json
+
+###
+
+PUT http://localhost:8080/user/notificationupdate/1/2
+
+<> 2020-11-12T051433.404.json
+
+###
+
 GET http://localhost:8080/user/notification/list/1
 Accept: application/json
 
