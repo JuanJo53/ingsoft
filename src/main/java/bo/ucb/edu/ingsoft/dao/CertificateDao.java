@@ -9,13 +9,13 @@ import java.util.List;
 public interface CertificateDao {
     //This function returns details of an specific certificate
     public Certificate detailsByCertificateId(Integer userId, Integer certificateId);
-
+    //This function returns all user certificates of an specific user
     public List<Certificate> getCertificates(Integer userId);
-
+    //This function creates a new certificate
     public void newCertificate(Certificate certificate);
-
+    //This function updates an specific certificate
     public void updateCertificate(Certificate certificate);
-
+    //This function deletes (updates status) an specific certificate
     public void deleteCertificate(Certificate certificate);
 
 }

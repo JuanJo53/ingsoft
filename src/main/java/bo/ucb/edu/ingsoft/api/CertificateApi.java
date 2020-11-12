@@ -25,44 +25,45 @@ public class CertificateApi {
         this.certificateBl = certificateBl;
         this.transactionBl = transactionBl;
     }
-
+    //GET function that gets all user certificates
     @RequestMapping(value = "/{userid}/certificates" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Certificate> getUserCertificates(@PathVariable("userid") Integer userid,HttpServletRequest request) {
         return certificateBl.getCertificateBasicData(userid);
     }
-
+    //POST function that creates a new certificate for a user
     @RequestMapping(value = "/{userid}/certificates" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public CertificateRequest createCertificate(@PathVariable("userid") Integer userid,@RequestBody CertificateRequest certificateRequest, HttpServletRequest request) {
-        // Creamos transaccion para la operación.
+        // Creating transaction for this operation
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
+        // Executing the update function in CertificateBl
         CertificateRequest certificateResponse = certificateBl.createCertificate(userid,certificateRequest, transaction);
         return certificateResponse;
     }
+    //GET function that gets user certificate details
     @RequestMapping(value = "/{userid}/certificates/edit/{certificateid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Certificate getCertificateDetails(@PathVariable("userid") Integer userid,@PathVariable("certificateid") Integer certificateid,HttpServletRequest request) {
         return certificateBl.getCertificateDetails(userid,certificateid);
     }
+    //PUT function that updates a user certificate data
     @RequestMapping(value = "/{userid}/certificates/edit/{certificateid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public CertificateRequest editCertificate(@PathVariable("certificateid") Integer certificateId, @RequestBody CertificateRequest certificateRequest, HttpServletRequest request) {
-        // Creamos transaccion para la operación.
+        // Creating transaction for this operation
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-
+        // Executing the update function in CertificateBl
         CertificateRequest certificateResponse=certificateBl.editCertificate(certificateRequest,certificateId,transaction);
-        //CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
         return certificateResponse;
     }
     @RequestMapping(value = "/{userid}/certificates/edit/{certificateid}" ,method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Certificate deleteCertificate(@PathVariable("certificateid") Integer certificateId, HttpServletRequest request) {
-        // Creamos transaccion para la operación.
+        // Creating transaction for this operation
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-
+        // Executing the delete function in CertificateBl
         Certificate certificateResponse=certificateBl.deleteCertificate(certificateId,transaction);
-        //CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
         return certificateResponse;
     }
 }

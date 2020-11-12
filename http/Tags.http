@@ -5,12 +5,12 @@ Content-Type: application/json
 
 {
   "tag": "c++",
-  "verified": "1"
+  "verified": 1
 }
 
 ### GET tag by name
 
-GET http://localhost:8080/tags/c++
+GET http://localhost:8080/tags/python
 Accept: application/json
 
 ### GET All verified tags

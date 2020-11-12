@@ -4,14 +4,14 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Marco",
-  "surname": "Polo",
-  "nickName": "polito",
-  "email": "polito@gmail.com"
+  "name": "Maria",
+  "surname": "Lopez",
+  "nickName": "mlop",
+  "email": "lopita@gmail.com"
 }
 
 ### Get user 1
-GET http://localhost:8080/users/3
+GET http://localhost:8080/users/1
 Accept: application/json
 
 ### Update user 1

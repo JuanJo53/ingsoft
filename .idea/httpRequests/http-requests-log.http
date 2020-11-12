@@ -1,3 +1,86 @@
+GET http://localhost:8080/tags/python
+Accept: application/json
+
+<> 2020-11-12T043437.200.json
+
+###
+
+GET http://localhost:8080/tags/c++
+Accept: application/json
+
+<> 2020-11-12T043430.200.json
+
+###
+
+GET http://localhost:8080/tags
+Accept: application/json
+
+<> 2020-11-12T043420.200.json
+
+###
+
+POST http://localhost:8080/tags/createTag/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tag": "c++",
+  "verified": 1
+}
+
+<> 2020-11-12T043401.200.json
+
+###
+
+POST http://localhost:8080/tags/createTag/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tag": "c++",
+  "verified": "1"
+}
+
+<> 2020-11-12T043335.200.json
+
+###
+
+GET http://localhost:8080/users/4
+Accept: application/json
+
+<> 2020-11-12T042749.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Maria",
+  "surname": "Lopez",
+  "nickName": "mlop",
+  "email": "lopita@gmail.com"
+}
+
+<> 2020-11-12T042736.200.json
+
+###
+
+GET http://localhost:8080/users/3
+Accept: application/json
+
+<> 2020-11-12T042618.200.json
+
+###
+
+GET http://localhost:8080/paymentPlan
+Accept: application/json
+
+<> 2020-11-12T042343.200.json
+
+###
+
 GET http://localhost:8080/paymentPlan
 Accept: application/json
 
@@ -367,119 +450,6 @@ Content-Type: application/json
 }
 
 <> 2020-11-12T113741.200.json
-
-###
-
-POST http://localhost:8080/users/newusers
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "lorito",
-  "surname": "Fernandez",
-  "nickName": "El yepas",
-  "email": "example@gmail.com"
-}
-
-<> 2020-11-12T113740.200.json
-
-###
-
-POST http://localhost:8080/users/newusers
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "lorito",
-  "surname": "Fernandez",
-  "nickName": "El yepas",
-  "email": "example@gmail.com"
-}
-
-<> 2020-11-12T113737.200.json
-
-###
-
-PUT http://localhost:8080/my-projects/edit/3
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectTitle": "Autos voladores",
-  "description": "es un poyecto muy nuevo",
-  "abilities": "El Nerd",
-  "benefits": "mucho dinero ",
-  "status" : "0"
-}
-
-<> 2020-11-12T111627.200.json
-
-###
-
-GET http://localhost:8080/my-projects/2
-Accept: application/json
-
-<> 2020-11-12T111614.200.json
-
-###
-
-GET http://localhost:8080/my-projects/project-feed/1
-Accept: application/json
-
-<> 2020-11-12T111550.200.json
-
-###
-
-GET http://localhost:8080/my-projects/list/1
-Accept: application/json
-
-<> 2020-11-12T111418.200.json
-
-###
-
-POST http://localhost:8080/my-projects/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectTitle": "Esto es una prueba 2",
-  "description": "es un poyecto es una prueba 2",
-  "abilities": "El Nerd 2",
-  "benefits": "mucho dinero 2",
-  "status" : "0"
-}
-
-<> 2020-11-12T111351.200.json
-
-###
-
-POST http://localhost:8080/users/newusers
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "lorito",
-  "surname": "Fernandez",
-  "nickName": "El yepas",
-  "email": "example@gmail.com"
-}
-
-<> 2020-11-12T111342.200.json
-
-###
-
-POST http://localhost:8080/users/newusers
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "lorito",
-  "surname": "Fernandez",
-  "nickName": "El yepas",
-  "email": "example@gmail.com"
-}
-
-<> 2020-11-12T111140.500.json
 
 ###
 
