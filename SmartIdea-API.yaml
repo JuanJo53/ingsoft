@@ -413,6 +413,10 @@ paths:
           in: path
           required: true
           type: integer
+        - name: certificateid
+          in: path
+          required: true
+          type: integer
         - in: "body"
           name: "body"
           description: "update Certificate"
@@ -902,16 +906,21 @@ definitions:
       name:
         type: string
         example: Curso de Python
-      nameorganization:
+      company:
         type: string
         example: Coursera
-      date:
+      expeditionDate:
         type: string
         example: "2019-02-03 13:55:21"
+      expirationDate:
+          type: string
+          example: "2022-12-03 13:55:21"
       urlcredential:
         type: string
+        example: "http://coursera.com/certificados/python"
       idcredential:
         type: string
+        example: "45687sd64114sdg7sadwer98g"
       iduser:
         type: integer
         
