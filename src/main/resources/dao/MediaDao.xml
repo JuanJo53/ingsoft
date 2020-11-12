@@ -17,7 +17,7 @@
         a.projects_id as projectId,
         a.title as title,
         a.url as url,
-        a.type as type
+        a.type as type,
         a.creation_date as creationDate
         FROM media a ,projects b
         where b.projects_id=#{idprojects}  and a.status = 1

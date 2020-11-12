@@ -1,3 +1,87 @@
+GET http://localhost:8080/my-projects/1/media
+Accept: application/json
+
+<> 2020-11-12T070906.200.json
+
+###
+
+GET http://localhost:8080/my-projects/1/media
+Accept: application/json
+
+<> 2020-11-12T070425.500.json
+
+###
+
+GET http://localhost:8080/my-projects/1/media
+Accept: application/json
+
+<> 2020-11-12T070403.500.json
+
+###
+
+GET http://localhost:8080/my-projects/1/media
+Accept: application/json
+
+<> 2020-11-12T070351.500.json
+
+###
+
+POST http://localhost:8080/my-projects/1/media/addMedia
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "fotito.jpeg",
+  "url": "B64encondeimageOrASimpleDirFile",
+  "type": "1"
+}
+
+<> 2020-11-12T070348.200.json
+
+###
+
+POST http://localhost:8080/my-projects/1/media/addMedia
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "fotito.jpeg",
+  "url": "B64encondeimageOrASimpleDirFile",
+  "type": "1"
+}
+
+<> 2020-11-12T065831.500.json
+
+###
+
+POST http://localhost:8080/my-projects/1/media/addMedia
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "fotito.jpeg",
+  "url": "B64encondeimageOrASimpleDirFile",
+  "type": "1"
+}
+
+<> 2020-11-12T065807.500.json
+
+###
+
+POST http://localhost:8080/my-projects/1/media/addMedia
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "fotito.jpeg",
+  "url": "B64encondeimageOrASimpleDirFile",
+  "type": "1"
+}
+
+<> 2020-11-12T065753.404.json
+
+###
+
 GET http://localhost:8080/user/1/card
 Accept: application/json
 Content-Type: application/json
@@ -450,87 +534,6 @@ GET http://localhost:8080/my-projects/3/user-request
 Accept: application/json
 
 <> 2020-11-12T053643.200.json
-
-###
-
-GET http://localhost:8080/my-projects/list/1
-Accept: application/json
-
-<> 2020-11-12T053637.200.json
-
-###
-
-GET http://localhost:8080/my-projects/project-feed/1
-Accept: application/json
-
-<> 2020-11-12T053631.200.json
-
-###
-
-GET http://localhost:8080/my-projects/2
-Accept: application/json
-
-<> 2020-11-12T053444.500.json
-
-###
-
-PUT http://localhost:8080/my-projects/edit/3
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectTitle": "Autos voladores",
-  "description": "es un poyecto muy nuevo",
-  "abilities": "El Nerd",
-  "benefits": "mucho dinero ",
-  "status" : 1
-}
-
-<> 2020-11-12T053431.200.json
-
-###
-
-PUT http://localhost:8080/my-projects/edit/3
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectTitle": "Autos voladores",
-  "description": "es un poyecto muy nuevo",
-  "abilities": "El Nerd",
-  "benefits": "mucho dinero ",
-  "status" : "0"
-}
-
-<> 2020-11-12T053423.200.json
-
-###
-
-POST http://localhost:8080/my-projects/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectTitle": "Esto es una prueba 2",
-  "description": "es un poyecto es una prueba 2",
-  "abilities": "El Nerd 2",
-  "benefits": "mucho dinero 2",
-  "status" : 1
-}
-
-<> 2020-11-12T053058.200.json
-
-###
-
-GET http://localhost:8080/user/notification/list/2
-Accept: application/json
-
-<> 2020-11-12T051629.200.json
-
-###
-
-GET http://localhost:8080/user/notification/2
-Accept: application/json
 
 ###
 
