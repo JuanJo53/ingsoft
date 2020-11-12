@@ -5,7 +5,6 @@ import bo.ucb.edu.ingsoft.model.Transaction;
 import java.util.Date;
 
 public class BillRequest {
-    private Integer billId;
     private Integer userId;
     private Integer paymentPlanId;
     private Integer cardId;
@@ -16,13 +15,6 @@ public class BillRequest {
     private String city;
     private Integer status;
 
-    public Integer getBillId() {
-        return billId;
-    }
-
-    public void setBillId(Integer billId) {
-        this.billId = billId;
-    }
 
     public Integer getUserId() {
         return userId;
@@ -99,7 +91,6 @@ public class BillRequest {
     @Override
     public String toString() {
         return "BillRequest{" +
-                "billId=" + billId +
                 ", userId=" + userId +
                 ", paymentPlanId=" + paymentPlanId +
                 ", cardId=" + cardId +

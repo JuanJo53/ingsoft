@@ -9,9 +9,9 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "cardName": "Tarjeta Cami",
+  "cardName": "Tarjeta Roberto",
   "cardNumber": "43674786",
-  "expirationYear": "2022",
+  "expirationYear": "2021",
   "expirationMonth": "07",
   "cvc": "12345",
   "creationDate": "2022-11-01",

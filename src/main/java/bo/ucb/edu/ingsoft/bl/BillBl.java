@@ -19,7 +19,7 @@ public class BillBl {
     private TransactionDao transactionDao;
 
     @Autowired
-    public BillBl(BillDao billDao, TransactionDao transactionDao){
+    public BillBl(BillDao billDao,TransactionDao transactionDao){
         this.billDao = billDao;
         this.transactionDao = transactionDao;
     }
@@ -27,6 +27,7 @@ public class BillBl {
     public Bill detailsByBillId(Integer billId){
         return billDao.detailsByBillId(billId);
     }
+
 
     public BillRequest createBill(Integer billId, BillRequest billRequest, Transaction transaction){
         Bill bill = new Bill();
