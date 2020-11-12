@@ -4,9 +4,9 @@ public class Tag {
     private Integer tagId;
     private String nameTags;
     private Integer verified;
+    private Transaction transaction;
 
-    public Tag() {
-    }
+    public Tag() {transaction=new Transaction();}
 
     @Override
     public String toString() {
@@ -39,5 +39,13 @@ public class Tag {
 
     public void setVerified(Integer verified) {
         this.verified = verified;
+    }
+
+    public Transaction getTransaction() {
+        return transaction;
+    }
+
+    public void setTransaction(Transaction transaction) {
+        this.transaction = transaction;
     }
 }

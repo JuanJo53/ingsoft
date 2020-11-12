@@ -35,16 +35,13 @@ public class CertificateBl {
         Certificate certificate = new Certificate();
 
         certificate.setUserId(userId);
-        certificate.setName(certificateRequest.getName());
+        certificate.setCertificateName(certificateRequest.getCertificateName());
         certificate.setCompany(certificateRequest.getCompany());
         certificate.setExpeditionDate(certificateRequest.getExpeditionDate());
         certificate.setCredentialId(certificateRequest.getCredentialId());
         certificate.setCredentialURL(certificateRequest.getCredentialURL());
         certificate.setExpirationDate(certificateRequest.getExpirationDate());
         certificate.setStatus(1);
-
-        LOGGER.error(certificate.getCredentialId());
-        LOGGER.error(certificate.getCredentialURL());
 
         certificate.setTransaction(transaction);
 
@@ -56,20 +53,12 @@ public class CertificateBl {
         Certificate certificate = new Certificate();
 
         certificate.setCertificateId(certificateId);
-        certificate.setName(certificateRequest.getName());
+        certificate.setCertificateName(certificateRequest.getCertificateName());
         certificate.setCompany(certificateRequest.getCompany());
         certificate.setExpeditionDate(certificateRequest.getExpeditionDate());
         certificate.setCredentialId(certificateRequest.getCredentialId());
         certificate.setCredentialURL(certificateRequest.getCredentialURL());
         certificate.setExpirationDate(certificateRequest.getExpirationDate());
-
-        LOGGER.error(certificate.getCertificateId().toString());
-        LOGGER.error(certificate.getName());
-        LOGGER.error(certificate.getCompany());
-        LOGGER.error(certificate.getExpirationDate().toString());
-        LOGGER.error(certificate.getCredentialId());
-        LOGGER.error(certificate.getCredentialURL());
-        LOGGER.error(certificate.getExpeditionDate().toString());
 
         certificate.setTransaction(transaction);
 
@@ -80,11 +69,11 @@ public class CertificateBl {
     public Certificate deleteCertificate(Integer certificateId, Transaction transaction) {
         Certificate certificate = new Certificate();
 
+        LOGGER.info("Borrando certificado");
         certificate.setCertificateId(certificateId);
         certificate.setStatus(0);
+        LOGGER.info("Certificado borrado exitosamente");
 
-        LOGGER.error(certificate.getCertificateId().toString());
-        LOGGER.error(certificate.getStatus().toString());
 
         certificate.setTransaction(transaction);
 

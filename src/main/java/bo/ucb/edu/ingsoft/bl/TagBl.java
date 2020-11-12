@@ -1,6 +1,7 @@
 package bo.ucb.edu.ingsoft.bl;
 
 import bo.ucb.edu.ingsoft.dao.TagDao;
+import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dao.UserTagsDao;
 import bo.ucb.edu.ingsoft.dto.TagRequest;
 import bo.ucb.edu.ingsoft.dto.UserRequest;
@@ -19,22 +20,26 @@ import java.util.List;
 public class TagBl {
     private TagDao tagDao;
     private UserTagsDao userTagsDao;
+    private TransactionDao transactionDao;
     private static final Logger LOGGER = LoggerFactory.getLogger(TagBl.class);
 
     @Autowired
-    public TagBl(TagDao tagDao, UserTagsDao userTagsDao) {
+    public TagBl(TagDao tagDao, UserTagsDao userTagsDao, TransactionDao transactionDao) {
         this.tagDao = tagDao;
         this.userTagsDao = userTagsDao;
+        this.transactionDao = transactionDao;
     }
 
 
 
 
-    public Tag createNewTag(TagRequest tagRequest, Integer userid) {
+    public Tag createNewTag(TagRequest tagRequest, Integer userid, Transaction transaction) {
         Tag tag=new Tag();
 
         tag.setNameTags(tagRequest.getTag());
         tag.setVerified(tagRequest.getVerified());
+        tag.setTransaction(transaction);
+
         tagDao.createTag(tag);
         Integer tagid = tagDao.getLastIdTag();
         LOGGER.info("idtag: "+tagid);

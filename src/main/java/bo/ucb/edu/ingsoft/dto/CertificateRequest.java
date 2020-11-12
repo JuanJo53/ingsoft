@@ -3,7 +3,7 @@ package bo.ucb.edu.ingsoft.dto;
 import java.util.Date;
 
 public class CertificateRequest {
-    private String name;
+    private String certificateName;
     private String company;
     private Date expeditionDate;
     private String credentialId;
@@ -13,12 +13,12 @@ public class CertificateRequest {
     public CertificateRequest() {
     }
 
-    public String getName() {
-        return name;
+    public String getCertificateName() {
+        return certificateName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setCertificateName(String certificateName) {
+        this.certificateName = certificateName;
     }
 
     public String getCompany() {
@@ -60,5 +60,4 @@ public class CertificateRequest {
     public void setExpirationDate(Date expirationDate) {
         this.expirationDate = expirationDate;
     }
-
 }

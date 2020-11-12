@@ -20,7 +20,7 @@ public class BillApi {
     private TransactionBl transactionBl;
 
     @Autowired
-    public BillApi(BillBl billBl, TransactionBl transactionBl){
+    public BillApi(BillBl billBl,TransactionBl transactionBl){
         this.billBl = billBl;
         this.transactionBl = transactionBl;
     }
@@ -28,7 +28,7 @@ public class BillApi {
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
 
-    public BillRequest createBill(@RequestBody BillRequest billRequest, HttpServletRequest request){
+    public BillRequest createBill(@RequestBody BillRequest billRequest,HttpServletRequest request){
         //Creamos transaccion para la operacion
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
