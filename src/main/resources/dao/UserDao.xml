@@ -10,7 +10,6 @@
             #{email},'PasswordNeedsSecure',null,null,
             null,1,#{transaction.txId},#{transaction.txHost},#{transaction.txUserId},
             #{transaction.txDate}
-
         )
     </insert>
 
@@ -21,7 +20,7 @@
         a.username as username,
         a.email as email
         FROM user a ,project_user b
-        where b.projects_id=#{projectsId} and b.user_id=a.user_id and b.rol=2
+        where b.projects_id=#{projectsId} and b.user_id=a.user_id and b.rol=2 and a.status = 1
 
     </select>
 
@@ -32,12 +31,9 @@
         a.username as username,
         a.email as email
         FROM user a ,project_user b
-        where b.projects_id=#{projectsId}  and b.user_id=a.user_id and b.rol=3
+        where b.projects_id=#{projectsId}  and b.user_id=a.user_id and b.rol=3 and a.status = 1
 
     </select>
-
-
-
 
     <select id="findByUserId" resultType="bo.ucb.edu.ingsoft.model.User">
         SELECT user_id as userId,
@@ -49,12 +45,14 @@
         image as image,
         cellphone as cellphone
         FROM user
+        where user_id=#{userId} and status = 1
     </select>
+
     <update id="updateUser" parameterType="bo.ucb.edu.ingsoft.model.User">
             UPDATE user SET name=#{name},surname=#{surname},
              username= #{username},email=#{email},
              description=#{description},image=#{image}, cellphone=#{cellphone}
-             WHERE user_id= #{userId}
+             WHERE user_id= #{userId} and status = 1
     </update>
 
 </mapper>

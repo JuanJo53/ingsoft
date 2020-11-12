@@ -33,7 +33,7 @@ public class  PaymentPlanBl  {
     //payment plan request
     public PaymentPlanRequest createPaymentPlan( Integer paymentPlanId,PaymentPlanRequest paymentPlanRequest,Transaction transaction){
         PaymentPlan paymentPlan = new PaymentPlan();
-
+       //payment plan data
         paymentPlan.setPaymentPlanId(paymentPlanId);
         paymentPlan.setPlan(paymentPlanRequest.getPlan());
         paymentPlan.setDescription(paymentPlanRequest.getDescription());
@@ -47,7 +47,6 @@ public class  PaymentPlanBl  {
         return paymentPlanRequest;
     }
 
-    // payments plan get
     public List<PaymentPlan> getPaymentsPlan(){ return  paymentPlanDao.getPaymentPlans();
     }
 

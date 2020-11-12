@@ -25,7 +25,7 @@ public class PaymentPlanApi{
         this.transactionBl = transactionBl;
     }
 
-    //post
+    //post for paymentplan
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public PaymentPlanRequest createPaymentPlan(@RequestBody PaymentPlanRequest paymentPlanRequest, HttpServletRequest request) {
@@ -36,10 +36,9 @@ public class PaymentPlanApi{
         return paymentPlanResponse;
     }
 
-    //get
+    //get for paymentplan
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<PaymentPlan> getPaymentPlans(HttpServletRequest request) {
-
         return paymentPlanBl.getPaymentsPlan();
     }
 }

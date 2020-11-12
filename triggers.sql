@@ -31,7 +31,25 @@ END;
 delimiter ;
 
 --Triggers for card
+delimiter |
+CREATE  TRIGGER tr_h_card
+AFTER INSERT  ON card
+for each row
+BEGIN
+    Insert into `h_card` (`card_id`,`user_id`,`card_name`,`card_number`,`expiration_year`,`expiration_month`,`CVC`,`creation_date`,`status`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.card_id, new.user_id,new.card_name,new.card_number,new.expiration_year,new.expiration_month,new.CVC,new.creation_date,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+END;
+|
+delimiter ;
 
+delimiter |
+CREATE TRIGGER tr_h_update_card
+AFTER UPDATE ON card
+for each row
+BEGIN
+	    Insert into `h_card` (`card_id`,`user_id`,`card_name`,`card_number`,`expiration_year`,`expiration_month`,`CVC`,`creation_date`,`status`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.card_id, new.user_id,new.card_name,new.card_number,new.expiration_year,new.expiration_month,new.CVC,new.creation_date,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+END;
+|
+delimiter ;
 
 --Triggers for certificate
 delimiter |
@@ -60,7 +78,7 @@ CREATE TRIGGER tr_h_project_user
 AFTER INSERT ON project_user
 for each row
 BEGIN
-    Insert into h_project_user (project_user_id,user_id,projects_id,rol,status,tx_id,tx_host,tx_user_id,tx_date)
+    Insert into h_project_user (proyect_user_id,user_id,projects_id,rol,status,tx_id,tx_host,tx_user_id,tx_date)
     values(new.project_user_id, new.user_id,new.projects_id,new.rol
     ,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
 
@@ -73,7 +91,7 @@ CREATE TRIGGER tr_update_h_project_user
 AFTER UPDATE ON project_user
 for each row
 BEGIN
-    Insert into h_project_user (project_user_id,user_id,projects_id,rol,status,tx_id,tx_host,tx_user_id,tx_date)
+    Insert into h_project_user (proyect_user_id,user_id,projects_id,rol,status,tx_id,tx_host,tx_user_id,tx_date)
     values(new.project_user_id, new.user_id,new.projects_id,new.rol
     ,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
 
