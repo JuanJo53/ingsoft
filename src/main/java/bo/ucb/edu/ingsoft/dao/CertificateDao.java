@@ -7,6 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface CertificateDao {
+    //This function returns details of an specific certificate
     public Certificate detailsByCertificateId(Integer userId, Integer certificateId);
 
     public List<Certificate> getCertificates(Integer userId);

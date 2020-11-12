@@ -1,32 +1,32 @@
 ### GET request for all certificates of a user
-GET http://localhost:8080/user/certificates/1
+GET http://localhost:8080/user/1/certificates
 Accept: application/json
 
 ### Add new certificate to a user
-POST http://localhost:8080/user/certificates/1
+POST http://localhost:8080/user/1/certificates
 Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Curso de Fisica Basica",
-  "company": "Udemy",
-  "expeditionDate": "2018-09-01",
-  "credentialId": "456sd114sdg7sadwer98g",
-  "credentialURL": "http://udemy.com/certificados/fisica",
-  "expirationDate": "2022-09-01"
+  "certificateName": "Curso de Python Avanzado",
+  "company": "Plazi",
+  "expeditionDate": "2020-10-12",
+  "credentialId": "45687sd64114sdg7sadwer98g",
+  "credentialURL": "http://platzi.com/certificados/mate",
+  "expirationDate": "2025-10-12"
 }
 
 ### GET request for an specific certificates of a user
-GET http://localhost:8080/user/certificates/1/1
+GET http://localhost:8080/user/1/certificates/edit/3
 Accept: application/json
 
 ### Edit a certificate
-PUT http://localhost:8080/user/certificates/edit/3
+PUT http://localhost:8080/user/1/certificates/edit/1
 Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Curso de Finanzas",
+  "certificateName": "Curso de Python",
   "company": "Udemy",
   "expeditionDate": "2018-11-02",
   "credentialId": "4564sdg7sadwer98g987",
@@ -35,7 +35,6 @@ Content-Type: application/json
 }
 
 ### Soft-delete for an especific certificate
-
-DELETE http://localhost:8080/user/certificates/edit/2
+DELETE http://localhost:8080/user/1/certificates/edit/2
 Accept: application/json
 Content-Type: application/json

@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/user/certificates")
+@RequestMapping(value = "/user")
 public class CertificateApi {
 
     private CertificateBl certificateBl;
@@ -27,12 +27,12 @@ public class CertificateApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(value = "/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{userid}/certificates" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Certificate> getUserCertificates(@PathVariable("userid") Integer userid,HttpServletRequest request) {
         return certificateBl.getCertificateBasicData(userid);
     }
 
-    @RequestMapping(value = "/{userid}" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/certificates" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public CertificateRequest createCertificate(@PathVariable("userid") Integer userid,@RequestBody CertificateRequest certificateRequest, HttpServletRequest request) {
         // Creamos transaccion para la operación.
@@ -41,11 +41,11 @@ public class CertificateApi {
         CertificateRequest certificateResponse = certificateBl.createCertificate(userid,certificateRequest, transaction);
         return certificateResponse;
     }
-    @RequestMapping(value = "/{userid}/{certificateid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{userid}/certificates/edit/{certificateid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Certificate getCertificateDetails(@PathVariable("userid") Integer userid,@PathVariable("certificateid") Integer certificateid,HttpServletRequest request) {
         return certificateBl.getCertificateDetails(userid,certificateid);
     }
-    @RequestMapping(value = "/edit/{certificateid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/certificates/edit/{certificateid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public CertificateRequest editCertificate(@PathVariable("certificateid") Integer certificateId, @RequestBody CertificateRequest certificateRequest, HttpServletRequest request) {
         // Creamos transaccion para la operación.
@@ -56,7 +56,7 @@ public class CertificateApi {
         //CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
         return certificateResponse;
     }
-    @RequestMapping(value = "/edit/{certificateid}" ,method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{userid}/certificates/edit/{certificateid}" ,method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Certificate deleteCertificate(@PathVariable("certificateid") Integer certificateId, HttpServletRequest request) {
         // Creamos transaccion para la operación.
         Transaction transaction = TransactionUtil.createTransaction(request);

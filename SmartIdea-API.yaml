@@ -280,7 +280,7 @@ paths:
         410:
           description: not found
           
-  /user-certificates/{userid}:
+  /user/{userid}/certificates:
     get:
       tags:
       - certificates
@@ -335,56 +335,96 @@ paths:
           description: Certificate added
         400:
           description: can't add Certificate
+
+  /user/{userid}/certificates/edit/{certificateid}:
+    get:
+      tags:
+        - certificates
+      summary: get an specific certificate details of a user
+      description: |
+        get user certificate details
+      produces:
+        - application/json
+      parameters:
+        - name: userid
+          in: path
+          required: true
+          type: integer
+        - name: certificateid
+          in: path
+          required: true
+          type: integer
+        - in: query
+          name: page number
+          type: integer
+          description: The numbers of page that we want to view.
+        - in: query
+          name: limit
+          type: integer
+          description: The numbers of items to return.
+      responses:
+        200:
+          description: OK
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Certified"
+        410:
+          description: not found
     put:
       tags:
-      - certificates
+        - certificates
       summary: update Certificate
       description: |
-       user can update Certificate
+        user can update Certificate
       produces:
-      - application/json
+        - application/json
       parameters:
-      - name: userid
-        in : path
-        required: true
-        type: integer
-      - in: "body"
-        name: "body"
-        description: "update Certificate"
-        required: true
-        schema:
-          $ref: "#/definitions/Certified"
+        - name: userid
+          in: path
+          required: true
+          type: integer
+        - name: certificateid
+          in: path
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          description: "update Certificate"
+          required: true
+          schema:
+            $ref: "#/definitions/Certified"
       responses:
         200:
           description: Certificate updated
         400:
           description: Can't  update  Certificate
-          
+
     delete:
       tags:
-       - certificates
+        - certificates
       summary: delete certificate
       description: |
-       user can update Certificate
+        user can update Certificate
       produces:
-      - application/json
+        - application/json
       parameters:
-      - name: userid
-        in : path
-        required: true
-        type: integer
-      - in: "body"
-        name: "body"
-        description: "update Certificate"
-        required: true
-        schema:
-          $ref: "#/definitions/Certified"
+        - name: userid
+          in: path
+          required: true
+          type: integer
+        - in: "body"
+          name: "body"
+          description: "update Certificate"
+          required: true
+          schema:
+            $ref: "#/definitions/Certified"
       responses:
         200:
           description: Certificate updated
         400:
           description: can't  update  Certificate
-   
+
   /projects/{projectid}:
     put:
       tags:
