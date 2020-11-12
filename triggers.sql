@@ -4,7 +4,7 @@ CREATE TRIGGER tr_h_payment_plan
 AFTER INSERT ON payment_plan
 for each row
 BEGIN
-	Insert into `h_payment_plan` (`payment_plan_id`,`plan`,`description`,`cost`,`duration`,`creation_date`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.payment_plan_id, new.plan,new.description,new.cost,new.duration,new.creation_date,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+	Insert into `h_payment_plan` (`payment_plan_id`,`plan`,`description`,`cost`,`duration`,`status`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.payment_plan_id,new.plan,new.description,new.cost,new.duration,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
 END;
 |
 delimiter ;
@@ -14,7 +14,7 @@ CREATE TRIGGER tr_h_update_payment_plan
 AFTER UPDATE ON payment_plan
 for each row
 BEGIN
-Insert into `h_payment_plan` (`payment_plan_id`,`plan`,`description`,`cost`,`duration`,`creation_date`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.payment_plan_id, new.plan,new.description,new.cost,new.duration,new.creation_date,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
+Insert into `h_payment_plan` (`payment_plan_id`,`plan`,`description`,`cost`,`duration`,`status`,`tx_id`,`tx_host`,`tx_user_id`,`tx_date`) values(new.payment_plan_id, new.plan,new.description,new.cost,new.duration,new.status,new.tx_id,new.tx_host,new.tx_user_id,new.tx_date);
 END;
 |
 delimiter ;

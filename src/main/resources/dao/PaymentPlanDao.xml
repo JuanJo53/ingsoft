@@ -64,11 +64,4 @@
             #{transaction.txDate}
         )
     </insert>
-
-    <insert id="createBill" parameterType="bo.ucb.edu.ingsoft.model.Bill">
-        INSERT INTO bill VALUES (
-            null, #{userId},#{paymentPlanId},#{cardId},#{projectsId},#{buyDate}, #{country},#{city}
-        )
-    </insert>
-
 </mapper>
