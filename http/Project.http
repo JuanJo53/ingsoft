@@ -8,7 +8,7 @@ Content-Type: application/json
   "description": "es un poyecto es una prueba 2",
   "abilities": "El Nerd 2",
   "benefits": "mucho dinero 2",
-  "status" : "0"
+  "status" : 1
 }
 ###
 ///
@@ -21,11 +21,11 @@ Content-Type: application/json
   "description": "es un poyecto muy nuevo",
   "abilities": "El Nerd",
   "benefits": "mucho dinero ",
-  "status" : "0"
+  "status" : 1
 }
 
 ###
-GET http://localhost:8080/my-projects/2
+GET http://localhost:8080/my-projects/1
 Accept: application/json
 ###
 ///project-feed/{userid}

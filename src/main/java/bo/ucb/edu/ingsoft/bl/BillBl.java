@@ -29,19 +29,18 @@ public class BillBl {
     }
 
 
-    public BillRequest createBill(Integer billId, BillRequest billRequest, Transaction transaction){
+    public BillRequest createBill(Integer userid,Integer projectid,Integer planid,Integer cardid, BillRequest billRequest, Transaction transaction){
         Bill bill = new Bill();
 
-        bill.setBillId(billId);
-        bill.setUserId(billRequest.getUserId());
-        bill.setPaymentPlanId(billRequest.getPaymentPlanId());
-        bill.setCardId(billRequest.getCardId());
-        bill.setProjectsId(billRequest.getProjectsId());
+        bill.setUserId(userid);
+        bill.setProjectsId(projectid);
+        bill.setPaymentPlanId(planid);
+        bill.setCardId(cardid);
         bill.setBuyDate(billRequest.getBuyDate());
         bill.setBillingAddress(billRequest.getBillingAddress());
         bill.setCountry(billRequest.getCountry());
         bill.setCity(billRequest.getCity());
-        bill.setStatus(1);
+        bill.setStatus(billRequest.getStatus());
 
         bill.setTransaction(transaction);
         billDao.newBill(bill);
@@ -49,7 +48,7 @@ public class BillBl {
         return billRequest;
     }
 
-    public List<Bill> getBill(){ return billDao.getBills(); }
+    public List<Bill> getBill(Integer userid){ return billDao.getBills(userid); }
 
 }
 

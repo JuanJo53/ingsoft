@@ -16,7 +16,7 @@
             status as status
         FROM card
         WHERE
-            card_id = #{cardId}
+            card_id = #{cardId} and status = 1
     </select>
     <resultMap id="cardResultMap" type="bo.ucb.edu.ingsoft.model.Card">
         <id column="userId" property="userId"></id>
@@ -34,13 +34,10 @@
             card_name as cardName,
             card_number as cardNumber,
             expiration_year as expirationYear,
-            expiration_month as expirationMonth,
-            cvc as cvc,
-            creation_date as creationDate,
-            status as status,
+            expiration_month as expirationMonth
         FROM card
         WHERE
-            user_id = #{userId}
+            user_id = #{userId} and status = 1
     </select>
     <insert id="newCard" parameterType="bo.ucb.edu.ingsoft.model.Card">
         INSERT INTO card VALUES (
@@ -72,6 +69,8 @@
             creation_date=#{creationDate},
             status=#{status}
         where
-            card_id = #{cardId}
+            card_id = #{cardId} and status = 1
     </update>
+
+
 </mapper>

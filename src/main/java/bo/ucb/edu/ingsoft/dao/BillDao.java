@@ -8,5 +8,5 @@ import java.util.List;
 public interface BillDao {
     public Bill detailsByBillId(Integer billId);
     public void newBill(Bill bill);
-    public List<Bill> getBills();
+    public List<Bill> getBills(Integer userid);
 }

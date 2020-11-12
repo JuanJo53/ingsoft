@@ -1,18 +1,17 @@
-GET http://localhost:8080/user/bill/1
+GET http://localhost:8080/user/1/bill
 Accept: application/json
 Content-Type: application/json
 
 ###
-POST http://localhost:8080/bill
+POST http://localhost:8080/user/1/my-projects/1/buy/1/1
 Accept: application/json
 Content-Type: application/json
 
 {
-
   "buyDate": "2020-25-17",
-  "billingAddress": " ",
+  "billingAddress": "",
   "country": "Bolivia",
   "city": "La Paz",
-  "status":"0"
+  "status": 1
 }
 ###

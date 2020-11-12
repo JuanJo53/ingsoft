@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-@RequestMapping(value="/bill")
+@RequestMapping(value="/user")
 public class BillApi {
     private BillBl billBl;
     private TransactionBl transactionBl;
@@ -25,19 +25,18 @@ public class BillApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/my-projects/{projectid}/buy/{planid}/{cardid}",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-
-    public BillRequest createBill(@RequestBody BillRequest billRequest,HttpServletRequest request){
+    public BillRequest createBill(@PathVariable("userid") Integer userid,@PathVariable("projectid") Integer projectid,@PathVariable("planid") Integer planid,@PathVariable("cardid") Integer cardid,@RequestBody BillRequest billRequest,HttpServletRequest request){
         //Creamos transaccion para la operacion
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-        BillRequest billResponse = billBl.createBill(1,billRequest,transaction);
+        BillRequest billResponse = billBl.createBill(userid,projectid,planid,cardid,billRequest,transaction);
         return billResponse;
     }
 
-    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Bill> getBills(HttpServletRequest request){
-        return billBl.getBill();
+    @RequestMapping(value = "/{userid}/bill",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Bill> getBills(@PathVariable("userid") Integer userid,HttpServletRequest request){
+        return billBl.getBill(userid);
     }
 }

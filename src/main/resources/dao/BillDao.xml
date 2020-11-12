@@ -13,34 +13,14 @@
             buy_date as buyDate,
             billing_address as billingAddress,
             country as country,
-            city as city,
-            status as status
-
+            city as city
         FROM bill
         WHERE
-            bill_id = #{billId}
+            bill_id = #{billId} and status = 1
     </select>
 
-    <insert id="createBill" parameterType="bo.ucb.edu.ingsoft.model.Bill">
-        INSERT INTO bill VALUES (
-            null,
-            #{userId},
-            #{paymentPlanId},
-            #{cardId},
-            #{projectsId},
-            #{buyDate},
-            #{billingAddress},
-            #{country},
-            #{city},
-            #{status},
-            #{transaction.txId},
-            #{transaction.txHost},
-            #{transaction.txUserId},
-            #{transaction.txDate}
-        )
-    </insert>
-    <resultMap id="billsResultMap" type="bo.ucb.edu.ingsoft.model.Bill">
-        <id column="billId" property="billId"></id>
+   <resultMap id="billsResultMap" type="bo.ucb.edu.ingsoft.model.Bill">
+        <id column="bill_id" property="billId"></id>
         <result column="userId" property="userId"></result>
         <result column="paymentPlanId" property="paymentPlanId"></result>
         <result column="cardId" property="cardId"></result>
@@ -49,10 +29,10 @@
         <result column="billingAddress" property="billingAddress"></result>
         <result column="country" property="country"></result>
         <result column="city" property="city"></result>
-        <result column="status" property="status"></result>
     </resultMap>
     <select id="getBills" resultMap="billsResultMap">
         SELECT
+            bill_id as billId,
             user_id as userId,
             payment_plan_id as paymentPlanId,
             card_id as cardId,
@@ -60,11 +40,10 @@
             buy_date as buyDate,
             billing_address as billingAddress,
             country as country,
-            city as city,
-            status as status,
-        FROM card
+            city as city
+        FROM bill
         WHERE
-            user_id = #{userId}
+            user_id = #{userId} and status = 1
     </select>
 
     <insert id="newBill" parameterType="bo.ucb.edu.ingsoft.model.Bill">

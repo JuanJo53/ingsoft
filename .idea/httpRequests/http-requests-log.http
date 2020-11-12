@@ -1,3 +1,344 @@
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T062249.200.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T062121.500.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T061830.500.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T061735.500.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T061726.500.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T061613.500.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T061503.500.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T061339.500.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T061313.500.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T061119.404.json
+
+###
+
+POST http://localhost:8080/user/1/my-projects/1/buy/1/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "buyDate": "2020-25-17",
+  "billingAddress": "",
+  "country": "Bolivia",
+  "city": "La Paz",
+  "status": 1
+}
+
+<> 2020-11-12T061106.200.json
+
+###
+
+POST http://localhost:8080/user/1/my-projects/1/buy/1/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "buyDate": "2020-25-17",
+  "billingAddress": "",
+  "country": "Bolivia",
+  "city": "La Paz",
+  "status": 0
+}
+
+<> 2020-11-12T061049.200.json
+
+###
+
+POST http://localhost:8080/bill
+Accept: application/json
+Content-Type: application/json
+
+{
+  "buyDate": "2020-25-17",
+  "billingAddress": "",
+  "country": "Bolivia",
+  "city": "La Paz",
+  "status": 0
+}
+
+<> 2020-11-12T055414.500.json
+
+###
+
+GET http://localhost:8080/user/card/1
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T055117.200.json
+
+###
+
+GET http://localhost:8080/user/card/1
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T054546.200.json
+
+###
+
+PUT http://localhost:8080/user/card/edit/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta Daniel",
+  "cardNumber": "43674786",
+  "expirationYear": "2022",
+  "expirationMonth": "07",
+  "cvc": "12345",
+  "creationDate": "2022-11-01",
+  "status": 1
+
+}
+
+<> 2020-11-12T054337.200.json
+
+###
+
+GET http://localhost:8080/user/card/1
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T054310.200.json
+
+###
+
+POST http://localhost:8080/user/card
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta VISA",
+  "cardNumber": "123456789",
+  "expirationYear": "2021",
+  "expirationMonth": "12",
+  "cvc": "321",
+  "creationDate": "2022-11-01",
+  "status": 1
+}
+
+<> 2020-11-12T054308.200.json
+
+###
+
+GET http://localhost:8080/user/card/1
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T054237.200.json
+
+###
+
+GET http://localhost:8080/user/card/1
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T053923.500.json
+
+###
+
+POST http://localhost:8080/user/card
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta Roberto",
+  "cardNumber": "43674786",
+  "expirationYear": "2021",
+  "expirationMonth": "07",
+  "cvc": "12345",
+  "creationDate": "2022-11-01",
+  "status":1
+
+}
+
+<> 2020-11-12T053907.200.json
+
+###
+
+GET http://localhost:8080/user/card/1
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-11-12T053839.500.json
+
+###
+
+GET http://localhost:8080/my-projects/1
+Accept: application/json
+
+<> 2020-11-12T053736.200.json
+
+###
+
+GET http://localhost:8080/my-projects/2
+Accept: application/json
+
+###
+
+GET http://localhost:8080/my-projects/2
+Accept: application/json
+
+<> 2020-11-12T053653.500.json
+
+###
+
+GET http://localhost:8080/my-projects/list/work_on/3
+Accept: application/json
+
+<> 2020-11-12T053648.200.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-members
+Accept: application/json
+
+<> 2020-11-12T053646.200.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-request
+Accept: application/json
+
+<> 2020-11-12T053643.200.json
+
+###
+
+GET http://localhost:8080/my-projects/list/1
+Accept: application/json
+
+<> 2020-11-12T053637.200.json
+
+###
+
+GET http://localhost:8080/my-projects/project-feed/1
+Accept: application/json
+
+<> 2020-11-12T053631.200.json
+
+###
+
+GET http://localhost:8080/my-projects/2
+Accept: application/json
+
+<> 2020-11-12T053444.500.json
+
+###
+
+PUT http://localhost:8080/my-projects/edit/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "abilities": "El Nerd",
+  "benefits": "mucho dinero ",
+  "status" : 1
+}
+
+<> 2020-11-12T053431.200.json
+
+###
+
+PUT http://localhost:8080/my-projects/edit/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "abilities": "El Nerd",
+  "benefits": "mucho dinero ",
+  "status" : "0"
+}
+
+<> 2020-11-12T053423.200.json
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "abilities": "El Nerd 2",
+  "benefits": "mucho dinero 2",
+  "status" : 1
+}
+
+<> 2020-11-12T053058.200.json
+
+###
+
 GET http://localhost:8080/user/notification/list/2
 Accept: application/json
 
@@ -134,312 +475,6 @@ GET http://localhost:8080/paymentPlan
 Accept: application/json
 
 <> 2020-11-12T041716.200.json
-
-###
-
-POST http://localhost:8080/paymentPlan
-Accept: application/json
-Content-Type: application/json
-
-{
-  "plan": "6 meses",
-  "description": " 6 meses de publicidad para tu proyecto",
-  "cost": "450.12",
-  "duration": "6",
-  "status":"0"
-}
-
-<> 2020-11-12T041702.200.json
-
-###
-
-GET http://localhost:8080/paymentPlan
-Accept: application/json
-
-<> 2020-11-12T041659.200.json
-
-###
-
-GET http://localhost:8080/users/3
-Accept: application/json
-
-<> 2020-11-12T033308.200.json
-
-###
-
-GET http://localhost:8080/users/1
-Accept: application/json
-
-<> 2020-11-12T033301.200.json
-
-###
-
-GET http://localhost:8080/users/1
-Accept: application/json
-
-<> 2020-11-12T033225.500.json
-
-###
-
-GET http://localhost:8080/users/1
-Accept: application/json
-
-<> 2020-11-12T032928.500.json
-
-###
-
-POST http://localhost:8080/users/newusers
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "Marco",
-  "surname": "Polo",
-  "nickName": "polito",
-  "email": "polito@gmail.com"
-}
-
-<> 2020-11-12T032908.200.json
-
-###
-
-POST http://localhost:8080/users/newusers
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "Juan",
-  "surname": "Perez",
-  "nickName": "jperez",
-  "email": "example@gmail.com"
-}
-
-<> 2020-11-12T032827.200.json
-
-###
-
-PUT http://localhost:8080/users/editprofile/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "otro lorito",
-  "surname": "Fernandez",
-  "nickName": "El paisano",
-  "email": "example@gmail.com",
-  "description": "Me gusta el sql",
-  "image": null,
-  "cellphone": "75281857"
-}
-
-<> 2020-11-12T032743.200.json
-
-###
-
-GET http://localhost:8080/users/1
-Accept: application/json
-
-<> 2020-11-12T031853.200.json
-
-###
-
-POST http://localhost:8080/users/newusers
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "lorito",
-  "surname": "Fernandez",
-  "nickName": "El yepas",
-  "email": "example@gmail.com"
-}
-
-<> 2020-11-12T031812.200.json
-
-###
-
-POST http://localhost:8080/users/newusers
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "lorito",
-  "surname": "Fernandez",
-  "nickName": "El yepas",
-  "email": "example@gmail.com"
-}
-
-<> 2020-11-12T031745.500.json
-
-###
-
-GET http://localhost:8080/user/notification/1
-Accept: application/json
-
-###
-
-GET http://localhost:8080/user/notification/list/1
-Accept: application/json
-
-<> 2020-11-12T024317.200.json
-
-###
-
-GET http://localhost:8080/user/notification/list/2
-Accept: application/json
-
-<> 2020-11-12T024310.200.json
-
-###
-
-GET http://localhost:8080/user/notification/list/1
-Accept: application/json
-
-<> 2020-11-12T024302.200.json
-
-###
-
-GET http://localhost:8080/user/notification/user/1
-Accept: application/json
-
-<> 2020-11-12T024154.200.json
-
-###
-
-GET http://localhost:8080/user/notification/user/2
-Accept: application/json
-
-<> 2020-11-12T024041.200.json
-
-###
-
-GET http://localhost:8080/user/notification/user/2
-Accept: application/json
-
-<> 2020-11-12T024034.200.json
-
-###
-
-GET http://localhost:8080/user/notification/user/1
-Accept: application/json
-
-<> 2020-11-12T024019.200.json
-
-###
-
-GET http://localhost:8080/user/notification/1
-Accept: application/json
-
-<> 2020-11-12T023942.200.json
-
-###
-
-GET http://localhost:8080/my-projects/list/work_on/3
-Accept: application/json
-
-<> 2020-11-12T123105.200.json
-
-###
-
-GET http://localhost:8080/my-projects/3/user-members
-Accept: application/json
-
-<> 2020-11-12T123059.200.json
-
-###
-
-GET http://localhost:8080/my-projects/3/user-request
-Accept: application/json
-
-<> 2020-11-12T123050.200.json
-
-###
-
-GET http://localhost:8080/my-projects/list/1
-Accept: application/json
-
-<> 2020-11-12T123034.200.json
-
-###
-
-GET http://localhost:8080/my-projects/project-feed/1
-Accept: application/json
-
-<> 2020-11-12T123031.200.json
-
-###
-
-GET http://localhost:8080/my-projects/project-feed/1
-Accept: application/json
-
-<> 2020-11-12T123019.200.json
-
-###
-
-GET http://localhost:8080/my-projects/2
-Accept: application/json
-
-<> 2020-11-12T123010.200.json
-
-###
-
-PUT http://localhost:8080/my-projects/edit/3
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectTitle": "Autos voladores",
-  "description": "es un poyecto muy nuevo",
-  "abilities": "El Nerd",
-  "benefits": "mucho dinero ",
-  "status" : "0"
-}
-
-<> 2020-11-12T123003.200.json
-
-###
-
-POST http://localhost:8080/my-projects/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectTitle": "Esto es una prueba 2",
-  "description": "es un poyecto es una prueba 2",
-  "abilities": "El Nerd 2",
-  "benefits": "mucho dinero 2",
-  "status" : "0"
-}
-
-<> 2020-11-12T122957.200.json
-
-###
-
-GET http://localhost:8080/my-projects/list/work_on/3
-Accept: application/json
-
-<> 2020-11-12T122422.200.json
-
-###
-
-GET http://localhost:8080/my-projects/3/user-members
-Accept: application/json
-
-<> 2020-11-12T121951.200.json
-
-###
-
-GET http://localhost:8080/my-projects/3/user-request
-Accept: application/json
-
-<> 2020-11-12T121743.200.json
-
-###
-
-GET http://localhost:8080/my-projects/3/user-request
-Accept: application/json
-
-<> 2020-11-12T121633.200.json
 
 ###
 

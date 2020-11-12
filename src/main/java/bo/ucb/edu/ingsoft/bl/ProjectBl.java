@@ -75,8 +75,8 @@ public class ProjectBl {
     }
 
     public Project detailsByprojectId(Integer projectid) {
-        Project p=projectDao.detailsproyect(projectid);
-        LOGGER.error(p.getAbilities());
+//        Project p=projectDao.detailsproyect(projectid);
+//        LOGGER.error(p.getAbilities());
         return  projectDao.detailsproyect(projectid);
     }
 
