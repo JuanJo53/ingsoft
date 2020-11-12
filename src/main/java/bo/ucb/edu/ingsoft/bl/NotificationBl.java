@@ -28,4 +28,10 @@ public class NotificationBl {
     public List<Notification> notificationList(Integer userId){
         return notificationDao.getNotification(userId);
     }
+
+
+    public  Notification editstatus(Notification notification){
+        notificationDao.UpdateStatus(notification);
+        return notification;
+    }
 }

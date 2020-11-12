@@ -1,14 +1,15 @@
 package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.NotificationBl;
+import bo.ucb.edu.ingsoft.dto.NotificationRequest;
+import bo.ucb.edu.ingsoft.dto.ProjectRequest;
 import bo.ucb.edu.ingsoft.model.Certificate;
 import bo.ucb.edu.ingsoft.model.Notification;
+import bo.ucb.edu.ingsoft.model.Transaction;
+import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -32,6 +33,21 @@ public class NotificationApi {
     public List<Notification> getnotificationlist(HttpServletRequest request, @PathVariable("userid") Integer Id) {
 
         return notificationBl.notificationList(Id);
+    }
+
+
+
+    @RequestMapping(value = "/update/{idnotification}/{status}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE )
+    public Notification editproyect(@PathVariable("idnotification") Integer id,@PathVariable("status") Integer status, HttpServletRequest request) {
+
+
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        Notification notification=new Notification() ;
+        notification.setNotificationId(id);
+        notification.setStatus(status);
+        notificationBl.editstatus(notification);
+
+        return notification;
     }
 
 }

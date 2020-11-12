@@ -24,5 +24,11 @@
         FROM notification
         where notification_id=#{notificationId} and status=1
     </select>
-
+    <update id="UpdateStatus" parameterType="bo.ucb.edu.ingsoft.model.Notification">
+        Update notification
+        set
+            status=#{status}
+        where
+            notification_id = #{notificationId}
+    </update>
 </mapper>

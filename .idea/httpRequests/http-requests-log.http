@@ -1,3 +1,10 @@
+PUT http://localhost:8080/user/notification/update/1/2
+Accept: application/json
+
+<> 2020-11-12T062747.200.json
+
+###
+
 GET http://localhost:8080/user/1/bill
 Accept: application/json
 Content-Type: application/json
@@ -468,13 +475,6 @@ Content-Type: application/json
 }
 
 <> 2020-11-12T042041.200.json
-
-###
-
-GET http://localhost:8080/paymentPlan
-Accept: application/json
-
-<> 2020-11-12T041716.200.json
 
 ###
 

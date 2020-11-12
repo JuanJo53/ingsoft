@@ -9,4 +9,5 @@ import java.util.List;
 public interface NotificationDao {
      public Notification detailsByNotificationId(Integer notificationId);
     public List<Notification> getNotification(Integer userId);
+    public void  UpdateStatus(Notification notification);
 }
