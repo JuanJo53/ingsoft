@@ -50,18 +50,4 @@
         )
     </insert>
 
-    <insert id="createPaymentPlan" parameterType="bo.ucb.edu.ingsoft.model.PaymentPlan">
-        INSERT INTO payment_plan VALUES (
-            null,
-            #{plan},
-            #{description},
-            #{cost},
-            #{duration},
-            #{status},
-            #{transaction.txId},
-            #{transaction.txHost},
-            #{transaction.txUserId},
-            #{transaction.txDate}
-        )
-    </insert>
 </mapper>
