@@ -5,6 +5,7 @@ import bo.ucb.edu.ingsoft.dao.BillDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.BillRequest;
 import bo.ucb.edu.ingsoft.model.Bill;
+import bo.ucb.edu.ingsoft.model.PaymentPlan;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,6 +29,8 @@ public class BillBl {
         return billDao.detailsByBillId(billId);
     }
 
+
+
     public BillRequest createBill(Integer billId, BillRequest billRequest, Transaction transaction){
         Bill bill = new Bill();
 
@@ -41,6 +44,8 @@ public class BillBl {
         bill.setCountry(billRequest.getCountry());
         bill.setCity(billRequest.getCity());
         bill.setStatus(1);
+
+
 
         bill.setTransaction(transaction);
         billDao.newBill(bill);
