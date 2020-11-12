@@ -80,10 +80,21 @@ public List<Project> getpryectlist(@PathVariable("userid") Integer id){
     }
 
 
+    @RequestMapping(value = "/list/work_on/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Project> getpryectlistuserparticipate(@PathVariable("userid") Integer id){
+        return projectBl.listproyectuserparticioate(id);
+    }
+
+
     @RequestMapping(value = "/{projectid}/user-request" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<User> userprojetrecuest(@PathVariable("projectid") Integer id){
         return  projectBl.listUserProject(id);
     }
 
+
+    @RequestMapping(value = "/{projectid}/user-members" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<User> userprojetparticioate(@PathVariable("projectid") Integer id){
+        return  projectBl.listUserProjectparticipate(id);
+    }
 
 }

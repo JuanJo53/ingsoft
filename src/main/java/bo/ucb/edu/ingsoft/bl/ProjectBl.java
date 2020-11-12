@@ -89,8 +89,17 @@ public class ProjectBl {
         return  projectDao.listproyectuser(idUser);
     }
 
+    public List<Project>listproyectuserparticioate(Integer idUser){
+        return  projectDao.listproyectuserparticipate(idUser);
+    }
+
     public List<User>listUserProject(Integer idproject){
 
         return userDao.listproyectuser(idproject);
+    }
+
+    public List<User>listUserProjectparticipate(Integer idproject){
+
+        return userDao.listproyectuserparticipan(idproject);
     }
 }

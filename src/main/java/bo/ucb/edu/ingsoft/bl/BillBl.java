@@ -5,7 +5,6 @@ import bo.ucb.edu.ingsoft.dao.BillDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.BillRequest;
 import bo.ucb.edu.ingsoft.model.Bill;
-import bo.ucb.edu.ingsoft.model.PaymentPlan;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,7 +19,7 @@ public class BillBl {
     private TransactionDao transactionDao;
 
     @Autowired
-    public BillBl(BillDao billDao, TransactionDao transactionDao){
+    public BillBl(BillDao billDao,TransactionDao transactionDao){
         this.billDao = billDao;
         this.transactionDao = transactionDao;
     }
@@ -28,7 +27,6 @@ public class BillBl {
     public Bill detailsByBillId(Integer billId){
         return billDao.detailsByBillId(billId);
     }
-
 
 
     public BillRequest createBill(Integer billId, BillRequest billRequest, Transaction transaction){
@@ -44,8 +42,6 @@ public class BillBl {
         bill.setCountry(billRequest.getCountry());
         bill.setCity(billRequest.getCity());
         bill.setStatus(1);
-
-
 
         bill.setTransaction(transaction);
         billDao.newBill(bill);

@@ -8,7 +8,7 @@
         VALUES (
             null,#{name},#{surname},#{username},
             #{email},'PasswordNeedsSecure',null,null,
-            null,#{transaction.txId},#{transaction.txHost},#{transaction.txUserId},
+            null,1,#{transaction.txId},#{transaction.txHost},#{transaction.txUserId},
             #{transaction.txDate}
 
         )
@@ -24,6 +24,21 @@
         where b.projects_id=#{projectsId} and b.user_id=a.user_id and b.rol=2
 
     </select>
+
+    <select id="listproyectuserparticipan" resultType="bo.ucb.edu.ingsoft.model.User">
+        SELECT a.user_id as userId,
+        a.name as name,
+        a.surname as surname,
+        a.username as username,
+        a.email as email
+        FROM user a ,project_user b
+        where b.projects_id=#{projectsId}  and b.user_id=a.user_id and b.rol=3
+
+    </select>
+
+
+
+
     <select id="findByUserId" resultType="bo.ucb.edu.ingsoft.model.User">
         SELECT user_id as userId,
         name as name,
