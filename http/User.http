@@ -25,7 +25,7 @@ Content-Type: application/json
   "nickName": "El paisano",
   "email": "example@gmail.com",
   "description": "Me gusta el sql",
-  "image": null,
+  "image": "B64encondeimageOrDirOfFile",
   "cellphone": "75281857"
 }
 ###

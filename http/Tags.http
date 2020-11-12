@@ -1,5 +1,5 @@
 ### POST new tag
-POST http://localhost:8080/tags/createTag/1
+POST http://localhost:8080/tags/userTag/1
 Accept: application/json
 Content-Type: application/json
 

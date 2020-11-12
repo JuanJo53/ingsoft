@@ -214,6 +214,7 @@ CREATE TABLE h_user (
 CREATE TABLE media (
     media_id int NOT NULL AUTO_INCREMENT,
     projects_id int NOT NULL,
+    title varchar(50) NOT NULL;
     url varchar(200) NOT NULL,
     type int NOT NULL,
     creation_date date NOT NULL,

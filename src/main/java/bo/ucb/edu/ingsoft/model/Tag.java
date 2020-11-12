@@ -4,6 +4,7 @@ public class Tag {
     private Integer tagId;
     private String nameTags;
     private Integer verified;
+    private Integer status;
     private Transaction transaction;
 
     public Tag() {transaction=new Transaction();}
@@ -39,6 +40,14 @@ public class Tag {
 
     public void setVerified(Integer verified) {
         this.verified = verified;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Transaction getTransaction() {

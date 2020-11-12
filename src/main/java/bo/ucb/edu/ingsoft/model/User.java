@@ -10,6 +10,7 @@ public class User {
     private String description;
     private String image;
     private String cellphone;
+    private Integer status;
     private Transaction transaction;
 
     public User() {
@@ -105,6 +106,14 @@ public class User {
 
     public void setCellphone(String cellphone) {
         this.cellphone = cellphone;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 
     public Transaction getTransaction() {

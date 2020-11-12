@@ -1,0 +1,15 @@
+### add image by projectId /my-projects/{idproject}/media/addMedia (type uses 0:deleted 1:image 2:video)
+POST http://localhost:8080/my-projects/1/media/addMedia
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "fotito.jpeg",
+  "url": "B64encondeimageOrASimpleDirFile",
+  "type": "1"
+}
+
+###
+
+GET http://localhost:8080/my-projects/1/media
+Accept: application/json
