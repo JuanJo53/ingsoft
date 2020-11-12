@@ -1,5 +1,5 @@
 ### Create new user
-POST http://localhost:8080/users/newuser
+POST http://localhost:8080/users/newusers
 Accept: application/json
 Content-Type: application/json
 

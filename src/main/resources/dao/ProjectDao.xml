@@ -11,8 +11,8 @@
             #{abilities},
             #{benefits},
             #{views},
-            #{status},
             #{createDate},
+            #{status},
             #{transaction.txId},
             #{transaction.txHost},
             #{transaction.txUserId},
@@ -54,6 +54,19 @@
         FROM projects
     </select>
 
+    <select id="listproyectuserparticipate" resultType="bo.ucb.edu.ingsoft.model.Project">
+        SELECT a.projects_id as projectsId,
+        a.project_title as projectTitle,
+        a.description as description,
+        a.abilities as abilities,
+        a.benefits as benefits,
+        a.status as status,
+        a.create_date as createDate
+        FROM projects a ,project_user b
+        where a.projects_id=b.projects_id and b.user_id=#{UserId} and b.rol=3
+
+    </select>
+
     <select id="listproyectuser" resultType="bo.ucb.edu.ingsoft.model.Project">
         SELECT a.projects_id as projectsId,
         a.project_title as projectTitle,
@@ -63,10 +76,9 @@
         a.status as status,
         a.create_date as createDate
         FROM projects a ,project_user b
-        where a.projects_id=b.projects_id and b.user_id=#{UserId}
+        where a.projects_id=b.projects_id and b.user_id=#{UserId} and b.rol=1
 
     </select>
-
     <select id="getLastInsertIdProject" resultType="java.lang.Integer">
     SELECT projects_id FROM projects ORDER BY projects_id DESC LIMIT 1
     </select>
