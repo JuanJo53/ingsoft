@@ -1,0 +1,408 @@
+GET http://localhost:8080/user/notification/list/1
+Accept: application/json
+
+<> 2020-11-12T024317.200.json
+
+###
+
+GET http://localhost:8080/user/notification/list/2
+Accept: application/json
+
+<> 2020-11-12T024310.200.json
+
+###
+
+GET http://localhost:8080/user/notification/list/1
+Accept: application/json
+
+<> 2020-11-12T024302.200.json
+
+###
+
+GET http://localhost:8080/user/notification/user/1
+Accept: application/json
+
+<> 2020-11-12T024154.200.json
+
+###
+
+GET http://localhost:8080/user/notification/user/2
+Accept: application/json
+
+<> 2020-11-12T024041.200.json
+
+###
+
+GET http://localhost:8080/user/notification/user/2
+Accept: application/json
+
+<> 2020-11-12T024034.200.json
+
+###
+
+GET http://localhost:8080/user/notification/user/1
+Accept: application/json
+
+<> 2020-11-12T024019.200.json
+
+###
+
+GET http://localhost:8080/user/notification/1
+Accept: application/json
+
+<> 2020-11-12T023942.200.json
+
+###
+
+GET http://localhost:8080/my-projects/list/work_on/3
+Accept: application/json
+
+<> 2020-11-12T123105.200.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-members
+Accept: application/json
+
+<> 2020-11-12T123059.200.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-request
+Accept: application/json
+
+<> 2020-11-12T123050.200.json
+
+###
+
+GET http://localhost:8080/my-projects/list/1
+Accept: application/json
+
+<> 2020-11-12T123034.200.json
+
+###
+
+GET http://localhost:8080/my-projects/project-feed/1
+Accept: application/json
+
+<> 2020-11-12T123031.200.json
+
+###
+
+GET http://localhost:8080/my-projects/project-feed/1
+Accept: application/json
+
+<> 2020-11-12T123019.200.json
+
+###
+
+GET http://localhost:8080/my-projects/2
+Accept: application/json
+
+<> 2020-11-12T123010.200.json
+
+###
+
+PUT http://localhost:8080/my-projects/edit/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "abilities": "El Nerd",
+  "benefits": "mucho dinero ",
+  "status" : "0"
+}
+
+<> 2020-11-12T123003.200.json
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "abilities": "El Nerd 2",
+  "benefits": "mucho dinero 2",
+  "status" : "0"
+}
+
+<> 2020-11-12T122957.200.json
+
+###
+
+GET http://localhost:8080/my-projects/list/work_on/3
+Accept: application/json
+
+<> 2020-11-12T122422.200.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-members
+Accept: application/json
+
+<> 2020-11-12T121951.200.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-request
+Accept: application/json
+
+<> 2020-11-12T121743.200.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-request
+Accept: application/json
+
+<> 2020-11-12T121633.200.json
+
+###
+
+GET http://localhost:8080/my-projects/list/1
+Accept: application/json
+
+<> 2020-11-12T121626.200.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-members
+Accept: application/json
+
+<> 2020-11-12T121610.200.json
+
+###
+
+GET http://localhost:8080/my-projects/list/1
+Accept: application/json
+
+<> 2020-11-12T114246.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com"
+}
+
+<> 2020-11-12T113741.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com"
+}
+
+<> 2020-11-12T113740.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com"
+}
+
+<> 2020-11-12T113737.200.json
+
+###
+
+PUT http://localhost:8080/my-projects/edit/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "abilities": "El Nerd",
+  "benefits": "mucho dinero ",
+  "status" : "0"
+}
+
+<> 2020-11-12T111627.200.json
+
+###
+
+GET http://localhost:8080/my-projects/2
+Accept: application/json
+
+<> 2020-11-12T111614.200.json
+
+###
+
+GET http://localhost:8080/my-projects/project-feed/1
+Accept: application/json
+
+<> 2020-11-12T111550.200.json
+
+###
+
+GET http://localhost:8080/my-projects/list/1
+Accept: application/json
+
+<> 2020-11-12T111418.200.json
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "abilities": "El Nerd 2",
+  "benefits": "mucho dinero 2",
+  "status" : "0"
+}
+
+<> 2020-11-12T111351.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com"
+}
+
+<> 2020-11-12T111342.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com"
+}
+
+<> 2020-11-12T111140.500.json
+
+###
+
+POST http://localhost:8080/users/newuser
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com"
+}
+
+<> 2020-11-12T110943.405.json
+
+###
+
+POST http://localhost:8080/users/newuser
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "lorito",
+  "surname": "Fernandez",
+  "nickName": "El yepas",
+  "email": "example@gmail.com"
+}
+
+<> 2020-11-12T110915.405.json
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "abilities": "El Nerd 2",
+  "benefits": "mucho dinero 2",
+  "status" : "0"
+}
+
+<> 2020-11-12T110843.500.json
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "abilities": "El Nerd 2",
+  "benefits": "mucho dinero 2",
+  "status" : "0"
+}
+
+<> 2020-11-12T105104.500.json
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "abilities": "El Nerd 2",
+  "benefits": "mucho dinero 2",
+  "status" : "0"
+}
+
+<> 2020-11-12T104919.500.json
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "abilities": "El Nerd 2",
+  "benefits": "mucho dinero 2",
+  "status" : "0"
+}
+
+<> 2020-11-12T104711.500.json
+
+###
+

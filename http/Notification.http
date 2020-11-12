@@ -1,0 +1,6 @@
+GET http://localhost:8080/user/notification/1
+Accept: application/json
+###
+///list/work_on/{userid}
+GET http://localhost:8080/user/notification/list/1
+Accept: application/json
