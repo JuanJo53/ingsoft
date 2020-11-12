@@ -17,11 +17,11 @@ Content-Type: application/json
 }
 
 ### GET request for an specific certificates of a user
-GET http://localhost:8080/user/1/certificates/edit/3
+GET http://localhost:8080/user/1/certificates/edit/5
 Accept: application/json
 
 ### Edit a certificate
-PUT http://localhost:8080/user/1/certificates/edit/1
+PUT http://localhost:8080/user/1/certificates/edit/5
 Accept: application/json
 Content-Type: application/json
 
@@ -35,6 +35,6 @@ Content-Type: application/json
 }
 
 ### Soft-delete for an especific certificate
-DELETE http://localhost:8080/user/1/certificates/edit/2
+DELETE http://localhost:8080/user/1/certificates/edit/5
 Accept: application/json
 Content-Type: application/json

@@ -3,7 +3,6 @@ package bo.ucb.edu.ingsoft.api;
 import bo.ucb.edu.ingsoft.bl.CertificateBl;
 import bo.ucb.edu.ingsoft.bl.TransactionBl;
 import bo.ucb.edu.ingsoft.dto.CertificateRequest;
-import bo.ucb.edu.ingsoft.dto.ProjectRequest;
 import bo.ucb.edu.ingsoft.model.Certificate;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
