@@ -1,3 +1,24 @@
+GET http://localhost:8080/user/1/certificates/3
+Accept: application/json
+
+<> 2020-11-12T111747.200.json
+
+###
+
+GET http://localhost:8080/user/1/certificates
+Accept: application/json
+
+<> 2020-11-12T111739.200.json
+
+###
+
+GET http://localhost:8080/user/1/certificates/edit/3
+Accept: application/json
+
+<> 2020-11-12T081340.200.json
+
+###
+
 GET http://localhost:8080/user/1/certificates/edit/1
 Accept: application/json
 
@@ -504,41 +525,6 @@ Accept: application/json
 Content-Type: application/json
 
 <> 2020-11-12T054237.200.json
-
-###
-
-GET http://localhost:8080/user/card/1
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T053923.500.json
-
-###
-
-POST http://localhost:8080/user/card
-Accept: application/json
-Content-Type: application/json
-
-{
-  "cardName": "Tarjeta Roberto",
-  "cardNumber": "43674786",
-  "expirationYear": "2021",
-  "expirationMonth": "07",
-  "cvc": "12345",
-  "creationDate": "2022-11-01",
-  "status":1
-
-}
-
-<> 2020-11-12T053907.200.json
-
-###
-
-GET http://localhost:8080/user/card/1
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T053839.500.json
 
 ###
 

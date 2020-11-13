@@ -42,12 +42,12 @@ public class CertificateApi {
         return certificateResponse;
     }
     //GET function that gets user certificate details
-    @RequestMapping(value = "/{userid}/certificates/edit/{certificateid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{userid}/certificates/{certificateid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Certificate getCertificateDetails(@PathVariable("userid") Integer userid,@PathVariable("certificateid") Integer certificateid,HttpServletRequest request) {
         return certificateBl.getCertificateDetails(userid,certificateid);
     }
     //PUT function that updates a user certificate data
-    @RequestMapping(value = "/{userid}/certificates/edit/{certificateid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/certificates/{certificateid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public CertificateRequest editCertificate(@PathVariable("certificateid") Integer certificateId, @RequestBody CertificateRequest certificateRequest, HttpServletRequest request) {
         // Creating transaction for this operation
@@ -57,7 +57,7 @@ public class CertificateApi {
         CertificateRequest certificateResponse=certificateBl.editCertificate(certificateRequest,certificateId,transaction);
         return certificateResponse;
     }
-    @RequestMapping(value = "/{userid}/certificates/edit/{certificateid}" ,method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{userid}/certificates/{certificateid}" ,method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
     public Certificate deleteCertificate(@PathVariable("certificateid") Integer certificateId, HttpServletRequest request) {
         // Creating transaction for this operation
         Transaction transaction = TransactionUtil.createTransaction(request);
