@@ -1,3 +1,48 @@
+GET http://localhost:8080/user/1/certificates/edit/1
+Accept: application/json
+
+###
+
+GET http://localhost:8080/user/1/certificates/edit/5
+Accept: application/json
+
+###
+
+GET http://localhost:8080/user/1/certificates
+Accept: application/json
+
+<> 2020-11-12T081037.200.json
+
+###
+
+GET http://localhost:8080/my-projects/1/media
+Accept: application/json
+
+<> 2020-11-12T073059.200.json
+
+###
+
+GET http://localhost:8080/my-projects/1/media
+Accept: application/json
+
+<> 2020-11-12T071318.200.json
+
+###
+
+POST http://localhost:8080/my-projects/1/media/addMedia
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "fotito2.jpeg",
+  "url": "B64encondeimageOrASimpleDirFile",
+  "type": "1"
+}
+
+<> 2020-11-12T071316.200.json
+
+###
+
 GET http://localhost:8080/my-projects/1/media
 Accept: application/json
 
@@ -494,46 +539,6 @@ Accept: application/json
 Content-Type: application/json
 
 <> 2020-11-12T053839.500.json
-
-###
-
-GET http://localhost:8080/my-projects/1
-Accept: application/json
-
-<> 2020-11-12T053736.200.json
-
-###
-
-GET http://localhost:8080/my-projects/2
-Accept: application/json
-
-###
-
-GET http://localhost:8080/my-projects/2
-Accept: application/json
-
-<> 2020-11-12T053653.500.json
-
-###
-
-GET http://localhost:8080/my-projects/list/work_on/3
-Accept: application/json
-
-<> 2020-11-12T053648.200.json
-
-###
-
-GET http://localhost:8080/my-projects/3/user-members
-Accept: application/json
-
-<> 2020-11-12T053646.200.json
-
-###
-
-GET http://localhost:8080/my-projects/3/user-request
-Accept: application/json
-
-<> 2020-11-12T053643.200.json
 
 ###
 

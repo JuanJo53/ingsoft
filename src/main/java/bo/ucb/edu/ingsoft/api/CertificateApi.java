@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/my")
+@RequestMapping(value = "/user")
 public class CertificateApi {
 
     private CertificateBl certificateBl;
