@@ -29,7 +29,6 @@ public class Certificate {
                 ", credentialURL='" + credentialURL + '\'' +
                 ", expirationDate=" + expirationDate +
                 ", status=" + status +
-                ", transaction=" + transaction +
                 '}';
     }
 
