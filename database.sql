@@ -1,6 +1,6 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2020-11-12 03:16:12.401
-CREATE DATABASE IF NOT EXISTS smart_idea;
+-- Last modification date: 2020-11-16 00:05:24.254
+
 -- tables
 -- Table: area
 CREATE TABLE area (
@@ -214,9 +214,9 @@ CREATE TABLE h_user (
 CREATE TABLE media (
     media_id int NOT NULL AUTO_INCREMENT,
     projects_id int NOT NULL,
-    title varchar(50) NOT NULL;
     url varchar(200) NOT NULL,
-    type int NOT NULL,
+    type int NOT NULL COMMENT '1: IMAGE
+2: VIDEO',
     creation_date date NOT NULL,
     status int NOT NULL COMMENT '0: DELETED
 1: ACTIVE',
@@ -307,12 +307,35 @@ CREATE TABLE projects_area (
     CONSTRAINT projects_area_pk PRIMARY KEY (projects_area_id)
 );
 
+-- Table: projects_skills
+CREATE TABLE projects_skills (
+    projects_skills_id int NOT NULL AUTO_INCREMENT,
+    skill_id int NOT NULL,
+    projects_id int NOT NULL,
+    CONSTRAINT projects_skills_pk PRIMARY KEY (projects_skills_id)
+);
+
 -- Table: projects_tags
 CREATE TABLE projects_tags (
     projects_tags_id int NOT NULL AUTO_INCREMENT,
     tags_id int NOT NULL,
     projects_id int NOT NULL,
     CONSTRAINT projects_tags_pk PRIMARY KEY (projects_tags_id)
+);
+
+-- Table: skills
+CREATE TABLE skills (
+    skill_id int NOT NULL,
+    skill_name varchar(100) NOT NULL,
+    verified int NOT NULL COMMENT '0: UNVERIFIED
+1: VERIFIED',
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
+    tx_id int NOT NULL,
+    tx_host varchar(100) NOT NULL,
+    tx_user_id int NOT NULL,
+    tx_date timestamp NOT NULL,
+    CONSTRAINT skills_pk PRIMARY KEY (skill_id)
 );
 
 -- Table: tags
@@ -359,6 +382,14 @@ CREATE TABLE user (
     CONSTRAINT user_pk PRIMARY KEY (user_id)
 ) COMMENT 'LLave primaria de la tabla user';
 
+-- Table: user_skill
+CREATE TABLE user_skill (
+    user_skills_id int NOT NULL AUTO_INCREMENT,
+    skill_id int NOT NULL,
+    user_id int NOT NULL,
+    CONSTRAINT user_skill_pk PRIMARY KEY (user_skills_id)
+);
+
 -- Table: user_tags
 CREATE TABLE user_tags (
     user_tags_id int NOT NULL AUTO_INCREMENT,
@@ -400,9 +431,17 @@ ALTER TABLE media ADD CONSTRAINT media_projects FOREIGN KEY media_projects (proj
 ALTER TABLE notification ADD CONSTRAINT notification_user FOREIGN KEY notification_user (user_id)
     REFERENCES user (user_id);
 
+-- Reference: projects_abilities_projects (table: projects_skills)
+ALTER TABLE projects_skills ADD CONSTRAINT projects_abilities_projects FOREIGN KEY projects_abilities_projects (projects_id)
+    REFERENCES projects (projects_id);
+
 -- Reference: projects_area_projects (table: projects_area)
 ALTER TABLE projects_area ADD CONSTRAINT projects_area_projects FOREIGN KEY projects_area_projects (projects_id)
     REFERENCES projects (projects_id);
+
+-- Reference: projects_skills (table: projects_skills)
+ALTER TABLE projects_skills ADD CONSTRAINT projects_skills FOREIGN KEY projects_skills (skill_id)
+    REFERENCES skills (skill_id);
 
 -- Reference: projects_tags_projects (table: projects_tags)
 ALTER TABLE projects_tags ADD CONSTRAINT projects_tags_projects FOREIGN KEY projects_tags_projects (projects_id)
@@ -418,6 +457,14 @@ ALTER TABLE project_user ADD CONSTRAINT proyect_user_projects FOREIGN KEY proyec
 
 -- Reference: proyect_user_user (table: project_user)
 ALTER TABLE project_user ADD CONSTRAINT proyect_user_user FOREIGN KEY proyect_user_user (user_id)
+    REFERENCES user (user_id);
+
+-- Reference: user_abilities_abilities (table: user_skill)
+ALTER TABLE user_skill ADD CONSTRAINT user_abilities_abilities FOREIGN KEY user_abilities_abilities (skill_id)
+    REFERENCES skills (skill_id);
+
+-- Reference: user_abilities_user (table: user_skill)
+ALTER TABLE user_skill ADD CONSTRAINT user_abilities_user FOREIGN KEY user_abilities_user (user_id)
     REFERENCES user (user_id);
 
 -- Reference: user_area_area (table: projects_area)
