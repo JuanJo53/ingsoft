@@ -15,8 +15,8 @@ INSERT INTO certificate VALUES (null, 1, "Curso Python Basico", "Udemy","2015-02
 INSERT INTO certificate VALUES (null, 2, "Curso programacion en java", "edX","2018-12-10","2020-12-20","a8hh9j12h134s9sss0988","https://www.edx.org/es/certificados/programacion-en-java",1,2,"192.168.1.1",2, now());
 
 -- Inserts for media table
-INSERT INTO media VALUES (null,1,"http://photos.com/super.png","image",now(),1,1,"192.168.1.1",1,now());
-INSERT INTO media VALUES (null,2,"http://photos.com/image.png","image",now(),1 ,2,"192.168.1.1",2,now());
+INSERT INTO media VALUES (null,1,"Screenshot","http://photos.com/super.png",1,now(),1,1,"192.168.1.1",1,now());
+INSERT INTO media VALUES (null,2,"Imagen de PROY","http://photos.com/image.png",1,now(),1 ,2,"192.168.1.1",2,now());
 
 -- Inserts for notification table
 INSERT INTO notification VALUES (null,1,"Nuevo interesado","Un usario esta interesado en tu proyecto",now(),1,1,"192.168.1.1",1, now());
@@ -38,9 +38,17 @@ INSERT INTO projects VALUES (null,"Arcade Videogames","Aplicacion para descargar
 INSERT INTO projects_area VALUES (null,1,1);
 INSERT INTO projects_area VALUES (null,2,2);
 
+-- Inserts for projects_skills table
+INSERT INTO projects_skills VALUES (null,1,1);
+INSERT INTO projects_skills VALUES (null,2,2);
+
 -- Inserts for projects_tags table
 INSERT INTO projects_tags VALUES (null,1,1);
 INSERT INTO projects_tags VALUES (null,2,2);
+
+-- Inserts for skills table
+INSERT INTO skills VALUES (null, "Programacion Backend con DJango",1,1,1,"192.168.1.1",1,now());
+INSERT INTO skills VALUES (null, "Diseño de Interfaces Web",2,1,2,"192.168.1.1",2,now());
 
 -- Inserts for tags table
 INSERT INTO tags VALUES (null, "python",1,1,1,"192.168.1.1",1,now());
@@ -49,6 +57,10 @@ INSERT INTO tags VALUES (null, "java",2,1,2,"192.168.1.1",2,now());
 -- Inserts for user table
 INSERT INTO user VALUES (null, "Albert", "Molina", "@almola","moli147@gmail.com","c9dd7d32e8e9","estudiante de ingenieria","profile1.png","74569310",1,1,"192.168.1.1",1, now());
 INSERT INTO user VALUES (null, "Lucas", "Gutierrez", "@aLuck","luck.gt@gmail.com","a8hh9j12h13h","estudiante","profile.png","60185633",1,2,"192.168.1.1",2, now());
+
+-- Inserts for user_skill table
+INSERT INTO user_skill VALUES (null,1,1);
+INSERT INTO user_skill VALUES (null,2,2);
 
 -- Inserts for user_tags table
 INSERT INTO user_tags VALUES (null,1,1);

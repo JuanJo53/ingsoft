@@ -2,55 +2,43 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="bo.ucb.edu.ingsoft.dao.CertificateDao">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.SkillDao">
     <resultMap id="skillsResultMap" type="bo.ucb.edu.ingsoft.model.Skill">
-        <id column="certificate_id" property="id"></id>
-        <result column="certificateName" property="certificateName"></result>
-        <result column="company" property="company"></result>
-        <result column="expeditionDate" property="expeditionDate"></result>
-        <result column="expirationDate" property="expirationDate"></result>
+        <id column="skill_id" property="id"></id>
+        <result column="skillName" property="skillName"></result>
+        <result column="verified" property="verified"></result>
     </resultMap>
-    <select id="getCertificates" resultMap="skillsResultMap">
+    <select id="getSkills" resultMap="skillsResultMap">
         SELECT
-               certificate_id as certificateId,
-               certificate_name as certificateName,
-               company as company,
-               expedition_Date as expeditionDate,
-               expiration_Date as expirationDate
-        FROM certificate
+               skill_id as skillId,
+               skill_name as skillName,
+               verified as verified
+        FROM skill
         WHERE
-            user_id = #{userId} and status = 1
+            verified = 1 and status = 1
+    </select>
+    <select id="getBySkillName" resultType="bo.ucb.edu.ingsoft.model.Skill">
+        SELECT skillId as skillId,
+        skill_name as skillName,
+        verified as verified
+        FROM skill
+        WHERE verified = 1 and skill_name=#{skillName} and status = 1
     </select>
     <insert id="newSkill" parameterType="bo.ucb.edu.ingsoft.model.Skill">
         INSERT INTO skill VALUES (
             null,
-            #{userId},
-            #{certificateName},
-            #{company},
-            #{expeditionDate},
-            #{expirationDate},
-            #{credentialId},
-            #{credentialURL},
+            #{skillName},
+            #{verified},
             #{status}
         )
     </insert>
-    <update id="updateCertificate" parameterType="bo.ucb.edu.ingsoft.model.Certificate">
-        Update certificate
+    <update id="updateSkill" parameterType="bo.ucb.edu.ingsoft.model.Skill">
+        Update skill
         set
-            certificate_name=#{certificateName},
-            company=#{company},
-            expedition_date=#{expeditionDate},
-            credential_id=#{credentialId},
-            credential_url=#{credentialURL},
-            expiration_date=#{expirationDate}
+            skill_name=#{certificateName},
+            verified=#{company},
+            status=#{expeditionDate}
         where
-            certificate_id = #{certificateId} and status = 1
-    </update>
-    <update id="deleteCertificate" parameterType="bo.ucb.edu.ingsoft.model.Certificate">
-        Update certificate
-        set
-            status=#{status}
-        where
-            certificate_id = #{certificateId} and status = 1
+            skill_id = #{skillId} and status = 1
     </update>
 </mapper>
