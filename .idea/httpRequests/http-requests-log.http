@@ -1,3 +1,179 @@
+GET http://localhost:8080/skills/projectkills/1
+Accept: application/json
+
+<> 2020-11-16T060548.200.json
+
+###
+
+GET http://localhost:8080/skills/projectkills/1
+Accept: application/json
+
+<> 2020-11-16T060430.500.json
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "benefits": "mucho dinero 2",
+  "status" : 1
+}
+
+<> 2020-11-16T060408.200.json
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "benefits": "mucho dinero 2",
+  "status" : 1
+}
+
+<> 2020-11-16T060058.500.json
+
+###
+
+POST http://localhost:8080/my-projects/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "abilities": "El Nerd 2",
+  "benefits": "mucho dinero 2",
+  "status" : 1
+}
+
+<> 2020-11-16T060042.500.json
+
+###
+
+GET http://localhost:8080/skills/userskills/2
+Accept: application/json
+
+<> 2020-11-16T055510.200.json
+
+###
+
+GET http://localhost:8080/skills/userskills/1
+Accept: application/json
+
+<> 2020-11-16T055449.200.json
+
+###
+
+GET http://localhost:8080/skills/userskills/1
+Accept: application/json
+
+<> 2020-11-16T055417.500.json
+
+###
+
+GET http://localhost:8080/skills/userskills/1
+Accept: application/json
+
+<> 2020-11-16T055340.500.json
+
+###
+
+GET http://localhost:8080/skills/1
+Accept: application/json
+
+<> 2020-11-16T055218.500.json
+
+###
+
+GET http://localhost:8080/skills/1
+Accept: application/json
+
+<> 2020-11-16T054406.500.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Maria",
+  "surname": "Lopez",
+  "nickName": "mlop",
+  "email": "lopita@gmail.com"
+}
+
+<> 2020-11-16T054215.200.json
+
+###
+
+GET http://localhost:8080/skills
+Accept: application/json
+
+<> 2020-11-16T052720.200.json
+
+###
+
+GET http://localhost:8080/skills
+Accept: application/json
+
+<> 2020-11-16T052632.500.json
+
+###
+
+POST http://localhost:8080/user/1/certificates
+Accept: application/json
+Content-Type: application/json
+
+{
+  "certificateName": "Curso de Python Avanzado",
+  "company": "Plazi",
+  "expeditionDate": "2020-10-12",
+  "credentialId": "45687sd64114sdg7sadwer98g",
+  "credentialURL": "http://platzi.com/certificados/mate",
+  "expirationDate": "2025-10-12"
+}
+
+<> 2020-11-16T051333.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Maria",
+  "surname": "Lopez",
+  "nickName": "mlop",
+  "email": "lopita@gmail.com"
+}
+
+<> 2020-11-16T051319.200.json
+
+###
+
+POST http://localhost:8080/users/newusers
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Maria",
+  "surname": "Lopez",
+  "nickName": "mlop",
+  "email": "lopita@gmail.com"
+}
+
+###
+
 GET http://localhost:8080/user/1/certificates
 Accept: application/json
 
@@ -343,187 +519,6 @@ Accept: application/json
 Content-Type: application/json
 
 <> 2020-11-12T062249.200.json
-
-###
-
-GET http://localhost:8080/user/1/bill
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T062121.500.json
-
-###
-
-GET http://localhost:8080/user/1/bill
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T061830.500.json
-
-###
-
-GET http://localhost:8080/user/1/bill
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T061735.500.json
-
-###
-
-GET http://localhost:8080/user/1/bill
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T061726.500.json
-
-###
-
-GET http://localhost:8080/user/1/bill
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T061613.500.json
-
-###
-
-GET http://localhost:8080/user/1/bill
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T061503.500.json
-
-###
-
-GET http://localhost:8080/user/1/bill
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T061339.500.json
-
-###
-
-GET http://localhost:8080/user/1/bill
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T061313.500.json
-
-###
-
-GET http://localhost:8080/user/1/bill
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T061119.404.json
-
-###
-
-POST http://localhost:8080/user/1/my-projects/1/buy/1/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Bolivia",
-  "city": "La Paz",
-  "status": 1
-}
-
-<> 2020-11-12T061106.200.json
-
-###
-
-POST http://localhost:8080/user/1/my-projects/1/buy/1/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Bolivia",
-  "city": "La Paz",
-  "status": 0
-}
-
-<> 2020-11-12T061049.200.json
-
-###
-
-POST http://localhost:8080/bill
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Bolivia",
-  "city": "La Paz",
-  "status": 0
-}
-
-<> 2020-11-12T055414.500.json
-
-###
-
-GET http://localhost:8080/user/card/1
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T055117.200.json
-
-###
-
-GET http://localhost:8080/user/card/1
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T054546.200.json
-
-###
-
-PUT http://localhost:8080/user/card/edit/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "cardName": "Tarjeta Daniel",
-  "cardNumber": "43674786",
-  "expirationYear": "2022",
-  "expirationMonth": "07",
-  "cvc": "12345",
-  "creationDate": "2022-11-01",
-  "status": 1
-
-}
-
-<> 2020-11-12T054337.200.json
-
-###
-
-GET http://localhost:8080/user/card/1
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T054310.200.json
-
-###
-
-POST http://localhost:8080/user/card
-Accept: application/json
-Content-Type: application/json
-
-{
-  "cardName": "Tarjeta VISA",
-  "cardNumber": "123456789",
-  "expirationYear": "2021",
-  "expirationMonth": "12",
-  "cvc": "321",
-  "creationDate": "2022-11-01",
-  "status": 1
-}
-
-<> 2020-11-12T054308.200.json
 
 ###
 

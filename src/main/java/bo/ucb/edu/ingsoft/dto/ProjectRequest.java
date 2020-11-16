@@ -7,7 +7,6 @@ import java.util.Date;
 public class ProjectRequest {
     private String projectTitle;
     private String description;
-    private String abilities;
     private String benefits;
     private Integer status;
 
@@ -16,7 +15,6 @@ public class ProjectRequest {
         return "ProyectRequest{" +
                 "projectTitle='" + projectTitle + '\'' +
                 ", description='" + description + '\'' +
-                ", abilities='" + abilities + '\'' +
                 ", benefits='" + benefits + '\'' +
                 ", status=" + status +
                 '}';
@@ -36,14 +34,6 @@ public class ProjectRequest {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getAbilities() {
-        return abilities;
-    }
-
-    public void setAbilities(String abilities) {
-        this.abilities = abilities;
     }
 
     public String getBenefits() {

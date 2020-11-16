@@ -1,0 +1,35 @@
+### POST new skill for a user
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tag": "Programacion Backend con Django",
+  "verified": 1
+}
+
+### POST new skill for a project
+POST http://localhost:8080/skills/projectSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tag": "c++",
+  "verified": 1
+}
+
+### GET skill by name
+
+GET http://localhost:8080/skills/python
+Accept: application/json
+
+### GET All verified skills
+GET http://localhost:8080/skills
+Accept: application/json
+
+### GET All user verified skills
+GET http://localhost:8080/skills/userskills/1
+Accept: application/json
+### GET All project verified skills
+GET http://localhost:8080/skills/projectkills/1
+Accept: application/json

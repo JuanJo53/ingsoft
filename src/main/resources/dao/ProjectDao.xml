@@ -8,7 +8,6 @@
             null,
             #{projectTitle},
             #{description},
-            #{abilities},
             #{benefits},
             #{views},
             #{createDate},
@@ -24,7 +23,6 @@
 
         Update projects set project_title=#{projectTitle},
              description=#{description},
-             abilities=#{abilities},
              benefits= #{benefits},
              views=#{views},
              status=#{status}
@@ -35,7 +33,6 @@
         SELECT projects_id as projectsId,
         project_title as projectTitle,
         description as description,
-        abilities as abilities,
         benefits as benefits,
         status as status,
         create_date as createDate
@@ -47,7 +44,6 @@
         SELECT projects_id as projectsId,
         project_title as projectTitle,
         description as description,
-        abilities as abilities,
         benefits as benefits,
         status as status,
         create_date as createDate
@@ -58,7 +54,6 @@
         SELECT a.projects_id as projectsId,
         a.project_title as projectTitle,
         a.description as description,
-        a.abilities as abilities,
         a.benefits as benefits,
         a.status as status,
         a.create_date as createDate
@@ -71,7 +66,6 @@
         SELECT a.projects_id as projectsId,
         a.project_title as projectTitle,
         a.description as description,
-        a.abilities as abilities,
         a.benefits as benefits,
         a.status as status,
         a.create_date as createDate

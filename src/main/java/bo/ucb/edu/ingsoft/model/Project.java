@@ -6,7 +6,6 @@ public class Project {
     private Integer projectsId;
     private String projectTitle;
     private String description;
-    private String abilities;
     private String benefits;
     private Integer views;
     private Integer status;
@@ -24,7 +23,6 @@ public class Project {
                 "projectsId=" + projectsId +
                 ", projectTitle='" + projectTitle + '\'' +
                 ", description='" + description + '\'' +
-                ", abilities='" + abilities + '\'' +
                 ", benefits='" + benefits + '\'' +
                 ", views=" + views +
                 ", status=" + status +
@@ -55,14 +53,6 @@ public class Project {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getAbilities() {
-        return abilities;
-    }
-
-    public void setAbilities(String abilities) {
-        this.abilities = abilities;
     }
 
     public String getBenefits() {

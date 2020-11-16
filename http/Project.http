@@ -6,7 +6,6 @@ Content-Type: application/json
 {
   "projectTitle": "Esto es una prueba 2",
   "description": "es un poyecto es una prueba 2",
-  "abilities": "El Nerd 2",
   "benefits": "mucho dinero 2",
   "status" : 1
 }
@@ -19,7 +18,6 @@ Content-Type: application/json
 {
   "projectTitle": "Autos voladores",
   "description": "es un poyecto muy nuevo",
-  "abilities": "El Nerd",
   "benefits": "mucho dinero ",
   "status" : 1
 }

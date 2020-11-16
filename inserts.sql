@@ -48,7 +48,7 @@ INSERT INTO projects_tags VALUES (null,2,2);
 
 -- Inserts for skills table
 INSERT INTO skills VALUES (null, "Programacion Backend con DJango",1,1,1,"192.168.1.1",1,now());
-INSERT INTO skills VALUES (null, "Diseño de Interfaces Web",2,1,2,"192.168.1.1",2,now());
+INSERT INTO skills VALUES (null, "Diseño de Interfaces Web",1,1,2,"192.168.1.1",2,now());
 
 -- Inserts for tags table
 INSERT INTO tags VALUES (null, "python",1,1,1,"192.168.1.1",1,now());

@@ -1,5 +1,5 @@
 -- Created by Vertabelo (http://vertabelo.com)
--- Last modification date: 2020-11-16 00:05:24.254
+-- Last modification date: 2020-11-16 21:16:36.72
 
 -- tables
 -- Table: area
@@ -284,7 +284,6 @@ CREATE TABLE projects (
     projects_id int NOT NULL AUTO_INCREMENT,
     project_title varchar(50) NOT NULL,
     description text NOT NULL,
-    abilities varchar(200) NULL,
     benefits text NULL,
     views int NOT NULL,
     create_date date NOT NULL,
@@ -325,7 +324,7 @@ CREATE TABLE projects_tags (
 
 -- Table: skills
 CREATE TABLE skills (
-    skill_id int NOT NULL,
+    skill_id int NOT NULL AUTO_INCREMENT,
     skill_name varchar(100) NOT NULL,
     verified int NOT NULL COMMENT '0: UNVERIFIED
 1: VERIFIED',

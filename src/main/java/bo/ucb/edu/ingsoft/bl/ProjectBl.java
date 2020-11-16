@@ -36,7 +36,6 @@ public class ProjectBl {
 
        project.setProjectTitle(projectRequest.getProjectTitle());
        project.setDescription(projectRequest.getDescription());
-       project.setAbilities(projectRequest.getAbilities());
        project.setBenefits(projectRequest.getBenefits());
        project.setViews(0);
        project.setStatus(projectRequest.getStatus());
@@ -65,7 +64,6 @@ public class ProjectBl {
         project.setProjectsId(id);
         project.setProjectTitle(projectRequest.getProjectTitle());
         project.setDescription(projectRequest.getDescription());
-        project.setAbilities(projectRequest.getAbilities());
         project.setBenefits(projectRequest.getBenefits());
         project.setStatus(projectRequest.getStatus());
         project.setViews(0);

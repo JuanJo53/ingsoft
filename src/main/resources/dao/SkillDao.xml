@@ -13,19 +13,45 @@
                skill_id as skillId,
                skill_name as skillName,
                verified as verified
-        FROM skill
+        FROM skills
         WHERE
             verified = 1 and status = 1
+    </select>
+    <select id="getUserSkills" resultMap="skillsResultMap">
+        SELECT
+               sk.skill_id as skillId,
+               sk.skill_name as skillName,
+               sk.verified as verified
+        FROM skills sk
+        INNER JOIN user_skill usk ON
+        usk.skill_id=sk.skill_id
+        INNER JOIN user us ON
+        us.user_id=usk.user_id
+        WHERE
+            usk.user_id=#{userid} and sk.verified = 1 and sk.status = 1
+    </select>
+    <select id="getProjectSkills" resultMap="skillsResultMap">
+        SELECT
+               sk.skill_id as skillId,
+               sk.skill_name as skillName,
+               sk.verified as verified
+        FROM skills sk
+        INNER JOIN projects_skills psk ON
+        psk.skill_id=sk.skill_id
+        INNER JOIN projects pj ON
+        pj.projects_id=psk.projects_id
+        WHERE
+            psk.projects_id=#{projectid} and sk.verified = 1 and sk.status = 1
     </select>
     <select id="getBySkillName" resultType="bo.ucb.edu.ingsoft.model.Skill">
         SELECT skillId as skillId,
         skill_name as skillName,
         verified as verified
-        FROM skill
+        FROM skills
         WHERE verified = 1 and skill_name=#{skillName} and status = 1
     </select>
     <insert id="newSkill" parameterType="bo.ucb.edu.ingsoft.model.Skill">
-        INSERT INTO skill VALUES (
+        INSERT INTO skills VALUES (
             null,
             #{skillName},
             #{verified},
@@ -33,7 +59,7 @@
         )
     </insert>
     <update id="updateSkill" parameterType="bo.ucb.edu.ingsoft.model.Skill">
-        Update skill
+        Update skills
         set
             skill_name=#{certificateName},
             verified=#{company},
