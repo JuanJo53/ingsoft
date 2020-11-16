@@ -29,8 +29,8 @@ public class CardBl {
         this.transactionDao = transactionDao;
     }
 
-    public Card detailsByCardId(Integer cardId) {
-        return cardDao.dataCardId(cardId);
+    public Card getCardDetails(Integer userid, Integer cardid) {
+        return cardDao.dataCardId(cardid);
     }
 
     //Function that gets all user certificates

@@ -32,6 +32,11 @@ public class CardApi {
         return cardBl.getCardBasicData(userid);
     }
 
+    @RequestMapping(value = "/{userid}/card/{cardid}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Card getUserCardDetails(@PathVariable("userid") Integer userid,@PathVariable("cardid") Integer cardid, HttpServletRequest request) {
+        return cardBl.getCardDetails(userid,cardid);
+    }
+
     @RequestMapping(value = "/{userid}/card",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public CardRequest createCard(@PathVariable("userid") Integer userid,@RequestBody CardRequest cardRequest, HttpServletRequest request) {
@@ -42,7 +47,7 @@ public class CardApi {
         return cardResponse;
     }
 
-    @RequestMapping(value = "/{userid}/card/edit/{cardid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/card/{cardid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
 
     public CardRequest editCard(@PathVariable("userid") Integer userid,@PathVariable("cardid") Integer cardId, @RequestBody CardRequest cardRequest, HttpServletRequest request) {
