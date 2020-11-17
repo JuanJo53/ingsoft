@@ -1,5 +1,5 @@
 
-POST http://localhost:8080/my-projects/1
+POST http://localhost:8080/user/1/projects
 Accept: application/json
 Content-Type: application/json
 
@@ -11,7 +11,7 @@ Content-Type: application/json
 }
 ###
 ///
-PUT http://localhost:8080/my-projects/edit/3
+PUT http://localhost:8080/user/1/projects/3
 Accept: application/json
 Content-Type: application/json
 
@@ -22,13 +22,13 @@ Content-Type: application/json
   "status" : 1
 }
 
-###
-GET http://localhost:8080/my-projects/1
+### GET all user owned projects
+GET http://localhost:8080/user/1/projects
 Accept: application/json
 ###
 ///project-feed/{userid}
 
-GET http://localhost:8080/my-projects/project-feed/1
+GET http://localhost:8080/user/1/project-feed
 Accept: application/json
 
 ###

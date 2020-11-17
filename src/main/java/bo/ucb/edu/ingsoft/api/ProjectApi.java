@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/my-projects")
+@RequestMapping(value = "/user")
 public class ProjectApi {
 
     private ProjectBl projectBl;
@@ -31,7 +31,7 @@ public class ProjectApi {
     }
 
 
-    @RequestMapping(value = "/{userid}" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/projects" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public ProjectRequest newproyect(@PathVariable("userid") Integer id,@RequestBody ProjectRequest projectRequest, HttpServletRequest request) {
         // Creamos transaccion para la operación.
@@ -39,13 +39,11 @@ public class ProjectApi {
         transactionBl.createTransaction(transaction);
 
         ProjectRequest projectRespont=projectBl.newproject(projectRequest,id,transaction);
-        //CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
-        //
         return projectRespont;
     }
 
 
-    @RequestMapping(value = "/edit/{projectid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/projects/{projectid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public ProjectRequest editproyect(@PathVariable("projectid") Integer id,@RequestBody ProjectRequest projectRequest, HttpServletRequest request) {
         // Creamos transaccion para la operación.
@@ -53,12 +51,10 @@ public class ProjectApi {
         transactionBl.createTransaction(transaction);
 
         ProjectRequest projectRespont=projectBl.editproject(projectRequest,id,transaction);
-        //CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
-        //
         return projectRespont;
     }
 
-    @RequestMapping(value = "/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/{userid}/projects" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public Project getpryect(@PathVariable("userid") Integer id){
         return projectBl.detailsByprojectId(id);
     }
@@ -69,8 +65,8 @@ public class ProjectApi {
     }
 * /project-feed/{userid}
 * */
-@RequestMapping(value = "/project-feed/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-public List<Project> getpryectlist(@PathVariable("userid") Integer id){
+    @RequestMapping(value = "{userid}/project-feed" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Project> getpryectlist(@PathVariable("userid") Integer id){
     return projectBl.listproyect();
 }
 
