@@ -1,28 +1,28 @@
 ### Create new user
-POST http://localhost:8080/users/newusers
+POST http://localhost:8080/users
 Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Maria",
-  "surname": "Lopez",
-  "nickName": "mlop",
-  "email": "lopita@gmail.com"
+  "name": "Ronald ",
+  "surname": "Romero",
+  "username": "ronmen",
+  "email": "ronmen@gmail.com"
 }
 
 ### Get user 1
-GET http://localhost:8080/users/1
+GET http://localhost:8080/users/2
 Accept: application/json
 
 ### Update user 1
-PUT http://localhost:8080/users/editprofile/1
+PUT http://localhost:8080/users/1
 Accept: application/json
 Content-Type: application/json
 
 {
   "name": "otro lorito",
   "surname": "Fernandez",
-  "nickName": "El paisano",
+  "username": "El paisano",
   "email": "example@gmail.com",
   "description": "Me gusta el sql",
   "image": "B64encondeimageOrDirOfFile",

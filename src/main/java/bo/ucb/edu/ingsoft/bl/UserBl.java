@@ -31,7 +31,7 @@ public class UserBl {
 
         user.setName(userRequest.getName());
         user.setSurname(userRequest.getSurname());
-        user.setUsername(userRequest.getNickName());
+        user.setUsername(userRequest.getUsername());
         user.setEmail(userRequest.getEmail());
         user.setTransaction(transaction);
 
@@ -40,10 +40,11 @@ public class UserBl {
         return  userRequest;
     }
     public User updateUser(UserUpdate userUpdate, Integer id, Transaction transaction){
-        User user = findByUserId(id);
+        User user = new User();
+        user.setUserId(id);
         user.setName(userUpdate.getName());
         user.setSurname(userUpdate.getSurname());
-        user.setUsername(userUpdate.getNickName());
+        user.setUsername(userUpdate.getUsername());
         user.setEmail(userUpdate.getEmail());
         user.setCellphone(userUpdate.getCellphone());
         user.setDescription(userUpdate.getDescription());
@@ -52,7 +53,7 @@ public class UserBl {
         return user;
     }
     public User findByUserId (Integer id1){
-        User user=userDao.findByUserId(id1);
+        User user = userDao.findByUserId(id1);
         return user;
     }
 

@@ -3,7 +3,7 @@ package bo.ucb.edu.ingsoft.dto;
 public class UserUpdate {
     private String name;
     private String surname;
-    private String nickName;
+    private String username;
     private String email;
     private String description;
     private String image;
@@ -28,12 +28,12 @@ public class UserUpdate {
         this.surname = surname;
     }
 
-    public String getNickName() {
-        return nickName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setNickName(String nickName) {
-        this.nickName = nickName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {

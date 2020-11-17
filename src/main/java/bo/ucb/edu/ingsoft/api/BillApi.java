@@ -25,7 +25,7 @@ public class BillApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(value = "/{userid}/my-projects/{projectid}/buy/{planid}/{cardid}",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/projects/{projectid}/paymentplan/{planid}/{cardid}",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public BillRequest createBill(@PathVariable("userid") Integer userid,@PathVariable("projectid") Integer projectid,@PathVariable("planid") Integer planid,@PathVariable("cardid") Integer cardid,@RequestBody BillRequest billRequest,HttpServletRequest request){
         //Creamos transaccion para la operacion

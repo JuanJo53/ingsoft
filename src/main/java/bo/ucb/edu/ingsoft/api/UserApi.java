@@ -27,7 +27,7 @@ public class UserApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(value = "/newusers", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public UserRequest createnewuser(@RequestBody UserRequest userRequest, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
@@ -36,7 +36,7 @@ public class UserApi {
         return userResponse;
     }
 
-    @RequestMapping(value = "/editprofile/{userid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public User updateuser(@PathVariable("userid") Integer id, @RequestBody UserUpdate userUpdate, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
