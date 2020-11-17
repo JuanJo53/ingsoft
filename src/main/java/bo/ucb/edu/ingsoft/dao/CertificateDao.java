@@ -1,5 +1,6 @@
 package bo.ucb.edu.ingsoft.dao;
 
+import bo.ucb.edu.ingsoft.dto.CertificateRequest;
 import bo.ucb.edu.ingsoft.model.Certificate;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -8,9 +9,9 @@ import java.util.List;
 @Mapper
 public interface CertificateDao {
     //This function returns details of an specific certificate
-    public Certificate detailsByCertificateId(Integer userId, Integer certificateId);
+    public CertificateRequest detailsByCertificateId(Integer userId, Integer certificateId);
     //This function returns all user certificates of an specific user
-    public List<Certificate> getCertificates(Integer userId);
+    public List<CertificateRequest> getCertificates(Integer userId);
     //This function creates a new certificate
     public void newCertificate(Certificate certificate);
     //This function updates an specific certificate

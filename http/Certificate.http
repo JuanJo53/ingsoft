@@ -17,7 +17,7 @@ Content-Type: application/json
 }
 
 ### GET request for an specific certificates of a user
-GET http://localhost:8080/user/1/certificates/3
+GET http://localhost:8080/user/1/certificates/1
 Accept: application/json
 
 ### Edit a certificate

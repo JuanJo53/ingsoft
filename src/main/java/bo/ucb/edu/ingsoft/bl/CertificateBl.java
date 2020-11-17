@@ -23,11 +23,11 @@ public class CertificateBl {
         this.transactionDao = transactionDao;
     }
     //This function gets a user certificate details, so user can edit this details
-    public Certificate getCertificateDetails(Integer userid,Integer certificateId) {
+    public CertificateRequest getCertificateDetails(Integer userid,Integer certificateId) {
         return  certificateDao.detailsByCertificateId(userid,certificateId);
     }
     //This function gets all user certificates basic data for showing it in a list by executing a query function in certificateDao
-    public List<Certificate> getCertificateBasicData(Integer userId) {
+    public List<CertificateRequest> getCertificateBasicData(Integer userId) {
         return  certificateDao.getCertificates(userId);
     }
     //This function creates a user certificate by executing an insert function in certificateDao

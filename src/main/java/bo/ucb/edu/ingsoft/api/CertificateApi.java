@@ -27,7 +27,7 @@ public class CertificateApi {
     }
     //GET function that gets all user certificates
     @RequestMapping(value = "/{userid}/certificates" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Certificate> getUserCertificates(@PathVariable("userid") Integer userid,HttpServletRequest request) {
+    public List<CertificateRequest> getUserCertificates(@PathVariable("userid") Integer userid,HttpServletRequest request) {
         return certificateBl.getCertificateBasicData(userid);
     }
     //POST function that creates a new certificate for a user
@@ -43,7 +43,7 @@ public class CertificateApi {
     }
     //GET function that gets user certificate details
     @RequestMapping(value = "/{userid}/certificates/{certificateid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Certificate getCertificateDetails(@PathVariable("userid") Integer userid,@PathVariable("certificateid") Integer certificateid,HttpServletRequest request) {
+    public CertificateRequest getCertificateDetails(@PathVariable("userid") Integer userid,@PathVariable("certificateid") Integer certificateid,HttpServletRequest request) {
         return certificateBl.getCertificateDetails(userid,certificateid);
     }
     //PUT function that updates a user certificate data

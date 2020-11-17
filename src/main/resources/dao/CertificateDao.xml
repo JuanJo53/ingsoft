@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bo.ucb.edu.ingsoft.dao.CertificateDao">
-    <select id="detailsByCertificateId" resultType="bo.ucb.edu.ingsoft.model.Certificate">
+    <select id="detailsByCertificateId" resultType="bo.ucb.edu.ingsoft.dto.CertificateRequest">
         SELECT
             certificate_id as certificateId,
             certificate_name as certificateName,
@@ -17,7 +17,7 @@
         WHERE
             certificate_id = #{certificateId} and user_id = #{userId} and status = 1
     </select>
-    <resultMap id="certificatesResultMap" type="bo.ucb.edu.ingsoft.model.Certificate">
+    <resultMap id="certificatesResultMap" type="bo.ucb.edu.ingsoft.dto.CertificateRequest">
         <id column="certificate_id" property="id"></id>
         <result column="certificateName" property="certificateName"></result>
         <result column="company" property="company"></result>
