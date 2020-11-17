@@ -1,3 +1,43 @@
+GET http://localhost:8080/my-projects/3/user-members
+Accept: application/json
+
+<> 2020-11-17T120937.404.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-request
+Accept: application/json
+
+<> 2020-11-17T120933.404.json
+
+###
+
+GET http://localhost:8080/my-projects/list/1
+Accept: application/json
+
+<> 2020-11-17T120909.404.json
+
+###
+
+GET http://localhost:8080/user/1/project-feed
+Accept: application/json
+
+<> 2020-11-17T120903.200.json
+
+###
+
+GET http://localhost:8080/user/1/projects
+Accept: application/json
+
+<> 2020-11-17T120859.200.json
+
+###
+
+GET http://localhost:8080/user/1/projects
+Accept: application/json
+
+###
+
 GET http://localhost:8080/user/1/card/1
 Accept: application/json
 Content-Type: application/json
@@ -432,86 +472,6 @@ Content-Type: application/json
 }
 
 <> 2020-11-12T063729.200.json
-
-###
-
-PUT http://localhost:8080/user/1/card/edit/2
-Accept: application/json
-Content-Type: application/json
-
-{
-  "cardName": "Tarjeta VISA 1",
-  "cardNumber": "43674786",
-  "expirationYear": "2022",
-  "expirationMonth": "07",
-  "cvc": "12345",
-  "creationDate": "2022-11-01",
-  "status": 1
-
-}
-
-<> 2020-11-12T063722.200.json
-
-###
-
-PUT http://localhost:8080/user/1/card/edit/2
-Accept: application/json
-Content-Type: application/json
-
-{
-  "cardName": "Tarjeta VISA 3",
-  "cardNumber": "43674786",
-  "expirationYear": "2022",
-  "expirationMonth": "07",
-  "cvc": "12345",
-  "creationDate": "2022-11-01",
-  "status": 1
-
-}
-
-<> 2020-11-12T063711.200.json
-
-###
-
-GET http://localhost:8080/user/1/card
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T063656.200.json
-
-###
-
-POST http://localhost:8080/user/1/card
-Accept: application/json
-Content-Type: application/json
-
-{
-  "cardName": "Tarjeta BNB",
-  "cardNumber": "987963958",
-  "expirationYear": "2021",
-  "expirationMonth": "12",
-  "cvc": "958",
-  "creationDate": "2022-11-01",
-  "status": 1
-}
-
-<> 2020-11-12T063647.200.json
-
-###
-
-GET http://localhost:8080/user/card/1
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T063342.200.json
-
-###
-
-GET http://localhost:8080/user/1/card/1
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-12T063333.404.json
 
 ###
 

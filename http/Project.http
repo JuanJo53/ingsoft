@@ -6,8 +6,7 @@ Content-Type: application/json
 {
   "projectTitle": "Esto es una prueba 2",
   "description": "es un poyecto es una prueba 2",
-  "benefits": "mucho dinero 2",
-  "status" : 1
+  "benefits": "mucho dinero 2"
 }
 ###
 ///
