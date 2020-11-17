@@ -52,8 +52,8 @@ public class UserBl {
         userDao.updateUser(user);
         return user;
     }
-    public User findByUserId (Integer id1){
-        User user = userDao.findByUserId(id1);
+    public UserRequest findByUserId (Integer id1){
+        UserRequest user = userDao.findByUserId(id1);
         return user;
     }
 

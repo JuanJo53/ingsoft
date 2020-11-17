@@ -35,7 +35,7 @@
 
     </select>
 
-    <select id="findByUserId" resultType="bo.ucb.edu.ingsoft.model.User">
+    <select id="findByUserId" resultType="bo.ucb.edu.ingsoft.dto.UserRequest">
         SELECT user_id as userId,
         name as name,
         surname as surname,
