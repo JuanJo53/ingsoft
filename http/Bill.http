@@ -11,7 +11,6 @@ Content-Type: application/json
   "buyDate": "2020-25-17",
   "billingAddress": "",
   "country": "Chile",
-  "city": "Santiago",
-  "status": 1
+  "city": "Santiago"
 }
 ###

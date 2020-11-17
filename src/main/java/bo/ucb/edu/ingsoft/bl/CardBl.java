@@ -51,7 +51,7 @@ public class CardBl {
         card.setExpirationMonth(cardRequest.getExpirationMonth());
         card.setCvc(cardRequest.getCvc());
         card.setCreationDate(cardRequest.getCreationDate());
-        card.setStatus(cardRequest.getStatus());
+        card.setStatus(1);
         card.setTransaction(transaction);
         cardDao.newCard(card);
         return cardRequest;

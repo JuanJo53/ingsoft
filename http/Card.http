@@ -20,8 +20,7 @@ Content-Type: application/json
   "expirationYear": 2021,
   "expirationMonth": 12,
   "cvc": 958,
-  "creationDate": "2022-11-01",
-  "status": 1
+  "creationDate": "2022-11-01"
 }
 
 ###Edit an scpecific Card

@@ -40,7 +40,7 @@ public class BillBl {
         bill.setBillingAddress(billRequest.getBillingAddress());
         bill.setCountry(billRequest.getCountry());
         bill.setCity(billRequest.getCity());
-        bill.setStatus(billRequest.getStatus());
+        bill.setStatus(1);
 
         bill.setTransaction(transaction);
         billDao.newBill(bill);
