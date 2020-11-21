@@ -3,14 +3,23 @@ package bo.ucb.edu.ingsoft.dto;
 import java.util.Date;
 
 public class CertificateRequest {
+    private Integer certificateId;
     private String certificateName;
     private String company;
-    private Date expeditionDate;
     private String credentialId;
     private String credentialURL;
+    private Date expeditionDate;
     private Date expirationDate;
 
     public CertificateRequest() {
+    }
+
+    public Integer getCertificateId() {
+        return certificateId;
+    }
+
+    public void setCertificateId(Integer certificateId) {
+        this.certificateId = certificateId;
     }
 
     public String getCertificateName() {

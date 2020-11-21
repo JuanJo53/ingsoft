@@ -21,16 +21,20 @@
         <id column="certificate_id" property="id"></id>
         <result column="certificateName" property="certificateName"></result>
         <result column="company" property="company"></result>
+        <result column="credentialId" property="credentialId"></result>
+        <result column="credentialURL" property="credentialURL"></result>
         <result column="expeditionDate" property="expeditionDate"></result>
         <result column="expirationDate" property="expirationDate"></result>
     </resultMap>
     <select id="getCertificates" resultMap="certificatesResultMap">
         SELECT
-               certificate_id as certificateId,
-               certificate_name as certificateName,
-               company as company,
-               expedition_Date as expeditionDate,
-               expiration_Date as expirationDate
+            certificate_id as certificateId,
+            certificate_name as certificateName,
+            company as company,
+            credential_id as credentialId,
+            credential_url as credentialURL,
+            expedition_Date as expeditionDate,
+            expiration_Date as expirationDate
         FROM certificate
         WHERE
             user_id = #{userId} and status = 1
