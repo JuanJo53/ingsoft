@@ -1,3 +1,50 @@
+POST http://localhost:8080/user/1/certificates
+Accept: application/json
+Content-Type: application/json
+
+{
+  "certificateName": "Curso de Python Avanzado",
+  "company": "Plazi",
+  "expeditionDate": "2020-10-12",
+  "credentialId": "45687sd64114sdg7sadwer98g",
+  "credentialURL": "http://platzi.com/certificados/mate",
+  "expirationDate": "2025-10-12"
+}
+
+<> 2020-11-21T074516.200.json
+
+###
+
+POST http://localhost:8080/user/1/projects
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "benefits": "mucho dinero 2",
+  "status" : 1
+}
+
+<> 2020-11-21T074042.200.json
+
+###
+
+POST http://localhost:8080/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Ronald ",
+  "surname": "Romero",
+  "username": "ronmen",
+  "email": "ronmen@gmail.com"
+}
+
+<> 2020-11-21T074015.200.json
+
+###
+
 GET http://localhost:8080/user/1/certificates
 Accept: application/json
 
@@ -414,39 +461,6 @@ Accept: application/json
 Content-Type: application/json
 
 <> 2020-11-16T060806.200.json
-
-###
-
-POST http://localhost:8080/user/1/card
-Accept: application/json
-Content-Type: application/json
-
-{
-  "cardName": "Tarjeta BNB",
-  "cardNumber": "987963958",
-  "expirationYear": 2021,
-  "expirationMonth": 12,
-  "cvc": 958,
-  "creationDate": "2022-11-01",
-  "status": 1
-}
-
-<> 2020-11-16T060804.200.json
-
-###
-
-GET http://localhost:8080/user/1/card
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-16T060802.200.json
-
-###
-
-GET http://localhost:8080/skills/projectkills/1
-Accept: application/json
-
-<> 2020-11-16T060548.200.json
 
 ###
 

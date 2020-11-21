@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/skills")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class SkillApi {
     private SkillBl skillBl;
     private TransactionBl transactionBl;

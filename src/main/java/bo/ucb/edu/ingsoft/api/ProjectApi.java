@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/user")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProjectApi {
 
     private ProjectBl projectBl;

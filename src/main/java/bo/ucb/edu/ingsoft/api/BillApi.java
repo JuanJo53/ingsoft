@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value="/user")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class BillApi {
     private BillBl billBl;
     private TransactionBl transactionBl;
