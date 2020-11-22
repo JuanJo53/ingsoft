@@ -14,8 +14,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping(value = "/user")
+
 public class CertificateApi {
 
     private CertificateBl certificateBl;

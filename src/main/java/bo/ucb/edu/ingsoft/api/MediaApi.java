@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 @RestController
 @RequestMapping(value = "/my-projects/{idproject}/media")
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class MediaApi {
 
     private MediaBl mediaBl;

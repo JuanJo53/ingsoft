@@ -16,6 +16,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/user/notification")
+
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class NotificationApi {
 
     private NotificationBl notificationBl;

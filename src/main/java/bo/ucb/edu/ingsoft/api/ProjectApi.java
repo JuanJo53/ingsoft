@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/user")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProjectApi {
 
     private ProjectBl projectBl;
@@ -54,8 +55,8 @@ public class ProjectApi {
         return projectRespont;
     }
 
-    @RequestMapping(value = "/{userid}/projects" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public Project getpryect(@PathVariable("userid") Integer id){
+    @RequestMapping(value = "/{userid}/projects/{projectid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Project getpryect(@PathVariable("projectid") Integer id){
         return projectBl.detailsByprojectId(id);
     }
 /*

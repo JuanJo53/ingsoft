@@ -17,6 +17,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value = "/tags")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class TagApi {
     private TagBl tagBl;
     private TransactionBl transactionBl;

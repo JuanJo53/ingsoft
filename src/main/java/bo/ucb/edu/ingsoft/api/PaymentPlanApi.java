@@ -15,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(value="/paymentPlan")
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class PaymentPlanApi{
     private PaymentPlanBl paymentPlanBl;
     private TransactionBl transactionBl;
