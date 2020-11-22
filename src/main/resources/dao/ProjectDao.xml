@@ -46,6 +46,7 @@
         description as description,
         benefits as benefits,
         status as status,
+        views as views,
         create_date as createDate
         FROM projects
     </select>
@@ -68,6 +69,7 @@
         a.description as description,
         a.benefits as benefits,
         a.status as status,
+        a.views as views,
         a.create_date as createDate
         FROM projects a ,project_user b
         where a.projects_id=b.projects_id and b.user_id=#{UserId} and b.rol=1
