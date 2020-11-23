@@ -55,7 +55,9 @@
             null,
             #{skillName},
             #{verified},
-            #{status}
+            #{status},
+            #{transaction.txId},#{transaction.txHost},#{transaction.txUserId},
+            #{transaction.txDate}
         )
     </insert>
     <update id="updateSkill" parameterType="bo.ucb.edu.ingsoft.model.Skill">
@@ -67,4 +69,7 @@
         where
             skill_id = #{skillId} and status = 1
     </update>
+    <select id="getLastInsertId" resultType="java.lang.Integer">
+        SELECT skill_id FROM skills ORDER BY skill_id DESC LIMIT 1
+    </select>
 </mapper>

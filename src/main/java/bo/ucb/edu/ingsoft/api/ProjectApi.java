@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping(value = "/user")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProjectApi {
 
     private ProjectBl projectBl;

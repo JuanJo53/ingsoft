@@ -2,9 +2,13 @@ package bo.ucb.edu.ingsoft.bl;
 
 import bo.ucb.edu.ingsoft.dao.SkillDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
+import bo.ucb.edu.ingsoft.dao.skillUserDao;
 import bo.ucb.edu.ingsoft.dto.SkillRequest;
 import bo.ucb.edu.ingsoft.model.Skill;
+import bo.ucb.edu.ingsoft.model.SkillUser;
 import bo.ucb.edu.ingsoft.model.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +18,13 @@ import java.util.List;
 public class SkillBl {
     private SkillDao skillDao;
     private TransactionDao transactionDao;
-
+    private skillUserDao skilluserDao;
+    private static final Logger LOGGER = LoggerFactory.getLogger(SkillBl.class);
     @Autowired
-    public SkillBl(SkillDao skillDao, TransactionDao transactionDao){
+    public SkillBl(SkillDao skillDao, TransactionDao transactionDao, skillUserDao skilluserDao){
         this.skillDao = skillDao;
         this.transactionDao = transactionDao;
+        this.skilluserDao = skilluserDao;
     }
 
     public Skill getSkillByName(String skillName) {
@@ -36,7 +42,7 @@ public class SkillBl {
         return  skillDao.getProjectSkills(projectid);
     }
 
-    public SkillRequest createSkill(SkillRequest skillRequest ,Transaction transaction){
+    public SkillRequest createSkill(SkillRequest skillRequest ,Transaction transaction,Integer iduser){
         Skill skill = new Skill();
 
         skill.setSkillName(skillRequest.getSkillName());
@@ -45,6 +51,15 @@ public class SkillBl {
         skill.setTransaction(transaction);
 
         skillDao.newSkill(skill);
+        Integer lastkill =skillDao.getLastInsertId();
+        LOGGER.info("idskill: "+lastkill);
+        SkillUser skilluser = new SkillUser();
+
+        skilluser.setSkillId(lastkill);
+        skilluser.setUserId(iduser);
+
+
+        skilluserDao.newSkillUser(skilluser);
 
         return skillRequest;
     }

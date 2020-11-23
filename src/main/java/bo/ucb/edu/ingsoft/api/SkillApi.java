@@ -45,14 +45,12 @@ public class SkillApi {
     }
 
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/userSkill/{iduser}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public SkillRequest createSkill(@RequestBody SkillRequest skillRequest, HttpServletRequest request) {
-        // Creating transaction for this operation
+    public SkillRequest createSkill(@RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("iduser") Integer userid) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-        // Executing the update function in CertificateBl
-        SkillRequest skillResponse = skillBl.createSkill(skillRequest, transaction);
+        SkillRequest skillResponse = skillBl.createSkill(skillRequest, transaction, userid);
         return skillResponse;
     }
 }

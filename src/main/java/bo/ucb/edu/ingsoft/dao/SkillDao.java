@@ -12,4 +12,5 @@ public interface SkillDao {
     public List<Skill> getSkills();
     public List<Skill> getUserSkills(Integer userid);
     public List<Skill> getProjectSkills(Integer projectid);
+    public Integer getLastInsertId();
 }

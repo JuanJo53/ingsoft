@@ -8,12 +8,12 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "certificateName": "Curso de Python Avanzado",
-  "company": "Plazi",
-  "expeditionDate": "2020-10-12",
-  "credentialId": "45687sd64114sdg7sadwer98g",
-  "credentialURL": "http://platzi.com/certificados/mate",
-  "expirationDate": "2025-10-12"
+  "certificateName": "Curso de C++ Avanzado",
+  "company": "Platzi",
+  "expeditionDate": "2019-10-12",
+  "credentialId": "4215sd7s3dadg7sadwer98g",
+  "credentialURL": "http://platzi.com/certificados/c++",
+  "expirationDate": "2024-10-12"
 }
 
 ### GET request for an specific certificates of a user

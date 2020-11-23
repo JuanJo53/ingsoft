@@ -4,7 +4,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "tag": "Programacion Backend con Django",
+  "skillName": "Programacion Backend con Spring",
   "verified": 1
 }
 
@@ -14,7 +14,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "tag": "c++",
+  "skillName": "c++",
   "verified": 1
 }
 
