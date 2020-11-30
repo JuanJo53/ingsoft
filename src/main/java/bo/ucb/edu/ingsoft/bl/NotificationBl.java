@@ -2,7 +2,12 @@ package bo.ucb.edu.ingsoft.bl;
 
 
 import bo.ucb.edu.ingsoft.dao.NotificationDao;
+import bo.ucb.edu.ingsoft.dao.UserDao;
+import bo.ucb.edu.ingsoft.dto.CertificateRequest;
+import bo.ucb.edu.ingsoft.dto.NotificationRequest;
+import bo.ucb.edu.ingsoft.model.Certificate;
 import bo.ucb.edu.ingsoft.model.Notification;
+import bo.ucb.edu.ingsoft.model.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +26,29 @@ public class NotificationBl {
         this.notificationDao = notificationDao;
     }
 
-    public Notification Notificationdetails(Integer notificationId){
+    public NotificationRequest Notificationdetails(Integer userid,Integer notificationId){
+        return notificationDao.detailsByNotificationId(userid,notificationId);
+    }
+    public NotificationRequest createNotification(Integer userId, NotificationRequest notificationRequest, Transaction transaction) {
+        Notification notification = new Notification();
+        //Setting all the data sent from the body in CertificateRequest to the certificate class.
+        notification.setUserId(userId);
+        notification.setTitle(notificationRequest.getTitle());
+        notification.setMessage(notificationRequest.getMessage());
+        notification.setDate(notificationRequest.getDate());
+        notification.setStatus(2);   //unseen = 2: UNSEEN CERTIFICATE
+        //setting the last transaction data
+        notification.setTransaction(transaction);
+        //Executing insert function to certificateDao
+        notificationDao.newNotification(notification);
 
-        return notificationDao.detailsByNotificationId(notificationId);
+        return  notificationRequest;
     }
     public List<Notification> notificationList(Integer userId){
         return notificationDao.getNotification(userId);
     }
 
-
-    public  Notification editstatus(Notification notification){
-        notificationDao.UpdateStatus(notification);
-        return notification;
+    public void markSeenNotification(Integer userId, Integer notificationId){
+        notificationDao.updateStatus(userId, notificationId);
     }
 }

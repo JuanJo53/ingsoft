@@ -3,8 +3,21 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="bo.ucb.edu.ingsoft.dao.NotificationDao">
-
-    <select id="getNotification" resultType="bo.ucb.edu.ingsoft.model.Notification">
+    <insert id="newNotification" parameterType="bo.ucb.edu.ingsoft.model.Notification">
+        INSERT INTO notification VALUES (
+            null,
+            #{userId},
+            #{title},
+            #{message},
+            #{date},
+            #{status},
+            #{transaction.txId},
+            #{transaction.txHost},
+            #{transaction.txUserId},
+            #{transaction.txDate}
+        )
+    </insert>
+    <select id="getNotification" resultType="bo.ucb.edu.ingsoft.dto.NotificationRequest">
         SELECT notification_id as notificationId,
         user_id as userId,
         title as title,
@@ -12,9 +25,9 @@
         date as date,
         status as status
         FROM notification
-        where user_id=#{userId} and status=1
+        where user_id=#{userId} and status=2
     </select>
-    <select id="detailsByNotificationId" resultType="bo.ucb.edu.ingsoft.model.Notification">
+    <select id="detailsByNotificationId" resultType="bo.ucb.edu.ingsoft.dto.NotificationRequest">
         SELECT notification_id as notificationId,
         user_id as userId,
         title as title,
@@ -22,13 +35,13 @@
         date as date,
         status as status
         FROM notification
-        where notification_id=#{notificationId} and status=1
+        where notification_id=#{notificationId} and status=2
     </select>
-    <update id="UpdateStatus" parameterType="bo.ucb.edu.ingsoft.model.Notification">
+    <update id="updateStatus" parameterType="bo.ucb.edu.ingsoft.model.Notification">
         Update notification
         set
-            status=#{status}
+            status=3
         where
-            notification_id = #{notificationId}
+            notification_id = #{notificationId} and user_id=#{userId}
     </update>
 </mapper>
