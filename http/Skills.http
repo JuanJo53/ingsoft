@@ -4,8 +4,24 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "skillName": "Programacion Backend con Spring",
+  "skillName": "Programacion java Backend",
   "verified": 1
+}
+### PUT skill delete status
+PUT http://localhost:8080/skills/userSkill/21
+Accept: application/json
+Content-Type: application/json
+
+{
+}
+
+### update skill
+PUT http://localhost:8080/skills/userSkill/update/21
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion en go"
 }
 
 ### POST new skill for a project

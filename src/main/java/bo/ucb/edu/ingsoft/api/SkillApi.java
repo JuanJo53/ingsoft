@@ -53,4 +53,22 @@ public class SkillApi {
         SkillRequest skillResponse = skillBl.createSkill(skillRequest, transaction, userid);
         return skillResponse;
     }
+
+    @RequestMapping(value = "/userSkill/{skillid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public SkillRequest deleteSkill(@RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("skillid") Integer skillid) {
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+        SkillRequest skillResponse = skillBl.deleteskill(skillRequest, transaction, skillid);
+        return skillResponse;
+    }
+
+    @RequestMapping(value = "/userSkill/update/{skillid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public SkillRequest updateskill(@RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("skillid") Integer skillid) {
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+        SkillRequest skillResponse = skillBl.updateSkill(skillRequest, transaction, skillid);
+        return skillResponse;
+    }
 }

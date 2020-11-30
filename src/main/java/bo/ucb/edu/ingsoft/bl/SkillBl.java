@@ -63,4 +63,16 @@ public class SkillBl {
 
         return skillRequest;
     }
+
+    public SkillRequest deleteskill(SkillRequest skillRequest,Transaction transaction, Integer skillid){
+        skillDao.deleteskill(skillid);
+        return skillRequest;
+    }
+    public SkillRequest updateSkill(SkillRequest skillRequest,Transaction transaction, Integer skillid){
+        Skill skill= new Skill();
+        skill.setSkillId(skillid);
+        skill.setSkillName(skillRequest.getSkillName());
+        skillDao.updateSkill(skill);
+        return skillRequest;
+    }
 }

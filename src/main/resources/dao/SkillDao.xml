@@ -28,7 +28,7 @@
         INNER JOIN user us ON
         us.user_id=usk.user_id
         WHERE
-            usk.user_id=#{userid} and sk.verified = 1 and sk.status = 1
+            usk.user_id=#{userid} and sk.status = 1
     </select>
     <select id="getProjectSkills" resultMap="skillsResultMap">
         SELECT
@@ -60,14 +60,19 @@
             #{transaction.txDate}
         )
     </insert>
+    <update id="deleteskill" parameterType="bo.ucb.edu.ingsoft.model.Skill">
+        UPDATE skills
+        set
+            status=0
+        where
+            skill_id=#{skillId}
+    </update>
     <update id="updateSkill" parameterType="bo.ucb.edu.ingsoft.model.Skill">
         Update skills
         set
-            skill_name=#{certificateName},
-            verified=#{company},
-            status=#{expeditionDate}
+            skill_name=#{skillName}
         where
-            skill_id = #{skillId} and status = 1
+            skill_id = #{skillId}
     </update>
     <select id="getLastInsertId" resultType="java.lang.Integer">
         SELECT skill_id FROM skills ORDER BY skill_id DESC LIMIT 1
