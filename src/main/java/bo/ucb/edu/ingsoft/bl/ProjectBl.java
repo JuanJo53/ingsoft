@@ -71,7 +71,33 @@ public class ProjectBl {
 
         return projectRequest;
     }
+    public void editprojectrollwaitingtoacept (Integer iduser, Integer idproject) {
 
+        ProjectUser projectUser=new ProjectUser();
+        projectUser.setUserId(iduser);
+        projectUser.setProjectId(idproject);
+        projectUser.setRol(3);
+        projectUser.setStatus(1);
+        projectUserDao.updatestatus(projectUser);
+    }
+    public void editprojectrollwaitingtoreject (Integer iduser, Integer idproject) {
+
+        ProjectUser projectUser=new ProjectUser();
+        projectUser.setUserId(iduser);
+        projectUser.setProjectId(idproject);
+        projectUser.setRol(0);
+        projectUser.setStatus(1);
+        projectUserDao.updatestatus(projectUser);
+    }
+    public void editprojectask(Integer iduser, Integer idproject) {
+
+        ProjectUser projectUser=new ProjectUser();
+        projectUser.setUserId(iduser);
+        projectUser.setProjectId(idproject);
+        projectUser.setRol(2);
+        projectUser.setStatus(1);
+        projectUserDao.newProjectUser(projectUser);
+    }
     public Project detailsByprojectId(Integer projectid) {
 //        Project p=projectDao.detailsproyect(projectid);
 //        LOGGER.error(p.getAbilities());

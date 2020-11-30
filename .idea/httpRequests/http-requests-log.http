@@ -1,3 +1,106 @@
+POST http://localhost:8080/users
+Accept: application/json
+Content-Type: application/json
+
+{
+  "name": "Ronald ",
+  "surname": "Romero",
+  "username": "ronmen",
+  "email": "ronmen@gmail.com"
+}
+
+<> 2020-11-30T054915.200.json
+
+###
+
+GET http://localhost:8080/user/2/user-request
+Accept: application/json
+
+<> 2020-11-30T053133.200.json
+
+###
+
+GET http://localhost:8080/my-projects/2/user-request
+Accept: application/json
+
+<> 2020-11-30T053037.404.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-request
+Accept: application/json
+
+<> 2020-11-30T052959.404.json
+
+###
+
+PUT http://localhost:8080/user/1/projects/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "benefits": "mucho dinero ",
+  "status" : 1
+}
+
+<> 2020-11-30T051628.200.json
+
+###
+
+PUT http://localhost:8080/user/1/projects/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "benefits": "mucho dinero ",
+  "status" : 1
+}
+
+<> 2020-11-30T051533.500.json
+
+###
+
+GET http://localhost:8080/my-projects/list/work_on/3
+Accept: application/json
+
+<> 2020-11-30T042446.404.json
+
+###
+
+PUT http://localhost:8080/user/1/projects/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "benefits": "mucho dinero ",
+  "status" : 1
+}
+
+<> 2020-11-30T022203.200.json
+
+###
+
+POST http://localhost:8080/user/1/projects
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "benefits": "mucho dinero 2",
+  "status" : 1
+}
+
+<> 2020-11-30T114124.200.json
+
+###
+
 PUT http://localhost:8080/user/1/notifications/1
 Accept: application/json
 
@@ -161,6 +264,186 @@ Content-Type: application/json
 
 ###
 
+GET http://localhost:8080/skills/projectkills/1
+Accept: application/json
+
+<> 2020-11-23T083357.200.json
+
+###
+
+GET http://localhost:8080/skills/projectkills/1
+Accept: application/json
+
+<> 2020-11-23T083118.200.json
+
+###
+
+GET http://localhost:8080/skills/userskills/1
+Accept: application/json
+
+<> 2020-11-23T083116.200.json
+
+###
+
+GET http://localhost:8080/skills
+Accept: application/json
+
+<> 2020-11-23T083113.200.json
+
+###
+
+POST http://localhost:8080/user/1/projects/1/paymentplan/1/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "buyDate": "2020-25-17",
+  "billingAddress": "",
+  "country": "Chile",
+  "city": "Santiago"
+}
+
+<> 2020-11-23T083044.500.json
+
+###
+
+POST http://localhost:8080/user/1/card
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta BNB",
+  "cardNumber": "987963958",
+  "expirationYear": 2021,
+  "expirationMonth": 12,
+  "cvc": 958,
+  "creationDate": "2022-11-01"
+}
+
+<> 2020-11-23T083038.200.json
+
+###
+
+POST http://localhost:8080/user/1/projects/1/paymentplan/1/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "buyDate": "2020-25-17",
+  "billingAddress": "",
+  "country": "Chile",
+  "city": "Santiago"
+}
+
+<> 2020-11-23T082831.500.json
+
+###
+
+GET http://localhost:8080/skills/userskills/1
+Accept: application/json
+
+<> 2020-11-23T081623.200.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion Backend con Spring",
+  "verified": 1
+}
+
+<> 2020-11-23T081614.200.json
+
+###
+
+GET http://localhost:8080/skills
+Accept: application/json
+
+<> 2020-11-23T081607.200.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion Backend con Spring",
+  "verified": 1
+}
+
+<> 2020-11-23T080855.200.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion Backend con Spring",
+  "verified": 1
+}
+
+<> 2020-11-23T080805.500.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion Backend con Spring",
+  "verified": 1
+}
+
+<> 2020-11-23T080738.404.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion Backend con Spring",
+  "verified": 1
+}
+
+<> 2020-11-23T080417.404.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tag": "Programacion Backend con Django",
+  "verified": 1
+}
+
+<> 2020-11-23T080322.404.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tag": "Programacion Backend con Django",
+  "verified": 1
+}
+
+<> 2020-11-23T080313.404.json
+
+###
+
 POST http://localhost:8080/user/1/projects
 Accept: application/json
 Content-Type: application/json
@@ -204,222 +487,6 @@ GET http://localhost:8080/user/1/certificates
 Accept: application/json
 
 <> 2020-11-21T012757.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-21T011156.200.json
-
-###
-
-PUT http://localhost:8080/user/1/certificates/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "certificateName": "Curso de Python",
-  "company": "Udemy",
-  "expeditionDate": "2018-11-02",
-  "credentialId": "4564sdg7sadwer98g987",
-  "credentialURL" : "http://udemy.com/certificados/finanzas",
-  "expirationDate" : "2020-05-12"
-}
-
-<> 2020-11-21T011153.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-21T011131.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-21T011058.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-21T011046.500.json
-
-###
-
-GET http://localhost:8080/users/2
-Accept: application/json
-
-<> 2020-11-17T020228.200.json
-
-###
-
-DELETE http://localhost:8080/user/1/certificates/1
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-17T015825.200.json
-
-###
-
-DELETE http://localhost:8080/user/1/certificates/5
-Accept: application/json
-Content-Type: application/json
-
-<> 2020-11-17T015819.200.json
-
-###
-
-PUT http://localhost:8080/user/1/certificates/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "certificateName": "Curso de Python",
-  "company": "Udemy",
-  "expeditionDate": "2018-11-02",
-  "credentialId": "4564sdg7sadwer98g987",
-  "credentialURL" : "http://udemy.com/certificados/finanzas",
-  "expirationDate" : "2020-05-12"
-}
-
-<> 2020-11-17T015808.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates/1
-Accept: application/json
-
-<> 2020-11-17T015633.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-17T015631.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates/1
-Accept: application/json
-
-<> 2020-11-17T015550.500.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-17T015543.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates/1
-Accept: application/json
-
-<> 2020-11-17T015455.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-17T015440.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates/1
-Accept: application/json
-
-<> 2020-11-17T015420.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-17T015215.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-17T014758.200.json
-
-###
-
-POST http://localhost:8080/user/1/certificates
-Accept: application/json
-Content-Type: application/json
-
-{
-  "certificateName": "Curso de Python Avanzado",
-  "company": "Plazi",
-  "expeditionDate": "2020-10-12",
-  "credentialId": "45687sd64114sdg7sadwer98g",
-  "credentialURL": "http://platzi.com/certificados/mate",
-  "expirationDate": "2025-10-12"
-}
-
-<> 2020-11-17T014753.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates/3
-Accept: application/json
-
-###
-
-GET http://localhost:8080/users/2
-Accept: application/json
-
-<> 2020-11-17T014528.200.json
-
-###
-
-GET http://localhost:8080/users/2
-Accept: application/json
-
-<> 2020-11-17T014423.200.json
-
-###
-
-GET http://localhost:8080/users/2
-Accept: application/json
-
-<> 2020-11-17T014231.500.json
-
-###
-
-GET http://localhost:8080/users/2
-Accept: application/json
-
-<> 2020-11-17T013922.500.json
-
-###
-
-PUT http://localhost:8080/users/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "otro lorito",
-  "surname": "Fernandez",
-  "username": "El paisano",
-  "email": "example@gmail.com",
-  "description": "Me gusta el sql",
-  "image": "B64encondeimageOrDirOfFile",
-  "cellphone": "75281857"
-}
-
-<> 2020-11-17T013904.200.json
 
 ###
 

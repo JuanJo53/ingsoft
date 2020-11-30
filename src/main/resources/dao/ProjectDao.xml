@@ -26,7 +26,7 @@
              benefits= #{benefits},
              views=#{views},
              status=#{status}
-             where projects_id= 1
+             where projects_id= #{projectsId}
     </update>
 
     <select id="detailsproyect" resultType="bo.ucb.edu.ingsoft.model.Project">

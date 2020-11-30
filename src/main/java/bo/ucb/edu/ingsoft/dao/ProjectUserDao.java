@@ -8,4 +8,5 @@ import org.apache.ibatis.annotations.Mapper;
 public interface ProjectUserDao {
 
     public void newProjectUser(ProjectUser projectUser);
+    public void updatestatus(ProjectUser projectUser);
 }

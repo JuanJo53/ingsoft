@@ -16,5 +16,9 @@
             #{transaction.txDate}
         )
     </insert>
+    <update id="updatestatus" parameterType="bo.ucb.edu.ingsoft.model.ProjectUser">
+
+        UPDATE project_user SET rol = #{Rol}, status = #{Status} WHERE user_id=#{UserId} and projects_id=#{ProjectId};
+    </update>
 
 </mapper>
