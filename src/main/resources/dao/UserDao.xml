@@ -51,8 +51,13 @@
     <update id="updateUser" parameterType="bo.ucb.edu.ingsoft.model.User">
             UPDATE user SET name=#{name},surname=#{surname},
              username= #{username},email=#{email},
-             description=#{description},image=#{image}, cellphone=#{cellphone}
+             description=#{description}, cellphone=#{cellphone}
              WHERE user_id= #{userId} and status = 1
+    </update>
+    <update id="updateImage" parameterType="bo.ucb.edu.ingsoft.model.User">
+            UPDATE user SET
+                image=#{image}
+            WHERE user_id= #{userId} and status = 1
     </update>
 
 </mapper>

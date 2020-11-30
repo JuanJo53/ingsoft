@@ -50,4 +50,12 @@ public class UserApi {
         return  userBl.findByUserId(id);
     }
 
+    @RequestMapping(value = "/{userid}/image", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public User updateimage(@PathVariable("userid") Integer id, @RequestBody UserUpdate userUpdate, HttpServletRequest request) {
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+        User userResponse = userBl.updateimage(userUpdate, id,transaction);
+        return userResponse;
+    }
 }

@@ -6,10 +6,7 @@ import bo.ucb.edu.ingsoft.dao.UserDao;
 import bo.ucb.edu.ingsoft.dto.CertificateRequest;
 import bo.ucb.edu.ingsoft.dto.UserRequest;
 import bo.ucb.edu.ingsoft.dto.UserUpdate;
-import bo.ucb.edu.ingsoft.model.Certificate;
-import bo.ucb.edu.ingsoft.model.Project;
-import bo.ucb.edu.ingsoft.model.Transaction;
-import bo.ucb.edu.ingsoft.model.User;
+import bo.ucb.edu.ingsoft.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +52,13 @@ public class UserBl {
     public UserRequest findByUserId (Integer id1){
         UserRequest user = userDao.findByUserId(id1);
         return user;
+    }
+    public User updateimage(UserUpdate userUpdate,Integer iduser,Transaction transaction) {
+        User user1 = new User();
+        user1.setUserId(iduser);
+        user1.setImage(userUpdate.getImage());
+        userDao.updateImage(user1);
+        return user1;
     }
 
 }

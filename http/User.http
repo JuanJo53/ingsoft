@@ -9,7 +9,14 @@ Content-Type: application/json
   "username": "ronmen",
   "email": "ronmen@gmail.com"
 }
+### image
+PUT http://localhost:8080/users/1/image
+Accept: application/json
+Content-Type: application/json
 
+{
+  "image": "B64encondeimageOrASimpleDirFile"
+}
 ### Get user 1
 GET http://localhost:8080/users/2
 Accept: application/json
