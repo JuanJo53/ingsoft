@@ -14,5 +14,5 @@ public interface UserDao {
     public void updateUser(User user);
     public UserRequest findByUserId(Integer userId);
     public List<User>listproyectuserparticipan(Integer projectsId);
-
+    public void updateImage(User user);
 }

@@ -214,7 +214,8 @@ CREATE TABLE h_user (
 CREATE TABLE media (
     media_id int NOT NULL AUTO_INCREMENT,
     projects_id int NOT NULL,
-    url varchar(200) NOT NULL,
+    title varchar(200) not null,
+    url longblob NOT NULL,
     type int NOT NULL COMMENT '1: IMAGE
 2: VIDEO',
     creation_date date NOT NULL,
@@ -370,7 +371,7 @@ CREATE TABLE user (
     email varchar(60) NOT NULL,
     password varchar(20) NOT NULL,
     description text NULL,
-    image varchar(200) NULL,
+    image longblob NULL,
     cellphone varchar(20) NULL,
     status int NOT NULL COMMENT '0: INACTIVE
 1: ACTIVE',
