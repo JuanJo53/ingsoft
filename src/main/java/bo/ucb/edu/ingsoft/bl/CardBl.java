@@ -70,5 +70,17 @@ public class CardBl {
         cardDao.updateCard(card);
         return  cardRequest;
     }
+    public Card deleteCard(Integer cardId, Transaction transaction) {
+        Card card = new Card();
+
+        LOGGER.info("Deleting card");
+        card.setCardId(cardId);
+        card.setStatus(0);
+        LOGGER.info("Card deleted succesfuly");
+        card.setTransaction(transaction);
+        cardDao.deleteCard(card);
+        return  card;
+    }
+
 
 }

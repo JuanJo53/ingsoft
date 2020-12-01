@@ -60,6 +60,22 @@ public class CardApi {
         //CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
         return cardResponse;
     }
+
+    @RequestMapping(value = "/{userid}/card/{cardid}" ,method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Card deleteCard(@PathVariable("cardid") Integer certificateId, HttpServletRequest request) {
+        // Creating transaction for this operation
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+        // Executing the delete function in CertificateBl
+        Card cardResponse=cardBl.deleteCard(certificateId,transaction);
+        return cardResponse;
+    }
+
+
+
+
+
+
 }
 
 
