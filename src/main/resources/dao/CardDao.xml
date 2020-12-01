@@ -72,5 +72,12 @@
             card_id = #{cardId} and status = 1
     </update>
 
+<update id="deleteCard" parameterType="bo.ucb.edu.ingsoft.model.Card">
+        Update card
+        set
+            status=#{status}
+        where
+            card_id = #{cardId} and status = 1
+    </update>
 
 </mapper>
