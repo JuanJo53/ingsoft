@@ -7,6 +7,7 @@
         INSERT INTO notification VALUES (
             null,
             #{userId},
+            #{projectId},
             #{title},
             #{message},
             now(),

@@ -33,6 +33,7 @@ public class NotificationBl {
         Notification notification = new Notification();
         //Setting all the data sent from the body in CertificateRequest to the certificate class.
         notification.setUserId(userId);
+        notification.setProjectId(notificationRequest.getProjectId());
         notification.setTitle(notificationRequest.getTitle());
         notification.setMessage(notificationRequest.getMessage());
         notification.setDate(notificationRequest.getDate());

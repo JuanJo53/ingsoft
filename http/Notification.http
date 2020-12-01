@@ -6,6 +6,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
+  "projectId": 1,
   "title": "Nueva Solicitud",
   "message": "Un usuario solicito unirse a tu proyecto",
   "date": "2020-10-12"

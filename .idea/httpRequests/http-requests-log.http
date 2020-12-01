@@ -1,3 +1,115 @@
+POST http://localhost:8080/user/1/notifications
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectId": 1,
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
+}
+
+<> 2020-12-01T010537.200.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectId": 1,
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
+}
+
+<> 2020-12-01T010528.200.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectsId": 1,
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
+}
+
+<> 2020-12-01T010508.500.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projects_id": 1,
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
+}
+
+<> 2020-12-01T010443.500.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projects_id": 1,
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
+}
+
+<> 2020-12-01T010355.500.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projects_id": 1,
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
+}
+
+<> 2020-12-01T010246.500.json
+
+###
+
+GET http://localhost:8080/user/1/notifications
+Accept: application/json
+
+<> 2020-12-01T010240.200.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projects_id": 1,
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
+}
+
+<> 2020-12-01T010204.500.json
+
+###
+
 GET http://localhost:8080/user/2/notifications/2
 Accept: application/json
 
@@ -318,90 +430,6 @@ GET http://localhost:8080/user/1/notifications
 Accept: application/json
 
 <> 2020-11-30T013730.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T013706.200.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-11-30T013640.200.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "title": "Nueva Solicitud un tu Proyecto",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-11-30T013612.500.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "title": "Nueva Solicitud un tu Proyecto",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-###
-
-PUT http://localhost:8080/user/1/certificates/5
-Accept: application/json
-Content-Type: application/json
-
-{
-  "company": "Udemy",
-  "expeditionDate": "2018-11-02",
-  "credentialId": "4564sdg7sadwer98g987",
-  "credentialURL" : "http://udemy.com/certificados/finanzas",
-  "expirationDate" : "2020-05-12"
-}
-
-<> 2020-11-23T123104.500.json
-
-###
-
-GET http://localhost:8080/skills/projectkills/1
-Accept: application/json
-
-<> 2020-11-23T083357.200.json
-
-###
-
-GET http://localhost:8080/skills/projectkills/1
-Accept: application/json
-
-<> 2020-11-23T083118.200.json
-
-###
-
-GET http://localhost:8080/skills/userskills/1
-Accept: application/json
-
-<> 2020-11-23T083116.200.json
 
 ###
 
