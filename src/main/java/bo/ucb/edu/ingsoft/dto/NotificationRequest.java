@@ -5,11 +5,12 @@ import bo.ucb.edu.ingsoft.model.Transaction;
 import java.util.Date;
 
 public class NotificationRequest {
-
-    private  Integer userId;
+    private Integer notificationId;
+    private Integer userId;
     private String title;
     private String message;
     private Date date;
+    private Integer status;
 
     @Override
     public String toString() {
@@ -19,6 +20,14 @@ public class NotificationRequest {
                 ", message='" + message + '\'' +
                 ", date=" + date +
                 '}';
+    }
+
+    public Integer getNotificationId() {
+        return notificationId;
+    }
+
+    public void setNotificationId(Integer notificationId) {
+        this.notificationId = notificationId;
     }
 
     public Integer getUserId() {
@@ -51,5 +60,13 @@ public class NotificationRequest {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

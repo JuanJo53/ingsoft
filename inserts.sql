@@ -19,8 +19,8 @@ INSERT INTO media VALUES (null,1,"Screenshot","http://photos.com/super.png",1,no
 INSERT INTO media VALUES (null,2,"Imagen de PROY","http://photos.com/image.png",1,now(),1 ,2,"192.168.1.1",2,now());
 
 -- Inserts for notification table
-INSERT INTO notification VALUES (null,1,"Nuevo interesado","Un usario esta interesado en tu proyecto",now(),1,1,"192.168.1.1",1, now());
-INSERT INTO notification VALUES (null,2,"Pago de publicidad","Se vence el plazo para tu pago",now(),1,2,"192.168.1.1",1, now());
+INSERT INTO notification VALUES (null,1,1,"Nuevo interesado","Un usario esta interesado en tu proyecto",now(),2,1,"192.168.1.1",1, now());
+INSERT INTO notification VALUES (null,2,1,"Pago de publicidad","Se vence el plazo para tu pago",now(),2,2,"192.168.1.1",1, now());
 
 -- Inserts for payment_plan table
 INSERT INTO payment_plan VALUES (null,"Plan 1","Plan por publicidad por un mes para tu proyecto",100.0,1,1,1,"192.168.1.1",1, now());

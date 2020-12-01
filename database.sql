@@ -232,8 +232,9 @@ CREATE TABLE media (
 CREATE TABLE notification (
     notification_id int NOT NULL AUTO_INCREMENT,
     user_id int NOT NULL,
-    title varchar(20) NOT NULL,
-    message varchar(50) NOT NULL,
+    projects_id int NOT NULL,
+    title varchar(30) NOT NULL,
+    message varchar(80) NOT NULL,
     date timestamp NOT NULL,
     status int NOT NULL COMMENT '0: DELETED
 1: ACTIVE
@@ -425,6 +426,10 @@ ALTER TABLE card ADD CONSTRAINT card_user FOREIGN KEY card_user (user_id)
 
 -- Reference: media_projects (table: media)
 ALTER TABLE media ADD CONSTRAINT media_projects FOREIGN KEY media_projects (projects_id)
+    REFERENCES projects (projects_id);
+
+-- Reference: notification_projects (table: notification)
+ALTER TABLE notification ADD CONSTRAINT notification_projects FOREIGN KEY notification_projects (projects_id)
     REFERENCES projects (projects_id);
 
 -- Reference: notification_user (table: notification)

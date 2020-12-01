@@ -25,7 +25,7 @@
         date as date,
         status as status
         FROM notification
-        where user_id=#{userId} and status=2
+        where user_id=#{userId} and status!=0
     </select>
     <select id="detailsByNotificationId" resultType="bo.ucb.edu.ingsoft.dto.NotificationRequest">
         SELECT notification_id as notificationId,
