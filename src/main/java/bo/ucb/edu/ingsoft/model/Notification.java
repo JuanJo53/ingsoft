@@ -4,8 +4,9 @@ import java.util.Date;
 
 public class Notification {
 
-    private  Integer notificationId;
-    private  Integer userId;
+    private Integer notificationId;
+    private Integer userId;
+    private Integer projectId;
     private String title;
     private String message;
     private Date date;
@@ -21,6 +22,7 @@ public class Notification {
         return "Notification{" +
                 "notificationId=" + notificationId +
                 ", userId=" + userId +
+                ", projectId=" + projectId +
                 ", title='" + title + '\'' +
                 ", message='" + message + '\'' +
                 ", date=" + date +
@@ -43,6 +45,14 @@ public class Notification {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
     }
 
     public String getTitle() {

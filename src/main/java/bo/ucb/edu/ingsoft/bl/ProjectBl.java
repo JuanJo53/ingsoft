@@ -1,9 +1,6 @@
 package bo.ucb.edu.ingsoft.bl;
 
-import bo.ucb.edu.ingsoft.dao.ProjectDao;
-import bo.ucb.edu.ingsoft.dao.ProjectUserDao;
-import bo.ucb.edu.ingsoft.dao.TransactionDao;
-import bo.ucb.edu.ingsoft.dao.UserDao;
+import bo.ucb.edu.ingsoft.dao.*;
 import bo.ucb.edu.ingsoft.dto.ProjectRequest;
 import bo.ucb.edu.ingsoft.model.*;
 import org.slf4j.Logger;
@@ -20,11 +17,12 @@ public class ProjectBl {
     private ProjectDao projectDao;
     private ProjectUserDao projectUserDao;
     private UserDao userDao;
+    private NotificationDao notificationDao;
     private static final Logger LOGGER = LoggerFactory.getLogger(CertificateBl.class);
 
 
     @Autowired
-    public ProjectBl(TransactionDao transactionDao, ProjectDao projectDao, ProjectUserDao projectUserDao,UserDao userDao) {
+    public ProjectBl(TransactionDao transactionDao, ProjectDao projectDao, ProjectUserDao projectUserDao,UserDao userDao,NotificationDao notificationDao) {
         this.transactionDao = transactionDao;
         this.projectDao = projectDao;
         this.projectUserDao = projectUserDao;
@@ -79,6 +77,15 @@ public class ProjectBl {
         projectUser.setRol(3);
         projectUser.setStatus(1);
         projectUserDao.updatestatus(projectUser);
+
+        Notification notification = new Notification();
+        notification.setTitle("Nueva Solicitud");
+        notification.setMessage("Un usuario solicito unirse a tu proyecto");
+        notification.setUserId(iduser);
+        notification.setProjectId(idproject);
+        notification.setStatus(2);
+        notificationDao.newNotification(notification);
+
     }
     public void editprojectrollwaitingtoreject (Integer iduser, Integer idproject) {
 
@@ -97,6 +104,15 @@ public class ProjectBl {
         projectUser.setRol(2);
         projectUser.setStatus(1);
         projectUserDao.newProjectUser(projectUser);
+
+        //Enviar notificacion a dueño de proyecto
+        Notification notification = new Notification();
+        notification.setTitle("Nueva Solicitud");
+        notification.setMessage("Un usuario solicito unirse a tu proyecto");
+        notification.setUserId(iduser);
+        notification.setProjectId(idproject);
+        notification.setStatus(2);
+        notificationDao.newNotification(notification);
     }
     public Project detailsByprojectId(Integer projectid) {
 //        Project p=projectDao.detailsproyect(projectid);

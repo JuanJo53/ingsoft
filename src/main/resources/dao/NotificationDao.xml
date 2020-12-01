@@ -9,7 +9,7 @@
             #{userId},
             #{title},
             #{message},
-            #{date},
+            now(),
             #{status},
             #{transaction.txId},
             #{transaction.txHost},
@@ -20,6 +20,7 @@
     <select id="getNotification" resultType="bo.ucb.edu.ingsoft.dto.NotificationRequest">
         SELECT notification_id as notificationId,
         user_id as userId,
+        projects_id as projectId,
         title as title,
         message as message,
         date as date,
@@ -30,12 +31,13 @@
     <select id="detailsByNotificationId" resultType="bo.ucb.edu.ingsoft.dto.NotificationRequest">
         SELECT notification_id as notificationId,
         user_id as userId,
+        projects_id as projectId,
         title as title,
         message as message,
         date as date,
         status as status
         FROM notification
-        where notification_id=#{notificationId} and status=2
+        where notification_id=#{notificationId} and user_id=#{userId} and status=2
     </select>
     <update id="updateStatus" parameterType="bo.ucb.edu.ingsoft.model.Notification">
         Update notification

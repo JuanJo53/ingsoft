@@ -7,6 +7,7 @@ import java.util.Date;
 public class NotificationRequest {
     private Integer notificationId;
     private Integer userId;
+    private Integer projectId;
     private String title;
     private String message;
     private Date date;
@@ -15,10 +16,13 @@ public class NotificationRequest {
     @Override
     public String toString() {
         return "NotificationRequest{" +
-                "userId=" + userId +
+                "notificationId=" + notificationId +
+                ", userId=" + userId +
+                ", projectId=" + projectId +
                 ", title='" + title + '\'' +
                 ", message='" + message + '\'' +
                 ", date=" + date +
+                ", status=" + status +
                 '}';
     }
 
@@ -36,6 +40,14 @@ public class NotificationRequest {
 
     public void setUserId(Integer userId) {
         this.userId = userId;
+    }
+
+    public Integer getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
     }
 
     public String getTitle() {
