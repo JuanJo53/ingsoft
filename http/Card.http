@@ -37,5 +37,9 @@ Content-Type: application/json
   "creationDate": "2022-11-01",
   "status": 1
 }
+###
+DELETE http://localhost:8080/user/1/card/2
+Accept: application/json
+Content-Type: application/json
 
 

@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface PaymentPlanDao {
     //paymentPlan details
-    public PaymentPlan detailsByPaymentPlanId(Integer paymentPlanId);
+    public PaymentPlanRequest findByPaymentPlanId(Integer paymentPlanId);
     //paymentPlan new
     public void newPaymentPlan(PaymentPlan paymentPlan);
     //paymentPlan get

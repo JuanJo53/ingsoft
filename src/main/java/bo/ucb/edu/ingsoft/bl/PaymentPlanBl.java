@@ -1,9 +1,9 @@
 package bo.ucb.edu.ingsoft.bl;
 
-import bo.ucb.edu.ingsoft.api.PaymentPlanApi;
 import bo.ucb.edu.ingsoft.dao.PaymentPlanDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.PaymentPlanRequest;
+import bo.ucb.edu.ingsoft.dto.UserRequest;
 import bo.ucb.edu.ingsoft.model.PaymentPlan;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.slf4j.Logger;
@@ -25,11 +25,6 @@ public class  PaymentPlanBl  {
         this.transactionDao = transactionDao;
     }
 
-    //payment plan details
-    public PaymentPlan detailsByPaymentPlanId(Integer paymentPlanId) {
-        return  paymentPlanDao.detailsByPaymentPlanId(paymentPlanId);
-    }
-
     //payment plan request
     public PaymentPlanRequest createPaymentPlan( Integer paymentPlanId,PaymentPlanRequest paymentPlanRequest,Transaction transaction){
         PaymentPlan paymentPlan = new PaymentPlan();
@@ -48,6 +43,11 @@ public class  PaymentPlanBl  {
     }
 
     public List<PaymentPlan> getPaymentsPlan(){ return  paymentPlanDao.getPaymentPlans();
+    }
+
+    public PaymentPlanRequest findByPaymentPlanId (Integer id1){
+        PaymentPlanRequest paymentPlan = paymentPlanDao.findByPaymentPlanId(id1);
+        return paymentPlan;
     }
 
 }

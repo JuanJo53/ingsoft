@@ -1,8 +1,10 @@
 package bo.ucb.edu.ingsoft.model;
 
+import bo.ucb.edu.ingsoft.dto.PaymentPlanRequest;
+
 import java.util.Date;
 
-public class PaymentPlan {
+public class PaymentPlan{
     private Integer paymentPlanId;
     private String plan;
     private String description;

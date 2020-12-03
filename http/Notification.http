@@ -6,13 +6,14 @@ Accept: application/json
 Content-Type: application/json
 
 {
+  "projectId": 1,
   "title": "Nueva Solicitud",
   "message": "Un usuario solicito unirse a tu proyecto",
   "date": "2020-10-12"
 }
 ###
 ///list/work_on/{userid}
-GET http://localhost:8080/user/1/notifications/1
+GET http://localhost:8080/user/2/notifications/2
 Accept: application/json
 
 ###
