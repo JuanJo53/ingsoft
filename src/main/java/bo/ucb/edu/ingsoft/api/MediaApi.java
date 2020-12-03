@@ -16,8 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 @RestController
-@RequestMapping(value = "/my-projects/{idproject}/media")
-
+@RequestMapping(value = "/projects/{idproject}/media")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class MediaApi {
 
@@ -32,7 +31,7 @@ public class MediaApi {
 
 
 
-    @RequestMapping(value = "/addMedia",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public Media insertMedia(@RequestBody MediaRequest mediaRequest, @PathVariable("idproject") Integer id, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
