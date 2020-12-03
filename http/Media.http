@@ -1,5 +1,5 @@
 ### add image by projectId /my-projects/{idproject}/media/addMedia (type uses 0:deleted 1:image 2:video)
-POST http://localhost:8080/my-projects/1/media/addMedia
+POST http://localhost:8080/projects/1/media
 Accept: application/json
 Content-Type: application/json
 
@@ -11,5 +11,5 @@ Content-Type: application/json
 
 ### Get the list of media by project id /my-projects/{idproject}/media
 
-GET http://localhost:8080/my-projects/1/media
+GET http://localhost:8080/projects/1/media
 Accept: application/json
