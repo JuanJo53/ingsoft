@@ -27,6 +27,7 @@ public class ProjectBl {
         this.projectDao = projectDao;
         this.projectUserDao = projectUserDao;
         this.userDao=userDao;
+        this.notificationDao=notificationDao;
     }
 
     public ProjectRequest newproject(ProjectRequest projectRequest, Integer id,Transaction transaction){
@@ -50,7 +51,6 @@ public class ProjectBl {
         projectUser.setRol(1);
         projectUser.setStatus(1);
         projectUser.setTransaction(transaction);
-
         projectUserDao.newProjectUser(projectUser);
 
         return projectRequest;
@@ -84,6 +84,8 @@ public class ProjectBl {
         notification.setUserId(iduser);
         notification.setProjectId(idproject);
         notification.setStatus(2);
+
+        LOGGER.info(String.valueOf(notification));
         notificationDao.newNotification(notification);
 
     }
@@ -114,6 +116,8 @@ public class ProjectBl {
         notification.setProjectId(idproject);
         notification.setStatus(2);
         notification.setTransaction(transaction);
+
+        LOGGER.info(String.valueOf(notification));
         notificationDao.newNotification(notification);
 
 
