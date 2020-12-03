@@ -107,13 +107,17 @@ public class ProjectBl {
         projectUserDao.newProjectUser(projectUser);
 
         //Enviar notificacion a dueño de proyecto
-        Notification notification = new Notification();
+       Notification notification = new Notification();
         notification.setTitle("Nueva Solicitud");
         notification.setMessage("Un usuario solicito unirse a tu proyecto");
         notification.setUserId(iduser);
         notification.setProjectId(idproject);
         notification.setStatus(2);
+        notification.setTransaction(transaction);
         notificationDao.newNotification(notification);
+
+
+
     }
     public Project detailsByprojectId(Integer projectid) {
 //        Project p=projectDao.detailsproyect(projectid);
