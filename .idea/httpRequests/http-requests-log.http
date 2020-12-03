@@ -1,6 +1,13 @@
 GET http://localhost:8080/paymentPlan/1
 Accept: application/json
 
+<> 2020-12-03T055746.200.json
+
+###
+
+GET http://localhost:8080/paymentPlan/1
+Accept: application/json
+
 <> 2020-12-03T050814.500.json
 
 ###
@@ -460,13 +467,6 @@ Content-Type: application/json
 }
 
 <> 2020-11-23T081614.200.json
-
-###
-
-GET http://localhost:8080/skills
-Accept: application/json
-
-<> 2020-11-23T081607.200.json
 
 ###
 
