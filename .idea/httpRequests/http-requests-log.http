@@ -57,237 +57,6 @@ Content-Type: application/json
 ###
 
 POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectId": 1,
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-12-01T010537.200.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectId": 1,
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-12-01T010528.200.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectsId": 1,
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-12-01T010508.500.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projects_id": 1,
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-12-01T010443.500.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projects_id": 1,
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-12-01T010355.500.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projects_id": 1,
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-12-01T010246.500.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-12-01T010240.200.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projects_id": 1,
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-12-01T010204.500.json
-
-###
-
-GET http://localhost:8080/user/2/notifications/2
-Accept: application/json
-
-<> 2020-12-01T122632.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications/1
-Accept: application/json
-
-<> 2020-12-01T122627.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications/2
-Accept: application/json
-
-###
-
-GET http://localhost:8080/user/1/notifications/1
-Accept: application/json
-
-<> 2020-12-01T122350.200.json
-
-###
-
-GET http://localhost:8080/user/2/notifications
-Accept: application/json
-
-<> 2020-12-01T122300.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-12-01T122233.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-12-01T122131.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T080616.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T080434.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T074710.200.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-11-30T074656.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T074213.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T074124.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T073643.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications/1
-Accept: application/json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T073613.200.json
-
-###
-
 POST http://localhost:8080/users
 Accept: application/json
 Content-Type: application/json
@@ -448,6 +217,335 @@ PUT http://localhost:8080/user/1/notifications/1
 Accept: application/json
 
 <> 2020-11-30T014158.200.json
+
+###
+
+GET http://localhost:8080/user/1/notifications/1
+Accept: application/json
+
+<> 2020-11-30T014127.200.json
+
+###
+
+GET http://localhost:8080/user/1/notifications/1
+Accept: application/json
+
+<> 2020-11-30T014050.500.json
+
+###
+
+GET http://localhost:8080/user/1/notifications
+Accept: application/json
+
+<> 2020-11-30T014038.200.json
+
+###
+
+GET http://localhost:8080/user/1/notifications/1
+Accept: application/json
+
+###
+
+GET http://localhost:8080/user/1/notifications
+Accept: application/json
+
+<> 2020-11-30T013810.200.json
+
+###
+
+GET http://localhost:8080/user/1/notifications
+Accept: application/json
+
+<> 2020-11-30T013730.200.json
+
+###
+
+GET http://localhost:8080/user/1/notifications
+Accept: application/json
+
+<> 2020-11-30T013706.200.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
+}
+
+<> 2020-11-30T013640.200.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "Nueva Solicitud un tu Proyecto",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
+}
+
+<> 2020-11-30T013612.500.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
+Accept: application/json
+Content-Type: application/json
+
+{
+  "title": "Nueva Solicitud un tu Proyecto",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
+}
+
+###
+
+PUT http://localhost:8080/user/1/certificates/5
+Accept: application/json
+Content-Type: application/json
+
+{
+  "company": "Udemy",
+  "expeditionDate": "2018-11-02",
+  "credentialId": "4564sdg7sadwer98g987",
+  "credentialURL" : "http://udemy.com/certificados/finanzas",
+  "expirationDate" : "2020-05-12"
+}
+
+<> 2020-11-23T123104.500.json
+
+###
+
+GET http://localhost:8080/skills/projectkills/1
+Accept: application/json
+
+<> 2020-11-23T083357.200.json
+
+###
+
+GET http://localhost:8080/skills/projectkills/1
+Accept: application/json
+
+<> 2020-11-23T083118.200.json
+
+###
+
+GET http://localhost:8080/skills/userskills/1
+Accept: application/json
+
+<> 2020-11-23T083116.200.json
+
+###
+
+GET http://localhost:8080/skills
+Accept: application/json
+
+<> 2020-11-23T083113.200.json
+
+###
+
+POST http://localhost:8080/user/1/projects/1/paymentplan/1/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "buyDate": "2020-25-17",
+  "billingAddress": "",
+  "country": "Chile",
+  "city": "Santiago"
+}
+
+<> 2020-11-23T083044.500.json
+
+###
+
+POST http://localhost:8080/user/1/card
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta BNB",
+  "cardNumber": "987963958",
+  "expirationYear": 2021,
+  "expirationMonth": 12,
+  "cvc": 958,
+  "creationDate": "2022-11-01"
+}
+
+<> 2020-11-23T083038.200.json
+
+###
+
+POST http://localhost:8080/user/1/projects/1/paymentplan/1/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "buyDate": "2020-25-17",
+  "billingAddress": "",
+  "country": "Chile",
+  "city": "Santiago"
+}
+
+<> 2020-11-23T082831.500.json
+
+###
+
+GET http://localhost:8080/skills/userskills/1
+Accept: application/json
+
+<> 2020-11-23T081623.200.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion Backend con Spring",
+  "verified": 1
+}
+
+<> 2020-11-23T081614.200.json
+
+###
+
+GET http://localhost:8080/skills
+Accept: application/json
+
+<> 2020-11-23T081607.200.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion Backend con Spring",
+  "verified": 1
+}
+
+<> 2020-11-23T080855.200.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion Backend con Spring",
+  "verified": 1
+}
+
+<> 2020-11-23T080805.500.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion Backend con Spring",
+  "verified": 1
+}
+
+<> 2020-11-23T080738.404.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "Programacion Backend con Spring",
+  "verified": 1
+}
+
+<> 2020-11-23T080417.404.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tag": "Programacion Backend con Django",
+  "verified": 1
+}
+
+<> 2020-11-23T080322.404.json
+
+###
+
+POST http://localhost:8080/skills/userSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tag": "Programacion Backend con Django",
+  "verified": 1
+}
+
+<> 2020-11-23T080313.404.json
+
+###
+
+POST http://localhost:8080/user/1/projects
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto2",
+  "description": "es un poyecto es una prueba 2",
+  "benefits": "mucho dinero 2",
+  "status" : 1
+}
+
+<> 2020-11-22T123622.200.json
+
+###
+
+POST http://localhost:8080/user/1/certificates
+Accept: application/json
+Content-Type: application/json
+
+{
+  "certificateName": "Curso de Python Avanzado",
+  "company": "Plazi",
+  "expeditionDate": "2020-10-12",
+  "credentialId": "45687sd64114sdg7sadwer98g",
+  "credentialURL": "http://platzi.com/certificados/mate",
+  "expirationDate": "2025-10-12"
+}
+
+<> 2020-11-21T040308.200.json
+
+###
+
+GET http://localhost:8080/user/1/certificates
+Accept: application/json
+
+<> 2020-11-21T014110.200.json
+
+###
+
+GET http://localhost:8080/user/1/certificates
+Accept: application/json
+
+<> 2020-11-21T012757.200.json
 
 ###
 

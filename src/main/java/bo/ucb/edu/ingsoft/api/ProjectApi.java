@@ -96,7 +96,11 @@ public class ProjectApi {
 
     @RequestMapping(value = "/{userid}/projects/{projectid}/acept" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
     public Integer editproyecttoacept(@PathVariable("userid") Integer iduser,@PathVariable("projectid") Integer idproyect, HttpServletRequest request) {
-        projectBl.editprojectrollwaitingtoacept(iduser,idproyect);
+
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+
+        projectBl.editprojectrollwaitingtoacept(iduser,idproyect,transaction);
         return iduser;
     }
     @RequestMapping(value = "/{userid}/projects/{projectid}/reject" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -107,8 +111,10 @@ public class ProjectApi {
 
     @RequestMapping(value = "/{userid}/projects/{projectid}/recuest" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Integer editproyectrecuest(@PathVariable("userid") Integer iduser,@PathVariable("projectid") Integer idproyect, HttpServletRequest request) {
-        projectBl.editprojectask(iduser,idproyect);
-        return iduser;
+    public ProjectRequest editproyectrecuest(@PathVariable("userid") Integer iduser,@PathVariable("projectid") Integer idproyect,@RequestBody ProjectRequest projectRequest, HttpServletRequest request) {
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+        projectBl.editprojectask(iduser,idproyect,transaction);
+        return projectRequest;
     }
 }

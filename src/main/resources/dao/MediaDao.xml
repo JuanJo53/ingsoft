@@ -20,7 +20,7 @@
         a.type as type,
         a.creation_date as creationDate
         FROM media a ,projects b
-        where b.projects_id = #{projectsId}  and a.status = 1
+        where a.projects_id = #{projectsId} and b.projects_id = #{projectsId} and a.status = 1
 
     </select>
 

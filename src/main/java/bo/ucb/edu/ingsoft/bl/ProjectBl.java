@@ -27,6 +27,7 @@ public class ProjectBl {
         this.projectDao = projectDao;
         this.projectUserDao = projectUserDao;
         this.userDao=userDao;
+        this.notificationDao=notificationDao;
     }
 
     public ProjectRequest newproject(ProjectRequest projectRequest, Integer id,Transaction transaction){
@@ -50,7 +51,6 @@ public class ProjectBl {
         projectUser.setRol(1);
         projectUser.setStatus(1);
         projectUser.setTransaction(transaction);
-
         projectUserDao.newProjectUser(projectUser);
 
         return projectRequest;
@@ -69,7 +69,7 @@ public class ProjectBl {
 
         return projectRequest;
     }
-    public void editprojectrollwaitingtoacept (Integer iduser, Integer idproject) {
+    public void editprojectrollwaitingtoacept(Integer iduser, Integer idproject, Transaction transaction) {
 
         ProjectUser projectUser=new ProjectUser();
         projectUser.setUserId(iduser);
@@ -84,6 +84,9 @@ public class ProjectBl {
         notification.setUserId(iduser);
         notification.setProjectId(idproject);
         notification.setStatus(2);
+        notification.setTransaction(transaction);
+
+        LOGGER.info(String.valueOf(notification));
         notificationDao.newNotification(notification);
 
     }
@@ -96,23 +99,30 @@ public class ProjectBl {
         projectUser.setStatus(1);
         projectUserDao.updatestatus(projectUser);
     }
-    public void editprojectask(Integer iduser, Integer idproject) {
+    public void editprojectask(Integer iduser, Integer idproject,Transaction transaction) {
 
         ProjectUser projectUser=new ProjectUser();
         projectUser.setUserId(iduser);
         projectUser.setProjectId(idproject);
         projectUser.setRol(2);
         projectUser.setStatus(1);
+        projectUser.setTransaction(transaction);
         projectUserDao.newProjectUser(projectUser);
 
         //Enviar notificacion a dueño de proyecto
-        Notification notification = new Notification();
+       Notification notification = new Notification();
         notification.setTitle("Nueva Solicitud");
         notification.setMessage("Un usuario solicito unirse a tu proyecto");
         notification.setUserId(iduser);
         notification.setProjectId(idproject);
         notification.setStatus(2);
+        notification.setTransaction(transaction);
+
+        LOGGER.info(String.valueOf(notification));
         notificationDao.newNotification(notification);
+
+
+
     }
     public Project detailsByprojectId(Integer projectid) {
 //        Project p=projectDao.detailsproyect(projectid);

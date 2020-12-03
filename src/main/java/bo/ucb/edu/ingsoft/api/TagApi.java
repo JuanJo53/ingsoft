@@ -28,7 +28,7 @@ public class TagApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(value="/userTag/{userid}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value="/user/{userid}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public Tag createnewtag(@RequestBody TagRequest tagRequest, @PathVariable("userid") Integer id, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
