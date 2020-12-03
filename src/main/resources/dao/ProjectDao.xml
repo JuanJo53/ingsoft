@@ -80,7 +80,10 @@
     </select>
     <update id="increaseProjectViews" parameterType="bo.ucb.edu.ingsoft.model.Project">
         UPDATE projects
-            SET views = views + 1
-            WHERE projects_id =#{projectsId}
+        INNER JOIN project_user ON project_user.projects_id=projects.projects_id
+        SET projects.views = projects.views + 1
+        WHERE projects.projects_id =#{projectsId}
+        AND project_user.user_id=#{userid}
+        AND project_user.rol!=1
     </update>
 </mapper>
