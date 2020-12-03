@@ -11,5 +11,5 @@ Content-Type: application/json
 
 ### Get the list of media by project id /my-projects/{idproject}/media
 
-GET http://localhost:8080/projects/1/media
+GET http://localhost:8080/projects/3/media
 Accept: application/json

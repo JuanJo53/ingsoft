@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 @RestController
-@RequestMapping(value = "/projects/{idproject}/media")
+@RequestMapping(value = "/projects")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class MediaApi {
 
@@ -31,7 +31,7 @@ public class MediaApi {
 
 
 
-    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value="/{idproject}/media",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public Media insertMedia(@RequestBody MediaRequest mediaRequest, @PathVariable("idproject") Integer id, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
@@ -39,7 +39,7 @@ public class MediaApi {
         Media mediaResponse = mediaBl.insertmedia(mediaRequest,id,transaction);
         return mediaResponse;
     }
-    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value="/{idproject}/media",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Media> getVerifiedTags(HttpServletRequest request, @PathVariable("idproject") Integer idproject) {
         return mediaBl.getListMedia(idproject);
     }
