@@ -8,7 +8,6 @@
         VALUES (
             null,#{nameTags},#{verified},1,#{transaction.txId},#{transaction.txHost},
             #{transaction.txUserId},#{transaction.txDate}
-
         )
     </insert>
     <select id="getLastIdTag" resultType="java.lang.Integer">
@@ -44,7 +43,5 @@
         WHERE
             b.user_id=#{iduser} and a.tags_id=b.tags_id and a.verified = 1
     </select>
-    <delete id="deletetag">
-        DELETE FROM user_tags WHERE user_id=#{iduser} and tags_id=#{idtag}
-    </delete>
+
 </mapper>

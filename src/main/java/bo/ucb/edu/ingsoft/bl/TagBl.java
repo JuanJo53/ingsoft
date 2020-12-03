@@ -36,10 +36,10 @@ public class TagBl {
     public Tag createNewTag(TagRequest tagRequest, Integer userid, Transaction transaction) {
         Tag tag=new Tag();
 
-        tag.setNameTags(tagRequest.getTag());
+        tag.setNameTags(tagRequest.getNameTags());
         tag.setVerified(tagRequest.getVerified());
         tag.setTransaction(transaction);
-
+        LOGGER.info("idtag: "+tag.getNameTags());
         tagDao.createTag(tag);
         Integer tagid = tagDao.getLastIdTag();
         LOGGER.info("idtag: "+tagid);
@@ -63,6 +63,6 @@ public class TagBl {
         return tagDao.getUserTag(id);
     }
     public void deletetag(Integer idtag,Integer iduser){
-        tagDao.deletetag(idtag,iduser);
+        userTagsDao.deletetag(idtag,iduser);
     }
 }

@@ -9,4 +9,7 @@
             null,#{userId},#{tagsId}
         )
     </insert>
+    <delete id="deletetag">
+        DELETE FROM user_tags WHERE user_id=#{iduser} and tags_id=#{idtag}
+    </delete>
 </mapper>

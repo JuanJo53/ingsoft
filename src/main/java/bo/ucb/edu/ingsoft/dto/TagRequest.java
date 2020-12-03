@@ -1,18 +1,18 @@
 package bo.ucb.edu.ingsoft.dto;
 
 public class TagRequest {
-    private String tag;
+    private String nameTags;
     private Integer verified;
 
     public TagRequest() {
     }
 
-    public String getTag() {
-        return tag;
+    public String getNameTags() {
+        return nameTags;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setNameTags(String nameTags) {
+        this.nameTags = nameTags;
     }
 
     public Integer getVerified() {
