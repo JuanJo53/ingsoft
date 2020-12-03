@@ -14,4 +14,5 @@ public interface TagDao {
     public Tag getByTagName(String tagName);
     public List<Tag> getVerifiedTags();
     public List<Tag> getUserTag(Integer iduser);
+    public void deletetag(Integer idtag, Integer iduser);
 }

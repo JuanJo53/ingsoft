@@ -4,11 +4,13 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "tag": "c++",
+  "tag": "go",
   "verified": 1
 }
-### GET tag by name
+### delete user tag
+DELETE http://localhost:8080/tags/3/user/1
 
+### GET tag by name
 GET http://localhost:8080/tags/python
 Accept: application/json
 

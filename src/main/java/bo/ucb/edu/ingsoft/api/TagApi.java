@@ -50,5 +50,8 @@ public class TagApi {
     public List<Tag> getUserTag(HttpServletRequest request,@PathVariable("userid") Integer id) {
         return tagBl.getusertag(id);
     }
-
+    @RequestMapping(value = "/{tagid}/user/{userid}" ,method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void deletetaguser(@PathVariable("tagid") Integer tagid,@PathVariable("userid") Integer userid, HttpServletRequest request) {
+        tagBl.deletetag(tagid,userid);
+    }
 }

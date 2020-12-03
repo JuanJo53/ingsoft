@@ -42,6 +42,9 @@
             a.verified as verified
         FROM tags a, user_tags b
         WHERE
-            b.tags_id=#{iduser} and a.tags_id=b.tags_id and a.verified = 1
+            b.user_id=#{iduser} and a.tags_id=b.tags_id and a.verified = 1
     </select>
+    <delete id="deletetag">
+        DELETE FROM user_tags WHERE user_id=#{iduser} and tags_id=#{idtag}
+    </delete>
 </mapper>

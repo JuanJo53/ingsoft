@@ -62,4 +62,7 @@ public class TagBl {
     public List<Tag> getusertag(Integer id){
         return tagDao.getUserTag(id);
     }
+    public void deletetag(Integer idtag,Integer iduser){
+        tagDao.deletetag(idtag,iduser);
+    }
 }
