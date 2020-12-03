@@ -69,6 +69,10 @@ public class ProjectBl {
 
         return projectRequest;
     }
+    public ProjectRequest increaseViews(ProjectRequest projectRequest,Integer userid,Integer id,Transaction transaction) {
+        projectDao.increaseProjectViews(userid,id);
+        return projectRequest;
+    }
     public void editprojectrollwaitingtoacept(Integer iduser, Integer idproject, Transaction transaction) {
 
         ProjectUser projectUser=new ProjectUser();
@@ -79,8 +83,8 @@ public class ProjectBl {
         projectUserDao.updatestatus(projectUser);
 
         Notification notification = new Notification();
-        notification.setTitle("Nueva Solicitud");
-        notification.setMessage("Un usuario solicito unirse a tu proyecto");
+        notification.setTitle("Se acepto una solicitud tuya!");
+        notification.setMessage("El dueño del proyecto acepto tu solicitud para unirte a su proyecto.");
         notification.setUserId(iduser);
         notification.setProjectId(idproject);
         notification.setStatus(2);
@@ -98,6 +102,7 @@ public class ProjectBl {
         projectUser.setRol(0);
         projectUser.setStatus(1);
         projectUserDao.updatestatus(projectUser);
+
     }
     public void editprojectask(Integer iduser, Integer idproject,Transaction transaction) {
 
@@ -110,7 +115,7 @@ public class ProjectBl {
         projectUserDao.newProjectUser(projectUser);
 
         //Enviar notificacion a dueño de proyecto
-       Notification notification = new Notification();
+        Notification notification = new Notification();
         notification.setTitle("Nueva Solicitud");
         notification.setMessage("Un usuario solicito unirse a tu proyecto");
         notification.setUserId(iduser);
@@ -120,9 +125,6 @@ public class ProjectBl {
 
         LOGGER.info(String.valueOf(notification));
         notificationDao.newNotification(notification);
-
-
-
     }
     public Project detailsByprojectId(Integer projectid) {
 //        Project p=projectDao.detailsproyect(projectid);

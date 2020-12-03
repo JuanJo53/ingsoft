@@ -1,5 +1,5 @@
 
-POST http://localhost:8080/user/1/projects
+POST http://localhost:8080/user/2/projects
 Accept: application/json
 Content-Type: application/json
 
@@ -21,7 +21,6 @@ Content-Type: application/json
   "benefits": "mucho dinero ",
   "status" : 1
 }
-
 ### GET all user owned projects
 GET http://localhost:8080/user/1/projects
 Accept: application/json
@@ -31,6 +30,17 @@ Accept: application/json
 GET http://localhost:8080/user/1/project-feed
 Accept: application/json
 
+###
+PUT http://localhost:8080/user/1/project-feed/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "benefits": "mucho dinero ",
+  "status" : 1
+}
 ###
 ///list/{userid}
 GET http://localhost:8080/my-projects/list/1

@@ -12,8 +12,10 @@ public interface ProjectDao {
     public void newProject(Project project);
     public void updateproyect(Project project);
     public Project detailsproyect(Integer projectsId);
+    public void increaseProjectViews(Integer userid,Integer projectsId);
     public List<Project> listproyect();
     public List<Project> listproyectuser(Integer UserId);
     public Integer getLastInsertIdProject();
     public List<Project> listproyectuserparticipate(Integer UserId);
+
 }

@@ -28,6 +28,7 @@
         status as status
         FROM notification
         where user_id=#{userId} and status!=0
+        order by date desc limit 4
     </select>
     <select id="detailsByNotificationId" resultType="bo.ucb.edu.ingsoft.dto.NotificationRequest">
         SELECT notification_id as notificationId,

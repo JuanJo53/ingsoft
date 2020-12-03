@@ -71,6 +71,16 @@ public class ProjectApi {
     return projectBl.listproyect();
 }
 
+    @RequestMapping(value = "/{userid}/project-feed/{projectid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ProjectRequest editproyect(@PathVariable("userid") Integer userid,@PathVariable("projectid") Integer id,@RequestBody ProjectRequest projectRequest, HttpServletRequest request) {
+        // Creamos transaccion para la operación.
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+
+        ProjectRequest projectRespont=projectBl.increaseViews(projectRequest,userid,id,transaction);
+        return projectRespont;
+    }
     @RequestMapping(value = "/list/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Project> getpryectlistuser(@PathVariable("userid") Integer id){
         return projectBl.listproyectuser(id);

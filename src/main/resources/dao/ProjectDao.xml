@@ -78,5 +78,9 @@
     <select id="getLastInsertIdProject" resultType="java.lang.Integer">
     SELECT projects_id FROM projects ORDER BY projects_id DESC LIMIT 1
     </select>
-
+    <update id="increaseProjectViews" parameterType="bo.ucb.edu.ingsoft.model.Project">
+        UPDATE projects
+            SET views = views + 1
+            WHERE projects_id =#{projectsId}
+    </update>
 </mapper>

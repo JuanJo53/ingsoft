@@ -1,3 +1,41 @@
+PUT http://localhost:8080/user/1/project-feed/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "benefits": "mucho dinero ",
+  "status" : 1
+}
+
+<> 2020-12-03T041441.200.json
+
+###
+
+PUT http://localhost:8080/user/1/project-feed/3
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-03T041349.400.json
+
+###
+
+POST http://localhost:8080/user/2/projects
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "benefits": "mucho dinero 2",
+  "status" : 1
+}
+
+<> 2020-12-03T032811.200.json
+
+###
+
 GET http://localhost:8080/user/1/projects
 Accept: application/json
 
@@ -435,117 +473,6 @@ Content-Type: application/json
 }
 
 <> 2020-11-23T080855.200.json
-
-###
-
-POST http://localhost:8080/skills/userSkill/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "skillName": "Programacion Backend con Spring",
-  "verified": 1
-}
-
-<> 2020-11-23T080805.500.json
-
-###
-
-POST http://localhost:8080/skills/userSkill/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "skillName": "Programacion Backend con Spring",
-  "verified": 1
-}
-
-<> 2020-11-23T080738.404.json
-
-###
-
-POST http://localhost:8080/skills/userSkill/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "skillName": "Programacion Backend con Spring",
-  "verified": 1
-}
-
-<> 2020-11-23T080417.404.json
-
-###
-
-POST http://localhost:8080/skills/userSkill/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "tag": "Programacion Backend con Django",
-  "verified": 1
-}
-
-<> 2020-11-23T080322.404.json
-
-###
-
-POST http://localhost:8080/skills/userSkill/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "tag": "Programacion Backend con Django",
-  "verified": 1
-}
-
-<> 2020-11-23T080313.404.json
-
-###
-
-POST http://localhost:8080/user/1/projects
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectTitle": "Esto2",
-  "description": "es un poyecto es una prueba 2",
-  "benefits": "mucho dinero 2",
-  "status" : 1
-}
-
-<> 2020-11-22T123622.200.json
-
-###
-
-POST http://localhost:8080/user/1/certificates
-Accept: application/json
-Content-Type: application/json
-
-{
-  "certificateName": "Curso de Python Avanzado",
-  "company": "Plazi",
-  "expeditionDate": "2020-10-12",
-  "credentialId": "45687sd64114sdg7sadwer98g",
-  "credentialURL": "http://platzi.com/certificados/mate",
-  "expirationDate": "2025-10-12"
-}
-
-<> 2020-11-21T040308.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-21T014110.200.json
-
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
-
-<> 2020-11-21T012757.200.json
 
 ###
 
