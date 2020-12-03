@@ -38,7 +38,7 @@
         date as date,
         status as status
         FROM notification
-        where notification_id=#{notificationId} and user_id=#{userId} and status=2
+        where notification_id=#{notificationId} and user_id=#{userId} and status!=0
     </select>
     <update id="updateStatus" parameterType="bo.ucb.edu.ingsoft.model.Notification">
         Update notification

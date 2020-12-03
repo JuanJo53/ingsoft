@@ -1,3 +1,61 @@
+GET http://localhost:8080/user/1/projects
+Accept: application/json
+
+<> 2020-12-01T054915.405.json
+
+###
+
+GET http://localhost:8080/user/1/projects
+Accept: application/json
+
+<> 2020-12-01T054847.405.json
+
+###
+
+GET http://localhost:8080/user/1/projects
+Accept: application/json
+
+<> 2020-12-01T054841.405.json
+
+###
+
+GET http://localhost:8080/my-projects/list/work_on/3
+Accept: application/json
+
+<> 2020-12-01T054830.404.json
+
+###
+
+POST http://localhost:8080/paymentPlan
+Accept: application/json
+Content-Type: application/json
+
+{
+  "plan": "6 mes",
+  "description": "6 mes de publicidad para tu proyecto",
+  "cost": 499.99,
+  "duration": 6
+}
+
+<> 2020-12-01T042718.200.json
+
+###
+
+POST http://localhost:8080/paymentPlan
+Accept: application/json
+Content-Type: application/json
+
+{
+  "plan": "1 mes",
+  "description": "1 mes de publicidad para tu proyecto",
+  "cost": 99.99,
+  "duration": 1
+}
+
+<> 2020-12-01T042341.200.json
+
+###
+
 POST http://localhost:8080/user/1/notifications
 Accept: application/json
 Content-Type: application/json
@@ -390,46 +448,6 @@ PUT http://localhost:8080/user/1/notifications/1
 Accept: application/json
 
 <> 2020-11-30T014158.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications/1
-Accept: application/json
-
-<> 2020-11-30T014127.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications/1
-Accept: application/json
-
-<> 2020-11-30T014050.500.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T014038.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications/1
-Accept: application/json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T013810.200.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-11-30T013730.200.json
 
 ###
 
