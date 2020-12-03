@@ -1,5 +1,5 @@
-### POST new tag
-POST http://localhost:8080/tags/userSkill/1
+### POST new tag user
+POST http://localhost:8080/tags/user/1
 Accept: application/json
 Content-Type: application/json
 
@@ -10,9 +10,9 @@ Content-Type: application/json
 
 ### GET tag by name
 
-GET http://localhost:8080/skills/python
+GET http://localhost:8080/tags/python
 Accept: application/json
 
 ### GET All verified tags
-GET http://localhost:8080/skills
+GET http://localhost:8080/tags
 Accept: application/json
