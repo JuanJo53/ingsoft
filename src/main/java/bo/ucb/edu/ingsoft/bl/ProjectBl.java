@@ -89,13 +89,14 @@ public class ProjectBl {
         projectUser.setStatus(1);
         projectUserDao.updatestatus(projectUser);
     }
-    public void editprojectask(Integer iduser, Integer idproject) {
+    public void editprojectask(Integer iduser, Integer idproject,Transaction transaction) {
 
         ProjectUser projectUser=new ProjectUser();
         projectUser.setUserId(iduser);
         projectUser.setProjectId(idproject);
         projectUser.setRol(2);
         projectUser.setStatus(1);
+        projectUser.setTransaction(transaction);
         projectUserDao.newProjectUser(projectUser);
     }
     public Project detailsByprojectId(Integer projectid) {
