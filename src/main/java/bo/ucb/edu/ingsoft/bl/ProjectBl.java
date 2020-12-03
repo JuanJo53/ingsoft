@@ -69,7 +69,7 @@ public class ProjectBl {
 
         return projectRequest;
     }
-    public void editprojectrollwaitingtoacept (Integer iduser, Integer idproject) {
+    public void editprojectrollwaitingtoacept(Integer iduser, Integer idproject, Transaction transaction) {
 
         ProjectUser projectUser=new ProjectUser();
         projectUser.setUserId(iduser);
@@ -84,6 +84,7 @@ public class ProjectBl {
         notification.setUserId(iduser);
         notification.setProjectId(idproject);
         notification.setStatus(2);
+        notification.setTransaction(transaction);
 
         LOGGER.info(String.valueOf(notification));
         notificationDao.newNotification(notification);
