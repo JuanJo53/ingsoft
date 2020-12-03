@@ -59,4 +59,7 @@ public class TagBl {
     public List<Tag> getAllVerifiedTags(){
         return tagDao.getVerifiedTags();
     }
+    public List<Tag> getusertag(Integer id){
+        return tagDao.getUserTag(id);
+    }
 }

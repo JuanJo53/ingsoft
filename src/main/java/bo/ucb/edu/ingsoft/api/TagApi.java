@@ -46,5 +46,9 @@ public class TagApi {
     public List<Tag> getVerifiedTags(HttpServletRequest request) {
         return tagBl.getAllVerifiedTags();
     }
+    @RequestMapping(value="/user/{userid}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Tag> getUserTag(HttpServletRequest request,@PathVariable("userid") Integer id) {
+        return tagBl.getusertag(id);
+    }
 
 }

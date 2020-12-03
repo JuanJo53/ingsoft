@@ -12,6 +12,9 @@ Content-Type: application/json
 
 GET http://localhost:8080/tags/python
 Accept: application/json
+###get user tag
+GET http://localhost:8080/tags/user/1
+Accept: application/json
 
 ### GET All verified tags
 GET http://localhost:8080/tags

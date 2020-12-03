@@ -35,4 +35,13 @@
         WHERE
             verified = 1
     </select>
+    <select id="getUserTag" resultMap="tagsResultMap">
+        SELECT
+            a.tags_id as tagId,
+            a.name_tags as nameTags,
+            a.verified as verified
+        FROM tags a, user_tags b
+        WHERE
+            b.tags_id=#{iduser} and a.tags_id=b.tags_id and verified = 1
+    </select>
 </mapper>
