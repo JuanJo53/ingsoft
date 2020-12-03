@@ -42,6 +42,6 @@
             a.verified as verified
         FROM tags a, user_tags b
         WHERE
-            b.tags_id=#{iduser} and a.tags_id=b.tags_id and verified = 1
+            b.tags_id=#{iduser} and a.tags_id=b.tags_id and a.verified = 1
     </select>
 </mapper>
