@@ -3,6 +3,7 @@ package bo.ucb.edu.ingsoft.api;
 import bo.ucb.edu.ingsoft.bl.PaymentPlanBl;
 import bo.ucb.edu.ingsoft.bl.TransactionBl;
 import bo.ucb.edu.ingsoft.dto.PaymentPlanRequest;
+import bo.ucb.edu.ingsoft.dto.UserRequest;
 import bo.ucb.edu.ingsoft.model.PaymentPlan;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
@@ -41,5 +42,10 @@ public class PaymentPlanApi{
     @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<PaymentPlan> getPaymentPlans(HttpServletRequest request) {
         return paymentPlanBl.getPaymentsPlan();
+    }
+
+    @RequestMapping(value = "/{paymentplanid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public PaymentPlanRequest findbypaymentplanid(@PathVariable("paymentplanid") Integer id){
+        return  paymentPlanBl.findByPaymentPlanId(id);
     }
 }
