@@ -17,6 +17,7 @@ Content-Type: application/json
 {
   "image": "B64encondeimageOrASimpleDirFile"
 }
+
 ### Get user 1
 GET http://localhost:8080/users/2
 Accept: application/json
@@ -36,3 +37,12 @@ Content-Type: application/json
   "cellphone": "75281857"
 }
 ###
+
+POST http://localhost:8080/users/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "ronmen@gmail.com",
+  "password": "PasswordNeedsSecure"
+}

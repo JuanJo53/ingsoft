@@ -15,4 +15,5 @@ public interface UserDao {
     public UserRequest findByUserId(Integer userId);
     public List<User>listproyectuserparticipan(Integer projectsId);
     public void updateImage(User user);
+    public User findPersonByNP(User user);
 }

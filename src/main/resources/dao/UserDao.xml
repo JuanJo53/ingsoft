@@ -47,7 +47,18 @@
         FROM user
         where user_id=#{userId} and status = 1
     </select>
-
+    <select id="findPersonByNP" resultType="bo.ucb.edu.ingsoft.model.User">
+        SELECT
+            user_id as userId,
+            name as name,
+            surname as surname,
+            username as username,
+            email as email
+        FROM
+             user
+        WHERE
+            email=#{email} and password=#{password} and status = 1
+    </select>
     <update id="updateUser" parameterType="bo.ucb.edu.ingsoft.model.User">
             UPDATE user SET name=#{name},surname=#{surname},
              username= #{username},email=#{email},

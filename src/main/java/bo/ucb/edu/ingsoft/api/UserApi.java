@@ -58,4 +58,11 @@ public class UserApi {
         User userResponse = userBl.updateimage(userUpdate, id,transaction);
         return userResponse;
     }
+
+    @RequestMapping(value = "/login",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public User login(@RequestBody User user1, HttpServletRequest request) {
+        User user = userBl.login(user1);
+        return user;
+    }
 }

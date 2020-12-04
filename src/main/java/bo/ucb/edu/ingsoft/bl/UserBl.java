@@ -60,5 +60,18 @@ public class UserBl {
         userDao.updateImage(user1);
         return user1;
     }
+    public User login(User user){
+        User user1= new User();
+        user1.setEmail(user.getEmail());
+        user1.setPassword(user.getPassword());
+        User user2= new User();
+        if (userDao.findPersonByNP(user1)!=null){
+            return userDao.findPersonByNP(user1);
+        }else{
+            return user2;
+        }
+
+
+    }
 
 }
