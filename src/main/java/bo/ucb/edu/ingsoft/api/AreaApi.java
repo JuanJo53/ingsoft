@@ -40,8 +40,7 @@ public class AreaApi {
         Area area=areaBl.createArea(areaRequest,transaction,projectid);
          return area ;
     }
-    @RequestMapping(value = "/Projectarealist/{idproject}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE,
-            consumes = MediaType.APPLICATION_JSON_VALUE)
+    @RequestMapping(value = "/Projectarealist/{idproject}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Area> createarea(@PathVariable("idproject") Integer projectid) {
 
         return areaBl.getAreaProjectlist(projectid);
