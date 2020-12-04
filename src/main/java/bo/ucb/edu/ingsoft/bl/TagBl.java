@@ -1,14 +1,12 @@
 package bo.ucb.edu.ingsoft.bl;
 
+import bo.ucb.edu.ingsoft.dao.ProjectTagsDao;
 import bo.ucb.edu.ingsoft.dao.TagDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dao.UserTagsDao;
 import bo.ucb.edu.ingsoft.dto.TagRequest;
 import bo.ucb.edu.ingsoft.dto.UserRequest;
-import bo.ucb.edu.ingsoft.model.Tag;
-import bo.ucb.edu.ingsoft.model.Transaction;
-import bo.ucb.edu.ingsoft.model.User;
-import bo.ucb.edu.ingsoft.model.UserTags;
+import bo.ucb.edu.ingsoft.model.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +19,14 @@ public class TagBl {
     private TagDao tagDao;
     private UserTagsDao userTagsDao;
     private TransactionDao transactionDao;
+    private ProjectTagsDao projectTagsDao;
     private static final Logger LOGGER = LoggerFactory.getLogger(TagBl.class);
 
     @Autowired
-    public TagBl(TagDao tagDao, UserTagsDao userTagsDao, TransactionDao transactionDao) {
+    public TagBl(TagDao tagDao, UserTagsDao userTagsDao, TransactionDao transactionDao, ProjectTagsDao projectTagsDao) {
         this.tagDao = tagDao;
         this.userTagsDao = userTagsDao;
+        this.projectTagsDao = projectTagsDao;
         this.transactionDao = transactionDao;
     }
 
@@ -65,12 +65,27 @@ public class TagBl {
     public void deletetag(Integer idtag,Integer iduser){
         userTagsDao.deletetag(idtag,iduser);
     }
-
+    public void deletetagproject(Integer idtag,Integer idproject){
+        projectTagsDao.deletetag(idtag,idproject);
+    }
     public Tag addTagToUser(Tag tag, Integer id) {
         UserTags tag1=new UserTags();
         tag1.setTagsId(tag.getTagId());
         tag1.setUserId(id);
         userTagsDao.createUserTag(tag1);
         return tag;
+    }
+    public Tag addTagToProject(TagRequest tagRequest, Integer id, Transaction transaction){
+        Tag tag1= new Tag();
+        tag1.setNameTags(tagRequest.getNameTags());
+        tag1.setVerified(tagRequest.getVerified());
+        tag1.setTransaction(transaction);
+        tagDao.createTag(tag1);
+        Integer tagid = tagDao.getLastIdTag();
+        ProjectTags projectTags= new ProjectTags();
+        projectTags.setProjectsId(id);
+        projectTags.setTagsId(tagid);
+        projectTagsDao.createProjectTag(projectTags);
+        return tag1;
     }
 }

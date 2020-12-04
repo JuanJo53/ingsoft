@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.ProjectTagsDao">
+    <insert id="createProjectTag" parameterType="bo.ucb.edu.ingsoft.model.ProjectTags">
+        INSERT INTO projects_tags
+        VALUES (
+                   null,#{TagsId},#{ProjectsId}
+               )
+    </insert>
+    <delete id="deletetagproject">
+        DELETE FROM project_tags WHERE projects_id=#{idprojects} and tags_id=#{idtag}
+    </delete>
+</mapper>
