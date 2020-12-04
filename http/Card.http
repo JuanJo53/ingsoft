@@ -1,5 +1,5 @@
 ### GET all user cards
-GET http://localhost:8080/user/1/card
+GET http://localhost:8080/user/4/card
 Accept: application/json
 Content-Type: application/json
 
