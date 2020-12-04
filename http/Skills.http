@@ -1,5 +1,5 @@
 ### POST new skill for a user
-POST http://localhost:8080/skills/userSkill/1
+POST http://localhost:8080/skills/userSkill/2
 Accept: application/json
 Content-Type: application/json
 
