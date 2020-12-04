@@ -48,7 +48,7 @@ public class BillBl {
         return billRequest;
     }
 
-    public List<Bill> getBill(Integer userid){ return billDao.getBills(userid); }
+    public List<BillRequest> getBill(Integer userid){ return billDao.getBills(userid); }
 
 }
 

@@ -37,7 +37,7 @@ public class BillApi {
     }
 
     @RequestMapping(value = "/{userid}/bill",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Bill> getBills(@PathVariable("userid") Integer userid,HttpServletRequest request){
+    public List<BillRequest> getBills(@PathVariable("userid") Integer userid,HttpServletRequest request){
         return billBl.getBill(userid);
     }
 }

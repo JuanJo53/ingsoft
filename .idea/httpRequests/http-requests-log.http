@@ -1,3 +1,74 @@
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-03T101222.200.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-03T101145.500.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-03T101103.500.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-03T100428.200.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-03T100140.200.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-03T095543.200.json
+
+###
+
+GET http://localhost:8080/user/1/bill
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-03T094433.200.json
+
+###
+
+POST http://localhost:8080/user/1/projects/1/paymentplan/1/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "buyDate": "2020-25-17",
+  "billingAddress": "",
+  "country": "Chile",
+  "city": "Santiago"
+}
+
+<> 2020-12-03T063253.200.json
+
+###
+
 GET http://localhost:8080/paymentPlan/1
 Accept: application/json
 
@@ -379,94 +450,6 @@ GET http://localhost:8080/skills/projectkills/1
 Accept: application/json
 
 <> 2020-11-23T083357.200.json
-
-###
-
-GET http://localhost:8080/skills/projectkills/1
-Accept: application/json
-
-<> 2020-11-23T083118.200.json
-
-###
-
-GET http://localhost:8080/skills/userskills/1
-Accept: application/json
-
-<> 2020-11-23T083116.200.json
-
-###
-
-GET http://localhost:8080/skills
-Accept: application/json
-
-<> 2020-11-23T083113.200.json
-
-###
-
-POST http://localhost:8080/user/1/projects/1/paymentplan/1/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Chile",
-  "city": "Santiago"
-}
-
-<> 2020-11-23T083044.500.json
-
-###
-
-POST http://localhost:8080/user/1/card
-Accept: application/json
-Content-Type: application/json
-
-{
-  "cardName": "Tarjeta BNB",
-  "cardNumber": "987963958",
-  "expirationYear": 2021,
-  "expirationMonth": 12,
-  "cvc": 958,
-  "creationDate": "2022-11-01"
-}
-
-<> 2020-11-23T083038.200.json
-
-###
-
-POST http://localhost:8080/user/1/projects/1/paymentplan/1/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Chile",
-  "city": "Santiago"
-}
-
-<> 2020-11-23T082831.500.json
-
-###
-
-GET http://localhost:8080/skills/userskills/1
-Accept: application/json
-
-<> 2020-11-23T081623.200.json
-
-###
-
-POST http://localhost:8080/skills/userSkill/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "skillName": "Programacion Backend con Spring",
-  "verified": 1
-}
-
-<> 2020-11-23T081614.200.json
 
 ###
 
