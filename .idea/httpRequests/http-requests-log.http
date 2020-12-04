@@ -1,3 +1,51 @@
+GET http://localhost:8080/user/4/card
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-04T055533.200.json
+
+###
+
+GET http://localhost:8080/user/4/card
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-04T055451.200.json
+
+###
+
+GET http://localhost:8080/user/4/card
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-04T055401.200.json
+
+###
+
+GET http://localhost:8080/user/4/card
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-04T055341.500.json
+
+###
+
+GET http://localhost:8080/user/4/card
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-04T055316.200.json
+
+###
+
+GET http://localhost:8080/user/1/card
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-04T055254.200.json
+
+###
+
 <<<<<<< HEAD
 POST http://localhost:8080/projects/1/media
 Accept: application/json
@@ -492,212 +540,4 @@ Content-Type: application/json
 {
   "skillName": "Programacion en go"
 }
-
-###
-
-PUT http://localhost:8080/skills/userSkill/21
-Accept: application/json
-Content-Type: application/json
-
-{
-}
-
-###
-
-POST http://localhost:8080/skills/userSkill/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "skillName": "Programacion java Backend",
-  "verified": 1
-}
-
-###
-
-GET http://localhost:8080/tags
-Accept: application/json
-
-###
-
-GET http://localhost:8080/tags/user/1
-Accept: application/json
-
-###
-
-GET http://localhost:8080/tags/python
-Accept: application/json
-
-###
-
-DELETE http://localhost:8080/tags/3/user/1
-
-###
-
-POST http://localhost:8080/tags/user/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "nameTags": "Javascript",
-  "verified": 1
-}
-
-###
-
-PUT http://localhost:8080/users/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "Juan",
-  "surname": "Fernandez",
-  "username": "El paisano",
-  "email": "example@gmail.com",
-  "description": "Me gusta el sql",
-  "image": "B64encondeimageOrDirOfFile",
-  "cellphone": "75281857"
-}
-
-###
-
-GET http://localhost:8080/users/2
-Accept: application/json
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-###
-
-PUT http://localhost:8080/users/1/image
-Accept: application/json
-Content-Type: application/json
-
-{
-  "image": "B64encondeimageOrASimpleDirFile"
-}
-
-###
-
-POST http://localhost:8080/users
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "Ronald ",
-  "surname": "Romero",
-  "username": "ronmen",
-  "email": "ronmen@gmail.com"
-}
-
-###
-
-<<<<<<< HEAD
-POST http://localhost:8080/paymentPlan
-Accept: application/json
-Content-Type: application/json
-
-{
-  "plan": "6 mes",
-  "description": "6 mes de publicidad para tu proyecto",
-  "cost": 499.99,
-  "duration": 6
-}
-
-<> 2020-12-03T112202.200.json
-
-###
-
-POST http://localhost:8080/paymentPlan
-Accept: application/json
-Content-Type: application/json
-
-{
-  "plan": "6 mes",
-  "description": "6 mes de publicidad para tu proyecto",
-  "cost": 499.99,
-  "duration": 6
-}
-
-<> 2020-12-03T112159.200.json
-
-###
-
-POST http://localhost:8080/paymentPlan
-Accept: application/json
-Content-Type: application/json
-
-{
-  "plan": "6 mes",
-  "description": "6 mes de publicidad para tu proyecto",
-  "cost": 499.99,
-  "duration": 6
-}
-
-<> 2020-12-03T112152.200.json
-
-###
-
-POST http://localhost:8080/user/1/projects/1/paymentplan/1/3
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Chile",
-  "city": "Santiago"
-}
-
-<> 2020-12-03T102923.200.json
-
-###
-
-POST http://localhost:8080/user/1/projects/1/paymentplan/1/2
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Chile",
-  "city": "Santiago"
-}
-
-<> 2020-12-03T102845.500.json
-
-###
-
-POST http://localhost:8080/user/1/projects/1/paymentplan/1/2
-Accept: application/json
-Content-Type: application/json
-
->>>>>>> 51327350be3dc1e46443dc43cf19fe09ccd7a6fb
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Chile",
-  "city": "Santiago"
-}
-
-<<<<<<< HEAD
-<> 2020-12-03T101846.500.json
-=======
-<> 2020-12-03T102758.500.json
-
-###
-
-POST http://localhost:8080/paymentPlan
-Accept: application/json
-Content-Type: application/json
-
-{
-  "plan": "6 mes",
-  "description": "6 mes de publicidad para tu proyecto",
-  "cost": 499.99,
-  "duration": 6
-}
-
-<> 2020-12-03T102754.200.json
->>>>>>> 51327350be3dc1e46443dc43cf19fe09ccd7a6fb
 
