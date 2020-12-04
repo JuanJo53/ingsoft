@@ -1,135 +1,31 @@
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectId": 1,
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-12-03T114856.500.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectId": 1,
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-12-03T114854.500.json
-
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
-
-<> 2020-12-03T114851.500.json
-
-###
-
-POST http://localhost:8080/users
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "Ronald ",
-  "surname": "Romero",
-  "username": "ronmen",
-  "email": "ronmen@gmail.com"
-}
-
-<> 2020-12-03T114845.200.json
-
-###
-
-POST http://localhost:8080/users
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "Ronald ",
-  "surname": "Romero",
-  "username": "ronmen",
-  "email": "ronmen@gmail.com"
-}
-
-<> 2020-12-03T114843.200.json
-
-###
-
-POST http://localhost:8080/users
-Accept: application/json
-Content-Type: application/json
-
-{
-  "name": "Ronald ",
-  "surname": "Romero",
-  "username": "ronmen",
-  "email": "ronmen@gmail.com"
-}
-
-<> 2020-12-03T114840.200.json
-
-###
-
-POST http://localhost:8080/user/1/notifications
-Accept: application/json
-Content-Type: application/json
-
-{
-  "projectId": 1,
-  "title": "Nueva Solicitud",
-  "message": "Un usuario solicito unirse a tu proyecto",
-  "date": "2020-10-12"
-}
-
-<> 2020-12-03T114808.500.json
-
-###
-
-POST http://localhost:8080/user/1/projects/1/paymentplan/1/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Chile",
-  "city": "Santiago"
-}
-
-###
-
-POST http://localhost:8080/user/1/projects/1/paymentplan/1/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Chile",
-  "city": "Santiago"
-}
-
-###
-
 GET http://localhost:8080/user/1/bill
 Accept: application/json
 Content-Type: application/json
 
+<> 2020-12-04T060023.200.json
+
 ###
 
-DELETE http://localhost:8080/user/1/card/2
+POST http://localhost:8080/user/1/projects/1/paymentplan/1/1
 Accept: application/json
 Content-Type: application/json
+
+{
+  "buyDate": "2020-25-17",
+  "billingAddress": "",
+  "country": "Chile",
+  "city": "Santiago"
+}
+
+<> 2020-12-04T060021.200.json
+
+###
+
+GET http://localhost:8080/user/1/card
+Accept: application/json
+Content-Type: application/json
+
+<> 2020-12-04T060016.200.json
 
 ###
 
@@ -147,6 +43,8 @@ Content-Type: application/json
   "status": 1
 }
 
+<> 2020-12-04T060010.200.json
+
 ###
 
 POST http://localhost:8080/user/1/card
@@ -162,17 +60,7 @@ Content-Type: application/json
   "creationDate": "2022-11-01"
 }
 
-###
-
-GET http://localhost:8080/user/1/card/1
-Accept: application/json
-Content-Type: application/json
-
-###
-
-GET http://localhost:8080/user/1/card
-Accept: application/json
-Content-Type: application/json
+<> 2020-12-04T060001.200.json
 
 ###
 
@@ -189,10 +77,19 @@ Content-Type: application/json
   "expirationDate" : "2020-05-12"
 }
 
+<> 2020-12-04T055954.200.json
+
 ###
 
 GET http://localhost:8080/user/1/certificates/1
 Accept: application/json
+
+###
+
+GET http://localhost:8080/user/1/certificates
+Accept: application/json
+
+<> 2020-12-04T055947.200.json
 
 ###
 
@@ -209,15 +106,14 @@ Content-Type: application/json
   "expirationDate": "2024-10-12"
 }
 
-###
-
-GET http://localhost:8080/user/1/certificates
-Accept: application/json
+<> 2020-12-04T055945.200.json
 
 ###
 
 GET http://localhost:8080/projects/3/media
 Accept: application/json
+
+<> 2020-12-04T055937.200.json
 
 ###
 
@@ -231,6 +127,8 @@ Content-Type: application/json
   "type": "1"
 }
 
+<> 2020-12-04T055935.200.json
+
 ###
 
 PUT http://localhost:8080/user/1/notifications/1
@@ -240,6 +138,15 @@ Accept: application/json
 
 GET http://localhost:8080/user/2/notifications/2
 Accept: application/json
+
+<> 2020-12-04T055926.500.json
+
+###
+
+GET http://localhost:8080/user/1/notifications
+Accept: application/json
+
+<> 2020-12-04T055924.500.json
 
 ###
 
@@ -254,33 +161,150 @@ Content-Type: application/json
   "date": "2020-10-12"
 }
 
-###
-
-GET http://localhost:8080/user/1/notifications
-Accept: application/json
+<> 2020-12-04T055923.500.json
 
 ###
 
-POST http://localhost:8080/paymentPlan
+POST http://localhost:8080/user/1/notifications
 Accept: application/json
 Content-Type: application/json
 
 {
-  "plan": "6 mes",
-  "description": "6 mes de publicidad para tu proyecto",
-  "cost": 499.99,
-  "duration": 6
+  "projectId": 1,
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
 }
 
-###
-
-GET http://localhost:8080/paymentPlan/1
-Accept: application/json
+<> 2020-12-04T055921.500.json
 
 ###
 
-GET http://localhost:8080/paymentPlan
+GET http://localhost:8080/my-projects/list/work_on/3
 Accept: application/json
+
+<> 2020-12-04T055915.404.json
+
+###
+
+GET http://localhost:8080/my-projects/3/user-members
+Accept: application/json
+
+<> 2020-12-04T055914.404.json
+
+###
+
+GET http://localhost:8080/user/2/user-request
+Accept: application/json
+
+<> 2020-12-04T055910.200.json
+
+###
+
+GET http://localhost:8080/my-projects/list/1
+Accept: application/json
+
+<> 2020-12-04T055909.404.json
+
+###
+
+PUT http://localhost:8080/user/1/project-feed/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "benefits": "mucho dinero ",
+  "status" : 1
+}
+
+<> 2020-12-04T055902.200.json
+
+###
+
+GET http://localhost:8080/user/1/project-feed
+Accept: application/json
+
+<> 2020-12-04T055901.200.json
+
+###
+
+GET http://localhost:8080/user/1/projects
+Accept: application/json
+
+<> 2020-12-04T055859.405.json
+
+###
+
+PUT http://localhost:8080/user/1/projects/3
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Autos voladores",
+  "description": "es un poyecto muy nuevo",
+  "benefits": "mucho dinero ",
+  "status" : 1
+}
+
+<> 2020-12-04T055855.200.json
+
+###
+
+POST http://localhost:8080/user/2/projects
+Accept: application/json
+Content-Type: application/json
+
+{
+  "projectTitle": "Esto es una prueba 2",
+  "description": "es un poyecto es una prueba 2",
+  "benefits": "mucho dinero 2",
+  "status" : 1
+}
+
+<> 2020-12-04T055852.500.json
+
+###
+
+GET http://localhost:8080/skills/projectkills/1
+Accept: application/json
+
+<> 2020-12-04T055844.500.json
+
+###
+
+GET http://localhost:8080/skills/userskills/1
+Accept: application/json
+
+<> 2020-12-04T055843.500.json
+
+###
+
+GET http://localhost:8080/skills
+Accept: application/json
+
+<> 2020-12-04T055837.500.json
+
+###
+
+GET http://localhost:8080/skills/python
+Accept: application/json
+
+<> 2020-12-04T055835.500.json
+
+###
+
+POST http://localhost:8080/skills/projectSkill/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "skillName": "c++",
+  "verified": 1
+}
+
+<> 2020-12-04T055833.404.json
 
 ###
 
@@ -292,35 +316,7 @@ Content-Type: application/json
   "skillName": "Programacion en go"
 }
 
-###
-
-PUT http://localhost:8080/skills/userSkill/21
-Accept: application/json
-Content-Type: application/json
-
-{
-}
-
-###
-
-POST http://localhost:8080/skills/userSkill/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "skillName": "Programacion java Backend",
-  "verified": 1
-}
-
-###
-
-PUT http://localhost:8080/skills/userSkill/update/21
-Accept: application/json
-Content-Type: application/json
-
-{
-  "skillName": "Programacion en go"
-}
+<> 2020-12-04T055828.500.json
 
 ###
 
@@ -331,9 +327,11 @@ Content-Type: application/json
 {
 }
 
+<> 2020-12-04T055827.500.json
+
 ###
 
-POST http://localhost:8080/skills/userSkill/1
+POST http://localhost:8080/skills/userSkill/2
 Accept: application/json
 Content-Type: application/json
 
@@ -341,25 +339,33 @@ Content-Type: application/json
   "skillName": "Programacion java Backend",
   "verified": 1
 }
+
+<> 2020-12-04T055825.500.json
 
 ###
 
 GET http://localhost:8080/tags
 Accept: application/json
 
+<> 2020-12-04T055817.200.json
+
 ###
 
 GET http://localhost:8080/tags/user/1
 Accept: application/json
+
+<> 2020-12-04T055813.200.json
 
 ###
 
 GET http://localhost:8080/tags/python
 Accept: application/json
 
+<> 2020-12-04T055812.200.json
+
 ###
 
-DELETE http://localhost:8080/tags/3/user/1
+DELETE http://localhost:8080/tags/2/user/2
 
 ###
 
@@ -371,6 +377,21 @@ Content-Type: application/json
   "nameTags": "Javascript",
   "verified": 1
 }
+
+<> 2020-12-04T055805.200.json
+
+###
+
+POST http://localhost:8080/users/login
+Accept: application/json
+Content-Type: application/json
+
+{
+  "email": "ronmen@gmail.com",
+  "password": "PasswordNeedsSecure"
+}
+
+<> 2020-12-04T055755.500.json
 
 ###
 
@@ -388,10 +409,14 @@ Content-Type: application/json
   "cellphone": "75281857"
 }
 
+<> 2020-12-04T055752.200.json
+
 ###
 
 GET http://localhost:8080/users/2
 Accept: application/json
+
+<> 2020-12-04T055746.200.json
 
 ###
 
@@ -403,6 +428,8 @@ Content-Type: application/json
   "image": "B64encondeimageOrASimpleDirFile"
 }
 
+<> 2020-12-04T055744.200.json
+
 ###
 
 POST http://localhost:8080/users
@@ -410,115 +437,76 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Ronald ",
-  "surname": "Romero",
+  "name": "Jonas ",
+  "surname": "Savitar",
   "username": "ronmen",
-  "email": "ronmen@gmail.com"
+  "email": "jonas46@gmail.com",
+  "password": "1234"
 }
+
+<> 2020-12-04T055735.200.json
 
 ###
 
-<<<<<<< HEAD
-POST http://localhost:8080/paymentPlan
+GET http://localhost:8080/user/1/notifications
+Accept: application/json
+
+<> 2020-12-04T055727.500.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
 Accept: application/json
 Content-Type: application/json
 
 {
-  "plan": "6 mes",
-  "description": "6 mes de publicidad para tu proyecto",
-  "cost": 499.99,
-  "duration": 6
+  "projectId": 1,
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
 }
 
-<> 2020-12-03T112202.200.json
+<> 2020-12-04T055722.500.json
 
 ###
 
-POST http://localhost:8080/paymentPlan
+PUT http://localhost:8080/user/1/notifications/1
+Accept: application/json
+
+###
+
+GET http://localhost:8080/user/2/notifications/2
+Accept: application/json
+
+<> 2020-12-04T055716.500.json
+
+###
+
+POST http://localhost:8080/user/1/notifications
 Accept: application/json
 Content-Type: application/json
 
 {
-  "plan": "6 mes",
-  "description": "6 mes de publicidad para tu proyecto",
-  "cost": 499.99,
-  "duration": 6
+  "projectId": 1,
+  "title": "Nueva Solicitud",
+  "message": "Un usuario solicito unirse a tu proyecto",
+  "date": "2020-10-12"
 }
 
-<> 2020-12-03T112159.200.json
+<> 2020-12-04T055713.500.json
 
 ###
 
-POST http://localhost:8080/paymentPlan
+GET http://localhost:8080/user/1/notifications
 Accept: application/json
-Content-Type: application/json
 
-{
-  "plan": "6 mes",
-  "description": "6 mes de publicidad para tu proyecto",
-  "cost": 499.99,
-  "duration": 6
-}
-
-<> 2020-12-03T112152.200.json
+<> 2020-12-04T055710.500.json
 
 ###
 
-POST http://localhost:8080/user/1/projects/1/paymentplan/1/3
+GET http://localhost:8080/user/1/card
 Accept: application/json
 Content-Type: application/json
 
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Chile",
-  "city": "Santiago"
-}
-
-<> 2020-12-03T102923.200.json
-
-###
-
-POST http://localhost:8080/user/1/projects/1/paymentplan/1/2
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Chile",
-  "city": "Santiago"
-}
-
-<> 2020-12-03T102845.500.json
-
-###
-
-POST http://localhost:8080/user/1/projects/1/paymentplan/1/2
-Accept: application/json
-Content-Type: application/json
-
-{
-  "buyDate": "2020-25-17",
-  "billingAddress": "",
-  "country": "Chile",
-  "city": "Santiago"
-}
-
-<> 2020-12-03T102758.500.json
-
-###
-
-POST http://localhost:8080/paymentPlan
-Accept: application/json
-Content-Type: application/json
-
-{
-  "plan": "6 mes",
-  "description": "6 mes de publicidad para tu proyecto",
-  "cost": 499.99,
-  "duration": 6
-}
-
-<> 2020-12-03T102754.200.json
+<> 2020-12-04T055034.200.json
 
