@@ -54,4 +54,12 @@ public class TagApi {
     public void deletetaguser(@PathVariable("tagid") Integer tagid,@PathVariable("userid") Integer userid, HttpServletRequest request) {
         tagBl.deletetag(tagid,userid);
     }
+    @RequestMapping(value="/user/{userid}/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Tag addtagtouser(@RequestBody Tag tag, @PathVariable("userid") Integer id, HttpServletRequest request) {
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+        Tag tagResponse = tagBl.addTagToUser(tag,id);
+        return tagResponse;
+    }
 }

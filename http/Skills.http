@@ -14,7 +14,6 @@ Content-Type: application/json
 
 {
 }
-
 ### update skill
 PUT http://localhost:8080/skills/userSkill/update/21
 Accept: application/json
