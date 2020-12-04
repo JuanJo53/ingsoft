@@ -30,6 +30,7 @@ public class UserBl {
         user.setSurname(userRequest.getSurname());
         user.setUsername(userRequest.getUsername());
         user.setEmail(userRequest.getEmail());
+        user.setPassword(userRequest.getPassword());
         user.setTransaction(transaction);
 
         userDao.newUser(user);

@@ -4,10 +4,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "Ronald ",
-  "surname": "Romero",
+  "name": "Jonas ",
+  "surname": "Savitar",
   "username": "ronmen",
-  "email": "ronmen@gmail.com"
+  "email": "jonas46@gmail.com",
+  "password": "1234"
 }
 ### image
 PUT http://localhost:8080/users/1/image

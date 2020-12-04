@@ -7,7 +7,7 @@
         INSERT INTO user
         VALUES (
             null,#{name},#{surname},#{username},
-            #{email},'PasswordNeedsSecure',null,null,
+            #{email},#{password},null,null,
             null,1,#{transaction.txId},#{transaction.txHost},#{transaction.txUserId},
             #{transaction.txDate}
         )
