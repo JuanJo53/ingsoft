@@ -54,12 +54,24 @@ public class TagApi {
     public void deletetaguser(@PathVariable("tagid") Integer tagid,@PathVariable("userid") Integer userid, HttpServletRequest request) {
         tagBl.deletetag(tagid,userid);
     }
+    @RequestMapping(value = "/{tagid}/project/{projectid}" ,method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void deletetagproject(@PathVariable("tagid") Integer tagid,@PathVariable("projectid") Integer projectid, HttpServletRequest request) {
+        tagBl.deletetagproject(tagid,projectid);
+    }
     @RequestMapping(value="/user/{userid}/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public Tag addtagtouser(@RequestBody Tag tag, @PathVariable("userid") Integer id, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
         Tag tagResponse = tagBl.addTagToUser(tag,id);
+        return tagResponse;
+    }
+    @RequestMapping(value="projects/{projectid}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public Tag addtagtoproject(@RequestBody TagRequest tag, @PathVariable("projectid") Integer id, HttpServletRequest request) {
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+        Tag tagResponse = tagBl.addTagToProject(tag,id,transaction);
         return tagResponse;
     }
 }

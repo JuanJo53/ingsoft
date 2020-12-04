@@ -6,7 +6,11 @@ spring:
     platform: mysql
     url: jdbc:mysql://localhost:3306/smart_idea?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
+<<<<<<< HEAD
+    password: rebeca
+=======
     password:
+>>>>>>> 9a8d79097ae59ed95ea244dfe278b1d3dea0f04a
     driver-class-name: com.mysql.jdbc.Driver
     hikari:
       connectionTestQuery: select 1
