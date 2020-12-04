@@ -8,7 +8,7 @@ Content-Type: application/json
   "verified": 1
 }
 ### delete user tag
-DELETE http://localhost:8080/tags/3/user/1
+DELETE http://localhost:8080/tags/2/user/2
 
 ### GET tag by name
 GET http://localhost:8080/tags/python
