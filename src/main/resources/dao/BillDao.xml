@@ -19,8 +19,8 @@
             bill_id = #{billId} and status = 1
     </select>
 
-   <resultMap id="billsResultMap" type="bo.ucb.edu.ingsoft.model.Bill">
-        <id column="bill_id" property="billId"></id>
+   <resultMap id="billsResultMap" type="bo.ucb.edu.ingsoft.dto.BillRequest">
+        <id column="bill_id" property="id"></id>
         <result column="userId" property="userId"></result>
         <result column="paymentPlanId" property="paymentPlanId"></result>
         <result column="cardId" property="cardId"></result>
@@ -29,21 +29,27 @@
         <result column="billingAddress" property="billingAddress"></result>
         <result column="country" property="country"></result>
         <result column="city" property="city"></result>
+        <result column="projectTitle" property="projectTitle"></result>
+        <result column="paymentPlanName" property="paymentPlanName"></result>
+        <result column="paymentPlanCost" property="paymentPlanCost"></result>
     </resultMap>
     <select id="getBills" resultMap="billsResultMap">
         SELECT
-            bill_id as billId,
-            user_id as userId,
-            payment_plan_id as paymentPlanId,
-            card_id as cardId,
-            projects_id as projectsId,
-            buy_date as buyDate,
-            billing_address as billingAddress,
-            country as country,
-            city as city
-        FROM bill
+            a.bill_id as billId,
+            a.user_id as userId,
+            a.payment_plan_id as paymentPlanId,
+            a.card_id as cardId,
+            a.projects_id as projectsId,
+            a.buy_date as buyDate,
+            a.billing_address as billingAddress,
+            a.country as country,
+            a.city as city,
+            b.project_title as projectTitle,
+            c.plan as paymentPlanName,
+            c.cost as paymentPlanCost
+        FROM bill a, projects b, payment_plan c
         WHERE
-            user_id = #{userId} and status = 1
+            a.user_id = #{userId} and a.projects_id=b.projects_id and a.payment_plan_id=c.payment_plan_id and a.status = 1
     </select>
 
     <insert id="newBill" parameterType="bo.ucb.edu.ingsoft.model.Bill">
