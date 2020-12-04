@@ -5,6 +5,7 @@ public class UserRequest {
     private String surname;
     private String username;
     private String email;
+    private String password;
     private String description;
     private String image;
     private String cellphone;
@@ -66,5 +67,13 @@ public class UserRequest {
 
     public void setCellphone(String cellphone) {
         this.cellphone = cellphone;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
