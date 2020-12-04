@@ -18,7 +18,7 @@
         SELECT a.area_id as AreaId,
         a.name_area as nameArea
         FROM area a,projects_area b
-        WHERE a.area_id= b.area_id and b.projects_id=#{Idproject}
+        WHERE a.area_id= b.area_id and b.projects_id=#{Idproject} and a.status=1
     </select>
 
 
