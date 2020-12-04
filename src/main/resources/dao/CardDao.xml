@@ -19,7 +19,7 @@
             card_id = #{cardId} and status = 1
     </select>
     <resultMap id="cardResultMap" type="bo.ucb.edu.ingsoft.model.Card">
-        <id column="userId" property="userId"></id>
+        <id column="card_id" property="id"></id>
         <result column="cardName" property="cardName"></result>
         <result column="cardNumber" property="cardNumber"></result>
         <result column="expirationYear" property="expirationYear"></result>
@@ -30,6 +30,7 @@
     </resultMap>
     <select id="getCard" resultMap="cardResultMap">
         SELECT
+            card_id as cardId,
             user_id as userId,
             card_name as cardName,
             card_number as cardNumber,

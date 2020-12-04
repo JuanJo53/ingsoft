@@ -7,6 +7,16 @@ Content-Type: application/json
   "nameTags": "Javascript",
   "verified": 1
 }
+### add taguser
+
+POST http://localhost:8080/tags/user/1/add
+Accept: application/json
+Content-Type: application/json
+
+{
+  "tagId": "1"
+}
+
 ### delete user tag
 DELETE http://localhost:8080/tags/2/user/2
 

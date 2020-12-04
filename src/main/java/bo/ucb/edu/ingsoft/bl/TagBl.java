@@ -65,4 +65,12 @@ public class TagBl {
     public void deletetag(Integer idtag,Integer iduser){
         userTagsDao.deletetag(idtag,iduser);
     }
+
+    public Tag addTagToUser(Tag tag, Integer id) {
+        UserTags tag1=new UserTags();
+        tag1.setTagsId(tag.getTagId());
+        tag1.setUserId(id);
+        userTagsDao.createUserTag(tag1);
+        return tag;
+    }
 }
