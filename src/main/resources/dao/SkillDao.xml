@@ -41,7 +41,7 @@
         INNER JOIN projects pj ON
         pj.projects_id=psk.projects_id
         WHERE
-            psk.projects_id=#{projectid} and sk.verified = 1 and sk.status = 1
+            psk.projects_id=#{projectid} and sk.status = 1
     </select>
     <select id="getBySkillName" resultType="bo.ucb.edu.ingsoft.model.Skill">
         SELECT skillId as skillId,

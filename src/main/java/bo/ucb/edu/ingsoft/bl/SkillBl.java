@@ -1,10 +1,12 @@
 package bo.ucb.edu.ingsoft.bl;
 
 import bo.ucb.edu.ingsoft.dao.SkillDao;
+import bo.ucb.edu.ingsoft.dao.SkillProjectDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dao.skillUserDao;
 import bo.ucb.edu.ingsoft.dto.SkillRequest;
 import bo.ucb.edu.ingsoft.model.Skill;
+import bo.ucb.edu.ingsoft.model.SkillProject;
 import bo.ucb.edu.ingsoft.model.SkillUser;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.slf4j.Logger;
@@ -19,12 +21,14 @@ public class SkillBl {
     private SkillDao skillDao;
     private TransactionDao transactionDao;
     private skillUserDao skilluserDao;
+    private SkillProjectDao skillProjectDao;
     private static final Logger LOGGER = LoggerFactory.getLogger(SkillBl.class);
     @Autowired
-    public SkillBl(SkillDao skillDao, TransactionDao transactionDao, skillUserDao skilluserDao){
+    public SkillBl(SkillDao skillDao, TransactionDao transactionDao, skillUserDao skilluserDao,SkillProjectDao skillProjectDao){
         this.skillDao = skillDao;
         this.transactionDao = transactionDao;
         this.skilluserDao = skilluserDao;
+        this.skillProjectDao=skillProjectDao;
     }
 
     public Skill getSkillByName(String skillName) {
@@ -42,7 +46,7 @@ public class SkillBl {
         return  skillDao.getProjectSkills(projectid);
     }
 
-    public SkillRequest createSkill(SkillRequest skillRequest ,Transaction transaction,Integer iduser){
+    public SkillRequest createSkill(SkillRequest skillRequest ,Transaction transaction,Integer id,Integer projectoruser){
         Skill skill = new Skill();
 
         skill.setSkillName(skillRequest.getSkillName());
@@ -53,13 +57,19 @@ public class SkillBl {
         skillDao.newSkill(skill);
         Integer lastkill =skillDao.getLastInsertId();
         LOGGER.info("idskill: "+lastkill);
-        SkillUser skilluser = new SkillUser();
+        if(projectoruser==1){
 
-        skilluser.setSkillId(lastkill);
-        skilluser.setUserId(iduser);
-
-
-        skilluserDao.newSkillUser(skilluser);
+            SkillUser skilluser = new SkillUser();
+            skilluser.setSkillId(lastkill);
+            skilluser.setUserId(id);
+            skilluserDao.newSkillUser(skilluser);
+        }
+        else{
+            SkillProject skillProject   =new SkillProject();
+            skillProject.setProjecteId(id);
+            skillProject.setSkillId(lastkill);
+            skillProjectDao.newSkillProject(skillProject);
+        }
 
         return skillRequest;
     }

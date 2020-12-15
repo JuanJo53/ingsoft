@@ -1,5 +1,5 @@
 ### POST new skill for a user
-POST http://localhost:8080/skills/userSkill/2
+POST http://localhost:8080/skills/userSkill/1
 Accept: application/json
 Content-Type: application/json
 
@@ -43,7 +43,7 @@ GET http://localhost:8080/skills
 Accept: application/json
 
 ### GET All user verified skills
-GET http://localhost:8080/skills/userskills/1
+GET http://localhost:8080/skills/userskills/3
 Accept: application/json
 ### GET All project verified skills
 GET http://localhost:8080/skills/projectkills/1

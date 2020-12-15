@@ -50,7 +50,15 @@ public class SkillApi {
     public SkillRequest createSkill(@RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("iduser") Integer userid) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-        SkillRequest skillResponse = skillBl.createSkill(skillRequest, transaction, userid);
+        SkillRequest skillResponse = skillBl.createSkill(skillRequest, transaction, userid,1);
+        return skillResponse;
+    }
+    @RequestMapping(value = "/projectSkill/{iduser}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public SkillRequest createSkillprojecte(@RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("iduser") Integer userid) {
+        Transaction transaction = TransactionUtil.createTransaction(request);
+        transactionBl.createTransaction(transaction);
+        SkillRequest skillResponse = skillBl.createSkill(skillRequest, transaction, userid,2);
         return skillResponse;
     }
 
