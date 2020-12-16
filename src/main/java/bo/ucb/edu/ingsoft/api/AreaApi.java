@@ -36,7 +36,7 @@ public class AreaApi {
     public Area createarea(@RequestBody AreaRequest    areaRequest, HttpServletRequest request, @PathVariable("idproject") Integer projectid) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-        LOGGER.info(areaRequest.getAreaName()+"  hola sadasdasd");
+        LOGGER.info(areaRequest.getNameArea()+"  hola sadasdasd");
         Area area=areaBl.createArea(areaRequest,transaction,projectid);
          return area ;
     }
@@ -50,7 +50,7 @@ public class AreaApi {
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public Area updatearea(@RequestBody AreaRequest    areaRequest, HttpServletRequest request, @PathVariable("idarea") Integer idarea) {
 
-        LOGGER.info(areaRequest.getAreaName()+"  hola sadasdasd");
+        LOGGER.info(areaRequest.getNameArea()+"  hola sadasdasd");
         Area area=areaBl.editArea(areaRequest,idarea);
         return area ;
     }

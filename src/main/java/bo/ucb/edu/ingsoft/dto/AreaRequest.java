@@ -2,19 +2,19 @@ package bo.ucb.edu.ingsoft.dto;
 
 public class AreaRequest {
 
-    private String areaName;
+    private String nameArea;
     private Integer Status;
 
 
     public AreaRequest() {
     }
 
-    public String getAreaName() {
-        return areaName;
+    public String getNameArea() {
+        return nameArea;
     }
 
-    public void setAreaName(String areaName) {
-        this.areaName = areaName;
+    public void setNameArea(String nameArea) {
+        this.nameArea = nameArea;
     }
 
     public Integer getStatus() {

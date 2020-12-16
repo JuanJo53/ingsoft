@@ -33,8 +33,8 @@ public class AreaBl {
     }
     public Area createArea(AreaRequest areaRequest, Transaction transaction,Integer Idproject){
         Area area = new Area();
-        LOGGER.info(areaRequest.getAreaName().toString());
-        area.setNameArea(areaRequest.getAreaName());
+        LOGGER.info(areaRequest.getNameArea().toString());
+        area.setNameArea(areaRequest.getNameArea());
         area.setTransaction(transaction);
         area.setCreationDate(new Date());
         LOGGER.info(area.toString());
@@ -57,7 +57,7 @@ public class AreaBl {
 
         Area area = new Area();
         area.setAreaId(idarea);
-        area.setNameArea(areaRequest.getAreaName());
+        area.setNameArea(areaRequest.getNameArea());
         area.setStatus(areaRequest.getStatus());
         areaDao.updateArea(area);
         return area;
