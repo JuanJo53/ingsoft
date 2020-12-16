@@ -17,5 +17,5 @@ public interface ProjectDao {
     public List<Project> listproyectuser(Integer UserId);
     public Integer getLastInsertIdProject();
     public List<Project> listproyectuserparticipate(Integer UserId);
-
+    public Project proyectuser(Integer UserId,Integer projectsId);
 }

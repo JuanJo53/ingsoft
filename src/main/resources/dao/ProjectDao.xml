@@ -62,7 +62,18 @@
         where a.projects_id=b.projects_id and b.user_id=#{UserId} and b.rol=3
 
     </select>
+    <select id="proyectuser" resultType="bo.ucb.edu.ingsoft.model.Project">
+        SELECT a.projects_id as projectsId,
+        a.project_title as projectTitle,
+        a.description as description,
+        a.benefits as benefits,
+        a.status as status,
+        a.views as views,
+        a.create_date as createDate
+        FROM projects a ,project_user b
+        where a.projects_id=#{projectsId} and b.user_id=#{UserId}  ORDER By a.projects_id DESC LIMIT 1
 
+    </select>
     <select id="listproyectuser" resultType="bo.ucb.edu.ingsoft.model.Project">
         SELECT a.projects_id as projectsId,
         a.project_title as projectTitle,

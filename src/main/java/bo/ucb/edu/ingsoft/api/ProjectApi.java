@@ -127,4 +127,12 @@ public class ProjectApi {
         projectBl.editprojectask(iduser,idproyect,transaction);
         return projectRequest;
     }
+
+    @RequestMapping(value = "/{userid}/projectos/{projectid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Integer userprojet(@PathVariable("projectid") Integer idproject,@PathVariable("userid") Integer iduser){
+
+         return projectBl.conexion(iduser,idproject);
+    }
+
+
 }

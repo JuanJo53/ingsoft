@@ -73,6 +73,13 @@ public class ProjectBl {
         projectDao.increaseProjectViews(userid,id);
         return projectRequest;
     }
+    public Integer conexion(Integer usid,Integer prid){
+        if(projectDao.proyectuser(usid,prid)==null){
+            return 2;
+        }else {
+            return 1;
+        }
+    }
     public void editprojectrollwaitingtoacept(Integer iduser, Integer idproject, Transaction transaction) {
 
         ProjectUser projectUser=new ProjectUser();
