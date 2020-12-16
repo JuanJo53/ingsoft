@@ -43,5 +43,13 @@
         WHERE
             b.user_id=#{iduser} and a.tags_id=b.tags_id and a.verified = 1
     </select>
-
+    <select id="listTagProject" resultMap="tagsResultMap">
+        SELECT
+            a.tags_id as tagId,
+            a.name_tags as nameTags,
+            a.verified as verified
+        FROM tags a, projects_tags b
+        WHERE
+            b.projects_id=#{idproject} and a.tags_id=b.tags_id and a.verified = 1
+    </select>
 </mapper>

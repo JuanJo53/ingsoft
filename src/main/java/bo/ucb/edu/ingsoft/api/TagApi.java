@@ -74,4 +74,8 @@ public class TagApi {
         Tag tagResponse = tagBl.addTagToProject(tag,id,transaction);
         return tagResponse;
     }
+    @RequestMapping(value="projects/{projectid}",method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Tag> getProjectTags(@PathVariable("projectid") Integer id,HttpServletRequest request) {
+        return tagBl.getAllProjectTags(id);
+    }
 }

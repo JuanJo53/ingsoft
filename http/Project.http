@@ -21,6 +21,11 @@ Content-Type: application/json
   "benefits": "mucho dinero ",
   "status" : 1
 }
+
+### GET all user owned projects
+GET http://localhost:8080/user/list/1
+Accept: application/json
+
 ### GET all user owned projects
 GET http://localhost:8080/user/1/projects
 Accept: application/json

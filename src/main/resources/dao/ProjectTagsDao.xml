@@ -10,6 +10,6 @@
                )
     </insert>
     <delete id="deletetagproject">
-        DELETE FROM project_tags WHERE projects_id=#{idprojects} and tags_id=#{idtag}
+        DELETE FROM projects_tags WHERE projects_id=#{idproject} and tags_id=#{idtag}
     </delete>
 </mapper>

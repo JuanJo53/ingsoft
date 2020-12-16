@@ -66,7 +66,7 @@ public class TagBl {
         userTagsDao.deletetag(idtag,iduser);
     }
     public void deletetagproject(Integer idtag,Integer idproject){
-        projectTagsDao.deletetag(idtag,idproject);
+        projectTagsDao.deletetagproject(idtag,idproject);
     }
     public Tag addTagToUser(Tag tag, Integer id) {
         UserTags tag1=new UserTags();
@@ -87,5 +87,8 @@ public class TagBl {
         projectTags.setTagsId(tagid);
         projectTagsDao.createProjectTag(projectTags);
         return tag1;
+    }
+    public List<Tag> getAllProjectTags(Integer idproject){
+        return tagDao.listTagProject(idproject);
     }
 }
