@@ -65,12 +65,7 @@
             card_Number=#{cardNumber},
             expiration_year=#{expirationYear},
             expiration_month=#{ expirationMonth},
-<<<<<<< HEAD
             CVC=#{cvc}
-=======
-            CVC=#{cvc},
-            status=#{status}
->>>>>>> 86f2a347f456f87fdca56d75aaf79e5b8e697efb
         where
             card_id = #{cardId} and status = 1
     </update>
