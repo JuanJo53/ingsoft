@@ -61,14 +61,11 @@
     <update id="updateCard" parameterType="bo.ucb.edu.ingsoft.model.Card">
         Update card
         set
-            card_id=#{cardId},
             card_name=#{cardName},
             card_Number=#{cardNumber},
             expiration_year=#{expirationYear},
             expiration_month=#{ expirationMonth},
-            CVC=#{cvc},
-            creation_date=#{creationDate},
-            status=#{status}
+            CVC=#{cvc}
         where
             card_id = #{cardId} and status = 1
     </update>

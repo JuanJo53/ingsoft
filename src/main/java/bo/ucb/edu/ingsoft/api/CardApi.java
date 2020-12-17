@@ -56,7 +56,7 @@ public class CardApi {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
 
-        CardRequest cardResponse = cardBl.editCard(cardRequest, cardId, transaction);
+        CardRequest cardResponse = cardBl.editCard(cardRequest, cardId,userid, transaction);
         //CertificateRequest certificateResponse = certificateBl.createCertificate(1,certificateRequest, transaction);
         return cardResponse;
     }
