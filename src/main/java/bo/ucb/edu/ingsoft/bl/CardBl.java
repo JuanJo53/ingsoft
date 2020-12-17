@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -64,6 +65,11 @@ public class CardBl {
         card.setExpirationYear(cardRequest.getExpirationYear());
         card.setExpirationMonth(cardRequest.getExpirationMonth());
         card.setCvc(cardRequest.getCvc());
+<<<<<<< HEAD
+=======
+        card.setCreationDate(new Date());
+        card.setStatus(1);
+>>>>>>> 86f2a347f456f87fdca56d75aaf79e5b8e697efb
         card.setTransaction(transaction);
         cardDao.updateCard(card);
         return  cardRequest;
