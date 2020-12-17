@@ -71,7 +71,7 @@
         a.views as views,
         a.create_date as createDate
         FROM projects a ,project_user b
-        where a.projects_id=#{projectsId} and b.user_id=#{UserId}  ORDER By a.projects_id DESC LIMIT 1
+        where a.projects_id=#{projectsId} and b.user_id=#{UserId}   and a.projects_id=b.projects_id ORDER By a.projects_id DESC LIMIT 1
 
     </select>
     <select id="listproyectuser" resultType="bo.ucb.edu.ingsoft.model.Project">
