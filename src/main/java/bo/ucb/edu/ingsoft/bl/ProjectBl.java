@@ -126,7 +126,7 @@ public class ProjectBl {
         notification.setTitle("Nueva Solicitud");
         notification.setMessage("Un usuario solicito unirse a tu proyecto");
         //pendiente
-        notification.setUserId(iduser);
+        notification.setUserId(projectUserDao.getuserowner(idproject));
         notification.setProjectId(idproject);
         notification.setStatus(2);
         notification.setTransaction(transaction);

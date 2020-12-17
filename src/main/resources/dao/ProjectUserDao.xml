@@ -20,5 +20,10 @@
 
         UPDATE project_user SET rol = #{Rol}, status = #{Status} WHERE user_id=#{UserId} and projects_id=#{ProjectId};
     </update>
+    <select id="getuserowner" resultType="java.lang.Integer">
+        SELECT user_id
+        FROM project_user
+        WHERE projects_id=#{idproject} and rol=1
+    </select>
 
 </mapper>
