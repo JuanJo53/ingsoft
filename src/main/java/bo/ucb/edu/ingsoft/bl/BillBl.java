@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -36,7 +37,7 @@ public class BillBl {
         bill.setProjectsId(projectid);
         bill.setPaymentPlanId(planid);
         bill.setCardId(cardid);
-        bill.setBuyDate(billRequest.getBuyDate());
+        bill.setBuyDate(new Date());
         bill.setBillingAddress(billRequest.getBillingAddress());
         bill.setCountry(billRequest.getCountry());
         bill.setCity(billRequest.getCity());
