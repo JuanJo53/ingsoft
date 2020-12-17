@@ -1,3 +1,21 @@
+PUT http://localhost:8080/user/1/card/1
+Accept: application/json
+Content-Type: application/json
+
+{
+  "cardName": "Tarjeta VISA 2",
+  "cardNumber": "43674786",
+  "expirationYear": "2022",
+  "expirationMonth": "07",
+  "cvc": "12345",
+  "creationDate": "2022-11-01",
+  "status": 1
+}
+
+<> 2020-12-17T130452.200.json
+
+###
+
 POST http://localhost:8080/user/1/certificates
 Accept: application/json
 Content-Type: application/json
@@ -583,22 +601,4 @@ Content-Type: application/json
 DELETE http://localhost:8080/user/1/card/2
 Accept: application/json
 Content-Type: application/json
-
-###
-
-PUT http://localhost:8080/user/1/card/1
-Accept: application/json
-Content-Type: application/json
-
-{
-  "cardName": "Tarjeta VISA 2",
-  "cardNumber": "43674786",
-  "expirationYear": "2022",
-  "expirationMonth": "07",
-  "cvc": "12345",
-  "creationDate": "2022-11-01",
-  "status": 1
-}
-
-<> 2020-12-04T055827.500.json
 
