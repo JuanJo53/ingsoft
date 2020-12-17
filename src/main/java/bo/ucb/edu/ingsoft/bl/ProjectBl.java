@@ -144,6 +144,10 @@ public class ProjectBl {
         return  projectDao.listproyect();
     }
 
+    public List<Project>listproyecttag(Integer idtag){
+        return  projectDao.listproyectag(idtag);
+    }
+
     public List<Project>listproyectuser(Integer idUser){
         return  projectDao.listproyectuser(idUser);
     }

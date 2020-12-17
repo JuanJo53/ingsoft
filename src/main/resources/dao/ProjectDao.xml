@@ -86,6 +86,19 @@
         where a.projects_id=b.projects_id and b.user_id=#{UserId} and b.rol=1
 
     </select>
+
+    <select id="listproyectag" resultType="bo.ucb.edu.ingsoft.model.Project">
+        SELECT a.projects_id as projectsId,
+        a.project_title as projectTitle,
+        a.description as description,
+        a.benefits as benefits,
+        a.status as status,
+        a.views as views,
+        a.create_date as createDate
+        FROM projects a ,tags b ,projects_tags c
+        where a.projects_id=c.projects_id and b.tags_id=#{Tagsid} and  c.tags_id=b.tags_id  and b.status=1
+
+    </select>
     <select id="getLastInsertIdProject" resultType="java.lang.Integer">
     SELECT projects_id FROM projects ORDER BY projects_id DESC LIMIT 1
     </select>

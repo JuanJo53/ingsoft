@@ -8,6 +8,8 @@ import bo.ucb.edu.ingsoft.model.Project;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.model.User;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +26,7 @@ public class ProjectApi {
     private TransactionBl transactionBl;
 
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ProjectApi.class);
     @Autowired
 
     public ProjectApi(ProjectBl projectBl, TransactionBl transactionBl) {
@@ -134,5 +137,13 @@ public class ProjectApi {
          return projectBl.conexion(iduser,idproject);
     }
 
+    @RequestMapping(value = "{userid}/tag/{idtag}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Project> getpryectlisttag(@PathVariable("userid") Integer id,@PathVariable("idtag") Integer idtag){
+       LOGGER.info(idtag.toString());
+        return projectBl.listproyecttag(idtag);
+    }
+
+
+//listproyecttag
 
 }
