@@ -67,7 +67,6 @@
             expiration_year=#{expirationYear},
             expiration_month=#{ expirationMonth},
             CVC=#{cvc},
-            creation_date=#{creationDate},
             status=#{status}
         where
             card_id = #{cardId} and status = 1
