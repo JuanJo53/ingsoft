@@ -59,7 +59,7 @@ Accept: application/json
 ###
 ///{projectid}/user-members
 
-GET http://localhost:8080/my-projects/3/user-members
+GET http://localhost:8080/user/3/user-members
 Accept: application/json
 ###
 ///list/work_on/{userid}

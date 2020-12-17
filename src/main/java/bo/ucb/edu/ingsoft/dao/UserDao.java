@@ -12,7 +12,7 @@ public interface UserDao {
     public void newUser(User user);
     public List<User> listproyectuser(Integer projectsId);
     public void updateUser(User user);
-    public UserRequest findByUserId(Integer userId);
+    public User findByUserId(Integer userId);
     public List<User>listproyectuserparticipan(Integer projectsId);
     public void updateImage(User user);
     public User findPersonByNP(User user);

@@ -20,7 +20,7 @@ Content-Type: application/json
 }
 
 ### Get user 1
-GET http://localhost:8080/users/2
+GET http://localhost:8080/users/3
 Accept: application/json
 
 ### Update user 1

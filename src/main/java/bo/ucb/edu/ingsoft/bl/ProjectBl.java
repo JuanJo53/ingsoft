@@ -90,7 +90,7 @@ public class ProjectBl {
         projectUserDao.updatestatus(projectUser);
 
         Notification notification = new Notification();
-        notification.setTitle("Se acepto una solicitud tuya!");
+        notification.setTitle("Acepto tu solicitud");
         notification.setMessage("El dueño del proyecto acepto tu solicitud para unirte a su proyecto.");
         notification.setUserId(iduser);
         notification.setProjectId(idproject);
@@ -125,6 +125,7 @@ public class ProjectBl {
         Notification notification = new Notification();
         notification.setTitle("Nueva Solicitud");
         notification.setMessage("Un usuario solicito unirse a tu proyecto");
+        //pendiente
         notification.setUserId(iduser);
         notification.setProjectId(idproject);
         notification.setStatus(2);

@@ -46,7 +46,7 @@ public class UserApi {
         return userResponse;
     }
     @RequestMapping(value = "/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public UserRequest findbyuserid(@PathVariable("userid") Integer id){
+    public User findbyuserid(@PathVariable("userid") Integer id){
         return  userBl.findByUserId(id);
     }
 

@@ -29,13 +29,14 @@
         a.name as name,
         a.surname as surname,
         a.username as username,
-        a.email as email
+        a.email as email,
+        b.rol as status
         FROM user a ,project_user b
-        where b.projects_id=#{projectsId}  and b.user_id=a.user_id and b.rol=3 and a.status = 1
+        where b.projects_id=#{projectsId}  and b.user_id=a.user_id  and b.rol!=2 and a.status = 1
 
     </select>
 
-    <select id="findByUserId" resultType="bo.ucb.edu.ingsoft.dto.UserRequest">
+    <select id="findByUserId" resultType="bo.ucb.edu.ingsoft.model.User">
         SELECT user_id as userId,
         name as name,
         surname as surname,
