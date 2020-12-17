@@ -88,6 +88,13 @@ public class TagBl {
         projectTagsDao.createProjectTag(projectTags);
         return tag1;
     }
+    public Tag addToProject(Tag tag, Integer id) {
+        ProjectTags tag1=new ProjectTags();
+        tag1.setTagsId(tag.getTagId());
+        tag1.setProjectsId(id);
+        projectTagsDao.createProjectTag(tag1);
+        return tag;
+    }
     public List<Tag> getAllProjectTags(Integer idproject){
         return tagDao.listTagProject(idproject);
     }
