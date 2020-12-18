@@ -19,4 +19,6 @@ public interface ProjectDao {
     public List<Project> listproyectuserparticipate(Integer UserId);
     public Project proyectuser(Integer UserId,Integer projectsId);
     public List<Project>listproyectag(Integer Tagsid);
+
+    public List<Project>listproyecserch(String serch);
 }

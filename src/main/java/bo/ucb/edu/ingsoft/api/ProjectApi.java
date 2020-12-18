@@ -142,8 +142,13 @@ public class ProjectApi {
        LOGGER.info(idtag.toString());
         return projectBl.listproyecttag(idtag);
     }
-
-
+    @RequestMapping(value = "{userid}/buscar/{buscar}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Project> getpryectlisserche(@PathVariable("userid") Integer id,@PathVariable("buscar") String idtag){
+        LOGGER.info(idtag.toString());
+        String a=idtag+"%";
+        return projectBl.listproyecserche(a);
+    }
+//listproyecserche
 //listproyecttag
 
 }

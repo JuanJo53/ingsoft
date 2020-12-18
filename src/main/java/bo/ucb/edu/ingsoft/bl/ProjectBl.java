@@ -33,7 +33,7 @@ public class ProjectBl {
     public ProjectRequest newproject(ProjectRequest projectRequest, Integer id,Transaction transaction){
        Project project =new Project();
 
-       project.setProjectTitle(projectRequest.getProjectTitle());
+       project.setProjectTitle(projectRequest.getProjectTitle().trim());
        project.setDescription(projectRequest.getDescription());
        project.setBenefits(projectRequest.getBenefits());
        project.setViews(0);
@@ -62,7 +62,7 @@ public class ProjectBl {
         Project project =new Project();
 
         project.setProjectsId(id);
-        project.setProjectTitle(projectRequest.getProjectTitle());
+        project.setProjectTitle(projectRequest.getProjectTitle().trim());
         project.setDescription(projectRequest.getDescription());
         project.setBenefits(projectRequest.getBenefits());
         project.setStatus(projectRequest.getStatus());
@@ -153,7 +153,9 @@ public class ProjectBl {
     public List<Project>listproyecttag(Integer idtag){
         return  projectDao.listproyectag(idtag);
     }
-
+    public List<Project>listproyecserche(String  buscar){
+        return  projectDao.listproyecserch(buscar);
+    }
     public List<Project>listproyectuser(Integer idUser){
         return  projectDao.listproyectuser(idUser);
     }
