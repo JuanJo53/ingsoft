@@ -48,7 +48,7 @@
         status as status,
         views as views,
         create_date as createDate
-        FROM projects
+        FROM projects where status=1
     </select>
 
     <select id="listproyectuserparticipate" resultType="bo.ucb.edu.ingsoft.model.Project">
@@ -96,7 +96,7 @@
         a.views as views,
         a.create_date as createDate
         FROM projects a ,tags b ,projects_tags c
-        where a.projects_id=c.projects_id and b.tags_id=#{Tagsid} and  c.tags_id=b.tags_id  and b.status=1
+        where a.projects_id=c.projects_id and b.tags_id=#{Tagsid} and  c.tags_id=b.tags_id  and b.status=1 and a.status=1
 
     </select>
     <select id="listproyecserch" resultType="bo.ucb.edu.ingsoft.model.Project">
@@ -107,7 +107,7 @@
         a.status as status,
         a.views as views,
         a.create_date as createDate
-        FROM projects a  where a.project_title LIKE #{serch}
+        FROM projects a  where a.status=1 and a.project_title LIKE #{serch}
 
     </select>
     <select id="getLastInsertIdProject" resultType="java.lang.Integer">
