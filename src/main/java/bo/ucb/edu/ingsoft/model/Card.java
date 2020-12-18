@@ -7,7 +7,7 @@ public class Card {
     private Integer cardId;
     private Integer userId;
     private String cardName;
-    private Integer cardNumber;
+    private Long cardNumber;
     private Integer expirationYear;
     private Integer expirationMonth;
     private Integer cvc;
@@ -43,11 +43,11 @@ public class Card {
         this.cardName = cardName;
     }
 
-    public Integer getCardNumber() {
+    public Long getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(Integer cardNumber) {
+    public void setCardNumber(Long cardNumber) {
         this.cardNumber = cardNumber;
     }
 
@@ -118,4 +118,3 @@ public class Card {
                 '}';
     }
 }
-
