@@ -39,17 +39,30 @@ public class UserBl {
     }
     public User updateUser(UserUpdate userUpdate, Integer id, Transaction transaction){
         User user = new User();
-        user.setUserId(id);
-        user.setName(userUpdate.getName());
-        user.setSurname(userUpdate.getSurname());
-        user.setUsername(userUpdate.getUsername());
-        user.setEmail(userUpdate.getEmail());
-        user.setCellphone(userUpdate.getCellphone());
-        user.setDescription(userUpdate.getDescription());
-        user.setImage(userUpdate.getImage());
-        userDao.updateUser(user);
-        return user;
+        if (existe(userUpdate,id)==false){
+            user.setUserId(id);
+            user.setName(userUpdate.getName());
+            user.setSurname(userUpdate.getSurname());
+            user.setUsername(userUpdate.getUsername());
+            user.setEmail(userUpdate.getEmail());
+            user.setCellphone(userUpdate.getCellphone());
+            user.setDescription(userUpdate.getDescription());
+            user.setImage(userUpdate.getImage());
+            userDao.updateUser(user);
+            return user;
+        }else{
+            LOGGER.info("F se arruino");
+            return null;
+        }
     }
+    public boolean existe(UserUpdate userUpdate,Integer id){
+        if (userDao.findByUsername(userUpdate.getUsername(),id).size()>0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public User findByUserId (Integer id1){
         User user = userDao.findByUserId(id1);
         return user;

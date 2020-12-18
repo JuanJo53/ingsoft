@@ -44,6 +44,8 @@ public class UserApi {
         transactionBl.createTransaction(transaction);
         User userResponse = userBl.updateUser(userUpdate, id,transaction);
         return userResponse;
+
+
     }
     @RequestMapping(value = "/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public User findbyuserid(@PathVariable("userid") Integer id){

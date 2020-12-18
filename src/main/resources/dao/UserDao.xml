@@ -48,6 +48,12 @@
         FROM user
         where user_id=#{userId} and status = 1
     </select>
+    <select id="findByUsername" resultType="bo.ucb.edu.ingsoft.model.User">
+        SELECT
+               username as username
+        FROM user
+        where username=#{username} and user_id!=#{userId} and status = 1
+    </select>
     <select id="findPersonByNP" resultType="bo.ucb.edu.ingsoft.model.User">
         SELECT
             user_id as userId,

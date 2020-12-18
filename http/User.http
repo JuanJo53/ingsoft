@@ -24,14 +24,14 @@ GET http://localhost:8080/users/3
 Accept: application/json
 
 ### Update user 1
-PUT http://localhost:8080/users/1
+PUT http://localhost:8080/users/3
 Accept: application/json
 Content-Type: application/json
 
 {
   "name": "Juan",
   "surname": "Fernandez",
-  "username": "El paisano",
+  "username": "ronmen2",
   "email": "example@gmail.com",
   "description": "Me gusta el sql",
   "image": "B64encondeimageOrDirOfFile",
