@@ -26,20 +26,25 @@ public class UserBl {
 
         User user =new User();
 
-        user.setName(userRequest.getName().trim());
-        user.setSurname(userRequest.getSurname().trim());
-        user.setUsername(userRequest.getUsername());
-        user.setEmail(userRequest.getEmail());
-        user.setPassword(userRequest.getPassword());
-        user.setTransaction(transaction);
+            user.setName(userRequest.getName().trim());
+            user.setSurname(userRequest.getSurname().trim());
+            user.setUsername(userRequest.getUsername());
+            user.setEmail(userRequest.getEmail());
+            user.setPassword(userRequest.getPassword());
+            user.setTransaction(transaction);
+            if (user.getName().trim().length()==0 || user.getSurname().trim().length()==0|| user.getUsername().trim().length()==0){
+                return null;
+            }else{
+                userDao.newUser(user);
+                return  userRequest;
+            }
 
-        userDao.newUser(user);
 
-        return  userRequest;
     }
     public User updateUser(UserUpdate userUpdate, Integer id, Transaction transaction){
         User user = new User();
-        if (existe(userUpdate,id)==false){
+        if (existe(userUpdate.getUsername(),id)==false){
+
             user.setUserId(id);
             user.setName(userUpdate.getName());
             user.setSurname(userUpdate.getSurname());
@@ -48,15 +53,19 @@ public class UserBl {
             user.setCellphone(userUpdate.getCellphone());
             user.setDescription(userUpdate.getDescription());
             user.setImage(userUpdate.getImage());
-            userDao.updateUser(user);
-            return user;
+            if (user.getName().trim().length()==0 || user.getSurname().trim().length()==0|| user.getUsername().trim().length()==0){
+                return null;
+            }else{
+                userDao.updateUser(user);
+                return user;
+            }
         }else{
             LOGGER.info("F se arruino");
             return null;
         }
     }
-    public boolean existe(UserUpdate userUpdate,Integer id){
-        if (userDao.findByUsername(userUpdate.getUsername(),id).size()>0) {
+    public boolean existe(String sa,Integer id){
+        if (userDao.findByUsername(sa,id).size()>0) {
             return true;
         }else{
             return false;

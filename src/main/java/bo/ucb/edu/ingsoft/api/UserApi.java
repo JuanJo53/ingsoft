@@ -40,7 +40,7 @@ public class UserApi {
 
     @RequestMapping(value = "/{userid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public User updateuser(@PathVariable("userid") Integer id,  @RequestBody UserUpdate userUpdate, HttpServletRequest request) {
+    public User updateuser(@PathVariable("userid") Integer id,@Valid  @RequestBody UserUpdate userUpdate, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
         User userResponse = userBl.updateUser(userUpdate, id,transaction);

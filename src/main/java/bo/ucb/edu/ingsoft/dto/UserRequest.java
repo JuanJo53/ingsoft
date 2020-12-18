@@ -1,17 +1,25 @@
 package bo.ucb.edu.ingsoft.dto;
 
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
+import javax.validation.constraints.*;
 
 public class UserRequest {
     @NotBlank(message = "Name is mandatory")
     private String name;
-    @NotBlank(message = "Name is mandatory")
+
+    @NotBlank(message = "Surname is mandatory")
     private String surname;
-    @NotBlank(message = "Name is mandatory")
+
+    @NotBlank(message = "Username is mandatory")
     private String username;
+
+    @NotBlank(message = "Email is mandatory")
+    @Email
     private String email;
+
+    @NotBlank(message = "Password is mandatory")
+    @Size(min = 8, max = 20, message
+            = "About Me must be between 8 and 20 characters")
     private String password;
     private String description;
     private String image;

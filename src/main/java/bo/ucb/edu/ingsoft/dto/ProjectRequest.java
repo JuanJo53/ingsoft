@@ -10,7 +10,7 @@ public class ProjectRequest {
     private String projectTitle;
     @NotBlank(message = "Name is mandatory")
     private String description;
-    @NotBlank(message = "beneficion no pueden estar en blanco ")
+    @NotBlank(message = "beneficios no pueden estar en blanco ")
     private String benefits;
     private Integer status;
 

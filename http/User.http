@@ -4,11 +4,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "name": "",
-  "surname": "Savitar",
+  "name": "sdaf",
+  "surname": "Savitar47",
   "username": "ronmen",
   "email": "jonas46@gmail.com",
-  "password": "1234"
+  "password": "12345678"
 }
 ### image
 PUT http://localhost:8080/users/1/image
@@ -31,11 +31,11 @@ Content-Type: application/json
 {
   "name": "Juan",
   "surname": "Fernandez",
-  "username": "ronmen2",
+  "username": "ronmen24",
   "email": "example@gmail.com",
   "description": "Me gusta el sql",
   "image": "B64encondeimageOrDirOfFile",
-  "cellphone": "75281857"
+  "cellphone": "75123456"
 }
 ###
 
