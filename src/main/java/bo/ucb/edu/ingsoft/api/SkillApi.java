@@ -11,6 +11,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -47,7 +48,7 @@ public class SkillApi {
 
     @RequestMapping(value = "/userSkill/{iduser}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public SkillRequest createSkill(@RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("iduser") Integer userid) {
+    public SkillRequest createSkill(@Valid @RequestBody SkillRequest skillRequest, HttpServletRequest request, @PathVariable("iduser") Integer userid) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
         SkillRequest skillResponse = skillBl.createSkill(skillRequest, transaction, userid,1);
@@ -55,7 +56,7 @@ public class SkillApi {
     }
     @RequestMapping(value = "/projectSkill/{iduser}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public SkillRequest createSkillprojecte(@RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("iduser") Integer userid) {
+    public SkillRequest createSkillprojecte(@Valid @RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("iduser") Integer userid) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
         SkillRequest skillResponse = skillBl.createSkill(skillRequest, transaction, userid,2);
@@ -64,7 +65,7 @@ public class SkillApi {
 
     @RequestMapping(value = "/userSkill/{skillid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public SkillRequest deleteSkill(@RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("skillid") Integer skillid) {
+    public SkillRequest deleteSkill(@Valid @RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("skillid") Integer skillid) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
         SkillRequest skillResponse = skillBl.deleteskill(skillRequest, transaction, skillid);
@@ -73,7 +74,7 @@ public class SkillApi {
 
     @RequestMapping(value = "/userSkill/update/{skillid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public SkillRequest updateskill(@RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("skillid") Integer skillid) {
+    public SkillRequest updateskill( @Valid @RequestBody SkillRequest skillRequest, HttpServletRequest request,@PathVariable("skillid") Integer skillid) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
         SkillRequest skillResponse = skillBl.updateSkill(skillRequest, transaction, skillid);

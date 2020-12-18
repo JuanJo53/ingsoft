@@ -1,6 +1,9 @@
 package bo.ucb.edu.ingsoft.dto;
 
+import javax.validation.constraints.NotBlank;
+
 public class SkillRequest {
+    @NotBlank(message = "Name is mandatory")
     private String skillName;
     private Integer verified;
 

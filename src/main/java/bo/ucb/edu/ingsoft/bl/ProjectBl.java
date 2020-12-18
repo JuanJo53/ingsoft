@@ -138,6 +138,7 @@ public class ProjectBl {
         LOGGER.info(String.valueOf(notification));
         notificationDao.newNotification(notification);
     }
+
     public Project detailsByprojectId(Integer projectid) {
 //        Project p=projectDao.detailsproyect(projectid);
 //        LOGGER.error(p.getAbilities());

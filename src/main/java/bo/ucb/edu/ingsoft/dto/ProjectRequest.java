@@ -2,11 +2,15 @@ package bo.ucb.edu.ingsoft.dto;
 
 import bo.ucb.edu.ingsoft.model.Transaction;
 
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 public class ProjectRequest {
+    @NotBlank(message = "Name is mandatory")
     private String projectTitle;
+    @NotBlank(message = "Name is mandatory")
     private String description;
+    @NotBlank(message = "beneficion no pueden estar en blanco ")
     private String benefits;
     private Integer status;
 

@@ -14,6 +14,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -33,7 +34,7 @@ public class AreaApi {
 
     @RequestMapping(value = "/Projectarea/{idproject}", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Area createarea(@RequestBody AreaRequest    areaRequest, HttpServletRequest request, @PathVariable("idproject") Integer projectid) {
+    public Area createarea(@Valid @RequestBody AreaRequest    areaRequest, HttpServletRequest request, @PathVariable("idproject") Integer projectid) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
         LOGGER.info(areaRequest.getNameArea()+"  hola sadasdasd");
@@ -48,7 +49,7 @@ public class AreaApi {
 
     @RequestMapping(value = "/Projectarea/{idarea}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public Area updatearea(@RequestBody AreaRequest    areaRequest, HttpServletRequest request, @PathVariable("idarea") Integer idarea) {
+    public Area updatearea( @Valid @RequestBody AreaRequest    areaRequest, HttpServletRequest request, @PathVariable("idarea") Integer idarea) {
 
         LOGGER.info(areaRequest.getNameArea()+"  hola sadasdasd");
         Area area=areaBl.editArea(areaRequest,idarea);

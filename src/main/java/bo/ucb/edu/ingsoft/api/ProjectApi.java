@@ -15,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -37,7 +38,7 @@ public class ProjectApi {
 
     @RequestMapping(value = "/{userid}/projects" ,method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ProjectRequest newproyect(@PathVariable("userid") Integer id,@RequestBody ProjectRequest projectRequest, HttpServletRequest request) {
+    public ProjectRequest newproyect(@PathVariable("userid") Integer id, @Valid @RequestBody ProjectRequest projectRequest, HttpServletRequest request) {
         // Creamos transaccion para la operación.
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
@@ -49,7 +50,7 @@ public class ProjectApi {
 
     @RequestMapping(value = "/{userid}/projects/{projectid}" ,method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ProjectRequest editproyect(@PathVariable("projectid") Integer id,@RequestBody ProjectRequest projectRequest, HttpServletRequest request) {
+    public ProjectRequest editproyect(@PathVariable("projectid") Integer id,@Valid @RequestBody ProjectRequest projectRequest, HttpServletRequest request) {
         // Creamos transaccion para la operación.
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);

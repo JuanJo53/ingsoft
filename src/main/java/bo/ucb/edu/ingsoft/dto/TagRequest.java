@@ -1,6 +1,9 @@
 package bo.ucb.edu.ingsoft.dto;
 
+import javax.validation.constraints.NotBlank;
+
 public class TagRequest {
+    @NotBlank(message = "Name is mandatory")
     private String nameTags;
     private Integer verified;
 
