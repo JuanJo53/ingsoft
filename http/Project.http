@@ -19,7 +19,7 @@ Content-Type: application/json
   "projectTitle": "Autos voladores",
   "description": "es un poyecto muy nuevo",
   "benefits": "mucho dinero ",
-  "status" : 1
+  "status" : 2
 }
 
 ### GET all user owned projects

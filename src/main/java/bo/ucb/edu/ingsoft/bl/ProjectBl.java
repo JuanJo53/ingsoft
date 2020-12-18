@@ -57,16 +57,14 @@ public class ProjectBl {
        }
 
     }
-    public ProjectRequest editproject(ProjectRequest projectRequest,
-                                      Integer id,Transaction transaction) {
+    public ProjectRequest editproject(ProjectRequest projectRequest, Integer idproject,Transaction transaction) {
         Project project =new Project();
 
-        project.setProjectsId(id);
+        project.setProjectsId(idproject);
         project.setProjectTitle(projectRequest.getProjectTitle().trim());
         project.setDescription(projectRequest.getDescription());
         project.setBenefits(projectRequest.getBenefits());
         project.setStatus(projectRequest.getStatus());
-        project.setViews(0);
         if(project.getBenefits().trim().length()==0 || project.getDescription().trim().length()==0 || project.getProjectTitle().trim().length()==0){
             return null;
         }else{
@@ -116,6 +114,7 @@ public class ProjectBl {
         projectUserDao.updatestatus(projectUser);
 
     }
+
     public void editprojectask(Integer iduser, Integer idproject,Transaction transaction) {
 
         ProjectUser projectUser=new ProjectUser();

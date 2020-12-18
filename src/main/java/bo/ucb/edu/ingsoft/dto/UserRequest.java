@@ -7,7 +7,9 @@ import javax.validation.constraints.Pattern;
 public class UserRequest {
     @NotBlank(message = "Name is mandatory")
     private String name;
+    @NotBlank(message = "Name is mandatory")
     private String surname;
+    @NotBlank(message = "Name is mandatory")
     private String username;
     private String email;
     private String password;

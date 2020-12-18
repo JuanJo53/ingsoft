@@ -24,7 +24,6 @@
         Update projects set project_title=#{projectTitle},
              description=#{description},
              benefits= #{benefits},
-             views=#{views},
              status=#{status}
              where projects_id= #{projectsId}
     </update>
