@@ -12,6 +12,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -30,7 +31,7 @@ public class UserApi {
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public UserRequest createnewuser(@RequestBody UserRequest userRequest, HttpServletRequest request) {
+    public UserRequest createnewuser(@Valid @RequestBody UserRequest userRequest, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
         UserRequest userResponse = userBl.createNewUser(userRequest, transaction);
@@ -39,14 +40,13 @@ public class UserApi {
 
     @RequestMapping(value = "/{userid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
-    public User updateuser(@PathVariable("userid") Integer id, @RequestBody UserUpdate userUpdate, HttpServletRequest request) {
+    public User updateuser(@PathVariable("userid") Integer id,  @RequestBody UserUpdate userUpdate, HttpServletRequest request) {
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
         User userResponse = userBl.updateUser(userUpdate, id,transaction);
         return userResponse;
-
-
     }
+
     @RequestMapping(value = "/{userid}" ,method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public User findbyuserid(@PathVariable("userid") Integer id){
         return  userBl.findByUserId(id);

@@ -1,6 +1,11 @@
 package bo.ucb.edu.ingsoft.dto;
 
+import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+
 public class UserRequest {
+    @NotBlank(message = "Name is mandatory")
     private String name;
     private String surname;
     private String username;

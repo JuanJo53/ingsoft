@@ -1,7 +1,10 @@
 package bo.ucb.edu.ingsoft.model;
 
+
 public class User {
+
     private Integer userId;
+
     private String name;
     private String surname;
     private String username;
@@ -11,6 +14,7 @@ public class User {
     private String image;
     private String cellphone;
     private Integer status;
+
     private Transaction transaction;
 
     public User() {
