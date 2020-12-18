@@ -6,7 +6,7 @@ spring:
     platform: mysql
     url: jdbc:mysql://localhost:3306/smart_idea?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     username: root
-    password: ABCabc123
+    password:
 
     driver-class-name: com.mysql.jdbc.Driver
     hikari:
@@ -25,3 +25,7 @@ mybatis:
     default-fetch-size: 100
     default-statement-timeout: 30
   mapper-locations: classpath:/dao/*Dao.xml
+
+server:
+  error:
+    include-message: always
