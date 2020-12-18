@@ -38,15 +38,22 @@ public class AreaBl {
         area.setTransaction(transaction);
         area.setCreationDate(new Date());
         LOGGER.info(area.toString());
-        areaDao.createArea(area);
+        LOGGER.info(String.valueOf(area.getNameArea().trim().length()));
+        if(area.getNameArea().trim().length()==0){
+            return null;
+        }else{
+            areaDao.createArea(area);
 
-        AreaProject areaProject= new AreaProject();
-        Integer areaid=areaDao.getLastIdArea();
+            AreaProject areaProject= new AreaProject();
+            Integer areaid=areaDao.getLastIdArea();
 
-        areaProject.setAreaId(areaid);
-        areaProject.setProjectId(Idproject);
-        areaProjectDao.createUserTag(areaProject);
-        return area;
+            areaProject.setAreaId(areaid);
+            areaProject.setProjectId(Idproject);
+            areaProjectDao.createUserTag(areaProject);
+
+            return area;
+        }
+
     }
 
     public List<Area> getAreaProjectlist(Integer Idproject){
@@ -59,7 +66,12 @@ public class AreaBl {
         area.setAreaId(idarea);
         area.setNameArea(areaRequest.getNameArea());
         area.setStatus(areaRequest.getStatus());
-        areaDao.updateArea(area);
-        return area;
+        if(area.getNameArea().trim().length()==0){
+            return null;
+        }else{
+            areaDao.updateArea(area);
+            return area;
+        }
+
     }
 }

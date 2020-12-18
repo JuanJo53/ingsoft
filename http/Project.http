@@ -4,9 +4,9 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "projectTitle": "Esto es una prueba 2",
-  "description": "es un poyecto es una prueba 2",
-  "benefits": "mucho dinero 2",
+  "projectTitle": "   add a   ",
+  "description": "  asds ",
+  "benefits": "  ad ad",
   "status" : 1
 }
 ###

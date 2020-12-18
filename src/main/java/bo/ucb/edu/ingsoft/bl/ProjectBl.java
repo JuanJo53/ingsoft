@@ -39,21 +39,23 @@ public class ProjectBl {
        project.setViews(0);
        project.setStatus(projectRequest.getStatus());
        project.setCreateDate(new Date());
-
        project.setTransaction(transaction);
+       if(project.getBenefits().trim().length()==0 || project.getDescription().trim().length()==0 || project.getProjectTitle().trim().length()==0){
+           return null;
+       }else{
+           projectDao.newProject(project);
 
-       projectDao.newProject(project);
+           ProjectUser projectUser=new ProjectUser();
+           projectUser.setUserId(id);
+           projectUser.setProjectId(projectDao.getLastInsertIdProject());
+           projectUser.setRol(1);
+           projectUser.setStatus(1);
+           projectUser.setTransaction(transaction);
+           projectUserDao.newProjectUser(projectUser);
 
+           return projectRequest;
+       }
 
-        ProjectUser projectUser=new ProjectUser();
-        projectUser.setUserId(id);
-        projectUser.setProjectId(projectDao.getLastInsertIdProject());
-        projectUser.setRol(1);
-        projectUser.setStatus(1);
-        projectUser.setTransaction(transaction);
-        projectUserDao.newProjectUser(projectUser);
-
-        return projectRequest;
     }
     public ProjectRequest editproject(ProjectRequest projectRequest,
                                       Integer id,Transaction transaction) {
@@ -65,9 +67,12 @@ public class ProjectBl {
         project.setBenefits(projectRequest.getBenefits());
         project.setStatus(projectRequest.getStatus());
         project.setViews(0);
-        projectDao.updateproyect(project);
-
-        return projectRequest;
+        if(project.getBenefits().trim().length()==0 || project.getDescription().trim().length()==0 || project.getProjectTitle().trim().length()==0){
+            return null;
+        }else{
+            projectDao.updateproyect(project);
+            return projectRequest;
+        }
     }
     public ProjectRequest increaseViews(ProjectRequest projectRequest,Integer userid,Integer id,Transaction transaction) {
         projectDao.increaseProjectViews(userid,id);

@@ -53,25 +53,30 @@ public class SkillBl {
         skill.setStatus(1);
         skill.setVerified(0);
         skill.setTransaction(transaction);
+        if(skill.getSkillName().trim().length()==0){
+            return null;
+        }else {
 
-        skillDao.newSkill(skill);
-        Integer lastkill =skillDao.getLastInsertId();
-        LOGGER.info("idskill: "+lastkill);
-        if(projectoruser==1){
+            skillDao.newSkill(skill);
+            Integer lastkill =skillDao.getLastInsertId();
+            LOGGER.info("idskill: "+lastkill);
+            if(projectoruser==1){
 
-            SkillUser skilluser = new SkillUser();
-            skilluser.setSkillId(lastkill);
-            skilluser.setUserId(id);
-            skilluserDao.newSkillUser(skilluser);
+                SkillUser skilluser = new SkillUser();
+                skilluser.setSkillId(lastkill);
+                skilluser.setUserId(id);
+                skilluserDao.newSkillUser(skilluser);
+            }
+            else{
+                SkillProject skillProject   =new SkillProject();
+                skillProject.setProjecteId(id);
+                skillProject.setSkillId(lastkill);
+                skillProjectDao.newSkillProject(skillProject);
+            }
+
+            return skillRequest;
         }
-        else{
-            SkillProject skillProject   =new SkillProject();
-            skillProject.setProjecteId(id);
-            skillProject.setSkillId(lastkill);
-            skillProjectDao.newSkillProject(skillProject);
-        }
 
-        return skillRequest;
     }
 
     public SkillRequest deleteskill(SkillRequest skillRequest,Transaction transaction, Integer skillid){
@@ -82,7 +87,12 @@ public class SkillBl {
         Skill skill= new Skill();
         skill.setSkillId(skillid);
         skill.setSkillName(skillRequest.getSkillName());
-        skillDao.updateSkill(skill);
-        return skillRequest;
+        if(skill.getSkillName().trim().length()==0){
+            return null;
+        }else{
+            skillDao.updateSkill(skill);
+            return skillRequest;
+        }
+
     }
 }

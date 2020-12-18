@@ -40,18 +40,26 @@ public class TagBl {
         tag.setVerified(tagRequest.getVerified());
         tag.setTransaction(transaction);
         LOGGER.info("idtag: "+tag.getNameTags());
-        tagDao.createTag(tag);
-        Integer tagid = tagDao.getLastIdTag();
-        LOGGER.info("idtag: "+tagid);
+       if(tag.getNameTags().trim().length()==0){
+           return null;
+       }
+       else{
+           tagDao.createTag(tag);
+           Integer tagid = tagDao.getLastIdTag();
+           LOGGER.info("idtag: "+tagid);
 
-        UserTags usertag= new UserTags();
-        usertag.setUserId(userid);
-        usertag.setTagsId(tagid);
-        LOGGER.info(usertag.toString());
-        userTagsDao.createUserTag(usertag);
+           UserTags usertag= new UserTags();
+           usertag.setUserId(userid);
+           usertag.setTagsId(tagid);
+           LOGGER.info(usertag.toString());
+           userTagsDao.createUserTag(usertag);
 
-        return tag;
+           return tag;
+
+       }
+
     }
+
     public Tag getTagByName(String tagname) {
         Tag tag = tagDao.getByTagName(tagname);
         return tag;
@@ -80,13 +88,19 @@ public class TagBl {
         tag1.setNameTags(tagRequest.getNameTags());
         tag1.setVerified(tagRequest.getVerified());
         tag1.setTransaction(transaction);
-        tagDao.createTag(tag1);
-        Integer tagid = tagDao.getLastIdTag();
-        ProjectTags projectTags= new ProjectTags();
-        projectTags.setProjectsId(id);
-        projectTags.setTagsId(tagid);
-        projectTagsDao.createProjectTag(projectTags);
-        return tag1;
+        if(tag1.getNameTags().trim().length()==0){
+            return null;
+        }
+        else{
+            tagDao.createTag(tag1);
+            Integer tagid = tagDao.getLastIdTag();
+            ProjectTags projectTags= new ProjectTags();
+            projectTags.setProjectsId(id);
+            projectTags.setTagsId(tagid);
+            projectTagsDao.createProjectTag(projectTags);
+            return tag1;
+        }
+
     }
     public Tag addToProject(Tag tag, Integer id) {
         ProjectTags tag1=new ProjectTags();
