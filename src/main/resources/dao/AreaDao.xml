@@ -16,11 +16,16 @@
     </select>
     <select id="getAreaByProject" resultType="bo.ucb.edu.ingsoft.model.Area">
         SELECT a.area_id as AreaId,
-        a.name_area as nameArea
+                a.name_area as nameArea
         FROM area a,projects_area b
         WHERE a.area_id= b.area_id and b.projects_id=#{Idproject} and a.status=1
     </select>
-
+    <select id="findByAreaname" resultType="bo.ucb.edu.ingsoft.model.Area">
+        SELECT
+               a.name_area as nameArea
+        FROM area a,projects_area b
+        WHERE a.name_area=#{namearea}  and b.projects_id=#{idproject}  and a.status=1
+    </select>
 
     <update id="updateArea" parameterType="bo.ucb.edu.ingsoft.model.Area">
 

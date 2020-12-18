@@ -5,6 +5,7 @@ import bo.ucb.edu.ingsoft.dao.AreaDao;
 import bo.ucb.edu.ingsoft.dao.AreaProjectDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dto.AreaRequest;
+import bo.ucb.edu.ingsoft.dto.UserUpdate;
 import bo.ucb.edu.ingsoft.model.Area;
 import bo.ucb.edu.ingsoft.model.AreaProject;
 import bo.ucb.edu.ingsoft.model.Transaction;
@@ -33,29 +34,40 @@ public class AreaBl {
     }
     public Area createArea(AreaRequest areaRequest, Transaction transaction,Integer Idproject){
         Area area = new Area();
-        LOGGER.info(areaRequest.getNameArea().toString());
-        area.setNameArea(areaRequest.getNameArea());
-        area.setTransaction(transaction);
-        area.setCreationDate(new Date());
-        LOGGER.info(area.toString());
-        LOGGER.info(String.valueOf(area.getNameArea().trim().length()));
-        if(area.getNameArea().trim().length()==0){
+        if (existe(areaRequest,Idproject)==false) {
+            LOGGER.info(areaRequest.getNameArea().toString());
+            area.setNameArea(areaRequest.getNameArea());
+            area.setTransaction(transaction);
+            area.setCreationDate(new Date());
+            LOGGER.info(area.toString());
+            LOGGER.info(String.valueOf(area.getNameArea().trim().length()));
+
+            if (area.getNameArea().trim().length() == 0) {
+                return null;
+            } else {
+                areaDao.createArea(area);
+
+                AreaProject areaProject = new AreaProject();
+                Integer areaid = areaDao.getLastIdArea();
+
+                areaProject.setAreaId(areaid);
+                areaProject.setProjectId(Idproject);
+                areaProjectDao.createUserTag(areaProject);
+
+                return area;
+            }
+        }else {
             return null;
-        }else{
-            areaDao.createArea(area);
-
-            AreaProject areaProject= new AreaProject();
-            Integer areaid=areaDao.getLastIdArea();
-
-            areaProject.setAreaId(areaid);
-            areaProject.setProjectId(Idproject);
-            areaProjectDao.createUserTag(areaProject);
-
-            return area;
         }
 
     }
-
+    public boolean existe(AreaRequest area, Integer id){
+        if (areaDao.findByAreaname(area.getNameArea(),id).size()>0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
     public List<Area> getAreaProjectlist(Integer Idproject){
         return areaDao.getAreaByProject(Idproject);
     }

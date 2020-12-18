@@ -5,6 +5,7 @@ import bo.ucb.edu.ingsoft.dao.SkillProjectDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
 import bo.ucb.edu.ingsoft.dao.skillUserDao;
 import bo.ucb.edu.ingsoft.dto.SkillRequest;
+import bo.ucb.edu.ingsoft.dto.UserUpdate;
 import bo.ucb.edu.ingsoft.model.Skill;
 import bo.ucb.edu.ingsoft.model.SkillProject;
 import bo.ucb.edu.ingsoft.model.SkillUser;
