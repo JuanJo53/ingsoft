@@ -2,15 +2,22 @@ package bo.ucb.edu.ingsoft.bl;
 
 import bo.ucb.edu.ingsoft.dao.CertificateDao;
 import bo.ucb.edu.ingsoft.dao.TransactionDao;
+import bo.ucb.edu.ingsoft.dto.BillRequest;
 import bo.ucb.edu.ingsoft.dto.CertificateRequest;
 import bo.ucb.edu.ingsoft.model.Certificate;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class CertificateBl {
@@ -32,6 +39,7 @@ public class CertificateBl {
     }
     //This function creates a user certificate by executing an insert function in certificateDao
     public CertificateRequest createCertificate(Integer userId, CertificateRequest certificateRequest, Transaction transaction) {
+        validationCertificate(certificateRequest);
         Certificate certificate = new Certificate();
         //Setting all the data sent from the body in CertificateRequest to the certificate class.
         certificate.setUserId(userId);
@@ -51,6 +59,7 @@ public class CertificateBl {
     }
     //This function updates a user certificate data by executing an update function in certificateDao
     public CertificateRequest editCertificate(CertificateRequest certificateRequest, Integer certificateId, Transaction transaction) {
+        validationCertificate(certificateRequest);
         Certificate certificate = new Certificate();
         //Setting all the data sent from the body in CertificateRequest to the certificate class.
         certificate.setCertificateId(certificateId);
@@ -83,4 +92,49 @@ public class CertificateBl {
         return  certificate;
     }
 
+
+    private void validationCertificate(CertificateRequest certificateRequest) {
+        String regex_certificate = "[A-Za-zÁÉÍÓÚáéíóúñÑ0-9 ]{4,60}";
+        Pattern pattern = Pattern.compile(regex_certificate);
+        Matcher matcher = pattern.matcher(certificateRequest.getCertificateName());
+        if (!matcher.matches()) {
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Nombre del certificado incorrecto.");
+        }
+
+        String regex_company = "[A-Za-zÁÉÍÓÚáéíóúñÑ ]{3,60}";
+        Pattern pattern_company = Pattern.compile(regex_company);
+        Matcher matcher_company = pattern_company.matcher(certificateRequest.getCompany());
+        if (!matcher_company.matches()) {
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Nombre de empresa incorrecto.");
+        }
+
+        if (certificateRequest.getExpeditionDate().before(new Date())) {
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Fecha de expedidición incorrecta.");
+        }
+
+        if (certificateRequest.getExpirationDate().before(new Date())) {
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Fecha de expiracion incorrecta.");
+        }
+
+        Pattern pattern_id = Pattern.compile("[A-Za-zÁÉÍÓÚáéíóúñÑ0-9]{0,60}");
+        Matcher matcher_id = pattern_id.matcher(certificateRequest.getCredentialId());
+        if (!matcher_id.matches()) {
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Identificador del credencial incorrecto.");
+        }
+
+        Pattern pattern_url = Pattern.compile("^(http|https):[-a-zA-Z0-9+&@#/%?=~_|!:,.;]{0,}");
+        Matcher matcher_url = pattern_url.matcher(certificateRequest.getCredentialURL());
+        if (!matcher_url.matches()) {
+            throw new ResponseStatusException(
+                    HttpStatus.INTERNAL_SERVER_ERROR, "Url del credencial incorrecto.");
+        }
+
+    }
+
 }
+

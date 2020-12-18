@@ -8,10 +8,10 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "certificateName": "Curso de C++ Avanzado",
+  "certificateName": "Curso de Java Avanzado",
   "company": "Platzi",
-  "expeditionDate": "2019-10-12",
-  "credentialId": "4215sd7s3dadg7sadwer98g",
+  "expeditionDate": "2021-01-01",
+  "credentialId": "4215sd7s3dadg7sadwgda4g",
   "credentialURL": "http://platzi.com/certificados/c++",
   "expirationDate": "2024-10-12"
 }

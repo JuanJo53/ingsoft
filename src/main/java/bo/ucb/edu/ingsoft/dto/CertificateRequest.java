@@ -1,8 +1,14 @@
 package bo.ucb.edu.ingsoft.dto;
 
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
+
 public class CertificateRequest {
+    @NotBlank(message = "Name is mandatory")
     private Integer certificateId;
     private String certificateName;
     private String company;

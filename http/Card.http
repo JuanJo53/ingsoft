@@ -29,7 +29,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "cardName": "Tarjeta VISA 2",
+  "cardName": "Tarjeta",
   "cardNumber": "43674786",
   "expirationYear": "2022",
   "expirationMonth": "07",
