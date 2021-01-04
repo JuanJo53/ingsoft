@@ -1,5 +1,6 @@
 package bo.ucb.edu.ingsoft.model;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Date;
 
 public class Card {
@@ -7,7 +8,7 @@ public class Card {
     private Integer cardId;
     private Integer userId;
     private String cardName;
-    private Long cardNumber;
+    private Integer cardNumber;
     private Integer expirationYear;
     private Integer expirationMonth;
     private Integer cvc;
@@ -43,11 +44,11 @@ public class Card {
         this.cardName = cardName;
     }
 
-    public Long getCardNumber() {
+    public Integer getCardNumber() {
         return cardNumber;
     }
 
-    public void setCardNumber(Long cardNumber) {
+    public void setCardNumber(Integer cardNumber) {
         this.cardNumber = cardNumber;
     }
 
