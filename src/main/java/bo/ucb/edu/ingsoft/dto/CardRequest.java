@@ -7,7 +7,7 @@ import java.util.Date;
 public class CardRequest {
 
     private String cardName;
-    private Long cardNumber;
+    private Integer cardNumber;
     private Integer expirationYear;
     private Integer expirationMonth;
     private Integer cvc;
@@ -25,14 +25,10 @@ public class CardRequest {
         this.cardName = cardName;
     }
 
-    public Long getCardNumber() {
-        return cardNumber;
+    public Integer getCardNumber() { return cardNumber;
     }
-
-    public void setCardNumber(Long cardNumber) {
-        this.cardNumber = cardNumber;
+    public void setCardNumber(Integer cardNumber) { this.cardNumber = cardNumber;
     }
-
     public Integer getExpirationYear() {
         return expirationYear;
     }
