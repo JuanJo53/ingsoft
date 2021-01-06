@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.ucb.edu.ingsoft.dao.DonationDao">
+    <select id="detailsByDonationId" resultType="bo.ucb.edu.ingsoft.model.Donation">
+        SELECT
+            donation_id as donationId,
+            user_id as userId,
+            card_id as cardId,
+            projects_id as projectsId,
+            donation_date as donationDate,
+            amount as amount
+        FROM donation
+        WHERE
+            donation_id = #{donationId} and status = 1
+    </select>
+
+    <resultMap id="donationsResultMap" type="bo.ucb.edu.ingsoft.dto.DonationRequest">
+        <id column="donation_id" property="id"></id>
+        <result column="userId" property="userId"></result>
+        <result column="cardId" property="cardId"></result>
+        <result column="projectsId" property="projectsId"></result>
+        <result column="donationDate" property="donationDate"></result>
+        <result column="amount" property="amount"></result>
+        <result column="projectTitle" property="projectTitle"></result>
+        <result column="projectDescription" property="projectDescription"></result>
+        <result column="cardNumber" property="cardNumber"></result>
+    </resultMap>
+
+    <select id="getDonations" resultMap="donationsResultMap">
+        SELECT
+            a.bill_id as billId,
+            a.user_id as userId,
+            a.card_id as cardId,
+            a.projects_id as projectsId,
+            a.donation_date as donationDate,
+            a.amount as amount,
+            b.project_title as projectTitle,
+            b.project_description as projectDescription,
+            c.card_number as cardNumber
+        FROM donation a, projects b, card c
+        WHERE
+            a.user_id = #{userId} and a.projects_id=b.projects_id and a.card_id=c.card_id and a.status = 1
+    </select>
+
+    <insert id="newDonation" parameterType="bo.ucb.edu.ingsoft.model.Donation">
+        INSERT INTO donation VALUES (
+                                    null,
+                                    #{userId},
+                                    #{cardId},
+                                    #{projectsId},
+                                    #{donationDate},
+                                    #{amount},
+                                    #{status},
+                                    #{transaction.txId},
+                                    #{transaction.txHost},
+                                    #{transaction.txUserId},
+                                    #{transaction.txDate}
+                                )
+    </insert>
+</mapper>

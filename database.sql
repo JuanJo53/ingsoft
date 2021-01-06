@@ -399,6 +399,41 @@ CREATE TABLE user_tags (
     CONSTRAINT user_tags_pk PRIMARY KEY (user_tags_id)
 );
 
+-- Table: donation
+CREATE TABLE donation (
+                          donation_id int NOT NULL AUTO_INCREMENT,
+                          user_id int NOT NULL,
+                          card_id int NOT NULL,
+                          projects_id int NOT NULL,
+                          donation_date date NOT NULL,
+                          amount numeric(10,4) NOT NULL,
+                          status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
+                          tx_id int NOT NULL,
+                          tx_host varchar(100) NOT NULL,
+                          tx_user_id int NOT NULL,
+                          tx_date timestamp NOT NULL,
+                          CONSTRAINT donation_pk PRIMARY KEY (donation_id)
+);
+
+-- Table: h_donation
+CREATE TABLE h_donation (
+                            h_donation_id int NOT NULL AUTO_INCREMENT,
+                            donation_id int NOT NULL,
+                            user_id int NOT NULL,
+                            card_id int NOT NULL,
+                            projects_id int NOT NULL,
+                            donation_date date NOT NULL,
+                            amount numeric(10,4) NOT NULL,
+                            status int NOT NULL COMMENT '0: DELETED
+	1: ACTIVE',
+                            tx_id int NOT NULL,
+                            tx_host varchar(100) NOT NULL,
+                            tx_user_id int NOT NULL,
+                            tx_date timestamp NOT NULL,
+                            CONSTRAINT h_donation_pk PRIMARY KEY (h_donation_id)
+);
+
 -- foreign keys
 -- Reference: Bill_User (table: bill)
 ALTER TABLE bill ADD CONSTRAINT Bill_User FOREIGN KEY Bill_User (user_id)
@@ -483,6 +518,18 @@ ALTER TABLE user_tags ADD CONSTRAINT user_tags_tags FOREIGN KEY user_tags_tags (
 -- Reference: user_tags_user (table: user_tags)
 ALTER TABLE user_tags ADD CONSTRAINT user_tags_user FOREIGN KEY user_tags_user (user_id)
     REFERENCES user (user_id);
+
+-- Reference: Donation_User (table: donation)
+ALTER TABLE donation ADD CONSTRAINT donation_User FOREIGN KEY donation_User (user_id)
+    REFERENCES user (user_id);
+
+-- Reference: Donation_card (table: donation)
+ALTER TABLE donation ADD CONSTRAINT donation_card FOREIGN KEY donation_card (card_id)
+    REFERENCES card (card_id);
+
+-- Reference: Donation_projects (table: donation)
+ALTER TABLE donation ADD CONSTRAINT donation_projects FOREIGN KEY donation_projects (projects_id)
+    REFERENCES projects (projects_id);
 
 -- End of file.
 
