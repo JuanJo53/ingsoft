@@ -2,7 +2,6 @@ package bo.ucb.edu.ingsoft.api;
 
 import bo.ucb.edu.ingsoft.bl.DonationBl;
 import bo.ucb.edu.ingsoft.bl.TransactionBl;
-import bo.ucb.edu.ingsoft.dto.BillRequest;
 import bo.ucb.edu.ingsoft.dto.DonationRequest;
 import bo.ucb.edu.ingsoft.model.Donation;
 import bo.ucb.edu.ingsoft.model.Transaction;
@@ -27,14 +26,17 @@ public class DonationApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(value = "/{userid}/projects/{projectid}/{cardid}",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/projects/{projectid}/card/{cardid}",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
     consumes = MediaType.APPLICATION_JSON_VALUE)
+
     public DonationRequest createDonation(@PathVariable("userid") Integer userid, @PathVariable("projectid") Integer projectid, @PathVariable("cardid") Integer cardid, @RequestBody DonationRequest donationRequest, HttpServletRequest request){
+
+        //Creamos transaccion para la operacion
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
         DonationRequest donationResponse = donationBl.createDonation(userid,projectid,cardid,donationRequest,transaction);
 
-        return donationRequest;
+        return donationResponse;
     }
 
     @RequestMapping(value = "/{userid}/donation", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
