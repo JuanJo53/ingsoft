@@ -3,11 +3,11 @@ Accept: application/json
 Content-Type: application/json
 
 ###
-POST http://localhost:8080/user/1/projects/1/card/1
+POST http://localhost:8080/user/1/projects/1/1
 Accept: application/json
 Content-Type: application/json
 
 {
-  "donationDate": "2021-01-05",
-  "amount": 2500
+  "donationDate": "2021-01-25",
+  "amount":1520
 }

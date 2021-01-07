@@ -26,7 +26,7 @@ public class DonationApi {
         this.transactionBl = transactionBl;
     }
 
-    @RequestMapping(value = "/{userid}/projects/{projectid}/card/{cardid}",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
+    @RequestMapping(value = "/{userid}/projects/{projectid}/{cardid}",method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE,
     consumes = MediaType.APPLICATION_JSON_VALUE)
 
     public DonationRequest createDonation(@PathVariable("userid") Integer userid, @PathVariable("projectid") Integer projectid, @PathVariable("cardid") Integer cardid, @RequestBody DonationRequest donationRequest, HttpServletRequest request){
