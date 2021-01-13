@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -85,6 +86,28 @@ public class CardBl {
         cardDao.deleteCard(card);
         return card;
     }
+
+
+    public Boolean isCardName(Integer userId, String cardName) {
+        Boolean resp=false;
+        List<Card> listCard = cardDao.getCard(userId);
+        for(Card card :listCard) {
+            if(card.getCardName().equals(cardName)) {
+                resp=true;
+            }
+        }
+        return resp;
+    }
+
+    public Boolean isCardNumber(Integer userId, Long cardNumber) {
+        Boolean resp=false;
+        List<Card> listCard = cardDao.getCard(userId);
+        for(Card card :listCard) {
+            if(card.getCardNumber().toString().equals(cardNumber.toString())) {
+                resp=true;
+            }
+        }
+        return resp;
+    }
+
 }
-
-

@@ -1,4 +1,6 @@
 package bo.ucb.edu.ingsoft.api;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import bo.ucb.edu.ingsoft.bl.CardBl;
 import bo.ucb.edu.ingsoft.bl.TransactionBl;
@@ -8,6 +10,7 @@ import bo.ucb.edu.ingsoft.model.Card;
 import bo.ucb.edu.ingsoft.model.Transaction;
 import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,8 +47,30 @@ public class CardApi {
         // Creamos transaccion para la operación.
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
-        CardRequest cardResponse = cardBl.createCard(userid, cardRequest, transaction);
+
+        Boolean isCardN=  cardBl.isCardName(userid,cardRequest.getCardName());
+        Boolean isCardNum=  cardBl.isCardNumber(userid,cardRequest.getCardNumber());
+
+        CardRequest cardResponse = null;
+
+
+        if (isCardNum) {
+            System.out.println("::: isCardNum si existe");
+            throw new InvalidDataAccessApiUsageException("El número de tarjeta ya existe.");
+        }
+
+
+        if (isCardN) {
+            System.out.println("::: si existe");
+
+            throw new InvalidDataAccessApiUsageException("El nombre de la tarjeta ya existe. ");
+
+        }
+        cardResponse = cardBl.createCard(userid, cardRequest, transaction);
+
+
         return cardResponse;
+
     }
 
     @RequestMapping(value = "/{userid}/card/{cardid}", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE,
@@ -77,14 +102,4 @@ public class CardApi {
 
 
 }
-
-
-
-
-
-
-
-
-
-
 
