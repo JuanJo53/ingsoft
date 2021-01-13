@@ -5,82 +5,89 @@
 <mapper namespace="bo.ucb.edu.ingsoft.dao.ProjectDao">
     <insert id="newProject" parameterType="bo.ucb.edu.ingsoft.model.Project">
         INSERT INTO projects VALUES (
-            null,
-            #{projectTitle},
-            #{description},
-            #{benefits},
-            #{views},
-            #{createDate},
-            #{status},
-            #{transaction.txId},
-            #{transaction.txHost},
-            #{transaction.txUserId},
-            #{transaction.txDate}
-        )
+                                        null,
+                                        #{projectTitle},
+                                        #{description},
+                                        #{benefits},
+                                        #{budget},
+                                        #{views},
+                                        #{createDate},
+                                        #{status},
+                                        #{transaction.txId},
+                                        #{transaction.txHost},
+                                        #{transaction.txUserId},
+                                        #{transaction.txDate}
+                                    )
     </insert>
 
     <update id="updateproyect" parameterType="bo.ucb.edu.ingsoft.model.Project">
 
         Update projects set project_title=#{projectTitle},
-             description=#{description},
-             benefits= #{benefits},
-             status=#{status}
-             where projects_id= #{projectsId}
+                            description=#{description},
+                            benefits= #{benefits},
+                            budget= #{budget},
+                            status=#{status}
+        where projects_id= #{projectsId}
     </update>
 
     <select id="detailsproyect" resultType="bo.ucb.edu.ingsoft.model.Project">
         SELECT projects_id as projectsId,
-        project_title as projectTitle,
-        description as description,
-        benefits as benefits,
-        status as status,
-        create_date as createDate
+               project_title as projectTitle,
+               description as description,
+               benefits as benefits,
+               budget as budget,
+               status as status,
+               create_date as createDate
         FROM projects
         WHERE projects_id =#{projectsId}
     </select>
 
     <select id="listproyect" resultType="bo.ucb.edu.ingsoft.model.Project">
         SELECT projects_id as projectsId,
-        project_title as projectTitle,
-        description as description,
-        benefits as benefits,
-        status as status,
-        views as views,
-        create_date as createDate
+               project_title as projectTitle,
+               description as description,
+               benefits as benefits,
+               budget as budget,
+               status as status,
+               views as views,
+               create_date as createDate
         FROM projects where status=1
     </select>
 
     <select id="listproyectuserparticipate" resultType="bo.ucb.edu.ingsoft.model.Project">
         SELECT a.projects_id as projectsId,
-        a.project_title as projectTitle,
-        a.description as description,
-        a.benefits as benefits,
-        a.status as status,
-        a.create_date as createDate
+               a.project_title as projectTitle,
+               a.description as description,
+               a.benefits as benefits,
+               a.budget as budget,
+               a.status as status,
+               a.create_date as createDate
         FROM projects a ,project_user b
         where a.projects_id=b.projects_id and b.user_id=#{UserId} and b.rol=3
 
     </select>
     <select id="proyectuser" resultType="bo.ucb.edu.ingsoft.model.Project">
         SELECT a.projects_id as projectsId,
-        a.project_title as projectTitle,
-        a.description as description,
-        a.benefits as benefits,
-        a.status as status,
-        a.views as views,
-        a.create_date as createDate
+               a.project_title as projectTitle,
+               a.description as description,
+               a.benefits as benefits,
+               a.budget as budget,
+               a.status as status,
+               a.views as views,
+               a.create_date as createDate
         FROM projects a ,project_user b
         where a.projects_id=#{projectsId} and b.user_id=#{UserId}   and a.projects_id=b.projects_id ORDER By a.projects_id DESC LIMIT 1
 
     </select>
     <select id="listproyectuser" resultType="bo.ucb.edu.ingsoft.model.Project">
         SELECT a.projects_id as projectsId,
-        a.project_title as projectTitle,
-        a.description as description,
-        a.benefits as benefits,
-        a.status as status,
-        a.views as views,
-        a.create_date as createDate
+               a.project_title as projectTitle,
+               a.description as description,
+               a.benefits as benefits,
+               a.budget as budget,
+               a.status as status,
+               a.views as views,
+               a.create_date as createDate
         FROM projects a ,project_user b
         where a.projects_id=b.projects_id and b.user_id=#{UserId} and b.rol=1
 
@@ -88,36 +95,38 @@
 
     <select id="listproyectag" resultType="bo.ucb.edu.ingsoft.model.Project">
         SELECT a.projects_id as projectsId,
-        a.project_title as projectTitle,
-        a.description as description,
-        a.benefits as benefits,
-        a.status as status,
-        a.views as views,
-        a.create_date as createDate
+               a.project_title as projectTitle,
+               a.description as description,
+               a.benefits as benefits,
+               a.budget as budget,
+               a.status as status,
+               a.views as views,
+               a.create_date as createDate
         FROM projects a ,tags b ,projects_tags c
         where a.projects_id=c.projects_id and b.tags_id=#{Tagsid} and  c.tags_id=b.tags_id  and b.status=1 and a.status=1
 
     </select>
     <select id="listproyecserch" resultType="bo.ucb.edu.ingsoft.model.Project">
         SELECT a.projects_id as projectsId,
-        a.project_title as projectTitle,
-        a.description as description,
-        a.benefits as benefits,
-        a.status as status,
-        a.views as views,
-        a.create_date as createDate
+               a.project_title as projectTitle,
+               a.description as description,
+               a.benefits as benefits,
+               a.budget as budget,
+               a.status as status,
+               a.views as views,
+               a.create_date as createDate
         FROM projects a  where a.status=1 and a.project_title LIKE #{serch}
 
     </select>
     <select id="getLastInsertIdProject" resultType="java.lang.Integer">
-    SELECT projects_id FROM projects ORDER BY projects_id DESC LIMIT 1
+        SELECT projects_id FROM projects ORDER BY projects_id DESC LIMIT 1
     </select>
     <update id="increaseProjectViews" parameterType="bo.ucb.edu.ingsoft.model.Project">
         UPDATE projects
-        INNER JOIN project_user ON project_user.projects_id=projects.projects_id
-        SET projects.views = projects.views + 1
+            INNER JOIN project_user ON project_user.projects_id=projects.projects_id
+            SET projects.views = projects.views + 1
         WHERE projects.projects_id =#{projectsId}
-        AND project_user.user_id=#{userid}
-        AND project_user.rol!=1
+          AND project_user.user_id=#{userid}
+          AND project_user.rol!=1
     </update>
 </mapper>

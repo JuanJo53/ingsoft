@@ -4,9 +4,10 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "projectTitle": "  adfa ",
-  "description": "  asds ",
-  "benefits": "  ad ad",
+  "projectTitle": "Reconocimiento Colores",
+  "description": "Reconocimiento de imagenes en python",
+  "benefits": "Experiencia en programacion en python",
+  "budget": 2548,
   "status" : 1
 }
 ###
@@ -19,6 +20,7 @@ Content-Type: application/json
   "projectTitle": "Autos voladores",
   "description": "es un poyecto muy nuevo",
   "benefits": "mucho dinero ",
+  "budget": 2548,
   "status" : 2
 }
 
@@ -44,6 +46,7 @@ Content-Type: application/json
   "projectTitle": "Autos voladores",
   "description": "es un poyecto muy nuevo",
   "benefits": "mucho dinero ",
+  "budget": 2548,
   "status" : 1
 }
 ###

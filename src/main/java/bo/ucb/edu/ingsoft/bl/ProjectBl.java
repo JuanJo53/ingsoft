@@ -36,6 +36,7 @@ public class ProjectBl {
        project.setProjectTitle(projectRequest.getProjectTitle().trim());
        project.setDescription(projectRequest.getDescription());
        project.setBenefits(projectRequest.getBenefits());
+       project.setBudget(projectRequest.getBudget());
        project.setViews(0);
        project.setStatus(projectRequest.getStatus());
        project.setCreateDate(new Date());
@@ -64,6 +65,7 @@ public class ProjectBl {
         project.setProjectTitle(projectRequest.getProjectTitle().trim());
         project.setDescription(projectRequest.getDescription());
         project.setBenefits(projectRequest.getBenefits());
+        project.setBudget(projectRequest.getBudget());
         project.setStatus(projectRequest.getStatus());
         if(project.getBenefits().trim().length()==0 || project.getDescription().trim().length()==0 || project.getProjectTitle().trim().length()==0){
             return null;
