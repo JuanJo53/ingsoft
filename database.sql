@@ -531,5 +531,60 @@ ALTER TABLE donation ADD CONSTRAINT donation_card FOREIGN KEY donation_card (car
 ALTER TABLE donation ADD CONSTRAINT donation_projects FOREIGN KEY donation_projects (projects_id)
     REFERENCES projects (projects_id);
 
--- End of file.
 
+
+-- End of file.
+-- agregando
+-- Table: pregunta
+CREATE TABLE pregunta (
+    pregunta_id int NOT NULL AUTO_INCREMENT,
+    user_id int NOT NULL,
+    projects_id int NOT NULL,
+    pregunta text NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
+    tx_id int NOT NULL,
+    tx_host varchar(100) NOT NULL,
+    tx_user_id int NOT NULL,
+    tx_date timestamp NOT NULL,
+    CONSTRAINT pregunta_pk PRIMARY KEY (pregunta_id)
+);
+
+
+-- Table: respuesta
+CREATE TABLE respuesta (
+    respuesta_id int NOT NULL AUTO_INCREMENT,
+    pregunta_id int NOT NULL,
+    user_id int NOT NULL,
+    respuesta text NOT NULL,
+    respuesta_correcta tinyint NOT NULL,
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
+    tx_id int NOT NULL,
+    tx_host varchar(100) NOT NULL,
+    tx_user_id int NOT NULL,
+    tx_date timestamp NOT NULL,
+    CONSTRAINT respuesta_pk PRIMARY KEY (respuesta_id)
+);
+
+
+-- Table: evaluacion
+CREATE TABLE evaluacion (
+    evaluacion_id int NOT NULL AUTO_INCREMENT,
+    nro_evaluacion varchar(30) NOT NULL,
+    pregunta_id int NOT NULL,
+    proyecto_id int NOT NULL,
+    respuesta_correcta int NOT NULL,
+    respuesta_user int NOT NULL,
+    total_preguntas int NOT NULL,
+    user_id int NOT NULL,
+
+
+    status int NOT NULL COMMENT '0: DELETED
+1: ACTIVE',
+    tx_id int NOT NULL,
+    tx_host varchar(100) NOT NULL,
+    tx_user_id int NOT NULL,
+    tx_date timestamp NOT NULL,
+    CONSTRAINT evaluacion_pk PRIMARY KEY (evaluacion_id)
+);
