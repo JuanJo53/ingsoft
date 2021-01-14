@@ -39,42 +39,49 @@ public class CertificateBl {
     }
     //This function creates a user certificate by executing an insert function in certificateDao
     public CertificateRequest createCertificate(Integer userId, CertificateRequest certificateRequest, Transaction transaction) {
-        validationCertificate(certificateRequest);
         Certificate certificate = new Certificate();
         //Setting all the data sent from the body in CertificateRequest to the certificate class.
         certificate.setUserId(userId);
-        certificate.setCertificateName(certificateRequest.getCertificateName());
-        certificate.setCompany(certificateRequest.getCompany());
+        certificate.setCertificateName(certificateRequest.getCertificateName().trim());
+        certificate.setCompany(certificateRequest.getCompany().trim());
         certificate.setExpeditionDate(certificateRequest.getExpeditionDate());
-        certificate.setCredentialId(certificateRequest.getCredentialId());
-        certificate.setCredentialURL(certificateRequest.getCredentialURL());
+        certificate.setCredentialId(certificateRequest.getCredentialId().trim());
+        certificate.setCredentialURL(certificateRequest.getCredentialURL().trim());
         certificate.setExpirationDate(certificateRequest.getExpirationDate());
         certificate.setStatus(1);   //status = 1: ACVITE CERTIFICATE
         //setting the last transaction data
         certificate.setTransaction(transaction);
-        //Executing insert function to certificateDao
-        certificateDao.newCertificate(certificate);
 
-        return  certificateRequest;
+        if(certificate.getCertificateName().trim().length()==0 || certificate.getCompany().trim().length()==0 || certificate.getCredentialId().trim().length()==0 || certificate.getCredentialURL().trim().length()==0){
+            return null;
+        }else {
+            //Executing insert function to certificateDao
+            certificateDao.newCertificate(certificate);
+            return certificateRequest;
+        }
     }
     //This function updates a user certificate data by executing an update function in certificateDao
     public CertificateRequest editCertificate(CertificateRequest certificateRequest, Integer certificateId, Transaction transaction) {
-        validationCertificate(certificateRequest);
         Certificate certificate = new Certificate();
+
         //Setting all the data sent from the body in CertificateRequest to the certificate class.
         certificate.setCertificateId(certificateId);
-        certificate.setCertificateName(certificateRequest.getCertificateName());
-        certificate.setCompany(certificateRequest.getCompany());
+        certificate.setCertificateName(certificateRequest.getCertificateName().trim());
+        certificate.setCompany(certificateRequest.getCompany().trim());
         certificate.setExpeditionDate(certificateRequest.getExpeditionDate());
-        certificate.setCredentialId(certificateRequest.getCredentialId());
-        certificate.setCredentialURL(certificateRequest.getCredentialURL());
+        certificate.setCredentialId(certificateRequest.getCredentialId().trim());
+        certificate.setCredentialURL(certificateRequest.getCredentialURL().trim());
         certificate.setExpirationDate(certificateRequest.getExpirationDate());
         //setting the last transaction data
         certificate.setTransaction(transaction);
-        //Executing update function from certificateDao
-        certificateDao.updateCertificate(certificate);
 
-        return  certificateRequest;
+        if(certificate.getCertificateName().trim().length()==0 || certificate.getCompany().trim().length()==0 || certificate.getCredentialId().trim().length()==0 || certificate.getCredentialURL().trim().length()==0) {
+            return null;
+        }else{
+            //Executing update function from certificateDao
+            certificateDao.updateCertificate(certificate);
+            return  certificateRequest;
+        }
     }
     //This function deletes a user certificate data by executing an update function in certificateDao and changing it´s status
     public Certificate deleteCertificate(Integer certificateId, Transaction transaction) {
@@ -90,50 +97,6 @@ public class CertificateBl {
         certificateDao.deleteCertificate(certificate);
 
         return  certificate;
-    }
-
-
-    private void validationCertificate(CertificateRequest certificateRequest) {
-        String regex_certificate = "[A-Za-zÁÉÍÓÚáéíóúñÑ0-9 ]{4,60}";
-        Pattern pattern = Pattern.compile(regex_certificate);
-        Matcher matcher = pattern.matcher(certificateRequest.getCertificateName());
-        if (!matcher.matches()) {
-            throw new ResponseStatusException(
-                    HttpStatus.INTERNAL_SERVER_ERROR, "Nombre del certificado incorrecto.");
-        }
-
-        String regex_company = "[A-Za-zÁÉÍÓÚáéíóúñÑ ]{3,60}";
-        Pattern pattern_company = Pattern.compile(regex_company);
-        Matcher matcher_company = pattern_company.matcher(certificateRequest.getCompany());
-        if (!matcher_company.matches()) {
-            throw new ResponseStatusException(
-                    HttpStatus.INTERNAL_SERVER_ERROR, "Nombre de empresa incorrecto.");
-        }
-
-        if (certificateRequest.getExpeditionDate().before(new Date())) {
-            throw new ResponseStatusException(
-                    HttpStatus.INTERNAL_SERVER_ERROR, "Fecha de expedidición incorrecta.");
-        }
-
-        if (certificateRequest.getExpirationDate().before(new Date())) {
-            throw new ResponseStatusException(
-                    HttpStatus.INTERNAL_SERVER_ERROR, "Fecha de expiracion incorrecta.");
-        }
-
-        Pattern pattern_id = Pattern.compile("[A-Za-zÁÉÍÓÚáéíóúñÑ0-9]{0,60}");
-        Matcher matcher_id = pattern_id.matcher(certificateRequest.getCredentialId());
-        if (!matcher_id.matches()) {
-            throw new ResponseStatusException(
-                    HttpStatus.INTERNAL_SERVER_ERROR, "Identificador del credencial incorrecto.");
-        }
-
-        Pattern pattern_url = Pattern.compile("^(http|https):[-a-zA-Z0-9+&@#/%?=~_|!:,.;]{0,}");
-        Matcher matcher_url = pattern_url.matcher(certificateRequest.getCredentialURL());
-        if (!matcher_url.matches()) {
-            throw new ResponseStatusException(
-                    HttpStatus.INTERNAL_SERVER_ERROR, "Url del credencial incorrecto.");
-        }
-
     }
 
 }
