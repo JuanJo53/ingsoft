@@ -9,6 +9,8 @@ import bo.ucb.edu.ingsoft.util.TransactionUtil;
 import org.springframework.http.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.dao.InvalidDataAccessApiUsageException;
+import org.springframework.http.MediaType;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -32,6 +34,33 @@ public class BillApi {
         //Creamos transaccion para la operacion
         Transaction transaction = TransactionUtil.createTransaction(request);
         transactionBl.createTransaction(transaction);
+        // Billing Addresss
+        if (billRequest.getBillingAddress().trim().length()<=3 || billRequest.getBillingAddress().length()==0 || billRequest.getBillingAddress().trim().equals(" ")) {
+            throw new InvalidDataAccessApiUsageException("La direccion de envio debe tener mas 3 letras");
+        }
+        if (billRequest.getBillingAddress().trim().length()>=17 || billRequest.getBillingAddress().length()==0 || billRequest.getBillingAddress().trim().equals(" ")) {
+            throw new InvalidDataAccessApiUsageException("la direccion de envio debe tener menos de 17 letras");
+        }
+
+
+        // Country
+
+        if (billRequest.getCountry().trim().length()<=3 || billRequest.getCountry().length()==0 || billRequest.getCountry().trim().equals(" ")) {
+            throw new InvalidDataAccessApiUsageException("El  pais debe tener mas 3 letras");
+        }
+        if (billRequest.getCountry().trim().length()>=17 || billRequest.getCountry().length()==0 || billRequest.getCountry().trim().equals(" ")) {
+            throw new InvalidDataAccessApiUsageException("El pais debe tener menos de 17 letras");
+        }
+
+        // City
+        if (billRequest.getCity().trim().length()<=3 || billRequest.getCity().length()==0 || billRequest.getCity().trim().equals(" ")) {
+            throw new InvalidDataAccessApiUsageException("La ciudad debe tener mas 3 letras");
+        }
+        if (billRequest.getCity().trim().length()>=17 || billRequest.getCity().length()==0 || billRequest.getCity().trim().equals(" ")) {
+            throw new InvalidDataAccessApiUsageException("la ciudad debe tener menos de 17 letras");
+        }
+
+
         BillRequest billResponse = billBl.createBill(userid,projectid,planid,cardid,billRequest,transaction);
         return billResponse;
     }

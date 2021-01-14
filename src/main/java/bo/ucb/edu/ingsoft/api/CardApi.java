@@ -54,17 +54,63 @@ public class CardApi {
         CardRequest cardResponse = null;
 
 
+        // CardName
+        if (cardRequest.getCardName().trim().length()<=3 || cardRequest.getCardName().length()==0 || cardRequest.getCardName().toString().trim().equals(" ")) {
+            throw new InvalidDataAccessApiUsageException("El nombre debe tener mas 3 letras");
+        }
+
+
+        // CardNumber
+        if (cardRequest.getCardNumber().toString().trim().length()<11 || cardRequest.getCardNumber().toString().length()==0) {
+            System.out.println("El numero debe tener mas 11 digitos");
+            throw new InvalidDataAccessApiUsageException("El numero debe tener mas 11 digitos");
+
+        }
+
+        if (cardRequest.getCardNumber().toString().trim().length()>16 || cardRequest.getCardNumber().toString().length()==0) {
+            throw new InvalidDataAccessApiUsageException("El numero debe tener menos de  16 digitos");
+        }
+
+
+
+        // ExpirationYear
+        if (cardRequest.getExpirationYear().toString().trim().length()==0) {
+            throw new InvalidDataAccessApiUsageException("El año es requerido");
+        }
+
+        // ExpirationMonth
+        if (cardRequest.getExpirationMonth().toString().trim().length()==0) {
+            throw new InvalidDataAccessApiUsageException("El mes es requerido");
+        }
+
+
+
+        //cvc
+        if (cardRequest.getCvc().toString().trim().length()<3 || cardRequest.getCvc().toString().length()==0) {
+            System.out.println("El CVC debe tener minimo 3 digitos");
+            throw new InvalidDataAccessApiUsageException("El CVC debe tener minimo 3 digitos");
+        }
+
+        if (cardRequest.getCvc().toString().trim().length()>4 || cardRequest.getCvc().toString().length()==0) {
+            System.out.println("El CVC debe tener minimo 3 digitos");
+            throw new InvalidDataAccessApiUsageException("El CVC debe tener como maximo 4 digitos");
+        }
+
+
+        // ExpirationMonth
+        if (cardRequest.getCreationDate().toString().trim().length()==0) {
+            throw new InvalidDataAccessApiUsageException("La fecha es requerido");
+        }
+
+
         if (isCardNum) {
-            System.out.println("::: isCardNum si existe");
+
             throw new InvalidDataAccessApiUsageException("El número de tarjeta ya existe.");
         }
 
 
         if (isCardN) {
-            System.out.println("::: si existe");
-
             throw new InvalidDataAccessApiUsageException("El nombre de la tarjeta ya existe. ");
-
         }
         cardResponse = cardBl.createCard(userid, cardRequest, transaction);
 
@@ -102,4 +148,14 @@ public class CardApi {
 
 
 }
+
+
+
+
+
+
+
+
+
+
 
